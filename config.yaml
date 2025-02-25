@@ -18,13 +18,13 @@ carpentry: 'incubator'
 carpentry_description: 'Lesson Description'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Byte-sized RSE' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: ~ # FIXME
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'software, RSE, research software, development, practices' # FIXME
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -63,6 +63,9 @@ contact: 'team@carpentries.org' # FIXME
 # profiles:
 # - one-learner.md
 # - another-learner.md
+
+# Disable sidebar automatic numbering
+disable_sidebar_numbering: true
 
 # Order of episodes in your lesson
 episodes: 
