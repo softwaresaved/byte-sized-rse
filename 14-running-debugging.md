@@ -44,7 +44,7 @@ steve@laptop:~/code-style-example$
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
-## Error: `the term conda is no recognised`
+## Error: `the term conda is not recognised`
 
 If you're running an Anaconda distribution of Python on Windows,
 if you see this error it means that VSCode is not looking in the right place for Anaconda’s installation.

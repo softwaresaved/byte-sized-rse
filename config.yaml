@@ -69,11 +69,11 @@ disable_sidebar_numbering: true
 
 # Order of episodes in your lesson
 episodes: 
-- 00-introduction.md
-- 01-setup.md
-- 02-running-vscode.md
-- 03-code-editor.md
-- 04-running-debugging.md
+- 10-introduction.md
+- 11-setup.md
+- 12-running-vscode.md
+- 13-code-editor.md
+- 14-running-debugging.md
 
 # Information for Learners
 learners: 
