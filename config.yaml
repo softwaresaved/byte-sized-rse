@@ -74,6 +74,18 @@ episodes:
 - 12-running-vscode.md
 - 13-code-editor.md
 - 14-running-debugging.md
+- 20-introduction.md
+- 21-setup.md
+- 22-example-code.md
+- 23-analysing-code.md
+- 24-linter-advanced.md
+- 30-introduction.md
+- 31-setup.md
+- 32-example-code.md
+- 33-feature-branch.md
+- 34-pull-request.md
+- 35-merge-pr.md
+- 36-merge-conflicts.md
 
 # Information for Learners
 learners: 
