@@ -16,4 +16,6 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Something
+## Intro to IDEs
+
+## Intro to Code Linting
