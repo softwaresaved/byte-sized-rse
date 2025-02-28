@@ -19,6 +19,21 @@
     <loc>https://carpentries.github.io/workbench-template-md/04-running-debugging.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/10-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/11-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/12-running-vscode.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/13-code-editor.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/14-running-debugging.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -53,6 +68,21 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/04-running-debugging.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/10-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/11-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/12-running-vscode.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/13-code-editor.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/14-running-debugging.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
