@@ -34,6 +34,42 @@
     <loc>https://carpentries.github.io/workbench-template-md/14-running-debugging.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/20-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/21-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/22-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/23-analysing-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/24-linter-advanced.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/30-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/31-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/32-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/33-feature-branch.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/34-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/35-merge-pr.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/36-merge-conflicts.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -83,6 +119,42 @@
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/14-running-debugging.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/20-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/21-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/22-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/23-analysing-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/24-linter-advanced.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/30-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/31-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/32-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/33-feature-branch.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/34-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/35-merge-pr.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/36-merge-conflicts.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
