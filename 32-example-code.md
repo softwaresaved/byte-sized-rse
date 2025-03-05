@@ -18,6 +18,8 @@ exercises: 0
 
 ## Creating a Copy of the Example Code Repository
 
+FIXME: copy git-example repo into softwaresaved
+
 So the first thing we need to do is create a new GitHub repository from a template repository
 So first go to https://github.com/UNIVERSE-HPC/git-example [copy and paste]
 Select ‘Use this template’ -> Create a new repository
@@ -53,7 +55,7 @@ the problem would also become compounded if other developers came on board, perh
 what would be nice, would be to have our cake and eat it, so to speak
 where we can change our code using version control to track our changes,
 but not interfere with our working code on the main branch
-and as we’ve heard from Jeremy, repository branches can give us just that
+Fortunately, repository branches can give us just that
 
 ## Create Example Issues
 
