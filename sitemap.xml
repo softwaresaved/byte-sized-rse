@@ -70,7 +70,43 @@
     <loc>https://carpentries.github.io/workbench-template-md/36-merge-conflicts.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/40-introduction.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/41-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/42-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/43-repo-issue-fixing.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/44-create-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/45-review-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/46-merge-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/50-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/51-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/52-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/53-create-new-test.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/54-handling-errors.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
@@ -157,7 +193,43 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/36-merge-conflicts.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/40-introduction.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/41-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/42-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/43-repo-issue-fixing.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/44-create-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/45-review-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/46-merge-pull-request.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/50-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/51-setup.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/52-example-code.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/53-create-new-test.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/54-handling-errors.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
