@@ -1,5 +1,5 @@
 ---
-title: "Lesson 1: Integrated Development Environments"
+title: "Lesson 4: Code Review"
 teaching: 15
 exercises: 0
 ---
@@ -16,6 +16,6 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Intro to IDEs
+## 
 
-## Intro to Code Linting
+## 

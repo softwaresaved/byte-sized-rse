@@ -86,6 +86,18 @@ episodes:
 - 34-pull-request.md
 - 35-merge-pr.md
 - 36-merge-conflicts.md
+- 40-introduction.md
+- 41-setup.md
+- 42-example-code.md
+- 43-repo-issue-fixing.md
+- 44-create-pull-request.md
+- 45-review-pull-request.md
+- 46-merge-pull-request.md
+- 50-introduction.md
+- 51-setup.md
+- 52-example-code.md
+- 53-create-new-test.md
+- 54-handling-errors.md
 
 # Information for Learners
 learners: 

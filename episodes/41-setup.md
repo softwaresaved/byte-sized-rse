@@ -1,8 +1,10 @@
 ---
-title: "Lesson 1: Integrated Development Environments"
-teaching: 15
-exercises: 0
+title: "4.1 Setup"
+teaching: 10
+exercises: 2
 ---
+
+## Setup
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
@@ -16,6 +18,4 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Intro to IDEs
 
-## Intro to Code Linting

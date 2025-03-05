@@ -18,6 +18,8 @@ exercises: 0
 
 ## Obtaining Some Example Code
 
+FIXME: copy code-style-example into softwaresaved org
+
 Open a shell
 On own machine: open terminal with a bash shell
 Using the shell, we’re going to use Git to clone our example GitHub code repository
