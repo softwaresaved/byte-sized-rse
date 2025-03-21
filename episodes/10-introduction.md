@@ -18,4 +18,12 @@ exercises: 0
 
 ## Intro to IDEs
 
-## Intro to Code Linting
+- What is an Integrated Development Environment (IDE)?
+- Why use an IDE?
+- Common IDE Features
+- Some commonly used IDEs
+
+## Intro to Debugging
+
+- What is a debugger, and why use one?
+- How do we use a debugger?

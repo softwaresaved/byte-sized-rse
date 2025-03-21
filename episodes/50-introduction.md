@@ -16,6 +16,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## 
+## Intro to testing
 
-## 
+- Why test your code?
+- Types of testing - levels (unit, integration, system)
+- Types of testing - approaches (regression testing, property-based testing)
+- Mocking
