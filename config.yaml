@@ -15,26 +15,26 @@
 carpentry: 'incubator'
 
 # Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+carpentry_description: 'Byte-sized RSE'
 
 # Overall title for pages.
-title: 'Byte-sized RSE' # FIXME
+title: 'Byte-sized RSE' 
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2025-01-15
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, RSE, research software, development, practices' # FIXME
+keywords: 'software, RSE, research software, development, practices' 
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'pre-alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/softwaresaved/byte-sized-rse'
 
 # Default branch of your lesson
 branch: 'main'
