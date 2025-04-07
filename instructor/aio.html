@@ -1569,7 +1569,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-22-example-code"><p>Content from <a href="22-example-code.html">2.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-03-05 |
+<p>Last updated on 2025-04-07 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/22-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1605,66 +1605,156 @@ any links that you are not going to use.
 </h2>
 <hr class="half-width">
 <p>FIXME: copy code-style-example into softwaresaved org</p>
-<p>Open a shell On own machine: open terminal with a bash shell Using
-the shell, we’re going to use Git to clone our example GitHub code
-repository The URL is bit long - see the session notes for a copy and
-pastable link - it’s the second link at the top git clone <a href="https://github.com/UNIVERSE-HPC/code-style-example" class="external-link uri">https://github.com/UNIVERSE-HPC/code-style-example</a></p>
+<p>For this lesson we’ll be using some example code available on GitHub,
+which we’ll clone onto our machines using the Bash shell. So firstly
+open a Bash shell (via Git Bash in Windows or Terminal on a Mac). Then,
+on the command line, navigate to where you’d like the example code to
+reside, and use Git to clone it. For example, to clone the repository in
+our home directory:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UNIVERSE-HPC/code-style-example</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a>
 </h2>
 <hr class="half-width">
 <p>Next, let’s take a look at the code, which is in the root directory
-of the repository So the example code here is designed to process
-temperature data from a separate data file (which is also in the
-repository in the data directory) The idea is that is reads in
-fahrenheit data from a data file, and prints out fahrenheit temperatures
-in both celsius and kelvin The data file is a CSV file (see
-sc_climate_data_10.csv) which is held in the data directory It contains
-a number of lines, each containing a number of values, each separated by
-a comma There’s also a comment line at the top, to tell us what each
-column represents Now let’s take a look at the Python code Use any
-editor you like to open the file, I’ll use a command line one called
-nano If you’re on a Mac or Linux, you should be able to use this too cd
-code-style-example nano climate-analysis.py The code opens the data
-file, defines some functions to do some conversions I should point out
-that the code is deliberately written to be bad In so many ways we’ll
-look into Developers sometimes talk about “code smells” Code smells are
+of the repository in a file called <code>climate_analysis.py</code>.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>shift <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>comment <span class="op">=</span> <span class="st">'#'</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>climate_data <span class="op">=</span> <span class="bu">open</span>(<span class="st">'data/sc_climate_data_10.csv'</span>, <span class="st">'r'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="kw">def</span> FahrToCelsius(fahr):</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    celsius <span class="op">=</span> ((fahr <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) </span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="kw">def</span> FahrToKelvin(fahr):</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    kelvin <span class="op">=</span> FahrToCelsius(fahr) <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    <span class="cf">return</span> kelvin</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> climate_data:</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    data <span class="op">=</span> line.split(<span class="st">','</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="cf">if</span> data[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">!=</span> comment:</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>        fahr <span class="op">=</span> <span class="bu">float</span>(data[<span class="dv">3</span>])</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>        celsius <span class="op">=</span> FahrToCelsius(fahr)</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>        kelvin <span class="op">=</span> FahrToKelvin(fahr)</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Max temperature in Celsius'</span>, celsius, <span class="st">'Kelvin'</span>, kelvin)</span></code></pre>
+</div>
+<p>The code is designed to process temperature data from a separate data
+file. The code reads in data line by line from the data file, and prints
+out fahrenheit temperatures in both celsius and kelvin.</p>
+<p>The code expects to find the data file
+<code>sc_climate_data_10.csv</code> (formatted in the Comma Separated
+Value CSV format) in the <code>data</code> directory, and looks like
+this:</p>
+<pre class="text"><code># POINT_X,POINT_Y,Min_temp_Jul_F,Max_temp_jul_F,Rainfall_jul_inch
+461196.8188,1198890.052,47.77,58.53,0.76
+436196.8188,1191890.052,47.93,58.60,0.83
+445196.8188,1168890.052,47.93,58.30,0.74
+450196.8188,1144890.052,48.97,56.91,0.66
+329196.8188,1034890.052,49.26,59.86,0.78
+359196.8188,1017890.052,49.39,58.95,0.70
+338196.8188,1011890.052,49.28,58.73,0.74
+321196.8188,981890.0521,48.20,61.41,0.72
+296196.8188,974890.0521,48.07,61.27,0.78
+299196.8188,972890.0521,48.07,61.41,0.78</code></pre>
+<p>It contains a number of lines, each containing a number of values,
+each separated by a comma. There’s also a comment line at the top, to
+tell us what each column represents.</p>
+<p>Now let’s take a look at the Python code, using any text or code
+editor you like to open the file. You can also use <code>nano</code> if
+you’d prefer to use the command line, e.g.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="bu">cd</span> code-style-example</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">nano</span> climate-analysis.py</span></code></pre>
+</div>
+<p>The code opens the data file, and also defines some functions to do
+two temperature conversions from Fahrenheit to Celsius and Fahrenheit to
+Kelvin. Note that for the purposes of this lesson, the code is
+deliberately written to contain some issues!</p>
+</section><section><h2 class="section-heading" id="why-write-readable-code">Why Write Readable Code?<a class="anchor" aria-label="anchor" href="#why-write-readable-code"></a>
+</h2>
+<hr class="half-width">
+<div id="why-does-my-code-smell" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="why-does-my-code-smell" class="callout-inner">
+<h3 class="callout-title">Why Does my Code Smell?</h3>
+<div class="callout-content">
+<p>Developers sometimes talk about “code smells”. Code smells are
 cursory indications from looking at the source code that a piece of code
-may have some deeper issues And looking at this code, it smells pretty
-terrible We can see that there is inconsistent spacing, bunching in some
-places, very spread out in others, for example This doesn’t engender a
-great deal of confidence that the code will work as we expect It raises
-the question that if the style of the code appears rushed, what else has
-been rushed? It’s design? Testing? Something to bear in mind when
-writing code!</p>
+may have some deeper issues. And looking at this code, it smells pretty
+terrible. For example, we can see that there is inconsistent spacing,
+with lines bunched together in some places, and very spread out in
+others. This doesn’t engender a great deal of confidence that the code
+will work as we expect, and it raises the question that if the style of
+the code appears rushed, what else has been rushed? How about the design
+of the code? Something to bear in mind when writing code!</p>
+</div>
+</div>
+</div>
 <p>QUESTION: who has seen or used code that looks like this? Yes/No?
 QUESTION: who has written code like this? Yes/No</p>
 <p>No one writes great code that’s readable, well formatted, and well
-designed all the time Sometimes you often need to explore ideas with
-code to understand how the code should be designed May involve trying
-things out first But … the key is that once you understand how to do
-something, it’s a good idea to make sure it’s readable and
-understandable by others And this includes a future version of yourself,
-6 months down the line So it’s really helpful to have good clean code so
-your colleagues or development team can understand it So it can be
-extended and otherwise modified in the future But it’s also a really
-good idea if you write readable code for just yourself. You never know.
-The code may be useful elsewhere! An all too familiar example is You
-stop developing a piece of code, and put it to one side. Maybe it’s not
-needed any more, perhaps a project has finished. You forget about it
-BUT… suddenly, there’s a need to use the code again Maybe all of it in
-another project, or maybe to just part of it You come back to your code,
-and it’s a mess you can’t understand By spending a little time now to
-write good code while you understand it, you can save yourself (and
-possibly others) a lot of time later</p>
+designed all the time. Sometimes you often need to explore ideas with
+code to understand how the code should be designed, and this typically
+involves trying things out first. But… the key is that once you
+understand how to do something, it’s a good idea to make sure it’s
+readable and understandable by other people, which may includes a future
+version of yourself, 6 months into the future. So it’s really helpful to
+end up with good clean code so yit’s easier to understand.</p>
+<p>Another key benefit to writing “cleaner” code is that its generally
+easier to extend and otherwise modify in the future. When code is
+initially written it’s often impossible to tell if it will be reused in
+some way elsewhere. A familiar scenario is that you stop developing a
+piece of code for a while, and put it to one side. Maybe it’s not needed
+any more, or perhaps a project has finished. You forget about it, until
+suddenly, there’s a need to use the code again. Maybe all of it needs to
+be reused in another project, or maybe just a part of it. However, you
+come back to your code, and it’s a mess you can’t understand. But by
+spending a little time now to write good code <em>while you understand
+it</em>, you can save yourself (and possibly others) a lot of time
+later!</p>
 </section><section><h2 class="section-heading" id="running-the-example-code">Running the Example Code<a class="anchor" aria-label="anchor" href="#running-the-example-code"></a>
 </h2>
 <hr class="half-width">
-<p>Now despite the issues with the code, does it work? Let’s find out So
-in the shell In the root directory of the repository, we can type python
-climate_analysis.py And we can see that the code does indeed appear to
-work, with celsius and kelvin values being printed to the terminal But
-how can we improve its code formatting? Let’s use Pylint, a static
-Python code analysis tool to help us</p>
+<p>Now despite the issues with the code, does it work? Let’s find out.
+So in the shell, in the root directory of the repository:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">python</span> climate_analysis.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Max temperature in Celsius 14.73888888888889 Kelvin 287.88888888888886
+Max temperature in Celsius 14.777777777777779 Kelvin 287.92777777777775
+Max temperature in Celsius 14.61111111111111 Kelvin 287.76111111111106
+Max temperature in Celsius 13.838888888888887 Kelvin 286.9888888888889
+Max temperature in Celsius 15.477777777777778 Kelvin 288.62777777777774
+Max temperature in Celsius 14.972222222222225 Kelvin 288.1222222222222
+Max temperature in Celsius 14.85 Kelvin 288.0
+Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889
+Max temperature in Celsius 16.261111111111113 Kelvin 289.4111111111111
+Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889</code></pre>
+</div>
+<p>And we can see that the code does indeed appear to work, with celsius
+and kelvin values being printed to the terminal. But how can we improve
+its readability? We’ll use a special tool, called a code linter, to help
+us identify these sorts of issues with the code.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1684,7 +1774,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-23-analysing-code"><p>Content from <a href="23-analysing-code.html">2.3 Analysing Code using a Linter</a></p>
 <hr>
-<p>Last updated on 2025-02-28 |
+<p>Last updated on 2025-04-07 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/23-analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1719,91 +1809,273 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="installing-a-code-linter">Installing a Code Linter<a class="anchor" aria-label="anchor" href="#installing-a-code-linter"></a>
 </h2>
 <hr class="half-width">
-<p>The first thing we need to do is Install pylint Now fortunately,
-pylint can be installed as a Python package QUESTION: who has installed
-a Python package before, using the program pip? Yes/No QUESTION: who has
-created and used a Python virtual environment before? Yes/No Ok, so
-we’re going to create what’s known as a virtual environment This is a
-genuinely very useful technique - I cannot recommend this strongly
-enough! There isn’t a developer I know that doesn’t use virtual
-environments to install their packages whenever they can And to be
-honest, this could be a topic all on its own The idea is that Instead of
-installing Python packages at the level of our machine’s Python
-installation, which we could do We’re going to install them within their
-own container, which is separate to the machine’s Python installation
-And then we’ll run our Python code only using packages within that
-virtual environment The benefit of this is that it creates a clear
-separation between the packages we use for this project, and the
-packages we use for another The other benefit is that we don’t end up
-with a machine’s Python installation with a clutter of a thousand
-different packages Can become very difficult to tell which packages are
-used for which project If someone else needs to run your code for
-example, by using a virtual environment, you can be sure what your code
-actually needs as dependencies</p>
-</section><section><h2 class="section-heading" id="setting-up-a-development-environment">Setting up a Development Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-development-environment"></a>
-</h2>
-<hr class="half-width">
-<p>So let’s create a Python virtual environment now, and activate it So,
-make sure you’re in the root directory of the repository, then type
-python -m venv venv Here, we’re using the built-on Python venv module -
-short for virtual environment - to create a virtual environment
-directory called venv We could have called the directory anything, but
-naming it venv is a common convention We create the venv within the
-repository root directory, which is also an established convention This
-makes sure the venv is closely associated with this project, and not
-easily confused with another Once created, we can activate the venv so
-it’s the one in use We do that by: (if on Linux or Mac) source
-venv/bin/activate (if on Windows) source venv/Scripts/activate QUESTION:
-who has successfully created and activated their virtual environment?
-Yes/No? Ok, so what’s in this virtual environment? we can do: pip list
-We can see this is essentially empty, aside from some default packages
-that are always installed So, the next thing we can do is install any
-packages needed for this codebase It turns out, there isn’t any needed
-for the code itself But - we wish to use pylint, and that’s a python
-package So we can install pylint into our virtual environment using pip
-install pylint You’ll notice the prompt changes to reflect that the
-virtual environment is active - a handy reminder And with that, we’re
-ready to go Important thing with virtual environments Don’t add the venv
-directory to a GitHub repository</p>
+<p>The first thing we need to do is install pylint, a very well
+established tool for statically analysing Python code.</p>
+<p>Now fortunately, pylint can be installed as a Python package, and
+we’re going to create what’s known as a virtual environment to hold this
+installation of pylint.</p>
+<p>QUESTION: who has installed a Python package before, using the
+program pip? Yes/No QUESTION: who has created and used a Python virtual
+environment before? Yes/No</p>
+<div class="section level3">
+<h3 id="benefits-of-virtual-environments">Benefits of Virtual Environments<a class="anchor" aria-label="anchor" href="#benefits-of-virtual-environments"></a>
+</h3>
+<p>Virtual environments are an indispensible tool for managing package
+dependencies across multiple projects, and could be a whole topic
+itself. In the case of Python, the idea is that instead of installing
+Python packages at the level of our machine’s Python installation, which
+we could do, we’re going to install them within their own “container”,
+which is separate to the machine’s Python installation. Then we’ll run
+our Python code only using packages within that virtual environment.</p>
+<p>There are a number of key benefits to using virtual environments:</p>
+<ul>
+<li>It creates a clear separation between the packages we use for this
+project, and the packages we use other projects.</li>
+<li>We don’t end up with a machine’s Python installation containing a
+clutter of a thousand different packages, where determining which
+packages are used for which project often becomes very time consuming
+and prone to error.</li>
+<li>Since we are sure what our code actually needs as dependencies, it
+becomes much easier for someone else (which could be a future version of
+ourselves) to know what these dependencies are and install them to use
+our code.</li>
+<li>Virtual environments are not limited to Python; for example there
+are similar tools for available for Ruby, Java and JavaScript.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="setting-up-a-development-environment">Setting up a Development Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-development-environment"></a>
+</h3>
+<p>Let’s now create a Python virtual environment and make use of it.
+Make sure you’re in the root directory of the repository, then type</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span></code></pre>
+</div>
+<p>Here, we’re using the built-on Python venv module - short for virtual
+environment - to create a virtual environment directory called
+<code>venv</code>. We could have called the directory anything, but
+naming it <code>venv</code> (or <code>.venv</code>) is a common
+convention, as is creating it within the repository root directory. This
+makes sure the virtual environment is closely associated with this
+project, and not easily confused with another.</p>
+<p>Once created, we can <em>activate</em> it so it’s the one in use:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+</div>
+<p>You should notice the prompt changes to reflect that the virtual
+environment is active, which is a handy reminder. For example:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>(venv) $</code></pre>
+</div>
+<p>QUESTION: who has successfully created and activated their virtual
+environment? Yes/No?</p>
+<p>Now it’s created, let’s take a look at what’s in this virtual
+environment at this point.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">pip</span> list</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Package    Version
+---------- -------
+pip        22.0.2
+setuptools 59.6.0</code></pre>
+</div>
+<p>We can see this is essentially empty, aside from some default
+packages that are always installed. The next thing we can do is install
+any packages needed for this codebase. As it turns out, there isn’t any
+needed for the code itself, but we wish to use pylint, and that’s a
+python package. So we can install pylint into our virtual
+environment:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pip</span> install pylint</span></code></pre>
+</div>
+<p>Now if we check the packages, we see:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">pip</span> list</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Package           Version
+----------------- -------
+astroid           3.3.9
+dill              0.3.9
+isort             6.0.1
+mccabe            0.7.0
+pip               22.0.2
+platformdirs      4.3.7
+pylint            3.3.6
+setuptools        59.6.0
+tomli             2.2.1
+tomlkit           0.13.2
+typing_extensions 4.13.1</code></pre>
+</div>
+<p>So in addition to pylint, we see a number of other dependent packages
+installed that are required by it.</p>
+</div>
 </section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a>
 </h2>
 <hr class="half-width">
-<p>Now the magic can happen - let’s run pylint If you run it without any
-arguments, we can see it’s got a daunting array of options But
-fortunately the basic use is very simple Let’s point it at our code and
-see what it thinks pylint climate_analysis.py We run this, and it gives
-us a report essentially, a list of issues, and a score for each issue,
-it tells us the filename, the line number and text column the problem
-occurred, an issue identifier (what type of issue it is), and some text
-describing this type of error (as well as a shortened form of the error
-type) You’ll notice there’s also a score at the bottom, out of 10
-Essentially, for every infraction, it deducts from the ideal score of 10
-It is perfectly possible to get a negative score! It just keeps
-deducting from 10! But we can see here that our score appears very low -
-0.59/10 If we were to resolve each of these issues in turn, we should
-get a perfect score We can also ask for more information on an error
-type for example, we can see at line 9, near column 35, there is a
-trailing whitespace pylint —help-msg C0303 Which is helpful if we need
-clarification if we edit the file, e.g. nano climate-analysis.py and go
-to line 9, column 35, (we can use nano’s cursor locator function to help
-us find column 35), we can see that there is an unnecessary space I’ve
-made this visible in nano so you can see it (although usually you
-wouldn’t) QUESTION: who’s managed to run pylint on the example code?
-Yes/No Let’s fix this issue now. Let’s remove the space and re-run
-pylint on it Delete space, save pylint climate_analysis.py And we see
-that the error has disappeared and our score has gone up! Note that it
-also gives us a comparison against our last score Warning - it can get
-quite addictive to keep increasing your score which might well be the
-point! So looking at the issue types, what do the C, W, R symbols mean?
-Show pylint —long-help At the end, we can see a breakdown of what they
-mean I is for informational messages C for a programming standards
-violation - it’s not conforming to the normally accepted conventions of
-writing good code, things like variable or function naming R for a need
-to refactor, due to a “bad code smell” W for warning - something that E
-for error - so pylint think’s it’s spotted a bug (useful, but I wouldn’t
-depend on this!) and F for a fatal pylint error So if we run it again on
-our code pylint climate_analysis.py We can see that most of our issues
-are do to with conventions</p>
+<p>Let’s point it at our code and see what it thinks</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+</div>
+<p>We run this, and it gives us a report containing issues it has found
+with the code, and also an overall score.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>************* Module climate_analysis
+climate_analysis.py:9:35: C0303: Trailing whitespace (trailing-whitespace)
+climate_analysis.py:9:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+climate_analysis.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+climate_analysis.py:4:0: C0103: Constant name "shift" doesn't conform to UPPER_CASE naming style (invalid-name)
+climate_analysis.py:5:0: C0103: Constant name "comment" doesn't conform to UPPER_CASE naming style (invalid-name)
+climate_analysis.py:6:15: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+climate_analysis.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+climate_analysis.py:8:0: C0103: Function name "FahrToCelsius" doesn't conform to snake_case naming style (invalid-name)
+climate_analysis.py:8:18: W0621: Redefining name 'fahr' from outer scope (line 20) (redefined-outer-name)
+climate_analysis.py:9:4: W0621: Redefining name 'celsius' from outer scope (line 21) (redefined-outer-name)
+climate_analysis.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+climate_analysis.py:11:0: C0103: Function name "FahrToKelvin" doesn't conform to snake_case naming style (invalid-name)
+climate_analysis.py:11:17: W0621: Redefining name 'fahr' from outer scope (line 20) (redefined-outer-name)
+climate_analysis.py:12:4: W0621: Redefining name 'kelvin' from outer scope (line 22) (redefined-outer-name)
+climate_analysis.py:6:15: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+climate_analysis.py:1:0: W0611: Unused import string (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 0.59/10 (previous run: 0.59/10, +0.00)</code></pre>
+</div>
+<p>For each issue, it tells us:</p>
+<ul>
+<li>The filename</li>
+<li>The line number and text column the problem occurred</li>
+<li>An issue identifier (what type of issue it is)</li>
+<li>Some text describing this type of error (as well as a shortened form
+of the error type)</li>
+</ul>
+<p>You’ll notice there’s also a score at the bottom, out of 10.
+Essentially, for every infraction, it deducts from an ideal score of 10.
+Note that it is perfectly possible to get a negative score, since it
+just keeps deducting from 10! But we can see here that our score appears
+very low - 0.59/10, and if we were to now resolve each of these issues
+in turn, we should get a perfect score.</p>
+</section><section><h2 class="section-heading" id="identifying-and-fixing-an-issue">Identifying and Fixing an Issue<a class="anchor" aria-label="anchor" href="#identifying-and-fixing-an-issue"></a>
+</h2>
+<hr class="half-width">
+<p>We can also ask for more information on an issue identifier. For
+example, we can see at line 9, near column 35, there is a trailing
+whitespace</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--help-msg</span> C0303</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>:trailing-whitespace (C0303): *Trailing whitespace*
+  Used when there is whitespace between the end of a line and the newline. This
+  message belongs to the format checker.</code></pre>
+</div>
+<p>Which is helpful if we need clarification on a particular
+message.</p>
+<p>If we now edit the file, and go to line 9, column 35, we can see that
+there is an unnecessary space.</p>
+<p>QUESTION: who’s managed to run pylint on the example code? Yes/No</p>
+<p>Let’s fix this issue now by removing the space, save the changed
+file, and then re-run pylint on it.</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>------------------------------------------------------------------
+Your code has been rated at 1.18/10 (previous run: 0.59/10, +0.59)</code></pre>
+</div>
+<p>And we see that the <code>C0303</code> issue has disappeared and our
+score has gone up! Note that it also gives us a comparison against our
+last score.</p>
+<p>As a gentle warning: it can get quite addictive to keep increasing
+your score, which might well be the point!</p>
+<p>So looking at the issue identifiers, e.g. <code>C0303</code>, what do
+the <code>C</code>, <code>W</code>, <code>R</code> prefix symbols
+mean?</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--long-help</span></span></code></pre>
+</div>
+<p>At the end, we can see a breakdown of what they mean:</p>
+<ul>
+<li>
+<code>I</code> is for informational messages</li>
+<li>
+<code>C</code> is for a programming standards violation. Part of the
+code is not conforming to the normally accepted conventions of writing
+good code (e.g. things like variable or function naming)</li>
+<li>
+<code>R</code> for a need to refactor, due to a “bad code
+smell”</li>
+<li>
+<code>W</code> for warning - something that</li>
+<li>
+<code>E</code> for error - so pylint think’s it’s spotted a bug
+(useful, but don’t depend on this to find errors!)</li>
+<li>
+<code>F</code> for a fatal pylint error</li>
+</ul>
+<p>So if we run it again on our code:</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>************* Module climate_analysis
+climate_analysis.py:9:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+climate_analysis.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+climate_analysis.py:4:0: C0103: Constant name "shift" doesn't conform to UPPER_CASE naming style (invalid-name)
+climate_analysis.py:5:0: C0103: Constant name "comment" doesn't conform to UPPER_CASE naming style (invalid-name)
+climate_analysis.py:6:15: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+climate_analysis.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+climate_analysis.py:8:0: C0103: Function name "FahrToCelsius" doesn't conform to snake_case naming style (invalid-name)
+climate_analysis.py:8:18: W0621: Redefining name 'fahr' from outer scope (line 20) (redefined-outer-name)
+climate_analysis.py:9:4: W0621: Redefining name 'celsius' from outer scope (line 21) (redefined-outer-name)
+climate_analysis.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+climate_analysis.py:11:0: C0103: Function name "FahrToKelvin" doesn't conform to snake_case naming style (invalid-name)
+climate_analysis.py:11:17: W0621: Redefining name 'fahr' from outer scope (line 20) (redefined-outer-name)
+climate_analysis.py:12:4: W0621: Redefining name 'kelvin' from outer scope (line 22) (redefined-outer-name)
+climate_analysis.py:6:15: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+climate_analysis.py:1:0: W0611: Unused import string (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 1.18/10 (previous run: 1.18/10, +0.00)</code></pre>
+</div>
+<p>We can see that most of our issues are do to with coding
+conventions.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1823,7 +2095,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-24-linter-advanced"><p>Content from <a href="24-linter-advanced.html">2.4 Advanced Linting Features</a></p>
 <hr>
-<p>Last updated on 2025-02-28 |
+<p>Last updated on 2025-04-07 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/24-linter-advanced.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1858,47 +2130,88 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="more-verbose-reporting">More Verbose Reporting<a class="anchor" aria-label="anchor" href="#more-verbose-reporting"></a>
 </h2>
 <hr class="half-width">
-<p>We can also obtain a more verbose report, which gives us a lot more
-detail pylint —reports y file QUESTION: for those doing activity, who’s
-managed to run this command? YES/NO It gives you some overall
-statistics, plus comparisons with the last time you ran it such as how
-many modules, classes, methods and functions were looked at some raw
-metrics - we’ll come back to that the extent of code duplication (none,
-which is good) the number of messages by category (again, we can see
-that it’s mainly convention issues) and a sorted count of the messages
-we received now coming back to the raw metrics We can see that is breaks
-down our program into how many lines are code lines, python docstrings
-standalone comments and empty lines this is very useful, since it gives
-us an idea of how well commented our code is in this case - not very
-well commented at all! what’s a good % of comments to aim for? well it
-depends for normal comments, the usually accepted wisdom is to add them
-to explain why you are doing something, or perhaps to explain how
-necessarily complex code works</p>
+<p>We can also obtain a more verbose report by adding
+<code>--reports y</code> to the command, which gives us a lot more
+detail:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--reports</span> y file</span></code></pre>
+</div>
+<p>Here’s a part of that output:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>...
+Messages
+--------
+
++---------------------------+------------+
+|message id                 |occurrences |
++===========================+============+
+|redefined-outer-name       |4           |
++---------------------------+------------+
+|invalid-name               |4           |
++---------------------------+------------+
+|missing-function-docstring |2           |
++---------------------------+------------+
+|unused-import              |1           |
++---------------------------+------------+
+|unspecified-encoding       |1           |
++---------------------------+------------+
+|superfluous-parens         |1           |
++---------------------------+------------+
+|missing-module-docstring   |1           |
++---------------------------+------------+
+|consider-using-with        |1           |
++---------------------------+------------+
+...</code></pre>
+</div>
+<p>QUESTION: for those doing activity, who’s managed to run this
+command? YES/NO</p>
+<p>It gives you some overall statistics, plus comparisons with the last
+time you ran it, on aspects such as:</p>
+<ul>
+<li>How many modules, classes, methods and functions were looked at</li>
+<li>Raw metrics (which we’ll look at in a minute)</li>
+<li>Extent of code duplication (none, which is good)</li>
+<li>Number of messages by category (again, we can see that it’s mainly
+convention issues)</li>
+<li>A sorted count of the messages we received</li>
+</ul>
+<p>Looking at raw metrics, we can see that it breaks down our program
+into how many lines are code lines, python docstrings, standalone
+comments, and empty lines. This is very useful, since it gives us an
+idea of how well commented our code is. In this case - not very well
+commented at all! For normal comments, the usually accepted wisdom is to
+add them to explain <em>why</em> you are doing something, or perhaps to
+explain how necessarily complex code works, but not to explain the
+obvious, since clearly written code should do that itself.</p>
 </section><section><h2 class="section-heading" id="increasing-our-pylint-score---adding-a-docstring">Increasing our Pylint Score - Adding a Docstring<a class="anchor" aria-label="anchor" href="#increasing-our-pylint-score---adding-a-docstring"></a>
 </h2>
 <hr class="half-width">
-<p>QUESTION: Who’s familiar with Python docstrings? Yes/No for those
-that don’t know, docstrings are a special kind of comment for a
-function, that explain what the function does, the parameters it
-expects, and what is returned you can also write docstrings for classes,
-methods, and modules but you should usually aim to add docstring
-comments to your code wherever you can, particularly for critical or
-complex functions let’s add one to our code now, to the fahr_to_celsius
-function</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>QUESTION: Who’s familiar with Python docstrings? Yes/No</p>
+<p>Docstrings are a special kind of comment for a function, that explain
+what the function does, the parameters it expects, and what is returned.
+You can also write docstrings for classes, methods, and modules, but you
+should usually aim to add docstring comments to your code wherever you
+can, particularly for critical or complex functions.</p>
+<p>Let’s add one to our code now, within the
+<code>fahr_to_celsius</code> function.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="st">"""Convert fahrenheit to Celsius.</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="st">:param fahr: temperature in Fahrenheit</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="st">:returns: temperature in Celsius</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="st">"""</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>    <span class="co">"""Convert fahrenheit to Celsius.</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">    :param fahr: temperature in Fahrenheit</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">    :returns: temperature in Celsius</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">    """</span></span></code></pre>
 </div>
 <p>Re-run pylint - can see we have one less docstring error, and a
-slightly higher score If you’d like to know more about docstrings and
-commenting, we’ve included a link to a RealPython tutorial on comments
-and docstrings, and the different ways you can format them. that’s
-really good</p>
+slightly higher score.</p>
+<p>If you’d like to know more about docstrings and commenting, there’s
+an in-depth <a href="https://realpython.com/documenting-python-code/" class="external-link">RealPython
+tutorial</a> on these and the different ways you can format them.</p>
 </section><section><h2 class="section-heading" id="configuring-pylint-rules">Configuring Pylint Rules<a class="anchor" aria-label="anchor" href="#configuring-pylint-rules"></a>
 </h2>
 <hr class="half-width">
