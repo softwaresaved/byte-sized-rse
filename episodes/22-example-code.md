@@ -24,11 +24,13 @@ For this lesson we'll be using some example code available on GitHub,
 which we'll clone onto our machines using the Bash shell.
 So firstly open a Bash shell (via Git Bash in Windows or Terminal on a Mac). Then, on the command line, navigate to where you'd like the example code to reside,
 and use Git to clone it.
-For example, to clone the repository in our home directory:
+For example, to clone the repository in our home directory,
+and change our directory to the repository contents:
 
 ```bash
 cd
 git clone https://github.com/UNIVERSE-HPC/code-style-example
+cd code-style-example
 ```
 
 
@@ -129,7 +131,7 @@ you can save yourself (and possibly others) a lot of time later!
 
 ## Does my Code Smell?
 
-Developers sometimes talk about “code smells”.
+Developers sometimes talk about "code smells”.
 Code smells are cursory indications from looking at the source code that a piece of code may have some deeper issues.
 And looking at this code, it smells pretty terrible.
 For example, we can see that there is inconsistent spacing, with lines bunched together in some places, and very spread out in others.

@@ -20,7 +20,7 @@ exercises: 0
 
 But - we still need to submit this new branch and the commit we made as a pull request
 And GitHub nicely guides us to doing this
-Select “Create pull request”
+Select "Create pull request"
 
 Once we've done that, we can see that our pull request has been opened
 And is ready for consideration to be merged into the codebase

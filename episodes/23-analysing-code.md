@@ -47,7 +47,7 @@ where determining which packages are used for which project often becomes very t
 it becomes much easier for someone else (which could be a future version of ourselves) to know what these dependencies are and install them to use our code.
 - Virtual environments are not limited to Python; for example there are similar tools for available for Ruby, Java and JavaScript.
 
-### Setting up a Development Environment
+### Setting up a Virtual Environment
 
 Let's now create a Python virtual environment and make use of it.
 Make sure you're in the root directory of the repository, then type
@@ -64,8 +64,9 @@ This makes sure the virtual environment is closely associated with this project,
 Once created, we can *activate* it so it's the one in use:
 
 ```bash
-[Linux or Mac] $ source venv/bin/activate
-[Windows Git Bash] $ source venv/Scripts/activate
+[Linux] source venv/bin/activate
+[Mac] source venv/bin/activate
+[Windows] source venv/Scripts/activate
 ```
 
 You should notice the prompt changes to reflect that the virtual environment is active, which is a handy reminder. For example:
@@ -93,6 +94,9 @@ We can see this is essentially empty,
 aside from some default packages that are always installed.
 Note that whilst within this virtual environment,
 we no longer have access to any globally installed Python packages.
+
+### Installing Pylint into our Virtual Environment
+
 The next thing we can do is install any packages needed for this codebase.
 As it turns out, there isn't any needed for the code itself,
 but we wish to use pylint, and that's a python package.
@@ -138,8 +142,9 @@ indicating we have returned to our global Python environment.
 Let's reactivate it since we'll need it to use pylint.
 
 ```bash
-[Linux or Mac] $ source venv/bin/activate
-[Windows Git Bash] $ source venv/Scripts/activate
+[Linux] source venv/bin/activate
+[Mac] source venv/bin/activate
+[Windows] source venv/Scripts/activate
 ```
 
 ## Analysing our Code using a Linter
@@ -241,7 +246,7 @@ At the end, we can see a breakdown of what they mean:
 
 - `I` is for informational messages
 - `C` is for a programming standards violation. Part of the code is not conforming to the normally accepted conventions of writing good code (e.g. things like variable or function naming)
-- `R` for a need to refactor, due to a “bad code smell”
+- `R` for a need to refactor, due to a "bad code smell”
 - `W` for warning - something that
 - `E` for error - so pylint think's it's spotted a bug (useful, but don't depend on this to find errors!)
 - `F` for a fatal pylint error

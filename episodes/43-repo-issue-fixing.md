@@ -25,10 +25,10 @@ But perhaps we've spotted a problem with our codebase during development, and we
 
 For example, if we look at the README for the repo, we can see there's a broken link
 Clearly a problem, so let's register that as an issue
-Select “Issues”, then “New issue”
+Select "Issues", then "New issue"
 Title: Broken link to article
 Description: The README link to the SSI website article is broken, resulting in a page not found error
-Select “Submit new issue”
+Select "Submit new issue"
 Have opportunity to assign someone to the issue - let's say me
 And also assign what type of issue it is
 It's a problem with the README, so that's probably documentation, so let's set it as that
@@ -43,9 +43,9 @@ And here, for the sake of the exercise, we'll just use GitHub's edit mechanism t
 Alternatively, and in most cases, we'd probably do this by having the repository cloned on our machine, and then we'd make the change, and submit it that way
 But in the interests of time and simplicity, we'll just use GitHub's edit function
 So select the edit icon
-And edit the README to fix the link (remove the bit that says “typo/“)
+And edit the README to fix the link (remove the bit that says "typo/")
 
-So we now need to commit the change, so we now select “Commit changes” in the top right
+So we now need to commit the change, so we now select "Commit changes" in the top right
 Good practice when committing a change is to refer to the issue number in the commit message
 This gives us traceability for changes back to the originating issue
 We had our issue number 1, so let's refer to that
