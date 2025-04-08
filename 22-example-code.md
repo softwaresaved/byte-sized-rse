@@ -100,21 +100,6 @@ the code is deliberately written to contain some issues!
 
 ## Why Write Readable Code?
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Why Does my Code Smell?
-
-Developers sometimes talk about “code smells”.
-Code smells are cursory indications from looking at the source code that a piece of code may have some deeper issues.
-And looking at this code, it smells pretty terrible.
-For example, we can see that there is inconsistent spacing, with lines bunched together in some places, and very spread out in others.
-This doesn't engender a great deal of confidence that the code will work as we expect,
-and it raises the question that if the style of the code appears rushed, what else has been rushed?
-How about the design of the code?
-Something to bear in mind when writing code!
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 QUESTION: who has seen or used code that looks like this? Yes/No?
 QUESTION: who has written code like this? Yes/No
 
@@ -139,6 +124,21 @@ or maybe just a part of it.
 However, you come back to your code, and it's a mess you can't understand.
 But by spending a little time now to write good code *while you understand it*,
 you can save yourself (and possibly others) a lot of time later!
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Does my Code Smell?
+
+Developers sometimes talk about “code smells”.
+Code smells are cursory indications from looking at the source code that a piece of code may have some deeper issues.
+And looking at this code, it smells pretty terrible.
+For example, we can see that there is inconsistent spacing, with lines bunched together in some places, and very spread out in others.
+This doesn't engender a great deal of confidence that the code will work as we expect,
+and it raises the question that if the style of the code appears rushed, what else has been rushed?
+How about the design of the code?
+Something to bear in mind when writing code!
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Running the Example Code
 

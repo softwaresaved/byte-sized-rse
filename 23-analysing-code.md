@@ -89,7 +89,10 @@ pip        22.0.2
 setuptools 59.6.0
 ```
 
-We can see this is essentially empty, aside from some default packages that are always installed.
+We can see this is essentially empty,
+aside from some default packages that are always installed.
+Note that whilst within this virtual environment,
+we no longer have access to any globally installed Python packages.
 The next thing we can do is install any packages needed for this codebase.
 As it turns out, there isn't any needed for the code itself,
 but we wish to use pylint, and that's a python package.
@@ -124,9 +127,24 @@ typing_extensions 4.13.1
 So in addition to pylint,
 we see a number of other dependent packages installed that are required by it.
 
+We can also *deactivate* our virtual environment:
+
+```bash
+deactivate
+```
+
+You should see the `(venv)` prefix disappear,
+indicating we have returned to our global Python environment.
+Let's reactivate it since we'll need it to use pylint.
+
+```bash
+[Linux or Mac] $ source venv/bin/activate
+[Windows Git Bash] $ source venv/Scripts/activate
+```
+
 ## Analysing our Code using a Linter
 
-Let's point it at our code and see what it thinks
+Let's point pylint at our code and see what it reports:
 
 ```bash
 pylint climate_analysis.py
