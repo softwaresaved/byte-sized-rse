@@ -648,11 +648,12 @@ pip        22.0.2
 setuptools 59.6.0</code></pre>
 </div>
 <p>We can see this is essentially empty, aside from some default
-packages that are always installed. The next thing we can do is install
-any packages needed for this codebase. As it turns out, there isn’t any
-needed for the code itself, but we wish to use pylint, and that’s a
-python package. So we can install pylint into our virtual
-environment:</p>
+packages that are always installed. Note that whilst within this virtual
+environment, we no longer have access to any globally installed Python
+packages. The next thing we can do is install any packages needed for
+this codebase. As it turns out, there isn’t any needed for the code
+itself, but we wish to use pylint, and that’s a python package. So we
+can install pylint into our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -683,13 +684,28 @@ typing_extensions 4.13.1</code></pre>
 </div>
 <p>So in addition to pylint, we see a number of other dependent packages
 installed that are required by it.</p>
-</div>
-</section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a></h2>
-<hr class="half-width"><p>Let’s point it at our code and see what it thinks</p>
+<p>We can also <em>deactivate</em> our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">deactivate</span></span></code></pre>
+</div>
+<p>You should see the <code>(venv)</code> prefix disappear, indicating
+we have returned to our global Python environment. Let’s reactivate it
+since we’ll need it to use pylint.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a></h2>
+<hr class="half-width"><p>Let’s point pylint at our code and see what it reports:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
 </div>
 <p>We run this, and it gives us a report containing issues it has found
 with the code, and also an overall score.</p>
@@ -733,10 +749,10 @@ in turn, we should get a perfect score.</p>
 <hr class="half-width"><p>We can also ask for more information on an issue identifier. For
 example, we can see at line 9, near column 35, there is a trailing
 whitespace</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--help-msg</span> C0303</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--help-msg</span> C0303</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -752,10 +768,10 @@ there is an unnecessary space.</p>
 <p>QUESTION: who’s managed to run pylint on the example code? Yes/No</p>
 <p>Let’s fix this issue now by removing the space, save the changed
 file, and then re-run pylint on it.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -771,10 +787,10 @@ your score, which might well be the point!</p>
 <p>So looking at the issue identifiers, e.g. <code>C0303</code>, what do
 the <code>C</code>, <code>W</code>, <code>R</code> prefix symbols
 mean?</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--long-help</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--long-help</span></span></code></pre>
 </div>
 <p>At the end, we can see a breakdown of what they mean:</p>
 <ul><li>
@@ -794,10 +810,10 @@ smell”</li>
 <li>
 <code>F</code> for a fatal pylint error</li>
 </ul><p>So if we run it again on our code:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

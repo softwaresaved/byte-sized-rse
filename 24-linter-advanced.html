@@ -299,7 +299,7 @@
       <div class="accordion-body">
         <ul><li><a href="#more-verbose-reporting">More Verbose Reporting</a></li>
 <li><a href="#increasing-our-pylint-score---adding-a-docstring">Increasing our Pylint Score - Adding a Docstring</a></li>
-<li><a href="#configuring-pylint-rules">Configuring Pylint Rules</a></li>
+<li><a href="#ignoring-issues">Ignoring Issues</a></li>
 <li><a href="#summary">Summary</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -648,37 +648,144 @@ slightly higher score.</p>
 <p>If you’d like to know more about docstrings and commenting, there’s
 an in-depth <a href="https://realpython.com/documenting-python-code/" class="external-link">RealPython
 tutorial</a> on these and the different ways you can format them.</p>
-</section><section><h2 class="section-heading" id="configuring-pylint-rules">Configuring Pylint Rules<a class="anchor" aria-label="anchor" href="#configuring-pylint-rules"></a></h2>
-<hr class="half-width"><p>Specifying a pylint rcfile - e.g. to ignore/specify rules Write a
-module docstring that exceeds 100 characters Show pylint complaining
-about long line length pylint –generate-rcfile Specify long line length
-Edit .pylintrc file, add C0301 to disable= Re-run pylint When to use?
-Agree as a team</p>
+</section><section><h2 class="section-heading" id="ignoring-issues">Ignoring Issues<a class="anchor" aria-label="anchor" href="#ignoring-issues"></a></h2>
+<hr class="half-width"><p>We can instruct pylint to ignore any particular types of issues,
+which is useful if they are not seen as important or pedantic, or we
+need to see other types more clearly. For example, to ignore any unused
+imports:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--disable</span><span class="op">=</span>W0611 climate_analysis.py</span></code></pre>
+</div>
+<p>Or, to disable all issues of type “warning”:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--disable</span><span class="op">=</span>W climate_analysis.py</span></code></pre>
+</div>
+<p>This can be particularly useful if we wish to ignore particularly
+pedantic rules, such as long line lengths over 100 characters.</p>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Edit the <code>climate_analysis.py</code> file and add in a comment
+line that exceeds 100 characters. Then re-run pylint and determine the
+issue identifier for this message, and re-run pylint again disabling
+this specific issue.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">pylint</span> climate_analysis.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>************* Module climate_analysis
+climate_analysis.py:3:0: C0301: Line too long (111/100) (line-too-long)
+climate_analysis.py:17:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+climate_analysis.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+...</code></pre>
+</div>
+<p>We can see that the identifier is <code>C0301</code>, so:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--disable</span><span class="op">=</span>C0301 climate_analysis.py</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>However, if we wanted to ignore this issue for the foreseeable
+future, typing this in every time would be tiresome. Fortunately we can
+specify a configuration file to pylint which specifies how we want to
+interpret issues.</p>
+<p>We do this by first using pylint to generate a default
+<code>.pylintrc</code> file. It directs this as output to the shell, so
+we need to redirect it to a file to capture it. Ensure you are in the
+repository root directory, then:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+</div>
+<p>If you edit this generated file you’ll notice there are many things
+we can specify to pylint. For now, look for <code>disable=</code> and
+add <code>C0301</code> to the list of ignored issues already present
+that are separated by commas, e.g.:</p>
+<pre class="text"><code># no Warning level messages displayed, use "--disable=all --enable=classes
+# --disable=W".
+disable=C0301,
+        raw-checker-failed,
+        bad-inline-option,
+        locally-disabled,
+        file-ignored,
+        suppressed-message,
+        useless-suppression,
+        deprecated-pragma,
+        use-implicit-booleaness-not-comparison-to-string,
+        use-implicit-booleaness-not-comparison-to-zero,
+        use-symbolic-message-instead</code></pre>
+<p>Every time you re-run it now, the <code>C0301</code> issue will not
+be present.</p>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
-<hr class="half-width"><p>What doesn’t pylint - and other code analysis tools - give us? What
-are their limitations? They don’t tell us that the code works - this
-first and foremost And they don’t tell us if the results our code
-produces are actually correct So we still need to test our code They
-don’t give us any Idea of whether it’s a good implementation And that
-the technical choices are good ones For example, this code does its own
-temperature conversions It turns out there’s a number of well-maintained
-Python packages that do this, e.g. pytemperature so we should be using a
-tried and tested package instead of reinventing the wheel They also
-don’t tell us if the implementation is actually fit for purpose Ok, so
-the code is a good implementation, and it works as expected But is it
-actually solving the intended problem? They also don’t tell us anything
-about the data the program may use Which may have its own problems So we
-have to be a bit careful These are all valid, high-level questions to
-ask while you’re writing code I’ve added them to the google doc As a
-team, and also individually In the fog of development, it can be
-surprisingly easy to lose track of what’s actually being implemented</p>
-<p>A good idea is to revisit these questions regularly, to be sure you
-can answer them! A high score or zero warnings may give us false
-confidence Just because we have reached a 10.00 score, doesn’t mean the
-code is actually GOOD Just that it’s likely well formatted and hopefully
-easier to read and understand But nevertheless, it’s a low effort way to
-check our code And such tools are still very useful, as far as they
-go</p>
+<hr class="half-width"><p>Code linters like pylint help us to identify problems in our code,
+such as code styling issues and potential errors, and importantly, if we
+work in a team of developers such tools help us keep our code style
+<em>consistent</em>. Attempting to understand a code base which employs
+a variety of coding styles (perhaps even in the same source file) can be
+remarkably difficult.</p>
+<p>But there are some aspects we should be careful of when using linters
+and interpreting their results:</p>
+<ul><li>
+<strong>They don’t tell us that the code actually works</strong> and
+they don’t tell us if the results our code produces are actually
+correct, so we still need to test our code.</li>
+<li>
+<strong>They don’t give us any Idea of whether it’s a good
+implementation</strong>, and that the technical choices are good ones.
+For example, this code contains functions to conduct temperature
+conversions, but it turns out there’s a number of well-maintained Python
+packages that do this (e.g. <a href="https://pypi.org/project/pytemperature/" class="external-link">pytemperature</a>)so we
+should be using a tried and tested package instead of reinventing the
+wheel.</li>
+<li>
+<strong>They also don’t tell us if the implementation is actually
+fit for purpose</strong>. Even if the code is a good implementation, and
+it works as expected, is it actually solving the <em>intended</em>
+problem?</li>
+<li>
+<strong>They also don’t tell us anything about the data the program
+uses</strong> which may have its own problems.</li>
+<li>
+<strong>A high score or zero warnings may give us false
+confidence</strong>. Just because we have reached a 10.00 score, doesn’t
+mean the code is actually <em>good</em> code, just that it’s likely well
+formatted and hopefully easier to read and understand.</li>
+</ul><p>So we have to be a bit careful. These are all valid, high-level
+questions to ask while you’re writing code, both as a team, and also
+individually. In the fog of development, it can be surprisingly easy to
+lose track of what’s actually being implemented and how it’s being
+implemented. A good idea is to revisit these questions regularly, to be
+sure you can answer them!</p>
+<p>However, whilst taking these shortcomings into account, linters are a
+very low effort way to help us improve our code and keep it
+consistent.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
