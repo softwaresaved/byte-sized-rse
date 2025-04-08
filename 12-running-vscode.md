@@ -24,7 +24,7 @@ How you run VSCode will differ depending on which operating system you have inst
 
 TODO: add screenshot of opening vscode for first time
 
-The first thing you'll likely see is a “Welcome” page.
+The first thing you'll likely see is a "Welcome" page.
 You may find it asks you which kind of theme you'd like - you can select from either a dark or light theme.
 
 ## Navigating Around VSCode
@@ -69,7 +69,7 @@ Let's install an extension now:
 1. Then select `Install`.
 
 It might take a minute - you can see a sliding blue line in the top left to indicate it's working.
-Once complete, you should see a couple of “Welcome” windows introducing you to two of its key features - support for Python and Jupyter notebooks.
+Once complete, you should see a couple of "Welcome" windows introducing you to two of its key features - support for Python and Jupyter notebooks.
 If you use Jupyter notebooks, which is a way of writing Python programs that you can run line by line from within an editor as you write the program, you may find this useful.
 
 For now, let's configure this extension for our Python development, and to do that, we need to do is tell VSCode which Python installation on our machine we'd like it to use. In the Python Welcome window, select `Select a Python interpreter`, and then `Select Python interpreter`.
@@ -108,12 +108,12 @@ then select `Open` when ‘Would you like to open the cloned repository?' appear
 
 You'll then likely be presented with a window asking whether you trust the authors of this code.
 In general, it's a good idea to be at least a little wary, since you're obtaining code from the internet, so be sure to check your sources!
-Be careful here - I found on Windows the “Trust” option appears on the left, whilst on Mac, it appears on the right!
+Be careful here - I found on Windows the "Trust" option appears on the left, whilst on Mac, it appears on the right!
 In this case, feel free to trust the repository!
 You'll then see the explorer present you with some files in a small window (or pane) on the left you can use to navigate and find files.
 
 So far within VSCode we have downloaded some code from a repository and opened a folder.
-Whenever we open a folder in VSCode, this is referred to as a “Workspace” - essentially, a collection of a project's files and directories.
+Whenever we open a folder in VSCode, this is referred to as a "Workspace" - essentially, a collection of a project's files and directories.
 So within this workspace, you'll see the following:
 
 - A `data` folder, containing a single data file (click on it to see the data file within it).

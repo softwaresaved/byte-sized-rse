@@ -21,7 +21,7 @@ exercises: 2
 
 Now let's try running a Python file.
 First, make sure your Python doesn't have any errors!
-Then, select the “Play”-looking icon at the top right of the code editor.
+Then, select the "Play"-looking icon at the top right of the code editor.
 
 FIXME: screenshot snippet of the play icon?
 
@@ -58,7 +58,7 @@ and hopefully that should resolve the issue.
 
 :::::::::::::::::::::::::::::::::::::::::
 
-The pop-up window is known as the “Console”,
+The pop-up window is known as the "Console",
 and essentially is a terminal, or command prompt, where the program is run.
 You'll notice we can also type in commands here too.
 For example in Windows, you could type `dir`, on Mac or Linux you could type `ls` - to get a listing of files, for example.
@@ -121,7 +121,7 @@ FIXME: show screenshot of debugging panes (esp. variables and call stack)
 
 - `VARIABLES` - on the left, we can see a list of variables, and their current state, at this point in the script's execution, such as `COMMENT` and `SHIFT`, and `climate_data` (which is a reference to our open data file).
 We don't have many at the moment.
-It also distinguishes between local variables and global variables - this is to do with the “scope” of the variables, as to how they are accessible from this point in the running of the code.
+It also distinguishes between local variables and global variables - this is to do with the "scope" of the variables, as to how they are accessible from this point in the running of the code.
 Global variables can be seen from anywhere in the script.
 And local variables are those that are visible from this point of the program.
 If we were within a function here, we would see variables that are defined and only used within that function as local variables only.

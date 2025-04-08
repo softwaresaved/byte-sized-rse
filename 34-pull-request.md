@@ -36,7 +36,7 @@ Which frankly, is much clearer and gives you a far better view of what's going o
 So let's go back to our repository on GitHub
 You may see a message about protecting the main branch
 We may come back to this later, so no need to worry about this for now!
-If we select the dropdown where it says “main”, it gives us a list of branches
+If we select the dropdown where it says “main", it gives us a list of branches
 We can see all branches by selecting that option at the bottom
 And now, we can see we have our new branch that has appeared
 Which is separate from our main branch
@@ -45,18 +45,18 @@ Including the new latest commits here - on climate-analysis.py
 
 ## Create a Pull Request
 
-Let's create the pull request now, by selecting “Compare & pull request”
-We could also do this from “Pull requests” if we wanted, but let's take the offered option
+Let's create the pull request now, by selecting “Compare & pull request"
+We could also do this from “Pull requests" if we wanted, but let's take the offered option
 Now it shows us an interface for creating the PR
 Importantly, at the top, it shows us which branch will be merged with which branch
 With the source branch on the right, and the destination branch on the left
 This should be our new branch for compare, and main for base
-Also, it tells us we are “able to merge” - and in this case, there are no conflicts to worry about, which is really handy
-You may rightly ask “what do I do if there are conflicts?” - a good question, and we'll look at this later!
+Also, it tells us we are “able to merge" - and in this case, there are no conflicts to worry about, which is really handy
+You may rightly ask “what do I do if there are conflicts?" - a good question, and we'll look at this later!
 Below this, it also shows us the commits associated with this branch
 as well as the sum of changes to the files by these commits
 We'll rename the PR to reference issue 2 directly
-Changing it to “Fixes #2 - missing docstrings”
+Changing it to “Fixes #2 - missing docstrings"
 We could add more contextual information if needed
 And also assign reviewers, as we did in the previous session on code review
 But for simplicity, we'll leave those for now
@@ -86,7 +86,7 @@ But branches in Git are designed, and should be wherever possible, short-lived
 The longer a branch is open, the more potential changes could be made to the main branch
 Then when it comes time to merge the branch, we may get a lot of conflicts we need to manage
 So generally, it's a good idea to keep your branches open for a day or two, a few days maximum, before creating a PR and doing a merge if you can
-Note that we can also see this PR, as well as any others, by selecting the “Pull request” tab
+Note that we can also see this PR, as well as any others, by selecting the “Pull request" tab
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 

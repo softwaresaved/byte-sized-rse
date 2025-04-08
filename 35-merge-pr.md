@@ -18,13 +18,13 @@ exercises: 0
 
 ## How to Merge the Pull Request?
 
-You'll notice there's a subtle dropdown on the “Merge pull request” button
+You'll notice there's a subtle dropdown on the "Merge pull request" button
 And one other option we have is how to perform the merge
-You may remember from the introduction about doing a “rebase and merge” as opposed to just doing a merge commit
+You may remember from the introduction about doing a "rebase and merge" as opposed to just doing a merge commit
 Since it leads to a cleaner repository history
 For example, if we did a normal merge here, we'd end up with our two new commits and a merge commit
 But if we do a rebase and then merge, our two commits are essentially just added to the top of main
-Let's do that - select the third option in the dropdown: “Rebase and merge”
+Let's do that - select the third option in the dropdown: "Rebase and merge"
 Note that if there had been a conflict with any commits on the main branch, we very likely wouldn't have been able to merge using this method
 Which in itself is a good question - even if we'd done a straight commit, what would happen if there was a conflict?
 If we have time, we'll look at this later
@@ -42,14 +42,14 @@ If in doubt, do a standard merge
 
 ## Merge the Pull Request
 
-So now let's go ahead and “Rebase pull request”
-We can add more information here if needed - but let's “Confirm rebase and merge”
+So now let's go ahead and "Rebase pull request"
+We can add more information here if needed - but let's "Confirm rebase and merge"
 Note that it says  that the merge was done successfully, and suggests we can delete the branch
 QUESTION:  who has merged the pull request? Yes/No
 We said earlier that branches in Git should be short lived where possible, and keeping branches hanging around may cause confusion
 So let's delete it now
 Now if we go the main branch on the main repository page in GitHub, we can see that the changes have been merged
-And if we look at “commits”, we can see the commits we made on our feature branch have been added to the main branch
+And if we look at "commits", we can see the commits we made on our feature branch have been added to the main branch
 
 ## See Commits on Issues
 
@@ -65,7 +65,7 @@ And then, using a rebase method, we applied our commits to the main branch
 ## Summary
 
 So what are the benefits so far?
-By using different feature branches, as opposed to just committing directly to the main branch, we've isolated the “churn” of developing a feature from the main branch
+By using different feature branches, as opposed to just committing directly to the main branch, we've isolated the "churn" of developing a feature from the main branch
 So this really is a key benefit - it allows us to maintain a working main branch
 It also gives us the opportunity to abandon a branch entirely, with no need to manually change things back
 In such a case, all we need to do is delete the branch
@@ -79,7 +79,7 @@ So what we've shown is one way to use feature branch workflow
 Using feature branches directly off the main branch, and merging to main
 We've chosen this way for the training, since it's more straightforward to teach in a practical activity
 But there are others
-Another way is to use a long-lived branch off of main, called usually something like “dev” or “develop”
+Another way is to use a long-lived branch off of main, called usually something like "dev" or "develop"
 And this dev branch would represent a general branch of development
 And using this approach, feature branches are created off of the dev branch instead, and then merged back to the dev branch
 And later, when a release of the software is due, or at an appropriate point, the dev branch is merged with the main branch
