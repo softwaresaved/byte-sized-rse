@@ -27,7 +27,7 @@ And is ready for consideration to be merged into the codebase
 For information, we can see that GitHub is aware that the change we've committed can be merged directly - without conflicts - into our main branch
 We could optionally add more info about this pull request here in comments if we wanted
 
-QUESTION: who’s been able to create a new pull request? Yes/No
+QUESTION: who's been able to create a new pull request? Yes/No
 
 ::::::::::::::::::::::::::::::::::::: challenge
 

@@ -70,7 +70,7 @@ so for the purposes of this training feel free to select the `Comment` option in
 So then submit the review, and our role as reviewer on the pull request is complete
 The other participant can then take our review into account, when deciding whether to merge that pull request
 
-QUESTION: Who’s submitted a very brief code review? Yes/No
+QUESTION: Who's submitted a very brief code review? Yes/No
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
