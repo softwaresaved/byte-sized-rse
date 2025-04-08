@@ -34,7 +34,7 @@ git clone https://github.com/UNIVERSE-HPC/code-style-example
 
 ## Examining the Code
 
-Next, let’s take a look at the code, which is in the root directory of the repository in a file called `climate_analysis.py`.
+Next, let's take a look at the code, which is in the root directory of the repository in a file called `climate_analysis.py`.
 
 ```python
 import string
@@ -83,9 +83,9 @@ and looks like this:
 ```
 
 It contains a number of lines, each containing a number of values, each separated by a comma.
-There’s also a comment line at the top, to tell us what each column represents.
+There's also a comment line at the top, to tell us what each column represents.
 
-Now let’s take a look at the Python code,
+Now let's take a look at the Python code,
 using any text or code editor you like to open the file.
 You can also use `nano` if you'd prefer to use the command line, e.g.
 
@@ -108,7 +108,7 @@ Developers sometimes talk about “code smells”.
 Code smells are cursory indications from looking at the source code that a piece of code may have some deeper issues.
 And looking at this code, it smells pretty terrible.
 For example, we can see that there is inconsistent spacing, with lines bunched together in some places, and very spread out in others.
-This doesn’t engender a great deal of confidence that the code will work as we expect,
+This doesn't engender a great deal of confidence that the code will work as we expect,
 and it raises the question that if the style of the code appears rushed, what else has been rushed?
 How about the design of the code?
 Something to bear in mind when writing code!
@@ -118,32 +118,32 @@ Something to bear in mind when writing code!
 QUESTION: who has seen or used code that looks like this? Yes/No?
 QUESTION: who has written code like this? Yes/No
 
-No one writes great code that’s readable, well formatted, and well designed all the time.
+No one writes great code that's readable, well formatted, and well designed all the time.
 Sometimes you often need to explore ideas with code to understand how the code should be designed,
 and this typically involves trying things out first.
 But... the key is that once you understand how to do something,
-it’s a good idea to make sure it’s readable and understandable by other people,
+it's a good idea to make sure it's readable and understandable by other people,
 which may includes a future version of yourself,
 6 months into the future.
-So it’s really helpful to end up with good clean code so yit's easier to understand.
+So it's really helpful to end up with good clean code so yit's easier to understand.
 
 Another key benefit to writing "cleaner" code is that its generally easier to extend and otherwise modify in the future.
 When code is initially written it's often impossible to tell if it will be reused in some way elsewhere.
 A familiar scenario is that you stop developing a piece of code for a while,
 and put it to one side.
-Maybe it’s not needed any more,
+Maybe it's not needed any more,
 or perhaps a project has finished.
-You forget about it, until suddenly, there’s a need to use the code again.
+You forget about it, until suddenly, there's a need to use the code again.
 Maybe all of it needs to be reused in another project,
 or maybe just a part of it.
-However, you come back to your code, and it’s a mess you can’t understand.
+However, you come back to your code, and it's a mess you can't understand.
 But by spending a little time now to write good code *while you understand it*,
 you can save yourself (and possibly others) a lot of time later!
 
 ## Running the Example Code
 
 Now despite the issues with the code, does it work?
-Let’s find out.
+Let's find out.
 So in the shell, in the root directory of the repository:
 
 ```bash

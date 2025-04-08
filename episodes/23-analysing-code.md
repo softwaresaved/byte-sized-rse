@@ -22,7 +22,7 @@ The first thing we need to do is install pylint,
 a very well established tool for statically analysing Python code.
 
 Now fortunately, pylint can be installed as a Python package,
-and we’re going to create what’s known as a virtual environment to hold this installation of pylint.
+and we're going to create what's known as a virtual environment to hold this installation of pylint.
 
 QUESTION: who has installed a Python package before, using the program pip? Yes/No
 QUESTION: who has created and used a Python virtual environment before? Yes/No
@@ -31,17 +31,17 @@ QUESTION: who has created and used a Python virtual environment before? Yes/No
 
 Virtual environments are an indispensible tool for managing package dependencies across multiple projects,
 and could be a whole topic itself.
-In the case of Python, the idea is that instead of installing Python packages at the level of our machine’s Python installation,
+In the case of Python, the idea is that instead of installing Python packages at the level of our machine's Python installation,
 which we could do,
-we’re going to install them within their own "container",
-which is separate to the machine’s Python installation.
-Then we’ll run our Python code only using packages within that virtual environment.
+we're going to install them within their own "container",
+which is separate to the machine's Python installation.
+Then we'll run our Python code only using packages within that virtual environment.
 
 There are a number of key benefits to using virtual environments:
 
 - It creates a clear separation between the packages we use for this project,
 and the packages we use other projects.
-- We don’t end up with a machine’s Python installation containing a clutter of a thousand different packages,
+- We don't end up with a machine's Python installation containing a clutter of a thousand different packages,
 where determining which packages are used for which project often becomes very time consuming and prone to error.
 - Since we are sure what our code actually needs as dependencies,
 it becomes much easier for someone else (which could be a future version of ourselves) to know what these dependencies are and install them to use our code.
@@ -49,19 +49,19 @@ it becomes much easier for someone else (which could be a future version of ours
 
 ### Setting up a Development Environment
 
-Let’s now create a Python virtual environment and make use of it.
-Make sure you’re in the root directory of the repository, then type
+Let's now create a Python virtual environment and make use of it.
+Make sure you're in the root directory of the repository, then type
 
 ```bash
 python -m venv venv
 ```
 
-Here, we’re using the built-on Python venv module - short for virtual environment - to create a virtual environment directory called `venv`.
+Here, we're using the built-on Python venv module - short for virtual environment - to create a virtual environment directory called `venv`.
 We could have called the directory anything, but naming it `venv` (or `.venv`) is a common convention,
 as is creating it within the repository root directory.
 This makes sure the virtual environment is closely associated with this project, and not easily confused with another.
 
-Once created, we can *activate* it so it’s the one in use:
+Once created, we can *activate* it so it's the one in use:
 
 ```bash
 [Linux or Mac] $ source venv/bin/activate
@@ -76,7 +76,7 @@ You should notice the prompt changes to reflect that the virtual environment is 
 
 QUESTION: who has successfully created and activated their virtual environment? Yes/No?
 
-Now it's created, let's take a look at what’s in this virtual environment at this point.
+Now it's created, let's take a look at what's in this virtual environment at this point.
 
 ```bash
 pip list
@@ -91,8 +91,8 @@ setuptools 59.6.0
 
 We can see this is essentially empty, aside from some default packages that are always installed.
 The next thing we can do is install any packages needed for this codebase.
-As it turns out, there isn’t any needed for the code itself,
-but we wish to use pylint, and that’s a python package.
+As it turns out, there isn't any needed for the code itself,
+but we wish to use pylint, and that's a python package.
 So we can install pylint into our virtual environment:
 
 ```bash
@@ -126,7 +126,7 @@ we see a number of other dependent packages installed that are required by it.
 
 ## Analysing our Code using a Linter
 
-Let’s point it at our code and see what it thinks
+Let's point it at our code and see what it thinks
 
 ```bash
 pylint climate_analysis.py
@@ -165,7 +165,7 @@ For each issue, it tells us:
 - An issue identifier (what type of issue it is)
 - Some text describing this type of error (as well as a shortened form of the error type)
 
-You’ll notice there’s also a score at the bottom, out of 10.
+You'll notice there's also a score at the bottom, out of 10.
 Essentially, for every infraction, it deducts from an ideal score of 10.
 Note that it is perfectly possible to get a negative score,
 since it just keeps deducting from 10!
@@ -192,9 +192,9 @@ Which is helpful if we need clarification on a particular message.
 If we now edit the file, and go to line 9, column 35,
 we can see that there is an unnecessary space.
 
-QUESTION: who’s managed to run pylint on the example code? Yes/No
+QUESTION: who's managed to run pylint on the example code? Yes/No
 
-Let’s fix this issue now by removing the space,
+Let's fix this issue now by removing the space,
 save the changed file,
 and then re-run pylint on it.
 
@@ -225,7 +225,7 @@ At the end, we can see a breakdown of what they mean:
 - `C` is for a programming standards violation. Part of the code is not conforming to the normally accepted conventions of writing good code (e.g. things like variable or function naming)
 - `R` for a need to refactor, due to a “bad code smell”
 - `W` for warning - something that
-- `E` for error - so pylint think’s it’s spotted a bug (useful, but don't depend on this to find errors!)
+- `E` for error - so pylint think's it's spotted a bug (useful, but don't depend on this to find errors!)
 - `F` for a fatal pylint error
 
 So if we run it again on our code:

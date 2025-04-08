@@ -33,7 +33,7 @@ Have opportunity to assign someone to the issue - let's say me
 And also assign what type of issue it is
 It's a problem with the README, so that's probably documentation, so let's set it as that
 
-QUESTION: who’s been able to create a new issue on the repository? Yes/No
+QUESTION: who's been able to create a new issue on the repository? Yes/No
 
 ## Fixing the Issue
 
@@ -61,7 +61,7 @@ readme-broken-link-fix
 Once we select propose changes, this change is submitted and our new branch, with that fix, is created
 And scrolling down, we can see our change highlighted
 
-QUESTION: who’s managed to commit their fix to a new branch? Yes/No
+QUESTION: who's managed to commit their fix to a new branch? Yes/No
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

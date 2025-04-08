@@ -22,8 +22,8 @@ FIXME: copy review-example repo into softwaresaved org
 
 So the first thing we need to do is create a new GitHub repository from a template repository
 So first go to https://github.com/UNIVERSE-HPC/review-example [copy and paste]
-Select ‘Use this template’ -> Create a new repository
-Set owner and repo name (e.g. git-example), ensure it’s set to public, Create
+Select ‘Use this template' -> Create a new repository
+Set owner and repo name (e.g. git-example), ensure it's set to public, Create
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
