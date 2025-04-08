@@ -1154,7 +1154,7 @@ very widely used.</p>
 This looks exactly like what we’re after! Select
 <code>Install</code>.</p>
 <p>Now, when we go to a function for example <code>FahrToCelsius</code>,
-go to the next line, and add <code>“””</code>, we’ll see a small pop-up
+go to the next line, and add <code>"""</code>, we’ll see a small pop-up
 to add a docstring. Press <code>Tab</code> to do so.</p>
 <p>FIXME: add screenshot snippet showing docstring boilerplate being
 added</p>
@@ -1610,12 +1610,14 @@ which we’ll clone onto our machines using the Bash shell. So firstly
 open a Bash shell (via Git Bash in Windows or Terminal on a Mac). Then,
 on the command line, navigate to where you’d like the example code to
 reside, and use Git to clone it. For example, to clone the repository in
-our home directory:</p>
+our home directory, and change our directory to the repository
+contents:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UNIVERSE-HPC/code-style-example</span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UNIVERSE-HPC/code-style-example</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> code-style-example</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a>
 </h2>
@@ -1844,7 +1846,7 @@ are similar tools for available for Ruby, Java and JavaScript.</li>
 </ul>
 </div>
 <div class="section level3">
-<h3 id="setting-up-a-development-environment">Setting up a Development Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-development-environment"></a>
+<h3 id="setting-up-a-virtual-environment">Setting up a Virtual Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-virtual-environment"></a>
 </h3>
 <p>Let’s now create a Python virtual environment and make use of it.
 Make sure you’re in the root directory of the repository, then type</p>
@@ -1864,8 +1866,9 @@ project, and not easily confused with another.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">[Linux]</span> source venv/bin/activate</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">[Mac]</span> source venv/bin/activate</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">[Windows]</span> source venv/Scripts/activate</span></code></pre>
 </div>
 <p>You should notice the prompt changes to reflect that the virtual
 environment is active, which is a handy reminder. For example:</p>
@@ -1894,10 +1897,15 @@ setuptools 59.6.0</code></pre>
 <p>We can see this is essentially empty, aside from some default
 packages that are always installed. Note that whilst within this virtual
 environment, we no longer have access to any globally installed Python
-packages. The next thing we can do is install any packages needed for
-this codebase. As it turns out, there isn’t any needed for the code
-itself, but we wish to use pylint, and that’s a python package. So we
-can install pylint into our virtual environment:</p>
+packages.</p>
+</div>
+<div class="section level3">
+<h3 id="installing-pylint-into-our-virtual-environment">Installing Pylint into our Virtual Environment<a class="anchor" aria-label="anchor" href="#installing-pylint-into-our-virtual-environment"></a>
+</h3>
+<p>The next thing we can do is install any packages needed for this
+codebase. As it turns out, there isn’t any needed for the code itself,
+but we wish to use pylint, and that’s a python package. So we can
+install pylint into our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1940,8 +1948,9 @@ since we’ll need it to use pylint.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">[Linux]</span> source venv/bin/activate</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">[Mac]</span> source venv/bin/activate</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="ex">[Windows]</span> source venv/Scripts/activate</span></code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a>
@@ -3373,7 +3382,7 @@ we’d probably do this by having the repository cloned on our machine,
 and then we’d make the change, and submit it that way But in the
 interests of time and simplicity, we’ll just use GitHub’s edit function
 So select the edit icon And edit the README to fix the link (remove the
-bit that says “typo/“)</p>
+bit that says “typo/”)</p>
 <p>So we now need to commit the change, so we now select “Commit
 changes” in the top right Good practice when committing a change is to
 refer to the issue number in the commit message This gives us

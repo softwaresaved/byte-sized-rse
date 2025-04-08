@@ -603,7 +603,7 @@ our code.</li>
 are similar tools for available for Ruby, Java and JavaScript.</li>
 </ul></div>
 <div class="section level3">
-<h3 id="setting-up-a-development-environment">Setting up a Development Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-development-environment"></a></h3>
+<h3 id="setting-up-a-virtual-environment">Setting up a Virtual Environment<a class="anchor" aria-label="anchor" href="#setting-up-a-virtual-environment"></a></h3>
 <p>Let’s now create a Python virtual environment and make use of it.
 Make sure you’re in the root directory of the repository, then type</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -622,8 +622,9 @@ project, and not easily confused with another.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">[Linux]</span> source venv/bin/activate</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">[Mac]</span> source venv/bin/activate</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">[Windows]</span> source venv/Scripts/activate</span></code></pre>
 </div>
 <p>You should notice the prompt changes to reflect that the virtual
 environment is active, which is a handy reminder. For example:</p>
@@ -652,10 +653,14 @@ setuptools 59.6.0</code></pre>
 <p>We can see this is essentially empty, aside from some default
 packages that are always installed. Note that whilst within this virtual
 environment, we no longer have access to any globally installed Python
-packages. The next thing we can do is install any packages needed for
-this codebase. As it turns out, there isn’t any needed for the code
-itself, but we wish to use pylint, and that’s a python package. So we
-can install pylint into our virtual environment:</p>
+packages.</p>
+</div>
+<div class="section level3">
+<h3 id="installing-pylint-into-our-virtual-environment">Installing Pylint into our Virtual Environment<a class="anchor" aria-label="anchor" href="#installing-pylint-into-our-virtual-environment"></a></h3>
+<p>The next thing we can do is install any packages needed for this
+codebase. As it turns out, there isn’t any needed for the code itself,
+but we wish to use pylint, and that’s a python package. So we can
+install pylint into our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -698,8 +703,9 @@ since we’ll need it to use pylint.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">[Linux</span> or Mac] $ source venv/bin/activate</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">[Windows</span> Git Bash] $ source venv/Scripts/activate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">[Linux]</span> source venv/bin/activate</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">[Mac]</span> source venv/bin/activate</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="ex">[Windows]</span> source venv/Scripts/activate</span></code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a></h2>
