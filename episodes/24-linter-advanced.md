@@ -99,47 +99,115 @@ Re-run pylint - can see we have one less docstring error, and a slightly higher 
 If you'd like to know more about docstrings and commenting,
 there's an in-depth [RealPython tutorial](https://realpython.com/documenting-python-code/) on these and the different ways you can format them.
 
-## Configuring Pylint Rules
+## Ignoring Issues
 
+We can instruct pylint to ignore any particular types of issues,
+which is useful if they are not seen as important or pedantic,
+or we need to see other types more clearly.
+For example, to ignore any unused imports:
 
-Specifying a pylint rcfile - e.g. to ignore/specify rules
-Write a module docstring that exceeds 100 characters
-Show pylint complaining about long line length
-pylint --generate-rcfile
-Specify long line length
-Edit .pylintrc file, add C0301 to disable=
-Re-run pylint
-When to use? Agree as a team
+```bash
+pylint --disable=W0611 climate_analysis.py
+```
+
+Or, to disable all issues of type "warning":
+
+```bash
+pylint --disable=W climate_analysis.py
+```
+
+This can be particularly useful if we wish to ignore particularly pedantic rules,
+such as long line lengths over 100 characters.
+
+::: challenge
+
+Edit the `climate_analysis.py` file and add in a comment line that exceeds 100 characters.
+Then re-run pylint and determine the issue identifier for this message,
+and re-run pylint again disabling this specific issue.
+
+:::: solution
+
+```bash
+pylint climate_analysis.py
+```
+
+```output
+************* Module climate_analysis
+climate_analysis.py:3:0: C0301: Line too long (111/100) (line-too-long)
+climate_analysis.py:17:0: C0325: Unnecessary parens after '=' keyword (superfluous-parens)
+climate_analysis.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+...
+```
+
+We can see that the identifier is `C0301`, so:
+
+```bash
+pylint --disable=C0301 climate_analysis.py
+```
+
+::::
+
+:::
+
+However, if we wanted to ignore this issue for the foreseeable future,
+typing this in every time would be tiresome.
+Fortunately we can specify a configuration file to pylint which specifies how we want to interpret issues.
+
+We do this by first using pylint to generate a default `.pylintrc` file.
+It directs this as output to the shell,
+so we need to redirect it to a file to capture it.
+Ensure you are in the repository root directory, then:
+
+```bash
+pylint --generate-rcfile > .pylintrc
+```
+
+If you edit this generated file you'll notice there are many things we can specify to pylint.
+For now, look for `disable=` and add `C0301` to the list of ignored issues already present that are separated by commas, e.g.:
+
+```text
+# no Warning level messages displayed, use "--disable=all --enable=classes
+# --disable=W".
+disable=C0301,
+        raw-checker-failed,
+        bad-inline-option,
+        locally-disabled,
+        file-ignored,
+        suppressed-message,
+        useless-suppression,
+        deprecated-pragma,
+        use-implicit-booleaness-not-comparison-to-string,
+        use-implicit-booleaness-not-comparison-to-zero,
+        use-symbolic-message-instead
+```
+
+Every time you re-run it now, the `C0301` issue will not be present.
 
 ## Summary
 
-What doesn't pylint - and other code analysis tools - give us?
-What are their limitations?
-They don't tell us that the code works - this first and foremost
-And they don't tell us if the results our code produces are actually correct
-So we still need to test our code
-They don't give us any Idea of whether it's a good implementation
-And that the technical choices are good ones
-For example, this code does its own temperature conversions
-It turns out there's a number of well-maintained Python packages that do this, e.g. pytemperature
-so we should be using a tried and tested package instead of reinventing the wheel
-They also don't tell us if the implementation is actually fit for purpose
-Ok, so the code is a good implementation, and it works as expected
-But is it actually solving the intended problem?
-They also don't tell us anything about the data the program may use
-Which may have its own problems
-So we have to be a bit careful
-These are all valid, high-level questions to ask while you're writing code
-I've added them to the google doc
-As a team, and also individually
-In the fog of development, it can be surprisingly easy to lose track of what's actually being implemented
+Code linters like pylint help us to identify problems in our code,
+such as code styling issues and potential errors,
+and importantly, if we work in a team of developers such tools help us keep our code style *consistent*.
+Attempting to understand a code base which employs a variety of coding styles (perhaps even in the same source file) can be remarkably difficult.
 
+But there are some aspects we should be careful of when using linters and interpreting their results:
+
+- **They don't tell us that the code actually works** and they don't tell us if the results our code produces are actually correct, so we still need to test our code.
+- **They don't give us any Idea of whether it's a good implementation**, 
+and that the technical choices are good ones.
+For example, this code contains functions to conduct temperature conversions, but it turns out there's a number of well-maintained Python packages that do this (e.g. [pytemperature](https://pypi.org/project/pytemperature/))so we should be using a tried and tested package instead of reinventing the wheel.
+- **They also don't tell us if the implementation is actually fit for purpose**. Even if the code is a good implementation, and it works as expected, is it actually solving the *intended* problem?
+- **They also don't tell us anything about the data the program uses**
+which may have its own problems.
+- **A high score or zero warnings may give us false confidence**.
+Just because we have reached a 10.00 score, doesn't mean the code is actually *good* code, just that it's likely well formatted and hopefully easier to read and understand.
+
+So we have to be a bit careful.
+These are all valid, high-level questions to ask while you're writing code, both as a team, and also individually.
+In the fog of development, it can be surprisingly easy to lose track of what's actually being implemented and how it's being implemented.
 A good idea is to revisit these questions regularly, to be sure you can answer them!
-A high score or zero warnings may give us false confidence
-Just because we have reached a 10.00 score, doesn't mean the code is actually GOOD
-Just that it's likely well formatted and hopefully easier to read and understand
-But nevertheless, it's a low effort way to check our code
-And such tools are still very useful, as far as they go
+
+However, whilst taking these shortcomings into account, linters are a very low effort way to help us improve our code and keep it consistent.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
