@@ -2264,7 +2264,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2511,72 +2511,165 @@ any links that you are not going to use.
 </h2>
 <hr class="half-width">
 <p>FIXME: copy git-example repo into softwaresaved</p>
-<p>So the first thing we need to do is create a new GitHub repository
-from a template repository So first go to <a href="https://github.com/UNIVERSE-HPC/git-example" class="external-link uri">https://github.com/UNIVERSE-HPC/git-example</a> [copy and
-paste] Select ‘Use this template’ -&gt; Create a new repository Set
-owner and repo name (e.g. git-example), ensure it’s set to public,
-Create</p>
+<p>For this lesson we’ll need to create a new GitHub repository based on
+the contents of another repository.</p>
+<ol style="list-style-type: decimal">
+<li>Once logged into GitHub in a web browser, go to <a href="https://github.com/UNIVERSE-HPC/git-example" class="external-link uri">https://github.com/UNIVERSE-HPC/git-example</a>.</li>
+<li>Select ‘Use this template’, and then select ‘Create a new
+repository’ from the dropdown menu.</li>
+<li>On the next screen, ensure your personal GitHub account is selected
+in the <code>Owner</code> field, and fill in
+<code>Repository name</code> with <code>git-example</code>.</li>
+<li>Ensure the repository is set to <code>Public</code>.</li>
+<li>Select <code>Create repository</code>.</li>
+</ol>
+<p>You should be presented with the new repository’s main page. Next, we
+need to clone this repository onto our own machines, using the Bash
+shell. So firstly open a Bash shell (via Git Bash in Windows or Terminal
+on a Mac). Then, on the command line, navigate to where you’d like the
+example code to reside, and use Git to clone it. For example, to clone
+the repository in our home directory (replacing
+<code>github-account-name</code> with our own account), and change
+directory to the repository contents:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/github-account-name/git-example</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> git-example</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a>
 </h2>
 <hr class="half-width">
-<p>Let’s first take a look at the example code on GitHub You’ll find the
-code in the root of the repository you’ve just cloned cd git_example
-Look at climate_analysis.py It’s designed to perform some temperature
-conversions from fahrenheit to either celsius or kelvin The code is for
-illustrative purposes If we actually wanted to do temperature
-conversions, there are at least three existing Python packages we would
-ideally use instead And with this code, there are a number of rather
-large issues (which is deliberate!) The code is a little untidy -
-inconsistent spacing and commenting, hardcoded file paths, not using a
-library to handle the CSV data files, and others, such as… function
-names are capitalised - perhaps we need to change these to be lower
-case, and use underscores between words - a naming style also known as
-snake case also, we’re missing some comments (known as docstrings)
-describing the function and the script (or module) itself for those that
-haven’t encountered docstrings yet, they are special comments described
-in a particular format that describe what the function or module is
-supposed to do you can see an example here - e.g. what it does, input
-arguments, what it returns there’s also an incorrect function name
-FahrToCels - which should be FahrToCelsius - this will cause it to fail
-if I run it one thing to note on this repository is that we have a
-single main branch used to be called a master branch, which you may see
-in older repositories you’ll notice some commits on the main branch
-already - one way to look at this is as a single “stream” of development
-we’ve made changes to this codebase one after the other on this main
-branch however, it might be that we may want to add a new software
-feature, or fix a bug in our code and this may take, maybe, more than a
-few commits to complete and make it work, perhaps over a matter of hours
-or days of course, as we make changes to make this feature work, the
-commits along the way may well break the “working” nature of our
-repository and after that, users getting hold of our software by cloning
-the repo, also get a version of the software that then isn’t working
-this is also true for developers as well - it’s hard to develop, say, a
-new feature for a piece of software, if you don’t start with software
-that is working the problem would also become compounded if other
-developers came on board, perhaps as part of a new project that will
-develop the software what would be nice, would be to have our cake and
-eat it, so to speak where we can change our code using version control
-to track our changes, but not interfere with our working code on the
-main branch Fortunately, repository branches can give us just that</p>
+<p>Let’s first take a look at the example code on GitHub, in the file
+<code>climate_analysis.py</code>.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>SHIFT <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>COMMENT <span class="op">=</span> <span class="st">'#'</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>climate_data <span class="op">=</span> <span class="bu">open</span>(<span class="st">'data/sc_climate_data_10.csv'</span>, <span class="st">'r'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="kw">def</span> FahrToCelsius(fahr):</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    <span class="co">"""COnverts fahrenehit to celsius</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">        fahr (float): temperature in fahrenheit</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">        float: temperature in Celsius</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    celsius <span class="op">=</span> ((fahr <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) </span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="kw">def</span> FahrToKelvin(fahr):</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    kelvin <span class="op">=</span> FahrToCelsius(fahr) <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="cf">return</span> kelvin</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> climate_data:</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>    data <span class="op">=</span> line.split(<span class="st">','</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    <span class="cf">if</span> data[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">!=</span> COMMENT:</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>        fahr <span class="op">=</span> <span class="bu">float</span>(data[<span class="dv">3</span>])</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>        celsius <span class="op">=</span> FahrToCels(fahr)</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>        kelvin <span class="op">=</span> FahrToKelvin(fahr)</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Max temperature in Celsius'</span>, celsius, <span class="st">'Kelvin'</span>, kelvin)</span></code></pre>
+</div>
+<p>If you have been through previous Byte-sized RSE episodes, you may
+have already encountered a version of this code before!</p>
+<p>It’s designed to perform some temperature conversions from fahrenheit
+to either celsius or kelvin, and the code here is for illustrative
+purposes. If we actually wanted to do temperature conversions, there are
+at least three existing Python packages we would ideally use instead
+that would do this for us (and much better). Similarly, this code should
+also use a library to handle the CSV data files, as opposed to handling
+them line by line itself.</p>
+<p>There are also a number of other rather large issues (which should be
+emphasised is deliberate!):</p>
+<ul>
+<li>The code is quite untidy, with inconsistent spacing and commenting
+which makes it harder to understand.</li>
+<li>It contains a hardcoded file path, as opposed to having them within
+a separate configuration file or passed in as an argument.</li>
+<li>Function names are capitalised - perhaps we need to change these to
+be lower case, and use underscores between words - a naming style also
+known as snake case.</li>
+<li>The code is also some comments (known as docstrings) describing the
+function and the script (or module) itself. For those that haven’t
+encountered docstrings yet, they are special comments described in a
+particular format that describe what the function or module is supposed
+to do. You can see an example here in the <code>FahrToCelsius</code>
+function, where the docstring explains what the function does, its input
+arguments, and what it returns.</li>
+<li>An incorrect function name <code>FahrToCels</code>, which should be
+<code>FahrToCelsius</code>. This will cause it to fail if we try to run
+it.</li>
+</ul>
+<p>Another thing to note on this repository is that we have a single
+main branch (also used to be called a master branch) which you may see
+in older repositories. You’ll also notice some commits on the main
+branch already. One way to look at this is as a single “stream” of
+development. We’ve made changes to this codebase one after the other on
+this main branch, however, it might be that we may want to add a new
+software feature, or fix a bug in our code later on. This may take,
+maybe, more than a few commits to complete and make it work, perhaps
+over a matter of hours or days. Of course, as we make changes to make
+this feature work, the commits along the way may well break the
+“working” nature of our repository and after that, users getting hold of
+our software by cloning the repo, also get a version of the software
+that then isn’t working. This is also true for developers as well: for
+example, it’s very hard to develop a new feature for a piece of software
+if you don’t start with software that is already working. The problem
+would also become compounded if other developers become involved,
+perhaps as part of a new project that will develop the software. What
+would be really helpful would be to be able to do all these things
+whilst always maintaining working code in our repository. Fortunately,
+version control allows us to create and use <em>separate branches</em>
+in addition to the main branch, which will not interfere with our
+working code on the main branch.</p>
 </section><section><h2 class="section-heading" id="create-example-issues">Create Example Issues<a class="anchor" aria-label="anchor" href="#create-example-issues"></a>
 </h2>
 <hr class="half-width">
-<p>Before we do that, let’s create a few new issues on our repository,
-to represent some work we’re going to do in this session One thing that
-might be good to do is to tidy up our code So let’s add issues to fix
-that script function naming bug, changing our function names to use
-snake case, and add the missing docstrings So go to your new repository
-in GitHub in a browser, and select “Issues” Then select “New issue”, and
-add something like the following In the title add: Functions should use
-snake case naming style In summary I’ll add the following, but don’t
-feel you need to! Naming of functions currently is using capitalisation,
-and needs to follow snake case naming instead For the purposes of this
-activity, let’s also assign ourselves, then select “Submit the issue”
-Repeat for another two issues - although to save time, let’s only focus
-on adding the issue title this time The googledoc has the list of titles
-to use for each issue “Add missing docstrings to function and module”
-“Script fails with undefined function name error” We’ll refer back to
-these later! QUESTION: who’s created the three issues? Yes/No</p>
+<p>Before we look into branches, let’s create a few new issues on our
+repository, to represent some work we’re going to do in this
+session.</p>
+<p>One thing that might be good to do is to tidy up our code. So let’s
+add issues to fix that script function naming bug, changing our function
+names to use snake case, and add the missing docstrings.</p>
+<p>Let’s create our first issue about using snake case:</p>
+<ol style="list-style-type: decimal">
+<li>Go to your new repository in GitHub in a browser, and select
+<code>Issues</code> at the top. You’ll notice a new page with no issues
+listed at present.</li>
+<li>Select <code>New issue</code>.</li>
+<li>On the issue creation page, add something like the following:
+<ul>
+<li>In the title add: Functions should use snake case naming style</li>
+<li>In the description add: Naming of functions currently is using
+capitalisation, and needs to follow snake case naming instead.</li>
+</ul>
+</li>
+<li>We can also assign people to this issue (in the top right), and for
+the purposes of this activity, let’s assign ourselves, so select
+<code>Assign yourself</code>.</li>
+<li>Select <code>Create</code> to create the issue.</li>
+</ol>
+<div id="adding-work-for-ourselves" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="adding-work-for-ourselves" class="callout-inner">
+<h3 class="callout-title">Adding Work for Ourselves</h3>
+<div class="callout-content">
+<p>Repeat this process for the other two issues in the following order:
+- “Add missing docstrings to function and module” - “Script fails with
+undefined function name error” We’ll refer back to these issues
+later!</p>
+</div>
+</div>
+</div>
+<p>QUESTION: who’s created the three issues? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2630,101 +2723,282 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="create-new-feature-branch-to-work-on-first-issue">Create new feature branch to work on first issue<a class="anchor" aria-label="anchor" href="#create-new-feature-branch-to-work-on-first-issue"></a>
 </h2>
 <hr class="half-width">
-<p>We’ll start by working on the missing docstring issue For the sake of
-this activity, let’s assume that the bug which causes the script to fail
-is being tackled by someone else</p>
-<p>So let’s now create a feature branch (also known in some places as
-“topic” branches), and work on adding that docstring, using that branch
-Now on the command line, we’ve checked out our new repository, and can
-see what branches it currently has by doing git branch (with no
-arguments) And we can see we have only our main branch With an asterisk
-to indicate it’s the current branch we’re on [[[ git branch -a Where
-“-a” means show us all branches But also two “remotes/origin” branches -
-which are references to the remote repository we have on GitHub In this
-case, a reference to the equivalent “main” branch in the remote
-repository HEAD here - as you may know - refers to the latest commit, so
-this refers to the latest commit on the main branch (which is where we
-are now) You can think of ”origin” as a stand-in for the full repository
-URL Indeed, if we do “git remote -v”, we can see the full URL for
-“origin” The first - remotes/origin/HEAD - refers to the latest commit
-on the active branch on the remote repo The second - refers to the
-branch itself]]] If we do “git log”, we can see only one commit so far
-So, in order to get started on our docstring work, let’s tell git to
-create a new branch by using “git branch” to create a branch this time
-When we name the branch, it’s considered good practice to include the
-issue number, and perhaps something useful about the issue, in the name
-of the feature branch Makes it easier to see what this branch was about
-git branch issue-2-missing-docstrings Now if we use “git branch, we can
-see that our new branch has been created! Great! But - if we type “git
-status”, we see that we’re still on our main branch, and any commits at
-this point will still go on this main branch and not our new one
-QUESTION: who’s created their new feature branch? Yes/No So what we need
-to do is to switch to this new branch, which we can do via git checkout
-issue-2-missing-docstrings Now if we do “bit branch” again, we can see
-we’re on the new branch And if we do “git status”, we also see that
-we’re on this new branch A very good habit to get into - use “git
-status” before you do anything It helps to clarify on which branch
-you’re working, and also any outstanding changes you may have forgotten
-about! Now, one thing that’s important to realise, is that the contents
-of the new branch are at the state at which we created the branch
-something… If we do “git log”, to show us the commits, we can see they
-are the same as when we first cloned the repository i.e. from the first
-commit So any commits we do now, will be on our new feature branch and
-will depart from this commit on the main branch and be separate from any
-other commits that occur on the main branch</p>
-</section><section><h2 class="section-heading" id="work-on-first-issue-in-feature-branch">Work on first issue in feature branch<a class="anchor" aria-label="anchor" href="#work-on-first-issue-in-feature-branch"></a>
+<p>We’ll start by working on the missing docstring issue. For the
+purpose of this activity, let’s assume that the bug which causes the
+script to fail is being tackled by someone else.</p>
+<p>So let’s create a feature branch, and work on adding that docstring,
+using that branch. But before we do, let’s take a look and see what’s
+already there.</p>
+<div class="section level3">
+<h3 id="examining-existing-repository-branches">Examining Existing Repository Branches<a class="anchor" aria-label="anchor" href="#examining-existing-repository-branches"></a>
+</h3>
+<p>We’ve already checked out our new repository, and can see what
+branches it currently has by doing:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>* main</code></pre>
+</div>
+<p>And we can see we have only our main branch, with an asterisk to
+indicate it’s the current branch we’re on.</p>
+<p>We can also use <code>-a</code> to show us all branches:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-a</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>* main
+  remotes/origin/HEAD -&gt; origin/main
+  remotes/origin/main</code></pre>
+</div>
+<p>Note the other two <code>remotes/origin</code> branches, which are
+references to the remote repository we have on GitHub. In this case, a
+reference to the equivalent <code>main</code> branch in the remote
+repository. <code>HEAD</code> here, as you may know, refers to the
+latest commit, so this refers to the latest commit on the main branch
+(which is where we are now). You can think of <code>origin</code> as a
+stand-in for the full repository URL. Indeed, if we do the following, we
+can see the full URL for <code>origin</code>:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>origin	git@github.com:steve-crouch/git-example2.git (fetch)
+origin	git@github.com:steve-crouch/git-example2.git (push)</code></pre>
+</div>
+<p>If we do <code>git log</code>, we can see only one commit so far:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>commit be6376bb349df0905693fdaad3a016273de2bdeb (HEAD -&gt; main, origin/main, origin/HEAD)
+Author: Steve Crouch &lt;s.crouch@software.ac.uk&gt;
+Date:   Tue Apr 8 14:47:05 2025 +0100
+
+    Initial commit</code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creating-a-new-branch">Creating a new Branch<a class="anchor" aria-label="anchor" href="#creating-a-new-branch"></a>
+</h3>
+<p>So, in order to get started on our docstring work, let’s tell git to
+create a new branch.</p>
+<p>When we name the branch, it’s considered good practice to include the
+issue number (if there is one), and perhaps something useful about the
+issue, in the name of the feature branch. This makes it easier to see
+what this branch was about:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> branch issue-2-missing-docstrings</span></code></pre>
+</div>
+<p>Now if we use the following, we can see that our new branch has been
+created:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  issue-2-missing-docstrings
+* main</code></pre>
+</div>
+<p>However, note that the asterisk indicates that we are still on our
+main branch, and any commits at this point will still go on this main
+branch and not our new one. We can verify this by doing
+<code>git status</code>:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+Your branch is up-to-date with 'origin/main'.
+
+nothing to commit, working tree clean</code></pre>
+</div>
+<p>QUESTION: who’s created their new feature branch? Yes/No</p>
+</div>
+<div class="section level3">
+<h3 id="switching-to-the-new-branch">Switching to the New Branch<a class="anchor" aria-label="anchor" href="#switching-to-the-new-branch"></a>
+</h3>
+<p>So what we need to do now is to switch to this new branch, which we
+can do via:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> checkout issue-2-missing-docstrings</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Switched to branch 'issue-2-missing-docstrings'</code></pre>
+</div>
+<p>Now if we do <code>git branch</code> again, we can see we’re on the
+new branch. And if we do <code>git status</code> again, this verifies
+we’re on this new branch.</p>
+<p>Using <code>git status</code> before you do anything is a good habit.
+It helps to clarify on which branch you’re working, and also any
+outstanding changes you may have forgotten about.</p>
+<p>Now, one thing that’s important to realise, is that the contents of
+the new branch are at the state at which we created the branch. If we do
+<code>git log</code>, to show us the commits, we can see they are the
+same as when we first cloned the repository (i.e. from the first
+commit). So any commits we do now, will be on our new feature branch and
+will depart from this commit on the main branch, and be separate from
+any other commits that occur on the main branch.</p>
+</div>
+</section><section><h2 class="section-heading" id="work-on-first-issue-in-new-feature-branch">Work on First Issue in New Feature Branch<a class="anchor" aria-label="anchor" href="#work-on-first-issue-in-new-feature-branch"></a>
 </h2>
 <hr class="half-width">
 <p>Now we’re on our feature branch, we can make some changes to fix this
-issue So open up the climate_analysis.py file in an editor of your
-choice For simplicity, I’m just going to use a command line editor
-called nano I’m going to add the following to the FahrToKelvin
-function</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+issue. So open up the <code>climate_analysis.py</code> file in an editor
+of your choice.</p>
+<p>Then add the following to the <code>FahrToKelvin</code> function
+(just below the function declaration):</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="st">"""Converts fahrenehit to kelvin</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="st">Args:</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="st">    fahr (float): temperature in fahrenheit</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="st">Returns:</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="st">    float: temperature in kelvin</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="st">"""</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>    <span class="co">"""Converts fahrenheit to kelvin</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">        fahr (float): temperature in fahrenheit</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">        float: temperature in kelvin</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">    """</span></span></code></pre>
 </div>
+<p>Then save the file.</p>
 <p>QUESTION: Who has added this to the file, and saved it? Yes/No</p>
 <p>Now we’ve done this, let’s commit this change to the repository on
-our new branch git add climate_analysis.py git commit -m “#2 Add missing
-function docstring” Notice we’ve added in the issue number and a short
-description to the commit message here If you’ve never seen this before,
-this is considered good practice We’ve created an issue describing the
-problem, and in the commit, we reference that issue number explicitly
-Later, we’ll see GitHub will pick up on this, and in this issue, we’ll
-be able to see the commits associated with this issue Now we’ve also got
-a module docstring to add as well, so let’s add that Open up our editor
-on this file again</p>
-<p>““” Performs conversions between different temperature scales.”””</p>
-<p>git add climate_analysis.py git commit -m “#2 Add missing module
-docstring” So again, we’re committing this change against issue 2 Now
-let’s look at our new branch git log So, as we can see, we now have our
-initial commit (inherited from the main branch) and our two new commits
-on this branch for our missing docstring)</p>
+our new branch.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#2 Add missing function docstring"</span></span></code></pre>
+</div>
+<p>Notice we’ve added in the issue number and a short description to the
+commit message here. If you’ve never seen this before, this is
+considered good practice. We’ve created an issue describing the problem,
+and in the commit, we reference that issue number explicitly. Later,
+we’ll see GitHub will pick up on this, and in this issue, we’ll be able
+to see the commits associated with this issue.</p>
+<p>Now we’ve also got a module docstring to add as well, so let’s add
+that. Open up our editor on this file again, and add the following to
+the top of the file:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co">""" Performs conversions between different temperature scales."""</span></span></code></pre>
+</div>
+<p>Then, add and commit this change:</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#2 Add missing module docstring"</span></span></code></pre>
+</div>
+<p>So again, we’re committing this change against issue number 2. Now
+let’s look at our new branch:</p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>commit 6bfc96e2961277b441e5f5d6d924c4c4d4ec6a68 (HEAD -&gt; issue-2-missing-docstrings)
+Author: Steve Crouch &lt;s.crouch@software.ac.uk&gt;
+Date:   Tue Apr 8 15:40:47 2025 +0100
+
+    #2 Add missing module docstring
+
+commit 20ea697db6b122aae759634892f9dd17e6497345
+Author: Steve Crouch &lt;s.crouch@software.ac.uk&gt;
+Date:   Tue Apr 8 15:29:37 2025 +0100
+
+    #2 Add missing function docstring
+
+commit be6376bb349df0905693fdaad3a016273de2bdeb (origin/main, origin/HEAD, main)
+Author: Steve Crouch &lt;s.crouch@software.ac.uk&gt;
+Date:   Tue Apr 8 14:47:05 2025 +0100
+
+    Initial commit</code></pre>
+</div>
+<p>So, as we can see, on our new feature branch we now have our initial
+commit inherited from the main branch, and also our two new commits.</p>
 <p>QUESTION: who’s edited the file and made the changes, and committed
 them - who’s done that twice? Yes/No</p>
-</section><section><h2 class="section-heading" id="push-new-feature-branch-and-commits-to-github">Push new feature branch and commits to GitHub<a class="anchor" aria-label="anchor" href="#push-new-feature-branch-and-commits-to-github"></a>
+</section><section><h2 class="section-heading" id="push-new-feature-branch-and-commits-to-github">Push New Feature Branch and Commits to GitHub<a class="anchor" aria-label="anchor" href="#push-new-feature-branch-and-commits-to-github"></a>
 </h2>
 <hr class="half-width">
-<p>Now let’s push these changes to GitHub Since this is a new branch, we
+<p>Let’s push these changes to GitHub. Since this is a new branch, we
 need to tell GitHub where to push the new branch commits, by naming the
-branch on the repository If we just type “git push” We get a suggestion
-telling us so, which is quite helpful! git push –set-upstream origin
-issue-2-missing-docstrings So here, we’re telling git to push the
-changes on the new branch to a branch with the same name on the remote
-repository ‘origin’ here is a shorthand that refers to the originating
-repository (the one we cloned originally) You’ll notice a message
-suggesting we could do a pull request to merge the changes with the main
-branch QUESTION: who’s committed that change and pushed the new branch
-with its commits to GItHub? Yes/no Let’s do this now!</p>
+branch on the remote repository.</p>
+<p>If we just type <code>git push</code>:</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fatal: The current branch issue-2-missing-docstrings has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin issue-2-missing-docstrings</code></pre>
+</div>
+<p>We get a suggestion telling us we need to do this, which is quite
+helpful!</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin issue-2-missing-docstrings</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 805 bytes | 805.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'issue-2-missing-docstrings' on GitHub by visiting:
+remote:      https://github.com/steve-crouch/git-example2/pull/new/issue-2-missing-docstrings
+remote:
+To github.com:steve-crouch/git-example2.git
+ * [new branch]      issue-2-missing-docstrings -&gt; issue-2-missing-docstrings
+Branch 'issue-2-missing-docstrings' set up to track remote branch 'issue-2-missing-docstrings' from 'origin'.</code></pre>
+</div>
+<p>So here, we’re telling git to push the changes on the new branch to a
+branch with the same name on the remote repository. <code>origin</code>
+here is a shorthand that refers to the originating repository (the one
+we cloned originally). You’ll notice a message suggesting we could
+create a pull request to merge the changes with the main branch.</p>
+<p>QUESTION: who’s committed that change and pushed the new branch with
+its commits to GItHub? Yes/no Let’s do this now!</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
