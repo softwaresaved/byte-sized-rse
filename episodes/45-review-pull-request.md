@@ -24,7 +24,7 @@ So let's take a look at it and review it
 
 ## Write a Review of the PR
 
-So we open the repo URL link in a browser, and go to “Pull requests” on the repo main page
+So we open the repo URL link in a browser, and go to “Pull requests" on the repo main page
 Then select the pull request
 To review the request's changes, we can go to 'Files changed' - one of the tabs
 Which perhaps unsurprisingly, shows us the changes in each file, in this case just one file, and one change
@@ -42,7 +42,7 @@ If this were a larger pull request, we would review the other changes, and add c
 
 So let's assume we've done that
 
-Finally, as a reviewer of this pull request, we “Finish our review”
+Finally, as a reviewer of this pull request, we “Finish our review"
 We can add a comment, maybe with some high-level observations or suggestions
 Overall, the changes look good, although we should consider adding the Zenodo repository link.
 

@@ -137,7 +137,7 @@ What's really handy is the little video that shows us what it does
 This looks exactly like what we're after!
 Select `Install`.
 
-Now, when we go to a function for example `FahrToCelsius`, go to the next line, and add `“””`, we'll see a small pop-up to add a docstring. Press `Tab` to do so.
+Now, when we go to a function for example `FahrToCelsius`, go to the next line, and add `"""`, we'll see a small pop-up to add a docstring. Press `Tab` to do so.
 
 FIXME: add screenshot snippet showing docstring boilerplate being added
 

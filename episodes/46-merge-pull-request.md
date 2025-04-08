@@ -27,7 +27,7 @@ We should now consider the review, and any observations or suggestions made
 At this point, we could go ahead and make any needed changes
 But, for simplicity, and assuming their review is positive (and they don't suggest more changes are required)
 We can go ahead and merge the pull request into our codebase
-By selecting 'Merge pull request', and then “Confirm Merge”
+By selecting 'Merge pull request', and then “Confirm Merge"
 
 So now, our change has been integrated into our codebase
 
