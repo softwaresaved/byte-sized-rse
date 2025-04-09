@@ -362,7 +362,7 @@
       <div class="accordion-body">
         <ul><li><a href="#work-on-another-issue">Work on Another Issue</a></li>
 <li><a href="#introducing-a-conflict">Introducing a Conflict</a></li>
-<li><a href="#resolving-a-merge-conflicts">Resolving a Merge Conflicts</a></li>
+<li><a href="#resolving-a-merge-conflict">Resolving a Merge Conflict</a></li>
 <li><a href="#commits-highlighted-in-issues">Commits Highlighted in Issues</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -536,7 +536,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>3.6 Merge Conflicts</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-04-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/36-merge-conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -570,81 +570,137 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="work-on-another-issue">Work on Another Issue<a class="anchor" aria-label="anchor" href="#work-on-another-issue"></a></h2>
-<hr class="half-width"><p>Now we have two other issues we can look at And these are interesting
-- both of them require changes that can cause a conflict when merging
-Let’s look at those now First, let’s go to main and pull the repository
-changes on the main branch to our local repository Always a good idea to
-do this! use git pull to synchronise your local repo with the GitHub one
-git checkout main git pull git log So now, again, we have those two
-commits on main as we would expect Let’s create a feature branch to fix
-our snake-case issue git branch issue-1-use-snake-case git checkout
-issue-1-use-snake-case So now, edit the climate_analysis.py file, and
-change functions to use a snake case style e.g. FahrToCelsius to
-fahr_to_celsius Remember to change the one in the fahr_to_kelvin
-function! Note we’ve changed the call to fahrtocelsius near the bottom
-let’s commit this to our new feature branch git add climate_analysis.py
-git commit -m “#1 use snake case naming” Now we can commit as before git
-push –set-upstream origin issue-1-use-snake-case</p>
+<hr class="half-width"><p>Now we still have two remaining issues we can look at. Interestingly,
+both of them require changes that can cause a conflict when merging, so
+let’s look at those now.</p>
+<p>First, let’s go to the <code>main</code> branch and pull the
+repository changes on this branch to our local repository. Generally,
+it’s good practice to use <code>git pull</code> to synchronise your
+local repo with the GitHub one before doing any further work.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<p>So now, again, we have those two commits on main as we would expect.
+Let’s create a feature branch to fix our snake-case issue.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> branch issue-1-use-snake-case</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> checkout issue-1-use-snake-case</span></code></pre>
+</div>
+<p>So now, edit the <code>climate_analysis.py</code> file, and change
+functions to use a snake case style, e.g. change
+<code>FahrToCelsius</code> to <code>fahr_to_celsius</code>. Remember to
+also change the one in the <code>fahr_to_kelvin</code> function as
+well.</p>
+<p>Note we’ve changed the call to <code>fahrtocelsius</code> near the
+bottom. let’s commit this to our new feature branch:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#1 use snake case naming"</span></span></code></pre>
+</div>
+<p>Now we can commit as before</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin issue-1-use-snake-case</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="introducing-a-conflict">Introducing a Conflict<a class="anchor" aria-label="anchor" href="#introducing-a-conflict"></a></h2>
 <hr class="half-width"><p>At this point, we could follow this advice and merge this branch’s
-work into the main branch This would be very neat and tidy! But life is
-rarely like that - and what happens when someone else commits their
-changes in some way to the main branch? Where does that leave us when we
-come to merge? Let’s find out! You may recall we created an issue for
-fixing the function call to the FahrToCelsius function - the call
-referenced the function incorrectly. The function name was wrong Let’s
-assume that a colleague has made these changes, and updated the main
-branch Hopefully they’ve done this on a feature branch and merged it,
-but maybe not! Let’s pretend we’re our colleague, and we’re making this
-fix to the main branch First, let’s switch to the main branch git
-checkout main git status git log Now as we can see, this main branch is
-completely unaware of the commits in our new feature branch And is at
-the initial state of the repository Let’s make the fix Now we could (and
-should) create a feature branch here, make and commit the change, then
-merge with the main branch But for the sake of time, let’s just commit
-directly to the main branch, and assume they did it the right way Edit
-the climate_analysis.py file And update the “FahrToCels” function call
-to “FahrToCelsius”, and save the changes git status git add
-climate_analysis.py git commit -m “#3 Fix incorrect function call” git
-log git push Now - we have this extra commit on main Which we can see if
-we do git log</p>
-</section><section><h2 class="section-heading" id="resolving-a-merge-conflicts">Resolving a Merge Conflicts<a class="anchor" aria-label="anchor" href="#resolving-a-merge-conflicts"></a></h2>
+work into the <code>main</code> branch, which would be very neat and
+tidy. But life is rarely like that: what happens when someone else
+commits their changes in some way to the main branch? Where does that
+leave us when we come to merge?</p>
+<p>You may recall we created an issue for fixing the function call to
+the <code>FahrToCelsius</code> function, where the call referenced the
+function incorrectly. Let’s assume that a colleague has made these
+changes, and updated the <code>main</code> branch. Let’s pretend we’re
+our colleague, and we’re making this fix to the main branch. First,
+let’s switch to the main branch:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<p>Now as we can see, this main branch is completely unaware of the
+commits in our new feature branch, and is at the initial state of the
+repository. Let’s make the fix. Now we could (and should) create a
+feature branch here, make and commit the change, then merge with the
+main branch. But for expediency, we’ll commit directly to the main
+branch, and assume they did it the right way. Edit the
+<code>climate_analysis.py</code> file, and update the
+<code>FahrToCels</code> function call to <code>FahrToCelsius</code>, and
+save the changes.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#3 Fix incorrect function call"</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">git</span> log</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+</div>
+<p>Now - we have this extra commit on main, which we can see if we
+do:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="resolving-a-merge-conflict">Resolving a Merge Conflict<a class="anchor" aria-label="anchor" href="#resolving-a-merge-conflict"></a></h2>
 <hr class="half-width"><p>Now let’s see what happens when we create a pull request on our
-feature branch, as before, and try to merge Again, let’s go to GitHub
-and this time, go to “Pull requests”, select “New pull request” And
-select the new feature branch issue-1-use-snake-case Then select it in
-“compare”, and ensure that “base” says “main” now - note that is says we
-can’t automatically merge! It’s handy that it does this - it’s compared
-the source and destination branches, and determined that there is a
-conflict Since there are different edits on the same line for commits in
-the main and feature branch But we’ll go ahead and create the PR anyway
-- select “Create pull request” title: Fixes #1 - use snake case naming
-assign yourself create pull request We create the PR, and we see “This
-branch has conflicts that must be resolved” And in this case, there is
-only one conflicting file - climate_analysis.py - but there could be
-more than one Now we can attempt to resolve the conflict by selecting
-“resolve conflicts” QUESTION: who’s resolved conflicts during a merge on
-the command line? Yes/No It can be a bit tricky, yes? The GitHub
-interface for doing this is quite a bit nicer! It tells you which files
-have the conflicts on the left (only climate_analysis.py in this case)
-And where in each file the conflicts are So let’s fix the conflict Near
-the bottom, we can see that our snake case naming of that function call
-conflicts with the fix to it And this has caused a conflict Now
-importantly we have to decide how to resolve the conflict If we’re
-lucky, common sense can help us! Now our snake_case fix resolves this
-issue anyway, since we’re calling the function correctly, which makes
-the other fix redundant So let’s remove the other fix We do this by
-editing out the chevron and equals parts, and the fix we don’t want We
-then select “Mark as resolved”, then “commit merge” Now unfortunately,
-due to the conflict commit, we can no longer rebase and merge So select
-the option to create a merge commit Then select merge pull request, and
-confirm merge And as before, delete the feature branch</p>
+feature branch, as before, and try to merge. Again, let’s go to GitHub
+and then:</p>
+<ol style="list-style-type: decimal"><li>Go to <code>Pull requests</code>, and select
+<code>New pull request</code>.</li>
+<li>Select the new feature branch
+<code>issue-1-use-snake-case</code>.</li>
+<li>Select this new branch in <code>compare:</code>, and ensure that
+<code>base:</code> says <code>main</code>.</li>
+</ol><p>Note that now it says we can’t automatically perform this merge.
+Essentially, it’s compared the source and destination branches, and
+determined that there is a conflict, since there are different edits on
+the same line for commits in the <code>main</code> and feature branch.
+But we’ll go ahead and create the PR anyway:</p>
+<ol style="list-style-type: decimal"><li>Select <code>Create pull request</code>.</li>
+<li>For the title, add “Fixes #1 - use snake case naming”.</li>
+<li>Assign yourself to the issue.</li>
+<li>Select <code>Create pull request</code>.</li>
+</ol><p>We should now see that “This branch has conflicts that must be
+resolved”. And in this case, there is only one conflicting file -
+<code>climate_analysis..py</code>, but there could be more than one. Now
+we can attempt to resolve the conflict by selecting
+<code>Resolve conflicts</code>.</p>
+<p>The GitHub interface is really useful here. It tells you which files
+have the conflicts on the left (only <code>climate_analysis.py</code> in
+this case), and where in each file the conflicts are. So let’s fix the
+conflict. Near the bottom, we can see that our snake case naming of that
+function call conflicts with the fix to it, and this has caused a
+conflict.</p>
+<p>Now importantly we have to decide how to resolve the conflict.
+Fortunately, our fix for the snake_case issue resolves this issue as
+well, since we’re calling the function correctly, which makes the other
+fix redundant. So let’s remove the other fix, by editing out the chevron
+and equals parts, and the fix we don’t want. We then select
+<code>Mark as resolved</code>, then <code>Commit merge</code>. Now
+unfortunately, due to the conflict commit, we can no longer rebase and
+merge. So select the option to create a <code>Merge commit</code>, then
+select <code>Merge pull request</code>, and <code>Confirm merge</code>.
+And as before, delete the feature branch which is no longer needed.</p>
 </section><section><h2 class="section-heading" id="commits-highlighted-in-issues">Commits Highlighted in Issues<a class="anchor" aria-label="anchor" href="#commits-highlighted-in-issues"></a></h2>
-<hr class="half-width"><p>if we go to the repository’s list of commits now (in the main branch)
-we see that we have a “merge branch main into issue-1-use-snake-case”
-commit which resolves the conflict (which occurred on the feature
-branch) and also a merge pull request commit, for when we merged the
-feature branch with main</p>
+<hr class="half-width"><p>If we go to the repository’s list of commits now in the
+<code>main</code> branch, we see that we have a “merge branch main into
+issue-1-use-snake-case” commit which resolves the conflict (which
+occurred on the feature branch) and also a merge pull request commit,
+for when we merged the feature branch with main.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -718,7 +774,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/36-merge-conflicts.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/36-merge-conflicts.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
+  "dateModified": "2025-04-09",
   "datePublished": "2025-04-09"
 }
 

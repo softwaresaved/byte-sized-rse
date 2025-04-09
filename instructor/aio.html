@@ -2276,7 +2276,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3201,7 +3201,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-35-merge-pr"><p>Content from <a href="35-merge-pr.html">3.5 Merging a Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-04-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/35-merge-pr.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -3236,89 +3236,120 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="how-to-merge-the-pull-request">How to Merge the Pull Request?<a class="anchor" aria-label="anchor" href="#how-to-merge-the-pull-request"></a>
 </h2>
 <hr class="half-width">
-<p>You’ll notice there’s a subtle dropdown on the “Merge pull request”
-button And one other option we have is how to perform the merge You may
-remember from the introduction about doing a “rebase and merge” as
-opposed to just doing a merge commit Since it leads to a cleaner
-repository history For example, if we did a normal merge here, we’d end
-up with our two new commits and a merge commit But if we do a rebase and
-then merge, our two commits are essentially just added to the top of
-main Let’s do that - select the third option in the dropdown: “Rebase
-and merge” Note that if there had been a conflict with any commits on
-the main branch, we very likely wouldn’t have been able to merge using
-this method Which in itself is a good question - even if we’d done a
-straight commit, what would happen if there was a conflict? If we have
-time, we’ll look at this later A question came up earlier about
-disadvantages of using rebasing You can also do rebasing with branches
-on the command line But a word of warning - when doing this, be really
-sure you know what you’re doing Since rebasing in this way rewrites the
-repository’s history And therefore, with rebasing, there is a GOLDEN
-RULE Which states that you should only rebase with a local branch, never
-a public (shared) branch you suspect is being used by others When
-rebasing, you’re re-writing the history of commits If someone else has
-the repository on their own machine and has worked on a particular
-branch, say If you rebase on that branch, the history will have changed,
-and they will run into difficulties due to the rewritten history It can
-get quite messy! If in doubt, do a standard merge</p>
+<p>You’ll notice there’s a subtle dropdown on the
+<code>Merge pull request</code> button, which presents options forhow to
+perform the merge.</p>
+<p>FIXME: ensure rebase and merge is covered in intro?</p>
+<p>You may remember from the introduction about doing a “rebase and
+merge” as opposed to just doing a merge commit, since it leads to a
+cleaner repository history. For example, if we did a normal merge here,
+we’d end up with our two new commits and a merge commit on the
+<code>main</code> branch. But if we do a rebase and then merge, our two
+commits are essentially just added to the top of the <code>main</code>
+branch. Let’s use this method, by selecting the third option in the
+dropdown: <code>Rebase and merge</code>.</p>
+<p>Note that if there had been a conflict with any commits on the main
+branch, we very likely wouldn’t have been able to merge using this
+method. Which in itself is a good question: even if we’d done a straight
+commit directly to the <code>main</code> branch, what would happen if
+there was a conflict? If we have time, we’ll look at this later</p>
+<div id="the-golden-rule-of-rebasing" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="the-golden-rule-of-rebasing" class="callout-inner">
+<h3 class="callout-title">The Golden Rule of Rebasing</h3>
+<div class="callout-content">
+<p>Note that you can also do rebasing with branches on the command line.
+But a word of warning: when doing this, be sure you know what will
+happen.</p>
+<p>Rebasing in this way rewrites the repository’s history, and
+therefore, with rebasing, there is a GOLDEN RULE which states that you
+should only rebase with a local branch, never a public (shared) branch
+you suspect is being used by others. When rebasing, you’re re-writing
+the history of commits, so if someone else has the repository on their
+own machine and has worked on a particular branch, if you rebase on that
+branch, the history will have changed, and they will run into
+difficulties when pushing their changes due to the rewritten history. It
+can get quite messy, so if in doubt, do a standard merge!</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="merge-the-pull-request">Merge the Pull Request<a class="anchor" aria-label="anchor" href="#merge-the-pull-request"></a>
 </h2>
 <hr class="half-width">
-<p>So now let’s go ahead and “Rebase pull request” We can add more
-information here if needed - but let’s “Confirm rebase and merge” Note
-that it says that the merge was done successfully, and suggests we can
-delete the branch QUESTION: who has merged the pull request? Yes/No We
-said earlier that branches in Git should be short lived where possible,
-and keeping branches hanging around may cause confusion So let’s delete
-it now Now if we go the main branch on the main repository page in
-GitHub, we can see that the changes have been merged And if we look at
-“commits”, we can see the commits we made on our feature branch have
-been added to the main branch</p>
+<p>So now let’s go ahead and select <code>Rebase pull request</code>. We
+can add more information here if needed - but let’s
+<code>Confirm rebase and merge</code>. Note that it says that the merge
+was done successfully, and suggests we can delete the branch.</p>
+<p>QUESTION: who has merged the pull request? Yes/No</p>
+<p>We said earlier that branches in Git should be short lived where
+possible, and keeping branches hanging around may cause confusion. So
+let’s delete it now. Now if we go the main branch on the main repository
+page in GitHub, we can see that the changes have been merged. And if we
+look at “commits”, we can see the commits we made on our feature branch
+have been added to the main branch.</p>
 </section><section><h2 class="section-heading" id="see-commits-on-issues">See Commits on Issues<a class="anchor" aria-label="anchor" href="#see-commits-on-issues"></a>
 </h2>
 <hr class="half-width">
 <p>Now, remember those commit messages with the issue numbers in them?
 If we go to our issues, we can see them with the commits associated with
-those issues They’re listed in chronological order Which is really handy
-when checking on issue progress Plus, it means the reason behind each
-commit is now traceable back to the originating issue So why are there
-two sets of commits, when we only made one? That’s because we first made
-two commits to the branch And then, using a rebase method, we applied
-our commits to the main branch</p>
+those issues, which are listed in chronological order. This is really
+handy when checking on issue progress. Plus, it means the reason behind
+each commit is now traceable back to the originating issue. So why are
+there two sets of commits, when we only made one? That’s because we
+first made two commits to the branch, and then, using a rebase method,
+we applied our commits to the main branch.</p>
 </section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
 </h2>
 <hr class="half-width">
-<p>So what are the benefits so far? By using different feature branches,
-as opposed to just committing directly to the main branch, we’ve
-isolated the “churn” of developing a feature from the main branch So
-this really is a key benefit - it allows us to maintain a working main
-branch It also gives us the opportunity to abandon a branch entirely,
-with no need to manually change things back In such a case, all we need
-to do is delete the branch Another benefit is in the other direction We
-are also effectively isolated from the changes being made on other
-feature branches So when a number of changes are being made, we still
-(hopefully!) only have to worry about our own changes And it also gives
-us a process that helps us maintain a working version on main for our
-users (which may very well include ourselves!) And it also gives us a
-mechanism - via pull requests - to have others review our code before
-changes are introduced into the codebase</p>
-<p>So what we’ve shown is one way to use feature branch workflow Using
-feature branches directly off the main branch, and merging to main We’ve
-chosen this way for the training, since it’s more straightforward to
-teach in a practical activity But there are others Another way is to use
-a long-lived branch off of main, called usually something like “dev” or
-“develop” And this dev branch would represent a general branch of
-development And using this approach, feature branches are created off of
-the dev branch instead, and then merged back to the dev branch And
-later, when a release of the software is due, or at an appropriate
-point, the dev branch is merged with the main branch This gives
-development greater distance from the main branch, which could be a good
-thing And it means you can merge and test all changes together on that
-branch before you merge with the main branch, to ensure it all works
-together But also means when it comes to merge, it can be more difficult
-since the dev branch could have built up a considerable number of
-changes that need to be merged In either case, the key is to make sure
-that code is tested and checked with the right people in your team
-before you merge to main</p>
+<p>So what are the benefits so far?</p>
+<ul>
+<li>By using different feature branches, as opposed to just committing
+directly to the main branch, we’ve isolated the “churn” of developing a
+feature from the main branch. This makes the work on any single branch
+easier to understand as a thread of work.</li>
+<li>It gives us the opportunity to abandon a branch entirely, with no
+need to manually change things back. In such a case, all we need to do
+is delete the branch.</li>
+<li>From a single developer’s perspective, we are also effectively
+isolated from the changes being made on other feature branches. So when
+a number of changes are being made, we still (hopefully!) only have to
+worry about our own changes.</li>
+<li>It gives us a process that helps us maintain a working version of
+the code on <code>main</code> for our users (which may very well include
+ourselves!), as long as we ensure that work on other branches is
+properly tested and works as expected before we merge back to the
+<code>main</code> branch.</li>
+<li>It also gives us a mechanism - via pull requests - to have others
+review our code before changes are introduced into the codebase.</li>
+</ul>
+<p>So what we’ve shown is one way to use feature branch workflow, By
+using feature branches directly off the main branch, and merging to
+<code>main</code> when these changes are ready. We’ve chosen this way
+for the training, since it’s more straightforward to teach in a
+practical activity, but there are other “branching strategies” you can
+use. Another way is to use a long-lived branch off of main, called
+usually something like <code>dev</code> or <code>develop</code>:</p>
+<ul>
+<li>This <code>dev</code> branch represents a general branch of
+development.</li>
+<li>Feature branches are created off of the <code>dev</code> branch
+instead of <code>main</code>, and then merged back to the
+<code>dev</code> branch.</li>
+<li>Later, when a release of the software is due, or at an appropriate
+point after the software has been tested, the <code>dev</code> branch is
+merged with the main branch.</li>
+</ul>
+<p>This approach gives development greater distance from the main
+branch, and it means you can merge and test all changes together on the
+<code>dev</code> branch before you merge with the <code>main</code>
+branch, to ensure it all works together first. However, it also means
+when it comes to merging back to <code>main</code>, it can be more
+difficult since the <code>dev</code> branch could have built up a
+considerable number of changes that need to be merged. In either case,
+the key is to make sure that code is tested and checked with the right
+people in your team before you merge to <code>main</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -3338,7 +3369,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-36-merge-conflicts"><p>Content from <a href="36-merge-conflicts.html">3.6 Merge Conflicts</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-04-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/36-merge-conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -3373,87 +3404,147 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="work-on-another-issue">Work on Another Issue<a class="anchor" aria-label="anchor" href="#work-on-another-issue"></a>
 </h2>
 <hr class="half-width">
-<p>Now we have two other issues we can look at And these are interesting
-- both of them require changes that can cause a conflict when merging
-Let’s look at those now First, let’s go to main and pull the repository
-changes on the main branch to our local repository Always a good idea to
-do this! use git pull to synchronise your local repo with the GitHub one
-git checkout main git pull git log So now, again, we have those two
-commits on main as we would expect Let’s create a feature branch to fix
-our snake-case issue git branch issue-1-use-snake-case git checkout
-issue-1-use-snake-case So now, edit the climate_analysis.py file, and
-change functions to use a snake case style e.g. FahrToCelsius to
-fahr_to_celsius Remember to change the one in the fahr_to_kelvin
-function! Note we’ve changed the call to fahrtocelsius near the bottom
-let’s commit this to our new feature branch git add climate_analysis.py
-git commit -m “#1 use snake case naming” Now we can commit as before git
-push –set-upstream origin issue-1-use-snake-case</p>
+<p>Now we still have two remaining issues we can look at. Interestingly,
+both of them require changes that can cause a conflict when merging, so
+let’s look at those now.</p>
+<p>First, let’s go to the <code>main</code> branch and pull the
+repository changes on this branch to our local repository. Generally,
+it’s good practice to use <code>git pull</code> to synchronise your
+local repo with the GitHub one before doing any further work.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<p>So now, again, we have those two commits on main as we would expect.
+Let’s create a feature branch to fix our snake-case issue.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> branch issue-1-use-snake-case</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> checkout issue-1-use-snake-case</span></code></pre>
+</div>
+<p>So now, edit the <code>climate_analysis.py</code> file, and change
+functions to use a snake case style, e.g. change
+<code>FahrToCelsius</code> to <code>fahr_to_celsius</code>. Remember to
+also change the one in the <code>fahr_to_kelvin</code> function as
+well.</p>
+<p>Note we’ve changed the call to <code>fahrtocelsius</code> near the
+bottom. let’s commit this to our new feature branch:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#1 use snake case naming"</span></span></code></pre>
+</div>
+<p>Now we can commit as before</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin issue-1-use-snake-case</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="introducing-a-conflict">Introducing a Conflict<a class="anchor" aria-label="anchor" href="#introducing-a-conflict"></a>
 </h2>
 <hr class="half-width">
 <p>At this point, we could follow this advice and merge this branch’s
-work into the main branch This would be very neat and tidy! But life is
-rarely like that - and what happens when someone else commits their
-changes in some way to the main branch? Where does that leave us when we
-come to merge? Let’s find out! You may recall we created an issue for
-fixing the function call to the FahrToCelsius function - the call
-referenced the function incorrectly. The function name was wrong Let’s
-assume that a colleague has made these changes, and updated the main
-branch Hopefully they’ve done this on a feature branch and merged it,
-but maybe not! Let’s pretend we’re our colleague, and we’re making this
-fix to the main branch First, let’s switch to the main branch git
-checkout main git status git log Now as we can see, this main branch is
-completely unaware of the commits in our new feature branch And is at
-the initial state of the repository Let’s make the fix Now we could (and
-should) create a feature branch here, make and commit the change, then
-merge with the main branch But for the sake of time, let’s just commit
-directly to the main branch, and assume they did it the right way Edit
-the climate_analysis.py file And update the “FahrToCels” function call
-to “FahrToCelsius”, and save the changes git status git add
-climate_analysis.py git commit -m “#3 Fix incorrect function call” git
-log git push Now - we have this extra commit on main Which we can see if
-we do git log</p>
-</section><section><h2 class="section-heading" id="resolving-a-merge-conflicts">Resolving a Merge Conflicts<a class="anchor" aria-label="anchor" href="#resolving-a-merge-conflicts"></a>
+work into the <code>main</code> branch, which would be very neat and
+tidy. But life is rarely like that: what happens when someone else
+commits their changes in some way to the main branch? Where does that
+leave us when we come to merge?</p>
+<p>You may recall we created an issue for fixing the function call to
+the <code>FahrToCelsius</code> function, where the call referenced the
+function incorrectly. Let’s assume that a colleague has made these
+changes, and updated the <code>main</code> branch. Let’s pretend we’re
+our colleague, and we’re making this fix to the main branch. First,
+let’s switch to the main branch:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<p>Now as we can see, this main branch is completely unaware of the
+commits in our new feature branch, and is at the initial state of the
+repository. Let’s make the fix. Now we could (and should) create a
+feature branch here, make and commit the change, then merge with the
+main branch. But for expediency, we’ll commit directly to the main
+branch, and assume they did it the right way. Edit the
+<code>climate_analysis.py</code> file, and update the
+<code>FahrToCels</code> function call to <code>FahrToCelsius</code>, and
+save the changes.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">git</span> add climate_analysis.py</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"#3 Fix incorrect function call"</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">git</span> log</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre>
+</div>
+<p>Now - we have this extra commit on main, which we can see if we
+do:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="resolving-a-merge-conflict">Resolving a Merge Conflict<a class="anchor" aria-label="anchor" href="#resolving-a-merge-conflict"></a>
 </h2>
 <hr class="half-width">
 <p>Now let’s see what happens when we create a pull request on our
-feature branch, as before, and try to merge Again, let’s go to GitHub
-and this time, go to “Pull requests”, select “New pull request” And
-select the new feature branch issue-1-use-snake-case Then select it in
-“compare”, and ensure that “base” says “main” now - note that is says we
-can’t automatically merge! It’s handy that it does this - it’s compared
-the source and destination branches, and determined that there is a
-conflict Since there are different edits on the same line for commits in
-the main and feature branch But we’ll go ahead and create the PR anyway
-- select “Create pull request” title: Fixes #1 - use snake case naming
-assign yourself create pull request We create the PR, and we see “This
-branch has conflicts that must be resolved” And in this case, there is
-only one conflicting file - climate_analysis.py - but there could be
-more than one Now we can attempt to resolve the conflict by selecting
-“resolve conflicts” QUESTION: who’s resolved conflicts during a merge on
-the command line? Yes/No It can be a bit tricky, yes? The GitHub
-interface for doing this is quite a bit nicer! It tells you which files
-have the conflicts on the left (only climate_analysis.py in this case)
-And where in each file the conflicts are So let’s fix the conflict Near
-the bottom, we can see that our snake case naming of that function call
-conflicts with the fix to it And this has caused a conflict Now
-importantly we have to decide how to resolve the conflict If we’re
-lucky, common sense can help us! Now our snake_case fix resolves this
-issue anyway, since we’re calling the function correctly, which makes
-the other fix redundant So let’s remove the other fix We do this by
-editing out the chevron and equals parts, and the fix we don’t want We
-then select “Mark as resolved”, then “commit merge” Now unfortunately,
-due to the conflict commit, we can no longer rebase and merge So select
-the option to create a merge commit Then select merge pull request, and
-confirm merge And as before, delete the feature branch</p>
+feature branch, as before, and try to merge. Again, let’s go to GitHub
+and then:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <code>Pull requests</code>, and select
+<code>New pull request</code>.</li>
+<li>Select the new feature branch
+<code>issue-1-use-snake-case</code>.</li>
+<li>Select this new branch in <code>compare:</code>, and ensure that
+<code>base:</code> says <code>main</code>.</li>
+</ol>
+<p>Note that now it says we can’t automatically perform this merge.
+Essentially, it’s compared the source and destination branches, and
+determined that there is a conflict, since there are different edits on
+the same line for commits in the <code>main</code> and feature branch.
+But we’ll go ahead and create the PR anyway:</p>
+<ol style="list-style-type: decimal">
+<li>Select <code>Create pull request</code>.</li>
+<li>For the title, add “Fixes #1 - use snake case naming”.</li>
+<li>Assign yourself to the issue.</li>
+<li>Select <code>Create pull request</code>.</li>
+</ol>
+<p>We should now see that “This branch has conflicts that must be
+resolved”. And in this case, there is only one conflicting file -
+<code>climate_analysis..py</code>, but there could be more than one. Now
+we can attempt to resolve the conflict by selecting
+<code>Resolve conflicts</code>.</p>
+<p>The GitHub interface is really useful here. It tells you which files
+have the conflicts on the left (only <code>climate_analysis.py</code> in
+this case), and where in each file the conflicts are. So let’s fix the
+conflict. Near the bottom, we can see that our snake case naming of that
+function call conflicts with the fix to it, and this has caused a
+conflict.</p>
+<p>Now importantly we have to decide how to resolve the conflict.
+Fortunately, our fix for the snake_case issue resolves this issue as
+well, since we’re calling the function correctly, which makes the other
+fix redundant. So let’s remove the other fix, by editing out the chevron
+and equals parts, and the fix we don’t want. We then select
+<code>Mark as resolved</code>, then <code>Commit merge</code>. Now
+unfortunately, due to the conflict commit, we can no longer rebase and
+merge. So select the option to create a <code>Merge commit</code>, then
+select <code>Merge pull request</code>, and <code>Confirm merge</code>.
+And as before, delete the feature branch which is no longer needed.</p>
 </section><section><h2 class="section-heading" id="commits-highlighted-in-issues">Commits Highlighted in Issues<a class="anchor" aria-label="anchor" href="#commits-highlighted-in-issues"></a>
 </h2>
 <hr class="half-width">
-<p>if we go to the repository’s list of commits now (in the main branch)
-we see that we have a “merge branch main into issue-1-use-snake-case”
-commit which resolves the conflict (which occurred on the feature
-branch) and also a merge pull request commit, for when we merged the
-feature branch with main</p>
+<p>If we go to the repository’s list of commits now in the
+<code>main</code> branch, we see that we have a “merge branch main into
+issue-1-use-snake-case” commit which resolves the conflict (which
+occurred on the feature branch) and also a merge pull request commit,
+for when we merged the feature branch with main.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
