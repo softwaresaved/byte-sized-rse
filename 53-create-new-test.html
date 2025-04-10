@@ -534,7 +534,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>5.3 Creating a New Test</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-04-10 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/53-create-new-test.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -568,48 +568,125 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="add-a-new-test">Add a New Test<a class="anchor" aria-label="anchor" href="#add-a-new-test"></a></h2>
-<hr class="half-width"><p>So how do we add a new unit test? We add a new test method… Let’s add
-one to test the number 5 - feel free to code along with me! def
-test_5(self): self.assertEqual(factorial(5), 120)</p>
+<hr class="half-width"><p>As we’ve mentioned, adding a new unit test is a matter of adding a
+new test method. Let’s add one to test the number <code>5</code>. Edit
+the <code>tests/test_factorial.py</code> file again:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>  <span class="kw">def</span> test_5(<span class="va">self</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="va">self</span>.assertEqual(factorial(<span class="dv">5</span>), <span class="dv">120</span>)</span></code></pre>
+</div>
 <p>[CHECKPOINT - who’s finished editing the file Yes/No]</p>
-<p>And then we can run it exactly as before, in the shell python -m
-unittest -v tests/test_factorial.py And they pass! So the really useful
-thing here, is we can rapidly add tests and rerun them And with more
-complex codes that are harder to reason about, we can develop a set of
-tests into a suite of tests to verify the codes’ correctness Whenever we
-make changes to our code, we can rerun our tests to make sure we haven’t
-broken anything An additional benefit is that successfully running our
-unit tests can also give others confidence that our code works as
-expected</p>
+<p>And then we can run it exactly as before, in the shell</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> tests/test_factorial.py </span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
+test_5 (tests.test_factorial.TestFactorialFunctions) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK</code></pre>
+</div>
+<p>We can see the tests pass. So the really useful thing here, is we can
+rapidly add tests and rerun all of them. Particularly with more complex
+codes that are harder to reason about, we can develop a set of tests
+into a suite of tests to verify the codes’ correctness. Then, whenever
+we make changes to our code, we can rerun our tests to make sure we
+haven’t broken anything. An additional benefit is that successfully
+running our unit tests can also give others confidence that our code
+works as expected.</p>
 <p>[CHECKPOINT - who managed to run this with their new unit test
 Yes/No]</p>
 </section><section><h2 class="section-heading" id="change-our-implementation-and-re-test">Change our Implementation, and Re-test<a class="anchor" aria-label="anchor" href="#change-our-implementation-and-re-test"></a></h2>
-<hr class="half-width"><p>So let’s illustrate another key advantage of having unit tests (Don’t
-need to do this bit) Now, let’s assume during development we find an
-error in our code for example, if we run our code with factorial(10000)
-our Python program crashes with an exception… It turns out that our
-program is recursive - it calls itself And in order to compute the
-factorial of 10000, it does that a lot Now Python has a default limit
-for recursion of 1000, hence the exception Bit of a limitation in our
-implementation But, we can correct our implementation by changing it to
-use a different method of calculating factorials that isn’t recursive
-Let’s do that - you can copy and paste the replacement code in the
-Google Doc session notes into the factorial.py file Make sure you
-replace the code in the factorial.py file, not the test_factorial.py
-file! So, we open the factorial.py file in mymath directory… factorial =
-1 for i in range(1, n + 1): factorial = factorial * i return factorial
-This is an iterative approach to solving factorial that isn’t recursive
-And shouldn’t suffer from the previous issue It simply goes through the
-intended range of numbers and multiples it by a previous running total
-each time, but doesn’t do it recursively Now, we’re not changing how the
-function is called, or its intended behaviour So we don’t need to change
-the Python docstring here So, we have our new implementation, but we
-need to make sure it works as intended Fortunately, we have our set of
-tests, so let’s run them again! python -m unittest -v
-tests/test_factorial.py And they work - this gives us some confidence -
-very quickly - that our new implementation is behaving as we would want
-So again, each time we change our code - small or large changes - we
-retest And check they all pass</p>
+<hr class="half-width"><p>Let’s illustrate another key advantage of having unit tests. Let’s
+assume during development we find an error in our code. For example, if
+we run our code with <code>factorial(10000)</code> our Python program
+from within the Python interpreter, it crashes with an exception:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> mymath.factorial <span class="im">import</span> factorial</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> factorial(<span class="dv">10000</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "/home/steve/factorial-example/mymath/factorial.py", line 11, in factorial
+    return  n * factorial(n-1)
+  File "/home/steve/factorial-example/mymath/factorial.py", line 11, in factorial
+    return  n * factorial(n-1)
+  File "/home/steve/factorial-example/mymath/factorial.py", line 11, in factorial
+    return  n * factorial(n-1)
+  [Previous line repeated 995 more times]
+  File "/home/steve/factorial-example/mymath/factorial.py", line 8, in factorial
+    if n == 0 or n == 1:
+RecursionError: maximum recursion depth exceeded in comparison</code></pre>
+</div>
+<p>It turns out that our factorial function is <em>recursive</em>, which
+means it calls itself. In order to compute the factorial of 10000, it
+does that a lot. Python has a default limit for recursion of 1000, hence
+the exception, which is a bit of a limitation in our implementation.
+However, we can correct our implementation by changing it to use a
+different method of calculating factorials that isn’t recursive. Edit
+the <code>mymath/factorial.py</code> file and replace the function with
+this one:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">    Calculate the factorial of a given number.</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">    :param int n: The factorial to calculate</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">    :return: The resultant factorial</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    factorial <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>        factorial <span class="op">=</span> factorial <span class="op">*</span> i</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    <span class="cf">return</span> factorial</span></code></pre>
+</div>
+<p>Make sure you replace the code in the <code>factorial.py</code> file,
+and not the <code>test_factorial.py</code> file.</p>
+<p>This is an <em>iterative</em> approach to solving factorial that
+isn’t recursive, and won’t suffer from the previous issue. It simply
+goes through the intended range of numbers and multiples it by a
+previous running total each time, but doesn’t do it recursively by
+calling itself. Notice that we’re not changing how the function is
+called, or its intended behaviour. So we don’t need to change the Python
+docstring here, since it still applies.</p>
+<p>We now have our updated implementation, but we need to make sure it
+works as intended. Fortunately, we have our set of tests, so let’s run
+them again:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> tests/test_factorial.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
+test_5 (tests.test_factorial.TestFactorialFunctions) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK</code></pre>
+</div>
+<p>And they work, which gives us some confidence - very rapidly - that
+our new implementation is behaving exactly the same as before. So again,
+each time we change our code, whether it’s making small or large
+changes, we retest and check they all pass</p>
 <p>[CHECKPOINT - who managed to write unit test and run it? Yes/No]</p>
 <div id="what-makes-a-good-test" class="callout">
 <div class="callout-square">
@@ -621,19 +698,25 @@ retest And check they all pass</p>
 <p>Of course, we only have 2 tests so far, and it would be good to have
 more But what kind of tests are good to write? With more tests that
 sufficiently test our code, the more confidence we have that our code is
-correct We could keep writing tests for e.g., 10, 15, 20 But these
-become increasingly less useful - they’re in much the same space We
-can’t test all positive numbers, and it’s fair to say at a certain
-point, these types of low integers are sufficiently tested So what test
-cases should we choose? We should select test cases that test two things
-The paths through our code - so we can check they work So if we had
-critical paths dictated with if statements, we write tests to ensure
-those are followed But also we need to test the boundaries of the input
-data we expect to use - known as edge cases For example, if we go back
-to our code We can see that there are some interesting edge cases to
-test for What about zero? What about very large numbers - as we’ve
-already seen? Or negative numbers? All good candidates for further
-tests!</p>
+correct. We could keep writing tests for e.g., 10, 15, 20, and so on.
+But these become increasingly less useful, since they’re in much the
+same “space”. We can’t test all positive numbers, and it’s fair to say
+at a certain point, these types of low integers are sufficiently tested.
+So what test cases should we choose?</p>
+<p>We should select test cases that test two things:</p>
+<ul><li><p>The paths through our code, so we can check they work as we
+expect. For example, if we had a number of paths through the code
+dictated with if statements, we write tests to ensure those are
+followed.</p></li>
+<li><p>We also need to test the boundaries of the input data we expect
+to use, known as <em>edge cases</em>. For example, if we go back to our
+code. we can see that there are some interesting edge cases to test
+for:</p></li>
+<li><p>Zero?</p></li>
+<li><p>Very large numbers (as we’ve already seen)?</p></li>
+<li><p>Negative numbers?</p></li>
+</ul><p>All good candidates for further tests, since they test the code in
+different ways, and test different paths through the code.</p>
 </div>
 </div>
 </div>
@@ -710,8 +793,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/53-create-new-test.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/53-create-new-test.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-04-09"
+  "dateModified": "2025-04-10",
+  "datePublished": "2025-04-10"
 }
 
   </script><script>

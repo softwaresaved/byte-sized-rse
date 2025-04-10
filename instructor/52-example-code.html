@@ -536,7 +536,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>5.2 Some Example Code</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-04-10 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/52-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -573,91 +573,209 @@
 </div>
 <section><h2 class="section-heading" id="creating-a-copy-of-the-example-code-repository">Creating a Copy of the Example Code Repository<a class="anchor" aria-label="anchor" href="#creating-a-copy-of-the-example-code-repository"></a></h2>
 <hr class="half-width"><p>FIXME: copy factorial-example repo into softwaresaved</p>
-<p>Using the shell, we’re going to use Git to clone our example GitHub
-code repository So start a terminal and do the following:</p>
-<p>git clone <a href="https://github.com/UNIVERSE-HPC/factorial-example" class="external-link uri">https://github.com/UNIVERSE-HPC/factorial-example</a></p>
+<p>For this lesson we’ll be using some example code available on GitHub,
+which we’ll clone onto our machines using the Bash shell. So firstly
+open a Bash shell (via Git Bash in Windows or Terminal on a Mac). Then,
+on the command line, navigate to where you’d like the example code to
+reside, and use Git to clone it. For example, to clone the repository in
+our home directory, and change our directory to the repository
+contents:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UNIVERSE-HPC/factorial-example</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> factorial-example</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a></h2>
 <hr class="half-width"><p>Next, let’s take a look at the code, which is in the
-factorial-example/mymath directory, called factorial.py If you’re on
-your own machine, you can use an editor to open the file Or navigate to
-it using the shell, and use the ‘cat’ command on the file If on replit,
-you can navigate to it from the file navigator on the left and select
-the file So the example code is a basic Python implementation of
-Factorial Essentially, it multiplies all the whole numbers from a given
-number down to 1 e.g. given 3, that’s 3 x 2 x 1 = 6 - so factorial of 3
-is 6</p>
-<p>We can also run this code to show it working, and also that it
-appears to work So in the shell In the root directory of the repository,
-we can type python from mymath.factorial import factorial [to import the
-factorial function into Python] And then run the function, for example
-factorial(3) Which gives us 6 - which looks good</p>
-<p>Some evidence this function is working! Which is good Of course, in
-practice, our functions may well be more complicated than this! And of
-course, may call other separate functions Now we could just come up with
-a list of known input numbers and expected outputs and run each of these
-manually But this would take some time! And computers are really good at
-one thing - automation - so let’s use that and automate our tests Let’s
-make it easy for ourselves</p>
+<code>factorial-example/mymath directory</code>, called
+<code>factorial.py</code>, so open this file in an editor.</p>
+<p>The example code is a basic Python implementation of Factorial.
+Essentially, it multiplies all the whole numbers from a given number
+down to 1 e.g. given 3, that’s 3 x 2 x 1 = 6 - so the factorial of 3 is
+6.</p>
+<p>We can also run this code from within Python to show it working. In
+the shell, ensure you are in the root directory of the repository, then
+type:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">python</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>Python <span class="fl">3.10.12</span> (main, Feb  <span class="dv">4</span> <span class="dv">2025</span>, <span class="dv">14</span>:<span class="dv">57</span>:<span class="dv">36</span>) [GCC <span class="fl">11.4.0</span>] on linux</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>Type <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> <span class="kw">or</span> <span class="st">"license"</span> <span class="cf">for</span> more information.</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre>
+</div>
+<p>Then at the prompt, import the <code>factorial</code> function from
+the <code>mymath</code> library and run it:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> mymath.factorial <span class="im">import</span> factorial</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> factorial(<span class="dv">3</span>)</span></code></pre>
+</div>
+<p>Which gives us 6 - which gives us some evidence that this function is
+working. Of course, in practice, our functions may well be more
+complicated than this, and of course, they may call other separate
+functions. Now we could just come up with a list of known input numbers
+and expected outputs and run each of these manually to test the code,
+but this would take some time. Computers are really good at one thing -
+automation - so let’s use that and automate our tests, to make it easy
+for ourselves.</p>
 </section><section><h2 class="section-heading" id="running-the-tests">Running the Tests<a class="anchor" aria-label="anchor" href="#running-the-tests"></a></h2>
-<hr class="half-width"><p>Now, as it turns out, this code repository already has a test - let’s
-take a look Navigate to the repository’s ‘tests’ directory, and open a
-file called test_factorial.py Now, we using a Python unit test framework
-called unittest Advantage of using unittest is that it’s already
-built-in to Python - much easier for training! But a more popular one is
-Pytest that you may wish to look into Before we look into this example
-unit test, questions <em>Who here is familiar with object oriented
-programming?</em> Yes/No <em>Who’s written an object oriented
-program?</em> Yes/No For those that aren’t familiar with object oriented
-programming… It’s a way of structuring your programs around the data of
-your problem space It’s based around the concept of objects, which are
-structures that contain both data and functions that operate on that
-data In OOP, objects are used to model real-world entities, such as
-people, bank accounts, libraries, books, even molecules, and so on With
-each object having its own data - known as attributes and functions -
-known as methods These are encapsulated within a defined structure known
-as a class Now, an introduction to OOP is beyond the scope of this
-session If you’d like to know more about object oriented programming,
-there’s a great introductory tutorial on the realpython site <a href="https://realpython.com/python3-object-oriented-programming/" class="external-link uri">https://realpython.com/python3-object-oriented-programming/</a>
-Plus, the realpython site is a great resource for learning about Python!
-But for the purposes of this activity, we use oo classes to encapsulate
-our unit tests since that’s how they’re defined in the unittest
-framework And you can consider them as a kind of syntactic sugar to
-group our tests together With a single unit test being represented as a
-single function - or method - within a class So in this example, we have
-a class called TestFactorialFunctions with a single unit test, which
-we’ve called test_3 And within that test method, we are essentially
-doing what we did when we ran it manually earlier We’re running
-factorial with the argument 3, and checking it equals 6 We use an
-inbuilt function, or method, in this class called ‘assertEqual’, that
-checks the two are the same If not, the test fails</p>
+<hr class="half-width"><p>As it turns out, this code repository already has a test. Navigate to
+the repository’s <code>tests</code> directory, and open a file called
+<code>test_factorial.py</code>:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> unittest</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="im">from</span> mymath.factorial <span class="im">import</span> factorial</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">class</span> TestFactorialFunctions(unittest.TestCase):</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    <span class="kw">def</span> test_3(<span class="va">self</span>):</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(factorial(<span class="dv">3</span>), <span class="dv">6</span>)</span></code></pre>
+</div>
+<p>Now, we using a Python unit test framework called
+<code>unittest</code>. There are other such frameworks for Python,
+including <code>nose</code> and <code>pytest</code> which is very
+popular, but the advantage of using <code>unittest</code> is that it’s
+already built-in to Python so it’s easier for us to use it.</p>
+<p>Before we look into this example unit test, questions <em>Who here is
+familiar with object oriented programming?</em> Yes/No <em>Who’s written
+an object oriented program?</em> Yes/No</p>
+<div id="what-is-object-oriented-programming" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="what-is-object-oriented-programming" class="callout-inner">
+<h3 class="callout-title">What is Object Oriented Programming?</h3>
+<div class="callout-content">
+<p>For those that aren’t familiar with object oriented programming, it’s
+a way of structuring your programs around the <em>data</em> of your
+problem. It’s based around the concept of objects, which are structures
+that contain both data and functions that operate on that data. In
+object oriented programming, objects are used to model real-world
+entities, such as people, bank accounts, libraries, books, even
+molecules, and so on. With each object having its own:</p>
+<ul><li>data - known as attributes</li>
+<li>functions - known as methods</li>
+</ul><p>These are encapsulated within a defined structure known as a class.
+An introduction to object oriented programming is beyond the scope of
+this session, but if you’d like to know more there’s a great <a href="https://realpython.com/python3-object-oriented-programming/" class="external-link">introductory
+tutorial</a> on the <a href="https://realpython.com/" class="external-link">RealPython</a>
+site. This site is a great practical resource for learning about how to
+do many things in Python!</p>
+</div>
+</div>
+</div>
+<p>For the purposes of this activity, we use object oriented classes to
+encapsulate our unit tests since that’s how they’re defined in the
+<code>unittest</code> framework. You can consider them as a kind of
+syntactic sugar to group our tests together, 2ith a single unit test
+being represented as a single function - or method - within a class.</p>
+<p>In this example, we have a class called
+<code>TestFactorialFunctions</code> with a single unit test, which we’ve
+called <code>test_3</code>. Within that test method, we are essentially
+doing what we did when we ran it manually earlier: we’re running
+factorial with the argument 3, and checking it equals 6. We use an
+inbuilt function, or method, in this class called
+<code>assertEqual</code>, that checks the two are the same, and if not,
+the test will fail.</p>
 <p>So how do we run this test? In the shell, we can run this test by
-ensuring we’re in the repository’s root directory, and running python -m
-unittest tests/test_factorial.py [CHECKPOINT - who’s run the tests and
-got this output? Yes/No] So what happens? We see a single ‘.’, we see a
-message that says it ran very quickly, and ‘OK’. So what does this
-single dot mean? It means the single test we have was successfully run
-Ok that’s great - out test passes! But how does unittest know what to
-run exactly? Well, unit test frameworks like unitttest follow a pattern
-of finding tests and running them When we give a single file argument to
-unittest, it searches the python file for unittest classes And within
-those classes, looks for methods starting with ‘test_’, and runs them
-That’s it! So we could add more tests in this class and it would run
-each in turn We could even add multiple unittest classes here if we
-wanted, each testing different aspects of our code for example, and
-unittest would search all of these classes and run each test_ function
-in turn</p>
+ensuring we’re in the repository’s root directory, and running:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest tests/test_factorial.py </span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK</code></pre>
+</div>
+<p>[CHECKPOINT - who’s run the tests and got this output? Yes/No]</p>
+<p>So what happens? We see a single <code>.</code>, we see a message
+that says it ran very quickly, and <code>OK</code>. The single dot means
+the single test we have was successfully run, so our test passes!</p>
+<p>But how does unittest know what to run exactly? Unit test frameworks
+like <code>unitttest</code> follow a common pattern of finding tests and
+running them. When we give a single file argument to
+<code>unittest</code>, it searches the Python file for
+<code>unittest.TestCase</code> classes, and within those classes, looks
+for methods starting with <code>test_</code>, and runs them. So we could
+add more tests in this class in the same way, and it would run each in
+turn. We could even add multiple <code>unittest.TestCase</code> classes
+here if we wanted, each testing different aspects of our code for
+example, and <code>unittest</code> would search all of these classes and
+run each <code>test_</code> function in turn.</p>
 </section><section><h2 class="section-heading" id="testing-for-failure">Testing for Failure<a class="anchor" aria-label="anchor" href="#testing-for-failure"></a></h2>
-<hr class="half-width"><p>We’ve seen what happens if a test succeeds But what happens if a test
-fails? Let’s deliberately change our test to be wrong and find out
-e.g. change the expected result of factorial(3) to be 10 We rerun our
-tests - slightly differently than last time python -m unittest -v
-tests/test_factorial.py In this case, we add ‘-v’ for more verbose
-output, giving us results test-by-test And we get a ‘FAIL’ in place of
-an ok for our test In this case, we see an AssertionError that 6 is not
-equal to 10! Let’s change our faulty test back, re-run our tests This
-illustrates an important point with our tests It’s important to make
-sure your tests are correct too So make sure you work with known ‘good’
-test data which has been verified to be correct!</p>
+<hr class="half-width"><p>We’ve seen what happens if a test succeeds, but what happens if a
+test fails? Let’s deliberately change our test to be wrong and find out,
+by editing the <code>tests/test_factorial.py</code> file, changing the
+expected result of <code>factorial(3)</code> to be <code>10</code>, and
+saving the file.</p>
+<p>We’ll rerun our tests slightly differently than last time:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> tests/test_factorial.py</span></code></pre>
+</div>
+<p>In this case, we add <code>-v</code> for more verbose output, giving
+us detailed results test-by-test.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>test_3 (tests.test_factorial.TestFactorialFunctions) ... FAIL
+
+======================================================================
+FAIL: test_3 (tests.test_factorial.TestFactorialFunctions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/steve/factorial-example/tests/test_factorial.py", line 8, in test_3
+    self.assertEqual(factorial(3), 10)
+AssertionError: 6 != 10
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)</code></pre>
+</div>
+<p>In this instance we get a <code>FAIL</code> instead of an
+<code>OK</code> for our test, and we see an <code>AssertionError</code>
+that <code>6</code> is not equal to <code>10</code>, which is clearly
+true.</p>
+<p>Let’s now change our faulty test back by editing the file again,
+changing the <code>10</code> back to <code>6</code>, and re-run our
+tests:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> tests/test_factorial.py</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK</code></pre>
+</div>
+<p>This illustrates an important point with our tests: it’s important to
+make sure your tests are correct too. So make sure you work with known
+‘good’ test data which has been verified to be correct!</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -731,8 +849,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/52-example-code.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/52-example-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-04-09"
+  "dateModified": "2025-04-10",
+  "datePublished": "2025-04-10"
 }
 
   </script><script>

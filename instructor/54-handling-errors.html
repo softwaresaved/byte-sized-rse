@@ -468,7 +468,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#brief-summary">Brief Summary</a></li>
+        <ul><li><a href="#how-do-we-handle-testing-for-errors">How do we Handle Testing for Errors?</a></li>
+<li><a href="#brief-summary">Brief Summary</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -533,7 +534,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>5.4 Handling Errors</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-04-10 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/54-handling-errors.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -568,36 +569,95 @@
 </div>
 </div>
 </div>
-<p>But what do we do if our code is expected to throw an error? How
+<section><h2 class="section-heading" id="how-do-we-handle-testing-for-errors">How do we Handle Testing for Errors?<a class="anchor" aria-label="anchor" href="#how-do-we-handle-testing-for-errors"></a></h2>
+<hr class="half-width"><p>But what do we do if our code is expected to throw an error? How
 would we test for that?</p>
-<p>Well, let’s try our code with a negative number Which we’ve
-identified as a good test case (Don’t need to run this bit) Run the
-python interpreter from mymath.factorial import factorial factorial(-1)
-We can see that we get 1 This is incorrect, since the factorial function
-is undefined for negative numbers Perhaps what we want in this case is
-to test for negative numbers as an input, and display an exception if
-that is the case How would we implement that, and how would we test for
-the presence of an exceptoin? So in our implementation, let’s add a
-check at the start of our function This is known as a precondition Where
-we check the validity of our input data before we do any processing on
-it And is considered good practice So add at the start, below the
-docstring if n &lt; 0: raise ValueError(‘Only use non-negative
-integers.’) If we run it now, we should see our error from
-mymath.factorial import factorial factorial(-1) Sure enough, we get our
-exception as desired But how do we test for this in a unit test? This is
-an exception, not a value Fortunately, unit test frameworks have ways to
-check for this Let’s add a new test def test_negative(self): with
-self.assertRaises(ValueError): factorial(-1) So here, we use unittests
-built-in assertRaises (instead of assertEquals) to test for a ValueError
-exception occurring when we run factorial(-1) We use Python’s ‘with’
-here to test for this within the call to factorial So if we re-run our
-tests again, we should see them all succeed And we do!</p>
-<section><h2 class="section-heading" id="brief-summary">Brief Summary<a class="anchor" aria-label="anchor" href="#brief-summary"></a></h2>
+<p>Let’s try our code with a negative number, which we’ve already
+identified as a good test case, from within the python interpreter:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> mymath.factorial <span class="im">import</span> factorial</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> factorial(<span class="op">-</span><span class="dv">1</span>)</span></code></pre>
+</div>
+<p>We can see that we get the result of 1, which is incorrect, since the
+factorial function is undefined for negative numbers.</p>
+<p>Perhaps what we want in this case is to test for negative numbers as
+an invalid input, and display an exception if that is the case. How
+would we implement that, and how would we test for the presence of an
+exception?</p>
+<p>In our implementation let’s add a check at the start of our function,
+which is known as a <em>precondition</em>. The precondition will check
+the validity of our input data before we do any processing on it, and
+this approach to checking function input data is considered good
+practice.</p>
+<p>Edit the <code>mymath/factorial.py</code> file again, and add at the
+start, below the docstring:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">'Only use non-negative integers.'</span>)</span></code></pre>
+</div>
+<p>If we run it now, we should see our error:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> mymath.factorial <span class="im">import</span> factorial</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> factorial(<span class="op">-</span><span class="dv">1</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "/home/steve/factorial-example/mymath/factorial.py", line 9, in factorial
+    raise ValueError('Only use non-negative integers.')
+ValueError: Only use non-negative integers.</code></pre>
+</div>
+<p>Sure enough, we get our exception as desired. But how do we test for
+this in a unit test, since this is an exception, not a value?
+Fortunately, unit test frameworks have ways to check for this.</p>
+<p>Let’s add a new test to <code>tests/test_factorial.py</code>:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>    <span class="kw">def</span> test_negative(<span class="va">self</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>        <span class="cf">with</span> <span class="va">self</span>.assertRaises(<span class="pp">ValueError</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>          factorial(<span class="op">-</span><span class="dv">1</span>)</span></code></pre>
+</div>
+<p>So here, we use <code>unittest</code>’s built-in
+<code>assertRaises()</code> (instead of <code>assertEquals()</code>) to
+test for a <code>ValueError</code> exception occurring when we run
+<code>factorial(-1)</code>. We also use Python’s <code>with</code> here
+to test for this within the call to <code>factorial()</code>. So if we
+re-run our tests again, we should see them all succeed:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> tests/test_factorial.py</span></code></pre>
+</div>
+<p>You should see:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
+test_5 (tests.test_factorial.TestFactorialFunctions) ... ok
+test_negative (tests.test_factorial.TestFactorialFunctions) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK</code></pre>
+</div>
+</section><section><h2 class="section-heading" id="brief-summary">Brief Summary<a class="anchor" aria-label="anchor" href="#brief-summary"></a></h2>
 <hr class="half-width"><p>So we now have the beginnings of a test suite! And every time we
-change our code, we can rerun our tests So the overall process of
-development becomes Add new functionality to our code And then add new
-tests to test that new functionality</p>
-<div id="keypoints1" class="callout keypoints">
+change our code, we can rerun our tests. So the overall process of
+development becomes:</p>
+<ul><li>Add new functionality (or modify new functionality) to our code</li>
+<li>Potentially add new tests to test any new functionality</li>
+<li>Re-run all our tests</li>
+</ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -670,8 +730,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/54-handling-errors.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/54-handling-errors.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-04-09"
+  "dateModified": "2025-04-10",
+  "datePublished": "2025-04-10"
 }
 
   </script><script>
