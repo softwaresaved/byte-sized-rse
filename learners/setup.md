@@ -2,4 +2,6 @@
 title: Setup
 ---
 
-Each episode has its own individual setup available at the start.
+## Setup
+
+Each episode has its own individual setup - there is no setup for the whole course.
