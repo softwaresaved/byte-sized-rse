@@ -12,6 +12,8 @@ Byte-sized RSE is a series of standalone mini training materials providing key r
 - Code Review
 - Unit Testing Code
 
+Each episode is standalone - you can jump staight into the episode you are interested in and do not have to read preceeding episodes.
+
 ### Target Audience
 
 Research Software Engineers (RSEs), reseachers and postgraduates involved in computational research who already posses foundational computational skills and who are now:
@@ -21,6 +23,6 @@ Research Software Engineers (RSEs), reseachers and postgraduates involved in com
 
 ::: prereq
 
-Each episode is standalone, although it may require some prerequisite knowledge clearly described at the start, along with its own setup instructions.
+Each episode may require some prerequisite knowledge clearly described at the start, along with its own setup instructions.
 
 :::
