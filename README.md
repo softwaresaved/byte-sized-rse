@@ -1,6 +1,6 @@
 # Byte-sized RSE
 
-[Byte-sized RSE](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) is a series of standalone mini training materials providing key research software skills in around 1-1.5 hour run by the [UNIVERSE-HPC](https://www.universe-hpc.ac.uk/) project since October 2022. There have been 3 Byte-sized RSE series so far, each with a number of episodes. Each episode also has a companion podcast episode in the Code for Thought podcast series.
+[Byte-sized RSE](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) is a series of standalone mini training materials providing key research software skills in around 1-1.5 hour originally developed and run by the [UNIVERSE-HPC](https://www.universe-hpc.ac.uk/) project since October 2022. There have been 3 Byte-sized RSE series so far, each with a number of episodes. Each episode also has a companion podcast episode in the Code for Thought podcast series.
 
 Check [Byte-sized RSE series](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) for the full list of all episodes.
 
