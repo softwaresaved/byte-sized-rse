@@ -13,5 +13,7 @@ Byte-sized RSE is a series of standalone mini training materials providing key r
 - Unit Testing Code
 
 ::: prereq
-Each episode is standalone, although it may require some prerequisite knowledge which is clearly described at the beginning. Episodes start with a setup for that episode, introduction and motivation, which is then followed by a practical hands-on part.
+
+Each episode is standalone, although it may require some prerequisite knowledge clearly described at the start, along with its own setup instructions.
+
 :::
