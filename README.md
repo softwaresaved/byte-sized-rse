@@ -4,7 +4,7 @@
 
 Check [Byte-sized RSE series](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) for the full list of all episodes.
 
-This repository contains a subset of original Byte-sized RSE episodes (currently mainly available as a set of slides) transcribed in the [The Carpentries Workbench][workbench] format suitable for the delivery by instructors familiar with the episode content. 
+This repository contains a subset of the [original Byte-sized RSE episodes](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) (currently mainly available as a set of slides) transcribed in the [The Carpentries Workbench][workbench] format suitable for the delivery by instructors familiar with the episode content. 
 
 ## Episode format
 
