@@ -17,6 +17,7 @@ Each episode is standalone - you can jump staight into the episode you are inter
 ### Target Audience
 
 Research Software Engineers (RSEs), reseachers and postgraduates involved in computational research who already posses foundational computational skills and who are now:
+
 - looking for quick refreshers, tips, or wanting to improve the sustainability or quality of their research code and are keen on continuous learning without heavy time investment.
 - interested in advancing their skills and learning best practices for software in research.
 - seeking digestible content to bridge the gap between research and software and benefiting from short-form RSE tips/tools to improve their research workflows.
