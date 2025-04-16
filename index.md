@@ -24,6 +24,6 @@ Research Software Engineers (RSEs), reseachers and postgraduates involved in com
 
 ::: prereq
 
-Each episode may require some prerequisite knowledge clearly described at the start, along with its own setup instructions.
+Episodes may require some prerequisite knowledge clearly described at the start or each episode, along with its own, individual, setup instructions.
 
 :::
