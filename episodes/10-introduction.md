@@ -27,27 +27,29 @@ An Integrated Development Environment (IDE) is a software application that provi
 
 ### Why use an IDE?
 
-Using an IDE can significantly boost productivity by:
+An IDE brings everything you need to write, test, and debug code into one place — saving time by helping you write better code faster.
+IDEs help by:
 
-- Reducing setup and development time - everything is in one place and the need to switch between different tools/applications/windows is significantly reduced
-- Offering helpful tools like syntax checking, code suggestions and error checking
-- Making it easier to debug and test code
+- Reducing setup and development time - everything you need for editing, running, and debugging code is in one place and the need to switch between different tools/applications/windows is significantly reduced
+- Offering helpful tools like syntax checking, code suggestions and autocomplete, and error checking leading to fewer errors thanks to real-time feedback and intelligent suggestions
+- Making it easier to debug and test code leading to easier issue detection and fixing
 - Providing a consistent environment across projects
 
-IDEs are especially helpful for beginners because they highlight mistakes in real time and often include integrated tutorials or help documentation.
+For beginners, IDEs lower the barrier to entry by making it easier to spot mistakes and understand code structure. 
+For experienced developers, IDEs boost productivity and streamline complex workflows.
 
 ### Common IDE Features
 
 The following is a list of the most commonly seen IDE features:
 
-- code editting - providing a place to write and edit code
-- syntax highlighting - to show programming language constructs, keywords and the syntax errors with visually distinct colours and font effects for better readability
-- code completion - to speed up programming by suggesting a set of possible (syntactically correct) code options
-- code search - to find package, class, function and variable declarations, their usages and referencing
-- version control support - to interact with source code repositories
-- debugging support - for setting breakpoints in the code editor, step-by-step execution of code and inspection of variables to help find and fix bugs in code
-- integrated terminal - to run commands without leaving the IDE
-- project/file explorer - to navigate the code project structure easily
+- **code editting** - providing a place to write and edit code
+- **syntax highlighting** - to show programming language constructs, keywords and the syntax errors with visually distinct colours and font effects for better readability
+- **code completion** - to speed up programming by suggesting a set of possible (syntactically correct) code options
+- **code search** - to find package, class, function and variable declarations, their usages and referencing
+- **version control support** - to interact with source code repositories
+- **debugging support** - for setting breakpoints in the code editor, step-by-step execution of code and inspection of variables to help find and fix bugs in code
+- **integrated terminal** - to run commands without leaving the IDE
+- **project/file explorer** - to navigate the code project structure easily
 
 ### Popular IDEs
 
