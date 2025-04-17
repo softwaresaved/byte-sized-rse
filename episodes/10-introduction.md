@@ -59,7 +59,7 @@ Here are a few widely used IDEs across different languages and fields:
 - [PyCharm][pycharm] – great for Python development
 - [RStudio][r-studio] – designed specifically for R programming
 - [Eclipse][eclipse] – often used for Java and other compiled languages
-- [JupyterLab][juputer-lab] – interactive environment for Python and data science
+- [JupyterLab][jupyter-lab] – interactive environment for Python and data science
 - [Spyder][spyder] – popular among scientists using Python
 
 ## Intro to Debugging
