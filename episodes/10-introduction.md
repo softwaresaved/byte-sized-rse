@@ -75,13 +75,13 @@ Even small mistakes in code can cause unexpected behavior or crashes. Debugging 
 - **improving code quality** - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
 - **efficient code development** - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
 
-### Common Debugging Techniques and Tools
+### Common Debugging Techniques
 
 - Adding print statements at certain points in the code to print and trace variable values and check code flow is one of the simplest debugging methods
 - Using a debugger integrated in your IDE allows you to set breakpoints, step through your code line by line, and inspect variables at runtime
 - Incorporating logging into your application can provide insights into its behavior over time and help diagnose issues that occur in specific runtime conditions
 - Writing tests that automatically check your code's functionality can help catch bugs early in the development process
 
-### How do we use a debugger?
+### How do we use a Debugger?
 
 We will focus on familiarising ourselves with a debugger built in into VS Code.
