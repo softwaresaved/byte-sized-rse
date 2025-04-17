@@ -30,10 +30,10 @@ An Integrated Development Environment (IDE) is a software application that provi
 An IDE brings everything you need to write, test, and debug code into one place — saving time by helping you write better code faster.
 IDEs help by:
 
-- Reducing setup and development time - everything you need for editing, running, and debugging code is in one place and the need to switch between different tools/applications/windows is significantly reduced
-- Offering helpful tools like syntax checking, code suggestions and autocomplete, and error checking leading to fewer errors thanks to real-time feedback and intelligent suggestions
-- Making it easier to debug and test code leading to easier issue detection and fixing
-- Providing a consistent environment across projects
+- reducing setup and development time - everything you need for editing, running, and debugging code is in one place and the need to switch between different tools/applications/windows is significantly reduced
+- offering helpful tools like syntax checking, code suggestions and autocomplete, and error checking leading to fewer errors thanks to real-time feedback and intelligent suggestions
+- making it easier to debug and test code leading to easier issue detection and fixing
+- providing a consistent environment across projects
 
 For beginners, IDEs lower the barrier to entry by making it easier to spot mistakes and understand code structure. 
 For experienced developers, IDEs boost productivity and streamline complex workflows.
@@ -68,12 +68,12 @@ Code debugging is the process of identifying, isolating, and fixing errors or bu
 
 ### Why Debugging Matters?
 
-Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps:
+Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps with:
 
-- Code correctness - debugging ensures your program works as expected and meets requirements
-- Error resolution - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
-- Improved code quality - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
-- Efficient development - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
+- code correctness - debugging ensures your program works as expected and meets requirements
+- error resolution - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
+- improved code quality - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
+- efficient development - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
 
 ### Common Debugging Techniques and Tools
 
