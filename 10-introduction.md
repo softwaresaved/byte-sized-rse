@@ -62,7 +62,26 @@ Here are a few widely used IDEs across different languages and fields:
 - [JupyterLab][jupyter-lab] – interactive environment for Python and data science
 - [Spyder][spyder] – popular among scientists using Python
 
-## Intro to Debugging
+## What is Code Debugging?
 
-- What is a debugger, and why use one?
-- How do we use a debugger?
+Code debugging is the process of identifying, isolating, and fixing errors or bugs in your software or script. Bugs can manifest as unexpected behavior, crashes, or incorrect outputs. Debugging is an essential step in software development, ensuring that your code runs as intended and meets quality standards.
+
+### Why Debugging Matters?
+
+Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps:
+
+- Code correctness - debugging ensures your program works as expected and meets requirements
+- Error resolution - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
+- Improved code quality - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
+- Efficient development - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
+
+### Common Debugging Techniques and Tools
+
+- Adding print statements at certain points in the code to print and trace variable values and check code flow is one of the simplest debugging methods
+- Using a debugger integrated in your IDE allows you to set breakpoints, step through your code line by line, and inspect variables at runtime
+- Incorporating logging into your application can provide insights into its behavior over time and help diagnose issues that occur in specific runtime conditions
+- Writing tests that automatically check your code's functionality can help catch bugs early in the development process
+
+### How do we use a debugger?
+
+We will focus on familiarising ourselves with a debugger built in into VS Code.
