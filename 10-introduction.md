@@ -70,10 +70,10 @@ Code debugging is the process of identifying, isolating, and fixing errors or bu
 
 Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps with:
 
-- code correctness - debugging ensures your program works as expected and meets requirements
-- error resolution - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
-- improved code quality - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
-- efficient development - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
+- **code correctness** - debugging ensures your program works as expected and meets requirements
+- **error resolution** - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
+- **improving code quality** - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
+- **efficient code development** - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
 
 ### Common Debugging Techniques and Tools
 
