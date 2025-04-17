@@ -18,16 +18,16 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: prereq
+
+- Familiarity with using any code editor and navigating a filesystem structure
+
+:::
+
 ## Setup
 
 The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
 
 To install VSCode, [go to code.visualstudio.com](https://code.visualstudio.com) and select the version for your operating system. 
 
-## Prerequisites
 
-::: prereq
-
-- Familiarity with using any code editor and navigating filesystem structure
-
-:::
