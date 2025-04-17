@@ -1,10 +1,8 @@
 ---
-title: "1.1 Setup"
+title: "1.1 Setup & Prerequisites"
 teaching: 10
 exercises: 2
 ---
-
-## Setup & Prerequisites
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
@@ -20,7 +18,16 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Setup
 
 The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
 
 To install VSCode, [go to code.visualstudio.com](https://code.visualstudio.com) and select the version for your operating system. 
+
+## Prerequisites
+
+::: prereq
+
+- Familiarity with using any code editor and navigating filesystem structure
+
+:::
