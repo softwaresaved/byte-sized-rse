@@ -55,7 +55,7 @@ The following is a list of the most commonly seen IDE features:
 
 Here are a few widely used IDEs across different languages and fields:
 
-- Visual Studio Code (VS Code) – Lightweight and highly customizable; supports many languages
+- [Visual Studio Code (VS Code)][vs-code] – lightweight and highly customisable; supports many languages
 - PyCharm – great for Python development
 - RStudio – designed specifically for R programming
 - Eclipse – often used for Java and other compiled languages
