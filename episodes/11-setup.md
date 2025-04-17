@@ -28,6 +28,6 @@ exercises: 2
 
 The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
 
-To install VSCode, [go to code.visualstudio.com](https://code.visualstudio.com) and select the version for your operating system. 
+Please [download the appropriate version of Visual Studio Code](https://code.visualstudio.com) for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
 
 
