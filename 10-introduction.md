@@ -6,13 +6,18 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- What is an Integrated Development Environment (IDE)?
+- Why use an IDE?
+- What are common IDE features that code developers find extremely useful?
+- What are some commonly used IDEs among the RSE community?
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Explain what an Integrated Development Environment (IDE) is and list a number of IDEs used by RSEs
+- List common IDE features and explain how they contribute to easier and quicker code development
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
