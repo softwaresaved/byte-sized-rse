@@ -21,14 +21,11 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Intro to IDEs
+## What is an Integrated Development Environment (IDE)?
 
-- What is an Integrated Development Environment (IDE)?
-- Why use an IDE?
-- Common IDE Features
-- Some commonly used IDEs
+An Integrated Development Environment (IDE) is a software application that provides a comprehensive workspace for writing, editing, testing, and debugging code—all in one place. It combines several tools that developers need into a single interface to streamline the code development process. IDEs are extremely useful and modern software development would be very hard without them. 
 
-An Integrated Development Environment (IDE) is a software application that provides a comprehensive workspace for writing, editing, testing, and debugging code—all in one place. It combines several tools that developers need into a single interface to streamline the code development process.
+### Why use an IDE?
 
 Using an IDE can significantly boost productivity by:
 
@@ -41,15 +38,16 @@ IDEs are especially helpful for beginners because they highlight mistakes in rea
 
 ### Common IDE Features
 
-Most IDEs include:
+The following is a list of the most commonly seen IDE features:
 
-- code editor: where you write and edit your code
-- syntax highlighting: colors and formats code for better readability
-- autocompletion: Suggests code as you type
-- debugger: helps find and fix bugs in your code
-- integrated terminal: run commands without leaving the IDE
-- version control tools: integration with Git or other systems
-- project/file explorer: navigate your project structure easily
+- code editting - providing a place to write and edit code
+- syntax highlighting - to show programming language constructs, keywords and the syntax errors with visually distinct colours and font effects for better readability
+- code completion - to speed up programming by suggesting a set of possible (syntactically correct) code options
+- code search - to find package, class, function and variable declarations, their usages and referencing
+- version control support - to interact with source code repositories
+- debugging support - for setting breakpoints in the code editor, step-by-step execution of code and inspection of variables to help find and fix bugs in code
+- integrated terminal - to run commands without leaving the IDE
+- project/file explorer - to navigate the code project structure easily
 
 ### Popular IDEs
 
