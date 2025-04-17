@@ -56,11 +56,11 @@ The following is a list of the most commonly seen IDE features:
 Here are a few widely used IDEs across different languages and fields:
 
 - [Visual Studio Code (VS Code)][vs-code] – lightweight and highly customisable; supports many languages
-- PyCharm – great for Python development
-- RStudio – designed specifically for R programming
-- Eclipse – often used for Java and other compiled languages
-- JupyterLab – interactive environment for Python and data science
-- Spyder – popular among scientists using Python
+- [PyCharm][pycharm] – great for Python development
+- [RStudio][r-studio] – designed specifically for R programming
+- [Eclipse][eclipse] – often used for Java and other compiled languages
+- [JupyterLab][juputer-lab] – interactive environment for Python and data science
+- [Spyder][spyder] – popular among scientists using Python
 
 ## Intro to Debugging
 
