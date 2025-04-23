@@ -315,7 +315,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="21-setup.html">2.1 Setup</a>
+        <a href="21-setup.html">2.1 Setup &amp; Prerequisites</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -1629,7 +1629,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-20-introduction"><p>Content from <a href="20-introduction.html">Lesson 2: Code Style &amp; Linting</a></p>
 <hr>
-<p>Last updated on 2025-03-21 |
+<p>Last updated on 2025-04-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/20-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1643,7 +1643,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>Why does code style matter?</li>
+<li>What is a linter and why use one?</li>
 </ul>
 </div>
 </div>
@@ -1653,7 +1654,11 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Understand key code styling practices, conventions and
+specifications</li>
+<li>Use code style practices and linting tools to maintain code quality
+and reduce bugs and errors</li>
+<li>Automate code linting using continuous integration</li>
 </ul>
 </div>
 </div>
@@ -1663,24 +1668,138 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="intro-to-code-style">Intro to code style<a class="anchor" aria-label="anchor" href="#intro-to-code-style"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="why-does-code-style-matter">Why does code style matter?<a class="anchor" aria-label="anchor" href="#why-does-code-style-matter"></a>
+</h3>
+<p>Software development is inherently a collaborative activity. Even if
+you do not currently intend for anyone else to read your code, chances
+are someone will need to in the future — and that person might even be
+you, months or years later. By following and consistently applying code
+styling guidelines, you can significantly improve the readability and
+maintainability of your code. Consistency plays a vital role in this
+process. Adopting a clear set of style guidelines not only helps you
+write uniform code but also makes it easier to switch between projects.
+This is especially important when working as part of a team, where
+shared understanding and clarity are essential.</p>
+<p>Using a consistent code style helps maintain code quality by making
+it easier to read, understand, and debug, ultimately reducing the
+likelihood of errors and bugs.</p>
+</div>
+<div class="section level3">
+<h3 id="key-code-style-practices-conventions-and-specifications">Key code style practices, conventions and specifications<a class="anchor" aria-label="anchor" href="#key-code-style-practices-conventions-and-specifications"></a>
+</h3>
+<p>Styling practices and conventions play a key role in writing readable
+and maintainable code, but they can vary significantly between
+programming languages. These conventions generally cover aspects such as
+line length, line splitting, the use of white space, naming conventions
+for variables, functions, and classes, as well as indentation and
+commenting styles (where not enforced by the language itself).</p>
+<p>It is important to note that programmers often have strong and
+differing opinions about what constitutes good style. For example, many
+style guides recommend a maximum line length of 80 characters, a
+convention that dates back to older hardware and terminal limitations.
+While some developers continue to find this helpful for readability and
+side-by-side editing, others argue that it feels unnecessarily
+restrictive on modern screens. Despite these differences, adopting and
+adhering to a consistent style within a project helps ensure clarity and
+makes collaboration smoother.</p>
+<p>There are many established code style guides tailored to specific
+programming languages, such as:</p>
 <ul>
-<li>Why does code style matter?</li>
-<li>Key styling practices, conventions and specifications</li>
-<li>Maintain your code quality to reduce bugs and errors</li>
-</ul></section><section><h2 class="section-heading" id="intro-to-linters">Intro to linters<a class="anchor" aria-label="anchor" href="#intro-to-linters"></a>
+<li>
+<a href="https://peps.python.org/pep-0008/" class="external-link">PEP8</a> and <a href="https://google.github.io/styleguide/pyguide.html" class="external-link">Google Style
+Guide</a> for Python</li>
+<li>
+<a href="https://google.github.io/styleguide/cppguide.html" class="external-link">Google
+C++ Style Guide</a> and <a href="https://github.com/isocpp/CppCoreGuidelines" class="external-link">C++ Core
+Guidelines</a> for C++</li>
+<li>
+<a href="https://airbnb.io/javascript/" class="external-link">Airbnb JavaScript Style
+Guide</a> and <a href="https://google.github.io/styleguide/jsguide.html" class="external-link">Google
+JavaScript Style Guide</a> and <a href="https://standardjs.com/" class="external-link">JavaScript Standard Style</a> for
+JavaScript</li>
+<li>
+<a href="https://google.github.io/styleguide/go/" class="external-link">Go Style Guide</a>
+and <a href="https://github.com/bahlo/go-styleguide" class="external-link">Go Styleguide</a>
+for Go.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="maintaining-code-quality-to-reduce-bugs">Maintaining code quality to reduce bugs<a class="anchor" aria-label="anchor" href="#maintaining-code-quality-to-reduce-bugs"></a>
+</h3>
+<p>Using a consistent code style helps maintain code quality by making
+it easier to read, understand, and debug, ultimately reducing the
+likelihood of errors and bugs.</p>
+<p>Furthermore, many things that seem harmless and do not cause
+immediate syntax errors while writing code can produce logic errors,
+wrong results and lead to issues later on - making them especially
+tricky to detect and fix. Examples include:</p>
+<ul>
+<li>defining variables that are never used</li>
+<li>importing modules or headers that serve no purpose, or</li>
+<li>variable scoping problems (e.g. reusing the same variable name in
+different scopes can lead to shadowing, where a local variable hides a
+global or outer-scope variable, resulting in unexpected values being
+used).</li>
+</ul>
+<p>These kinds of oversights can clutter your code and introduce bugs
+that are difficult to trace. By using clear naming conventions and
+developing a thoughtful coding style that helps you avoid such pitfalls,
+you can make your code more robust, less error-prone, and easier to
+maintain over time.</p>
+</div>
+</section><section><h2 class="section-heading" id="intro-to-linters">Intro to linters<a class="anchor" aria-label="anchor" href="#intro-to-linters"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="what-is-a-linter-and-why-use-one">What is a linter and why use one?<a class="anchor" aria-label="anchor" href="#what-is-a-linter-and-why-use-one"></a>
+</h3>
+<p>A linter is a tool that performs static analysis on your code —
+meaning it examines the source code without running it — to detect
+potential errors, stylistic issues, and code patterns that might cause
+bugs in the future. The term originates from a 1970s tool for the C
+programming language called “lint”.</p>
+<p>Linters help catch errors early and enforce consistent code style,
+making your code more reliable, readable, and easier to maintain. They
+are especially useful for improving code quality and streamlining
+collaboration in teams.</p>
+</div>
+<div class="section level3">
+<h3 id="example-linting-tools">Example linting tools<a class="anchor" aria-label="anchor" href="#example-linting-tools"></a>
+</h3>
+<p>There are various linting and style-checking tools available for
+popular programming languages.</p>
+<p>For example, in Python:</p>
 <ul>
-<li>What is a linter and why use one?</li>
-<li>Example linting tools (e.g. in Python)</li>
-<li>Taking linting automation further using continuous integration</li>
+<li>
+<a href="https://flake8.pycqa.org/en/latest/" class="external-link"><code>flake8</code></a>
+checks code for compliance with PEP8</li>
+<li>
+<a href="https://pypi.org/project/pylint/" class="external-link"><code>pylint</code></a>
+performs style checking along with additional linting
+functionalities</li>
+<li>
+<a href="https://bandit.readthedocs.io/en/latest/" class="external-link"><code>bandit</code></a>
+focuses on static analysis to detect potential security
+vulnerabilities.</li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="linting-automation-using-continuous-integration">Linting automation using continuous integration<a class="anchor" aria-label="anchor" href="#linting-automation-using-continuous-integration"></a>
+</h3>
+<p>The use of linting tools is often automated through integration with
+continuous integration (CI) pipelines or pre-commit hooks available in
+version controlled code repositories, helping to streamline the
+development process and ensure code quality consistently on each
+commit.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-21-setup"><p>Content from <a href="21-setup.html">2.1 Setup</a></p>
+ -->
+</div>
+</section></section><section id="aio-21-setup"><p>Content from <a href="21-setup.html">2.1 Setup &amp; Prerequisites</a></p>
 <hr>
-<p>Last updated on 2025-02-28 |
+<p>Last updated on 2025-04-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/21-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4968,8 +5087,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/aio.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-22",
-  "datePublished": "2025-04-22"
+  "dateModified": "2025-04-23",
+  "datePublished": "2025-04-23"
 }
 
   </script><script>
