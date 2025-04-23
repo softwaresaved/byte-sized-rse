@@ -65,9 +65,9 @@ There are various linting and style-checking tools available for popular program
 
 For example, in Python:
 
-- `flake8` checks code for compliance with PEP8,
-- `pylint` performs style checking along with additional linting functionalities, and
-- `bandit` focuses on static analysis to detect potential security vulnerabilities.
+- [`flake8`](https://flake8.pycqa.org/en/latest/) checks code for compliance with PEP8
+- [`pylint`](https://pypi.org/project/pylint/) performs style checking along with additional linting functionalities
+- [`bandit`](https://bandit.readthedocs.io/en/latest/) focuses on static analysis to detect potential security vulnerabilities.
 
 ### Linting automation using continuous integration
 
