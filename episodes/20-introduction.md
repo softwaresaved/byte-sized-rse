@@ -42,7 +42,7 @@ There are many established code style guides tailored to specific programming la
 
 Using a consistent code style helps maintain code quality by making it easier to read, understand, and debug, ultimately reducing the likelihood of errors and bugs.
 
-Furthermore, many things that seem harmless and do not cause immediate syntax errors while writing code can produce logic errors—bugs and wrong results and lead to issues later on - making them especially tricky to detect and fix. Examples include:
+Furthermore, many things that seem harmless and do not cause immediate syntax errors while writing code can produce logic errors, wrong results and lead to issues later on - making them especially tricky to detect and fix. Examples include:
 
 - defining variables that are never used
 - importing modules or headers that serve no purpose, or
