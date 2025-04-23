@@ -54,6 +54,21 @@ These kinds of oversights can clutter your code and introduce bugs that are diff
 ## Intro to linters
 
 ### What is a linter and why use one?
-### Example linting tools (e.g. in Python)
 
-- Taking linting automation further using continuous integration
+A linter is a tool that performs static analysis on your code — meaning it examines the source code without running it — to detect potential errors, stylistic issues, and code patterns that might cause bugs in the future. The term originates from a 1970s tool for the C programming language called "lint".
+
+Linters help catch errors early and enforce consistent code style, making your code more reliable, readable, and easier to maintain. They are especially useful for improving code quality and streamlining collaboration in teams.
+
+### Example linting tools 
+
+There are various linting and style-checking tools available for popular programming languages. 
+
+For example, in Python:
+
+- `flake8` checks code for compliance with PEP8,
+- `pylint` performs style checking along with additional linting functionalities, and
+- `bandit` focuses on static analysis to detect potential security vulnerabilities.
+
+### Linting automation using continuous integration
+
+The use of linting tools is often automated through integration with continuous integration (CI) pipelines or pre-commit hooks available in version controlled code repositories, helping to streamline the development process and ensure code quality consistently on each commit.
