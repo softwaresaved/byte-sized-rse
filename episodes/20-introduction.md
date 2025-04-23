@@ -40,8 +40,36 @@ There are many established code style guides tailored to specific programming la
 - [Airbnb JavaScript Style Guide](https://airbnb.io/javascript/) and [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) and [JavaScript Standard Style](https://standardjs.com/) for JavaScript
 - [Go Style Guide](https://google.github.io/styleguide/go/) and [Go Styleguide](https://github.com/bahlo/go-styleguide) for Go.
 
+### Maintaining code quality to reduce bugs
+
+Using a consistent code style helps maintain code quality by making it easier to read, understand, and debug, ultimately reducing the likelihood of errors and bugs.
+
+Furthermore, many things that seem harmless and do not cause immediate syntax errors while writing code can produce logic errors, wrong results and lead to issues later on - making them especially tricky to detect and fix. Examples include:
+
+- defining variables that are never used
+- importing modules or headers that serve no purpose, or
+- variable scoping problems (e.g. reusing the same variable name in different scopes can lead to shadowing, where a local variable hides a global or outer-scope variable, resulting in unexpected values being used).
+
+These kinds of oversights can clutter your code and introduce bugs that are difficult to trace. By using clear naming conventions and developing a thoughtful coding style that helps you avoid such pitfalls, you can make your code more robust, less error-prone, and easier to maintain over time. 
+
 ## Intro to linters
 
-- What is a linter and why use one?
-- Example linting tools (e.g. in Python)
-- Taking linting automation further using continuous integration
+### What is a linter and why use one?
+
+A linter is a tool that performs static analysis on your code — meaning it examines the source code without running it — to detect potential errors, stylistic issues, and code patterns that might cause bugs in the future. The term originates from a 1970s tool for the C programming language called "lint".
+
+Linters help catch errors early and enforce consistent code style, making your code more reliable, readable, and easier to maintain. They are especially useful for improving code quality and streamlining collaboration in teams.
+
+### Example linting tools 
+
+There are various linting and style-checking tools available for popular programming languages. 
+
+For example, in Python:
+
+- [`flake8`](https://flake8.pycqa.org/en/latest/) checks code for compliance with PEP8
+- [`pylint`](https://pypi.org/project/pylint/) performs style checking along with additional linting functionalities
+- [`bandit`](https://bandit.readthedocs.io/en/latest/) focuses on static analysis to detect potential security vulnerabilities.
+
+### Linting automation using continuous integration
+
+The use of linting tools is often automated through integration with continuous integration (CI) pipelines or pre-commit hooks available in version controlled code repositories, helping to streamline the development process and ensure code quality consistently on each commit.

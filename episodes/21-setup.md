@@ -1,5 +1,5 @@
 ---
-title: "2.1 Setup"
+title: "2.1 Setup & Prerequisites"
 teaching: 10
 exercises: 2
 ---
