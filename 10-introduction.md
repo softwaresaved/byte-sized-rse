@@ -83,12 +83,20 @@ Debugging is a normal part of the code development process - it is not just abou
 
 ### Common Debugging Techniques
 
-One of the simplest tricks is **adding print statements to your code**: just printing out variable values or messages at key points can quickly show you where things start to go wrong. **Logging** is another smart move, especially for bigger projects, because it helps you track what your program is doing over time and help diagnose issues that occur in specific runtime conditions. But if you want to level up, using a **built-in debugger** (like the one in VS Code) is a game-changer — you can set breakpoints, step through your code line by line, and actually see what is happening in real time. And if you really want to catch problems early, **writing small tests** to check that your code behaves properly can save you from bigger headaches later. 
+Let's be real — everyone’s code breaks sometimes. Debugging is just part of the game. For starters, you can try **rubber duck debugging** - a technique where you explain your code, line by line, out loud —  to a colleague or to an inanimate object like a rubber duck. The idea is that by forcing yourself to verbalise what your code is supposed to do, you slow down and think more clearly about each part, which often helps you spot mistakes or logical errors you might have missed when just reading the code silently.
+
+One of the simplest tricks is **adding print statements to your code**: just printing out variable values or messages at key points can quickly show you where things start to go wrong. 
+
+**Logging** is another smart move, especially for bigger projects, because it helps you track what your program is doing over time and help diagnose issues that occur in specific runtime conditions. A variant of logging is to use **assert statements** in your code - 
+
+But if you want to level up, using a **built-in debugger** (like the one in VS Code) is a game-changer — you can set breakpoints, step through your code line by line, and actually see what is happening in real time. 
+
+And if you really want to catch problems early, **writing tests** to check that your code behaves properly can save you from bigger headaches later. 
 
 ### How do we use a Debugger?
 
-We will focus on familiarising ourselves with a debugger built in into VS Code.
-
+In the rest of this session, we will walk you through how to use a debugger in VS Code, focusing on practical steps and tips to help you find and fix errors more efficiently in your code.
+It is easier than you think and can really save you time.
 
 ::: keypoints
 
