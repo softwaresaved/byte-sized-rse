@@ -670,7 +670,7 @@ in software development, ensuring that your code runs as intended and
 meets its requirements (and quality standards).</p>
 <div class="section level3">
 <h3 id="why-debugging-matters">Why Debugging Matters?<a class="anchor" aria-label="anchor" href="#why-debugging-matters"></a></h3>
-<p>Debudding ensures your code behaves as it should and helps you find
+<p>Debuggin ensures your code behaves as it should and helps you find
 the root cause of problems — not just guess - when it does not. Even
 small mistakes in code can cause unexpected behavior or crashes.
 Debugging helps with:</p>
@@ -689,21 +689,25 @@ problems in production</li>
 <strong>efficient code development</strong> - familiarity with
 debugging tools and techniques can significantly reduce the time spent
 on troubleshooting and enhance overall productivity.</li>
-</ul></div>
+</ul><p>Debugging is a normal part of the code development process - it is
+not just about fixing mistakes — it is about understanding your code
+better.</p>
+</div>
 <div class="section level3">
 <h3 id="common-debugging-techniques">Common Debugging Techniques<a class="anchor" aria-label="anchor" href="#common-debugging-techniques"></a></h3>
-<ul><li>Adding print statements at certain points in the code to print and
-trace variable values and check code flow is one of the simplest
-debugging methods</li>
-<li>Using a debugger integrated in your IDE allows you to set
-breakpoints, step through your code line by line, and inspect variables
-at runtime</li>
-<li>Incorporating logging into your application can provide insights
-into its behavior over time and help diagnose issues that occur in
-specific runtime conditions</li>
-<li>Writing tests that automatically check your code’s functionality can
-help catch bugs early in the development process</li>
-</ul></div>
+<p>One of the simplest tricks is <strong>adding print statements to your
+code</strong>: just printing out variable values or messages at key
+points can quickly show you where things start to go wrong.
+<strong>Logging</strong> is another smart move, especially for bigger
+projects, because it helps you track what your program is doing over
+time and help diagnose issues that occur in specific runtime conditions.
+But if you want to level up, using a <strong>built-in debugger</strong>
+(like the one in VS Code) is a game-changer — you can set breakpoints,
+step through your code line by line, and actually see what is happening
+in real time. And if you really want to catch problems early,
+<strong>writing small tests</strong> to check that your code behaves
+properly can save you from bigger headaches later.</p>
+</div>
 <div class="section level3">
 <h3 id="how-do-we-use-a-debugger">How do we use a Debugger?<a class="anchor" aria-label="anchor" href="#how-do-we-use-a-debugger"></a></h3>
 <p>We will focus on familiarising ourselves with a debugger built in
