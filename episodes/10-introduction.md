@@ -71,7 +71,7 @@ Debugging is an essential step in software development, ensuring that your code 
 
 ### Why Debugging Matters?
 
-Debudding ensures your code behaves as it should and helps you find the root cause of problems — not just guess - when it does not.
+Debuggin ensures your code behaves as it should and helps you find the root cause of problems — not just guess - when it does not.
 Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps with:
 
 - **code correctness** - to ensure your program works as expected and meets requirements
@@ -79,12 +79,11 @@ Even small mistakes in code can cause unexpected behavior or crashes. Debugging 
 - **improving code quality** - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production
 - **efficient code development** - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
 
+Debugging is a normal part of the code development process - it is not just about fixing mistakes — it is about understanding your code better. 
+
 ### Common Debugging Techniques
 
-- Adding print statements at certain points in the code to print and trace variable values and check code flow is one of the simplest debugging methods
-- Using a debugger integrated in your IDE allows you to set breakpoints, step through your code line by line, and inspect variables at runtime
-- Incorporating logging into your application can provide insights into its behavior over time and help diagnose issues that occur in specific runtime conditions
-- Writing tests that automatically check your code's functionality can help catch bugs early in the development process
+One of the simplest tricks is **adding print statements to your code**: just printing out variable values or messages at key points can quickly show you where things start to go wrong. **Logging** is another smart move, especially for bigger projects, because it helps you track what your program is doing over time and help diagnose issues that occur in specific runtime conditions. But if you want to level up, using a **built-in debugger** (like the one in VS Code) is a game-changer — you can set breakpoints, step through your code line by line, and actually see what is happening in real time. And if you really want to catch problems early, **writing small tests** to check that your code behaves properly can save you from bigger headaches later. 
 
 ### How do we use a Debugger?
 
