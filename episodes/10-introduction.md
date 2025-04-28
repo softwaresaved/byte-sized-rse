@@ -71,22 +71,12 @@ Debugging is an essential step in software development, ensuring that your code 
 
 ### Why Debugging Matters?
 
-Why is debugging important?
-
-    It ensures your code behaves as it should.
-
-    It helps you find the root cause of problems—not just guess.
-
-    It improves your code quality and reliability.
-
-    And ultimately, it saves you time during development.
-    
-
+Debudding ensures your code behaves as it should and helps you find the root cause of problems — not just guess - when it does not.
 Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps with:
 
-- **code correctness** - debugging ensures your program works as expected and meets requirements
-- **error resolution** - debugging helps you understand why your code isn't performing correctly, allowing you to find and fix issues that make your program behave incorrectly rather than just guessing.
-- **improving code quality** - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production.
+- **code correctness** - to ensure your program works as expected and meets requirements
+- **error resolution** - to help you understand why your code is not performing correctly, allowing you to find and fix issues that make your program behave incorrectly
+- **improving code quality** - regular debugging leads to cleaner, more reliable and performant code and reduces the risk of problems in production
 - **efficient code development** - familiarity with debugging tools and techniques can significantly reduce the time spent on troubleshooting and enhance overall productivity.
 
 ### Common Debugging Techniques
