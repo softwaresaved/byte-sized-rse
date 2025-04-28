@@ -6,18 +6,20 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What is an Integrated Development Environment (IDE)?
-- Why use an IDE?
-- What are common IDE features that code developers find extremely useful?
-- What are some commonly used IDEs among the RSE community?
-
+- What is an Integrated Development Environment (IDE) and what role does it play in software development?
+- What are the common features of IDEs?
+- Why is debugging important, and what are the main techniques developers use to debug their code?
+- How can you use a debugger in an IDE like Visual Studio Code to find and fix errors in your code?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what an Integrated Development Environment (IDE) is and list a number of IDEs used by RSEs
-- List common IDE features and explain how they contribute to easier and quicker code development
+- Define what an Integrated Development Environment (IDE) is and describe its role in the software development process
+- Identify common features of IDEs and explain how they support efficient code writing, debugging, and software project management
+- Explain the importance of debugging and list common debugging techniques
+- Demonstrate how to use a debugger within an IDE like Visual Studio Code
+- Recognise the benefits of using an IDE for improving code quality, reducing errors, and accelerating software development
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
