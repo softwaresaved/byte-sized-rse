@@ -28,12 +28,7 @@ exercises: 2
 
 ## Setup
 
-### VS Code
-
-The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
-Please [download the appropriate version of Visual Studio Code][vs-code] for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
-
-### Shell with Git version control tool installed
+### Shell with Git
 
 On macOS and Linux, a bash shell will be available by default.
 
@@ -46,3 +41,7 @@ Python version 3.8 or above is required. Type `python -v` at your shell prompt a
 If you do not have Python installed on your system and require assistance with the installation, you can take a look at [the instructions provided by Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/#install-python) 
 for installing Python in preparation for undertaking their Python lesson.
     
+### VS Code
+
+The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
+Please [download the appropriate version of Visual Studio Code][vs-code] for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
