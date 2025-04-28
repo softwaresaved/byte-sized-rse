@@ -53,12 +53,12 @@ Let’s look at what most IDEs offer - these features all work together to make 
 - **Project explorer** to easily navigate your files
 
 ### Popular IDEs
-
+  
 Here are a few widely used IDEs across different languages and fields:
 
 - [Visual Studio Code (VS Code)][vs-code] – lightweight and highly customisable; supports many languages
 - [PyCharm][pycharm] – great for Python development
-- [RStudio][r-studio] – designed specifically for R programming
+- [RStudio][r-studio] – tailored for R programming but allows users to mix (R Markdown) text with code in R, Python, Julia, shell scripts, SQL, Stan, JavaScript, C, C++, Fortran, and others, similar to Jupyter Notebooks.
 - [Eclipse][eclipse] – often used for Java and other compiled languages
 - [JupyterLab][jupyter-lab] – interactive environment for Python and data science
 - [Spyder][spyder] – popular among scientists using Python
