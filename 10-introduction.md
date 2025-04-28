@@ -40,16 +40,17 @@ For experienced developers, IDEs boost productivity and streamline complex workf
 
 ### Common IDE Features
 
-The following is a list of the most commonly seen IDE features:
+Let’s look at what most IDEs offer:
 
-- **code editting** - providing a place to write and edit code
-- **syntax highlighting** - to show programming language constructs, keywords and the syntax errors with visually distinct colours and font effects for better readability
-- **code completion** - to speed up programming by suggesting a set of possible (syntactically correct) code options
-- **code search** - to find package, class, function and variable declarations, their usages and referencing
-- **version control support** - to interact with source code repositories
-- **debugging support** - for setting breakpoints in the code editor, step-by-step execution of code and inspection of variables to help find and fix bugs in code
-- **integrated terminal** - to run commands without leaving the IDE
-- **project/file explorer** - to navigate the code project structure easily
+- **Code editing** functionality with **syntax highlighting**
+- **Code completion** to speed up your typing by suggesting a set of possible (syntactically correct) code options
+- **Code search** to find functions, classes, or variables quickly
+- **Version control integration** to interact with source code repositories and tools (e.g., Git)
+- **Built-in debugging tools** like setting breakpoints, step-by-step execution of code and inspection of variables to help find and fix bugs in code
+- **Integrated terminal** for running commands without leaving the IDE
+- **Project explorer** to easily navigate your files
+
+These features all work together to make your life easier when coding.
 
 ### Popular IDEs
 
