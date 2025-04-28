@@ -85,7 +85,7 @@ Debugging is a normal part of the code development process - it is not just abou
 
 Let's be real — everyone’s code breaks sometimes. Debugging is just part of the game. For starters, you can try **rubber duck debugging** - a technique where you explain your code, line by line, out loud —  to a colleague or to an inanimate object like a rubber duck. The idea is that by forcing yourself to verbalise what your code is supposed to do, you slow down and think more clearly about each part, which often helps you spot mistakes or logical errors you might have missed when just reading the code silently.
 
-One of the simplest tricks is **adding print statements to your code**: just printing out variable values or messages at key points can quickly show you where things start to go wrong. 
+In addition to talking to a rubber duck (which is surprisingly effective), one of the simplest tricks is **adding print statements to your code**: just printing out variable values or messages at key points can quickly show you where things start to go wrong. 
 
 **Logging** is another smart move, especially for bigger projects, because it helps you track what your program is doing over time and help diagnose issues that occur in specific runtime conditions. A variant of logging is to use **assert statements** in your code - 
 
