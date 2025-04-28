@@ -42,7 +42,7 @@ For experienced developers, IDEs boost productivity and streamline complex workf
 
 ### Common IDE Features
 
-Let’s look at what most IDEs offer:
+Let’s look at what most IDEs offer - these features all work together to make your life easier when coding:
 
 - **Code editing** functionality with **syntax highlighting**
 - **Code completion** to speed up your typing by suggesting a set of possible (syntactically correct) code options
@@ -51,8 +51,6 @@ Let’s look at what most IDEs offer:
 - **Built-in debugging tools** like setting breakpoints, step-by-step execution of code and inspection of variables to help find and fix bugs in code
 - **Integrated terminal** for running commands without leaving the IDE
 - **Project explorer** to easily navigate your files
-
-These features all work together to make your life easier when coding.
 
 ### Popular IDEs
 
