@@ -820,24 +820,37 @@ better.</p>
 <div class="section level3">
 <h3 id="common-debugging-techniques">Common Debugging Techniques<a class="anchor" aria-label="anchor" href="#common-debugging-techniques"></a>
 </h3>
+<p>Let’s be real — everyone’s code breaks sometimes. Debugging is just
+part of the game. For starters, you can try <strong>rubber duck
+debugging</strong> - a technique where you explain your code, line by
+line, out loud — to a colleague or to an inanimate object like a rubber
+duck. The idea is that by forcing yourself to verbalise what your code
+is supposed to do, you slow down and think more clearly about each part,
+which often helps you spot mistakes or logical errors you might have
+missed when just reading the code silently.</p>
 <p>One of the simplest tricks is <strong>adding print statements to your
 code</strong>: just printing out variable values or messages at key
-points can quickly show you where things start to go wrong.
-<strong>Logging</strong> is another smart move, especially for bigger
+points can quickly show you where things start to go wrong.</p>
+<p><strong>Logging</strong> is another smart move, especially for bigger
 projects, because it helps you track what your program is doing over
 time and help diagnose issues that occur in specific runtime conditions.
-But if you want to level up, using a <strong>built-in debugger</strong>
-(like the one in VS Code) is a game-changer — you can set breakpoints,
-step through your code line by line, and actually see what is happening
-in real time. And if you really want to catch problems early,
-<strong>writing small tests</strong> to check that your code behaves
-properly can save you from bigger headaches later.</p>
+A variant of logging is to use <strong>assert statements</strong> in
+your code -</p>
+<p>But if you want to level up, using a <strong>built-in
+debugger</strong> (like the one in VS Code) is a game-changer — you can
+set breakpoints, step through your code line by line, and actually see
+what is happening in real time.</p>
+<p>And if you really want to catch problems early, <strong>writing
+tests</strong> to check that your code behaves properly can save you
+from bigger headaches later.</p>
 </div>
 <div class="section level3">
 <h3 id="how-do-we-use-a-debugger">How do we use a Debugger?<a class="anchor" aria-label="anchor" href="#how-do-we-use-a-debugger"></a>
 </h3>
-<p>We will focus on familiarising ourselves with a debugger built in
-into VS Code.</p>
+<p>In the rest of this session, we will walk you through how to use a
+debugger in VS Code, focusing on practical steps and tips to help you
+find and fix errors more efficiently in your code. It is easier than you
+think and can really save you time.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2579,7 +2592,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
