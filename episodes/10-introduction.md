@@ -65,7 +65,9 @@ Here are a few widely used IDEs across different languages and fields:
 
 ## What is Code Debugging?
 
-Code debugging is the process of identifying, isolating, and fixing errors or bugs in your software or script. Bugs can manifest as unexpected behavior, crashes, or incorrect outputs. Debugging is an essential step in software development, ensuring that your code runs as intended and meets quality standards.
+Now, what happens when your code does not work as expected? That is where code debugging comes in.
+Debugging means finding, understanding, and fixing errors in your code — which can manifest as unexpected behavior, crashes, or incorrect outputs. 
+Debugging is an essential step in software development, ensuring that your code runs as intended and meets its requirements (and quality standards).
 
 ### Why Debugging Matters?
 
