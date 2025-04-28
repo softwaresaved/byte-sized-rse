@@ -1,5 +1,5 @@
 ---
-title: "Lesson 1: Code Development & Debugging with Integrated Development Environments"
+title: "Lesson 1: Code Development & Debugging with IDEs"
 teaching: 15
 exercises: 0
 ---
