@@ -33,7 +33,7 @@ exercises: 2
 The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
 Please [download the appropriate version of Visual Studio Code][vs-code] for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
 
-### Shell with Git
+### Shell with Git version control tool installed
 
 On macOS and Linux, a bash shell will be available by default.
 
