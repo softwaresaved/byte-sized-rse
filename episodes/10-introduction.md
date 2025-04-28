@@ -71,6 +71,17 @@ Debugging is an essential step in software development, ensuring that your code 
 
 ### Why Debugging Matters?
 
+Why is debugging important?
+
+    It ensures your code behaves as it should.
+
+    It helps you find the root cause of problems—not just guess.
+
+    It improves your code quality and reliability.
+
+    And ultimately, it saves you time during development.
+    
+
 Even small mistakes in code can cause unexpected behavior or crashes. Debugging helps with:
 
 - **code correctness** - debugging ensures your program works as expected and meets requirements
@@ -88,3 +99,14 @@ Even small mistakes in code can cause unexpected behavior or crashes. Debugging 
 ### How do we use a Debugger?
 
 We will focus on familiarising ourselves with a debugger built in into VS Code.
+
+
+::: keypoints
+
+- Integrated Development Environments (IDEs) are all-in-one tools for writing, editing, testing, and debugging code, improving developer efficiency by reducing the need to switch between different applications.
+- Common IDE features include code editing, syntax highlighting, code completion, version control integration, debugging tools, project navigation, and built-in terminals.
+- Debugging is the process of finding and fixing bugs in code to ensure it behaves as intended, improving code quality and reliability.
+- Common debugging techniques include adding print statements, using built-in debuggers to set breakpoints and inspect variables, writing tests, and using logging.
+- Using an IDE for debugging allows developers to step through their code interactively, making error detection and resolution much faster and more effective.
+
+:::
