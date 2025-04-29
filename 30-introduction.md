@@ -116,7 +116,7 @@ Here is a little comparison of the two merge strategies we covered so far.
 
 In Git, there is another way to integrate changes from one branch into another: the rebase.
 
-If we go back to an earlier example from the 3-way merge, where main and feature branche have diverged with subsequent commits made on each (so fast-forward merging strategy is not an option).
+Let's go back to an earlier example from the 3-way merge, where main and feature branche have diverged with subsequent commits made on each (so fast-forward merging strategy is not an option).
 
 ```text
 A - B - C - F [main]
