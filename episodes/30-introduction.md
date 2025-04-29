@@ -77,7 +77,7 @@ In this case, Git simply moves the main branch pointer to the latest commit in t
 After a fast forward merge:
 
 ```text
-A - B - C - D - E [main]
+A - B - C - D - E [main][feature]
 ```
 
 ### 3-Way Merge with Merge Commit
@@ -102,6 +102,18 @@ A - B - C - F - "MergeCommitG" [main]
 
 In addition, if the two branches you are trying to merge both changed the same part of the same file, Git will not be able to figure out which version to use and merge automatically.
 When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually before continuing.
+
+Here is a little comparison of the two merge strategies we covered so far.
+
+| Fast Forward      | 3-way Merge |
+| ----------------------- | ----------------------|
+| No new commits on main  |  New commits on main  |
+| Linear History | Commit with 2 parents       |
+| No merge commits    | Merge commit is created |
+
+ 	
+
+
 
 ### Rebase and Merge
 
