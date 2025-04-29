@@ -54,6 +54,20 @@ Using feature branches is an efficient way to manage changes, collaborate effect
 - Options for merging (fast forward, merge commit, rebase and merge)
 - Other useful git features (cherry picking via git cherry-pick, stashing changes via git stash, resetting local state via git reset)
 
+### Merging
+
+When you are ready to bring the changes from your feature branch back into the main branch, Git offers you to do a merge - a process that unifies work done in 2 separate branches. 
+Git will take two (or more - you can merge more branches at the same time) commit pointers and attempt to find a common base commit between them. 
+Git has several different methods to find a base commit - these methods are called "merge strategies". Once Git finds a common base commit it will create a new "merge commit" that combines the changes of the specified merge commits. Technically, a merge commit is a regular commit which just happens to have two parent commits.
+
+Each merge strategy is suited for a different scenario. The choice of strategy depends on the complexity of changes and the desired outcome. Let's have a look at the most commonly used merge strategies.
+
+### Fast Forward Merge
+
+A fast-forward merge occurs when the main branch has not diverged from the feature branch. In this case, Git simply moves the main branch pointer to the latest commit in the feature branch. This strategy is simple and keeps the commit history linear.
+
+![]()
+
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - Branches help you manage change, collaborate better, and avoid messy mistakes on main.
