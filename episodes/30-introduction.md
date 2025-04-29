@@ -69,6 +69,15 @@ In this case, Git simply moves the main branch pointer to the latest commit in t
 
 ![Fast forward merge](fig/fast-forward-merge.png){alt="Diagram depicting Git's fast forward merge strategy where there are no commits on the main branch and the main branch pointer and moved (fast-forwarded) to point to the last commit on the feature branch which is being merged."}
 
+### 3-Way Merge with Merge Commit
+
+If you try to merge your changes into the main branch and other changes have been made to main - git will try to do a 3-way merge and generate a merge commit.
+
+### Rebase and Merge
+
+### Squash and Merge
+
+
 ::::::::::::::::::::::::::::::::::::: keypoints
 
 - Branches help you manage change, collaborate better, and avoid messy mistakes on main.
