@@ -35,7 +35,7 @@ The name `main` is just a convention — a Git repository’s default branch can
 Why not just always use `main` branch? While it is possible to always commit to `main`, it is not ideal when you're collaborating with others, you are working on new features or want 
 to experiment with your code, and you want to keep main clean and stable for your users and collaborators.
 
-Creating a separate branch (often called a "feature" branch) allows you to add or test code without affecting the main line of development, work in parallel with collagues without worrying that
+Creating a separate branch (often called a "feature" branch) allows you to add or test code (containing a new "feature") without affecting the main line of development, work in parallel with collagues without worrying that
 your code may break something for the rest of the team and review and merge changes safely after testing using pull/merge requests.
 
 ## Introduction to Merging Strategies
