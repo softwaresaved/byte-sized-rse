@@ -3076,7 +3076,7 @@ so far.</p>
 <tr class="odd">
 <td>Only works if there are no new commits on the main branch</td>
 <td>Works for diverging branches</td>
-<td></td>
+<td>Works for diverging branches</td>
 </tr>
 <tr class="even">
 <td>Does not rewrite commit history</td>
@@ -3089,6 +3089,12 @@ so far.</p>
 <div class="section level3">
 <h3 id="squash-and-merge">Squash and Merge<a class="anchor" aria-label="anchor" href="#squash-and-merge"></a>
 </h3>
+<p>Squash and merge squashes all the commits from a feature branch into
+a single commit before merging into the main branch. This strategy
+simplifies the commit history, making it easier to follow. This strategy
+is ideal for merging feature branches with numerous small commits,
+resulting in a cleaner main branch history where you do not care about
+keeping the history of commits.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
