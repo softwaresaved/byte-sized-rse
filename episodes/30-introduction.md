@@ -149,11 +149,15 @@ Here is a little comparison of the three merge strategies we covered so far.
 | ----------------------- | ----------------------|----------------------|
 | Maintains a linear history  |  Maintains a linear history | Does not maintains a linear history|
 | Avoids merge commits         | Avoids merge commits | Uses merge commits |
-| Only works if there are no new commits on the main branch        | Works for diverging branches | |
+| Only works if there are no new commits on the main branch        | Works for diverging branches | Works for diverging branches |
 | Does not rewrite commit history | Rewrites commit history | Does not rewrite commit history |
 
 
 ### Squash and Merge
+
+Squash and merge squashes all the commits from a feature branch into a single commit before merging into the main branch. This strategy simplifies the commit history, making it easier to follow.
+This strategy is ideal for merging feature branches with numerous small commits, resulting in a cleaner main branch history where you do not care about keeping the history of commits. 
+
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints
