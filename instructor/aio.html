@@ -2720,7 +2720,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3012,28 +3012,6 @@ the same part of the same file, Git will not be able to figure out which
 version to use and merge automatically. When such a situation occurs, it
 stops right before the merge commit so that you can resolve the
 conflicts manually before continuing.</p>
-<p>Here is a little comparison of the two merge strategies we covered so
-far.</p>
-<table class="table">
-<thead><tr class="header">
-<th>Fast Forward</th>
-<th>3-Way Merge</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>No new commits on main</td>
-<td>New commits on main</td>
-</tr>
-<tr class="even">
-<td>Linear History</td>
-<td>Commit with 2 parents</td>
-</tr>
-<tr class="odd">
-<td>No merge commits</td>
-<td>Merge commit is created</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section level3">
 <h3 id="rebase-and-merge">Rebase and Merge<a class="anchor" aria-label="anchor" href="#rebase-and-merge"></a>
@@ -3072,8 +3050,8 @@ made sequentially and as if you created your feature branch from a
 different point in the repository’s history. A disadvantage is that it
 rewrites commit history, which can be problematic for shared branches as
 it requires force pushing.</p>
-<p>Here is a little comparison of the three merge strategies we covered
-so far.</p>
+<p>Here is a little comparison of the three merge strategies we have
+covered so far.</p>
 <table class="table">
 <colgroup>
 <col width="34%">
@@ -3087,21 +3065,26 @@ so far.</p>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Maintains a linear history</td>
-<td>Maintains a linear history</td>
-<td>Does not maintains a linear history</td>
+<td>Maintains linear history</td>
+<td>Maintains linear history</td>
+<td>Non-linear history (commit with 2 parents)</td>
 </tr>
 <tr class="even">
+<td>No new commits on main</td>
+<td>New commits on main</td>
+<td>New commits on main</td>
+</tr>
+<tr class="odd">
 <td>Avoids merge commits</td>
 <td>Avoids merge commits</td>
 <td>Uses merge commits</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Only works if there are no new commits on the main branch</td>
 <td>Works for diverging branches</td>
 <td>Works for diverging branches</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Does not rewrite commit history</td>
 <td>Rewrites commit history</td>
 <td>Does not rewrite commit history</td>
