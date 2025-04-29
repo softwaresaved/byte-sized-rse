@@ -725,11 +725,12 @@ other changes have been made to the main branch in the meantime.</p>
 <p>Rebase is ideal for feature branches that have fallen behind the main
 development line and need updating. It is particularly useful before
 merging long-running feature branches to ensure they apply cleanly on
-top of the main branch. Rebasing offers a way to rewrite history by
-transferring a branch from one base commit to another, making it seem
-like you created your feature branch from a different point in the
-repository’s history. In that sense, rebasing is useful for cleaning up
-your project history before merging changes.</p>
+top of the main branch. Rebasing maintains a linear history and avoids
+merge commits, making it look as if changes were made sequentially and
+as if you created your feature branch from a different point in the
+repository’s history. A disadvantage is that it rewrites commit history,
+which can be problematic for shared branches as it requires force
+pushing.</p>
 </div>
 <div class="section level3">
 <h3 id="squash-and-merge">Squash and Merge<a class="anchor" aria-label="anchor" href="#squash-and-merge"></a></h3>
