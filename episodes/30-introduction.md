@@ -84,7 +84,15 @@ A - B - C - D - E [main]
 
 ### 3-Way Merge with Merge Commit
 
-A fast-forward merge is not possible if the main and the feature branches have diverged. If you try to merge your feature branch changes into the main branch and other changes have been made to main - regardless of whether these changes create a conflict or not - Git will try to do a 3-way merge and generate a merge commit. A merge commit is a dedicated special commit that records the combined changes from both branches and has two parent commits, preserving the history of both lines of development. The name "3-way merge" comes from the fact that Git uses three commits to generate the merge commit - the two branch tips and their common ancestor to reconstruct the changes that are to be merged.
+A fast-forward merge is not possible if the main and the feature branches have diverged. 
+
+```text
+A - B - C - F [main]
+         \
+          D - E [feature]
+```
+
+If you try to merge your feature branch changes into the main branch and other changes have been made to main - regardless of whether these changes create a conflict or not - Git will try to do a 3-way merge and generate a merge commit. A merge commit is a dedicated special commit that records the combined changes from both branches and has two parent commits, preserving the history of both lines of development. The name "3-way merge" comes from the fact that Git uses three commits to generate the merge commit - the two branch tips and their common ancestor to reconstruct the changes that are to be merged.
 
 
 ### Rebase and Merge
