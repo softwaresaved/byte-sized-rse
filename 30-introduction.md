@@ -35,8 +35,18 @@ The name `main` is just a convention — a Git repository’s default branch can
 Why not just always use `main` branch? While it is possible to always commit to `main`, it is not ideal when you're collaborating with others, you are working on new features or want 
 to experiment with your code, and you want to keep main clean and stable for your users and collaborators.
 
+### Feature Branch
+
 Creating a separate branch (often called a "feature" branch) allows you to add or test code (containing a new "feature") without affecting the main line of development, work in parallel with collagues without worrying that
 your code may break something for the rest of the team and review and merge changes safely after testing using pull/merge requests.
+
+How do you decide when to use a new branch? You should consider starting a new branch whenever you are working on a distinct feature or fixing a specific bug. 
+This allows you to collect a related set of commits in one place, without interfering with other parts of the project.
+
+Branching helps separate concerns in your codebase, making development, testing, and code review much easier. It also reduces the chance of conflicts during collaborative work, especially when multiple people are contributing to the same repository.
+
+This approach is known as the "feature branch workflow". In this model, each new feature or fix lives in its own branch. Once the work is complete and has been tested, the branch is merged back into the main branch. At that point, any merge conflicts can be addressed.
+Using feature branches is an efficient way to manage changes, collaborate effectively, and keep the main branch stable and production-ready.
 
 ## Introduction to Merging Strategies
 
