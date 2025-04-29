@@ -65,13 +65,21 @@ Each merge strategy is suited for a different scenario. The choice of strategy d
 ### Fast Forward Merge
 
 A fast-forward merge occurs when the main branch has not diverged from the feature branch - meaning there are no new commits on the main branch since the feature branch was created. 
+
+```text
+A - B - C [main]
+         \
+          D - E [feature]
+```
+
 In this case, Git simply moves the main branch pointer to the latest commit in the feature branch. This strategy is simple and keeps the commit history linear - i.e. the history is one straight line.
 
 ![Fast forward merge](fig/fast-forward-merge.png){alt="Diagram depicting Git's fast forward merge strategy where there are no commits on the main branch and the main branch pointer and moved (fast-forwarded) to point to the last commit on the feature branch which is being merged."}
 
 ### 3-Way Merge with Merge Commit
 
-If you try to merge your changes into the main branch and other changes have been made to main - git will try to do a 3-way merge and generate a merge commit.
+A fast-forward merge is not possible if the main and the feature branches have diverged. If you try to merge your feature branch changes into the main branch and other changes have been made to main - regardless of whether these changes create a conflict or not - Git will try to do a 3-way merge and generate a merge commit. A merge commit is a dedicated special commit that records the combined changes from both branches and has two parent commits, preserving the history of both lines of development. The name "3-way merge" comes from the fact that Git uses three commits to generate the merge commit - the two branch tips and their common ancestor to reconstruct the changes that are to be merged.
+
 
 ### Rebase and Merge
 
