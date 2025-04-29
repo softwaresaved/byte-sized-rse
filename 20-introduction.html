@@ -553,8 +553,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>Why does code style matter?</li>
-<li>What is a linter and why use one?</li>
+<ul><li>Why does consistent code style matter in software development?</li>
+<li>What are some common code styling practices and conventions?</li>
+<li>How can poor coding style lead to bugs and maintenance issues?</li>
+<li>What is a linter, and how does it help improve code quality?</li>
 </ul></div>
 </div>
 </div>
@@ -562,11 +564,14 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Understand key code styling practices, conventions and
-specifications</li>
-<li>Use code style practices and linting tools to maintain code quality
-and reduce bugs and errors</li>
-<li>Automate code linting using continuous integration</li>
+<ul><li>Understand why consistent code style is important for collaboration
+and long-term maintainability.</li>
+<li>Identify key code style practices and how they vary between
+programming languages.</li>
+<li>Recognise how maintaining good code style can reduce bugs and
+improve code quality.</li>
+<li>Explain what a linter is and describe its role in detecting errors
+and enforcing style.</li>
 </ul></div>
 </div>
 </div>
@@ -624,25 +629,32 @@ for Go.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="maintaining-code-quality-to-reduce-bugs">Maintaining Code Quality to Reduce Bugs<a class="anchor" aria-label="anchor" href="#maintaining-code-quality-to-reduce-bugs"></a></h3>
-<p>Using a consistent code style helps maintain code quality by making
-it easier to read, understand, and debug, ultimately reducing the
-likelihood of errors and bugs.</p>
-<p>Furthermore, many things that seem harmless and do not cause
-immediate syntax errors while writing code can produce logic errors,
-wrong results and lead to issues later on - making them especially
-tricky to detect and fix. Examples include:</p>
-<ul><li>defining variables that are never used</li>
-<li>importing modules or headers that serve no purpose, or</li>
+<p>Poor coding style can lead to bugs and maintenance issues because it
+makes code harder to read, understand, and debug. Inconsistent naming,
+unclear structure, and sloppy formatting can cause confusion about what
+the code is doing, making it easier to introduce mistakes. Many things
+that seem harmless and do not cause immediate syntax errors while
+writing code can produce logic errors, wrong results and lead to issues
+later on - making them especially tricky to detect and fix. Small issues
+like unused variables, accidental redefinitions, or incorrect scoping
+can go unnoticed and later cause unexpected behavior or subtle logic
+errors. Over time, this makes the codebase more fragile, harder to
+maintain, and much more difficult for others — or even your future self
+— to fix or extend.</p>
+<p>Some examples of small oversights that stack up over time
+include:</p>
+<ul><li>defining variables or importing modules or headers that that are
+never used can clutter the code</li>
+<li>using vague variable names like <code>data</code> everywhere can
+make it unclear which <code>data</code> you are actually handling,
+causing mistakes</li>
+<li>bad indentation can cause logic errors — like running a block of
+code when you did not intend to</li>
 <li>variable scoping problems (e.g. reusing the same variable name in
-different scopes can lead to shadowing, where a local variable hides a
-global or outer-scope variable, resulting in unexpected values being
-used).</li>
-</ul><p>These kinds of oversights can clutter your code and introduce bugs
-that are difficult to trace. By using clear naming conventions and
-developing a thoughtful coding style that helps you avoid such pitfalls,
-you can make your code more robust, less error-prone, and easier to
-maintain over time.</p>
-</div>
+different scopes can lead to <em>shadowing</em>, where a local variable
+hides a global or outer-scope variable, resulting in unexpected values
+being used.</li>
+</ul></div>
 </section><section><h2 class="section-heading" id="introduction-to-linters">Introduction to Linters<a class="anchor" aria-label="anchor" href="#introduction-to-linters"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="what-is-a-linter-and-yhy-use-one">What is a Linter and yhy use one?<a class="anchor" aria-label="anchor" href="#what-is-a-linter-and-yhy-use-one"></a></h3>
