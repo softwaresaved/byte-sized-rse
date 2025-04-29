@@ -74,6 +74,12 @@ A - B - C [main]
 
 In this case, Git simply moves the main branch pointer to the latest commit in the feature branch. This strategy is simple and keeps the commit history linear - i.e. the history is one straight line.
 
+After a fast forward merge:
+
+```text
+A - B - C - D - E [main]
+```
+
 ![Fast forward merge](fig/fast-forward-merge.png){alt="Diagram depicting Git's fast forward merge strategy where there are no commits on the main branch and the main branch pointer and moved (fast-forwarded) to point to the last commit on the feature branch which is being merged."}
 
 ### 3-Way Merge with Merge Commit
