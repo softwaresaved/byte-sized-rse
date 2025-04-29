@@ -138,8 +138,10 @@ A - B - C - F [main]
 At this point, you can go back to the main branch and do a fast-forward merge with feature branch.
 
 Fast forward merge strategy is best used when you have a short-lived feature branch that needs to be merged back into the main branch, and no other changes have been made to the main branch in the meantime.
-Rebase is ideal for feature branches that have fallen behind the main development line and need updating. It is particularly useful before merging long-running branches to ensure they apply cleanly on top of the main branch.
-In thay sense, rebasing is useful for cleaning up your project history before merging changes. Rebasing offers a way to rewrite history by transferring a branch from one base commit to another, making it seem like you created your branch from a different point in the repository's history.
+
+Rebase is ideal for feature branches that have fallen behind the main development line and need updating. It is particularly useful before merging long-running feature branches to ensure they apply cleanly on top of the main branch.
+Rebasing offers a way to rewrite history by transferring a branch from one base commit to another, making it seem like you created your feature branch from a different point in the repository's history. 
+In that sense, rebasing is useful for cleaning up your project history before merging changes.
 
 ### Squash and Merge
 
