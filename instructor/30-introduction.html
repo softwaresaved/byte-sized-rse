@@ -629,7 +629,29 @@ merge)</li>
 <li>Other useful git features (cherry picking via git cherry-pick,
 stashing changes via git stash, resetting local state via git
 reset)</li>
-</ul><div id="keypoints1" class="callout keypoints">
+</ul><div class="section level3">
+<h3 id="merging">Merging<a class="anchor" aria-label="anchor" href="#merging"></a></h3>
+<p>When you are ready to bring the changes from your feature branch back
+into the main branch, Git offers you to do a merge - a process that
+unifies work done in 2 separate branches. Git will take two (or more -
+you can merge more branches at the same time) commit pointers and
+attempt to find a common base commit between them. Git has several
+different methods to find a base commit - these methods are called
+“merge strategies”. Once Git finds a common base commit it will create a
+new “merge commit” that combines the changes of the specified merge
+commits. Technically, a merge commit is a regular commit which just
+happens to have two parent commits.</p>
+<p>Each merge strategy is suited for a different scenario. The choice of
+strategy depends on the complexity of changes and the desired outcome.
+Let’s have a look at the most commonly used merge strategies.</p>
+</div>
+<div class="section level3">
+<h3 id="fast-forward-merge">Fast Forward Merge<a class="anchor" aria-label="anchor" href="#fast-forward-merge"></a></h3>
+<p>A fast-forward merge occurs when the main branch has not diverged
+from the feature branch. In this case, Git simply moves the main branch
+pointer to the latest commit in the feature branch. This strategy is
+simple and keeps the commit history linear.</p>
+<figure><img src=".." class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -645,6 +667,7 @@ mistakes on main.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/24-linter-advanced.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
