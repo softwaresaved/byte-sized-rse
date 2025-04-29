@@ -6,7 +6,10 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- What is a Git branch and why is it useful in collaborative development?
+- When should I create a new branch in my project?
+- What are the differences between fast-forward merge, 3-way merge, rebase, and squash and merge?
+- How does Git handle merging when branches have diverged?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
