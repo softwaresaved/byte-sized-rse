@@ -12,7 +12,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Understand the purpose and benefits of using Git branches, especially the feature branch workflow in collaborative projects.
+- Compare Git merging strategies (fast-forward, 3-way merge, rebase, squash and merge) and understand when to use each.
+- Gain familiarity with intermediate Git features, including cherry-picking, stashing, and resetting.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -162,6 +164,13 @@ This strategy is ideal for merging feature branches with numerous small commits,
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
+- A Git branch is an independent line of development; the default is typically called main.
 - Branches help you manage change, collaborate better, and avoid messy mistakes on main.
+- Feature branches let you develop and test code without affecting the main branch and support collaborative and parallel development.
+- Fast-forward merges are used when the main branch has not changed since the feature branch was created, resulting in a linear history.
+- 3-way merges occur when both branches have diverged; Git creates a merge commit to preserve both histories.
+- Rebasing replays feature branch commits on top of the main branch for a cleaner, linear history—but it rewrites history and should be used with care.
+- Squash and merge compresses all changes from a feature branch into a single commit, simplifying history.
+- Understanding different merge strategies and when to use them is crucial for maintaining clean and manageable project histories.
 
 :::::::::::::::::::::::::::::::::::::
