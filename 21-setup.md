@@ -44,7 +44,7 @@ for installing Python in preparation for undertaking their Python lesson.
 
 ### Pip
 
-Pip Python package installer is required - it should have been installed together with your Python distribution. 
+Pip Python package should come together with your Python distribution. 
 Try typing `pip` at the command line and you should see some usage instructions for the command appear if it is installed.
     
 ### VS Code
