@@ -25,7 +25,14 @@ exercises: 0
 
 ## What is an Integrated Development Environment (IDE)?
 
-An Integrated Development Environment (IDE) is a software application that provides a comprehensive workspace for writing, editing, testing, and debugging code—all in one place. It combines several tools that developers need into a single interface to streamline the code development process. IDEs are extremely useful and modern software development would be very hard without them. 
+An Integrated Development Environment (IDE) is a graphical application that provides a comprehensive workspace for writing, editing, testing, and debugging code—all in one place. 
+At the core of an IDE is a code editor, and it combines several tools that developers need into a single interface to streamline the code development process. 
+IDEs are extremely useful and modern software development would be very hard without them. 
+
+Historically, developers typically wrote code using simple text editors, often command-line based with no graphical interface or syntax checking support. 
+They had to rely on separate tools outside the editor to compile, debug, and manage their code, making development a much more fragmented experience.
+
+Today, although some IDEs are designed for specific programming languages, many modern IDEs can support multiple languages through a wide variety of plugins — often created and maintained by the developer community.
 
 ### Why use an IDE?
 
