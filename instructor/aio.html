@@ -316,7 +316,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="21-setup.html">1.1 Setup &amp; Prerequisites</a>
+        <a href="21-setup.html">2.1 Setup &amp; Prerequisites</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -376,7 +376,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="31-setup.html">3.1 Setup</a>
+        <a href="31-setup.html">3.1 Setup &amp; Prerequisites</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -1913,7 +1913,7 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-21-setup"><p>Content from <a href="21-setup.html">1.1 Setup &amp; Prerequisites</a></p>
+</section></section><section id="aio-21-setup"><p>Content from <a href="21-setup.html">2.1 Setup &amp; Prerequisites</a></p>
 <hr>
 <p>Last updated on 2025-04-29 |
 
@@ -2720,7 +2720,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2891,18 +2891,15 @@ reset)</li>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-31-setup"><p>Content from <a href="31-setup.html">3.1 Setup</a></p>
+ --></section></section><section id="aio-31-setup"><p>Content from <a href="31-setup.html">3.1 Setup &amp; Prerequisites</a></p>
 <hr>
-<p>Last updated on 2025-02-28 |
+<p>Last updated on 2025-04-29 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/31-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<section><h2 class="section-heading" id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
-</h2>
-<hr class="half-width">
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -2911,7 +2908,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What prerequiste knowledge is required to follow this topic?</li>
+<li>How to setup your machine to follow this topic?</li>
 </ul>
 </div>
 </div>
@@ -2921,17 +2919,56 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Understand what prerequiste knowledge is needed before following
+this topic</li>
+<li>Setup your machine to follow this topic</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
+<div id="prereq1" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Prerequisite</h3>
+<div class="callout-content">
+<ul>
+<li>Shell with Git version control tool installed and the ability to
+navigate filesystem and run commands from within a shell</li>
+<li>Account on GitHub.com</li>
+<li>Some understanding of Python syntax to be able to read some code
+samples</li>
+</ul>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="shell-with-git">Shell with Git<a class="anchor" aria-label="anchor" href="#shell-with-git"></a>
+</h3>
+<p>On macOS and Linux, a bash shell will be available by default.</p>
+<p>If you do not have a bash shell installed on your system and require
+assistance with the installation, you can take a look at <a href="https://swcarpentry.github.io/python-novice-inflammation/#install-python" class="external-link">the
+instructions provided by Software Carpentry</a> for installing <a href="https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell" class="external-link">shell</a>
+and <a href="https://carpentries.github.io/workshop-template/install_instructions/#git-1" class="external-link">Git</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="github-account">GitHub Account<a class="anchor" aria-label="anchor" href="#github-account"></a>
+</h3>
+<p><a href="https://github.com" class="external-link">GitHub</a> is a free, online host for
+Git repositories that you will use during the course to store your code
+in so you will need to open a free GitHub account unless you do not
+already have one.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section><section id="aio-32-example-code"><p>Content from <a href="32-example-code.html">3.2 Some Example Code</a></p>
 <hr>
 <p>Last updated on 2025-04-08 |
