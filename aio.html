@@ -2969,16 +2969,19 @@ commit history linear - i.e. the history is one straight line.</p>
 <h3 id="way-merge-with-merge-commit">3-Way Merge with Merge Commit<a class="anchor" aria-label="anchor" href="#way-merge-with-merge-commit"></a>
 </h3>
 <p>A fast-forward merge is not possible if the main and the feature
-branches have diverged. If you try to merge your feature branch changes
-into the main branch and other changes have been made to main -
-regardless of whether these changes create a conflict or not - Git will
-try to do a 3-way merge and generate a merge commit. A merge commit is a
-dedicated special commit that records the combined changes from both
-branches and has two parent commits, preserving the history of both
-lines of development. The name “3-way merge” comes from the fact that
-Git uses three commits to generate the merge commit - the two branch
-tips and their common ancestor to reconstruct the changes that are to be
-merged.</p>
+branches have diverged.</p>
+<pre class="text"><code>A - B - C - F [main]
+         \
+          D - E [feature]</code></pre>
+<p>If you try to merge your feature branch changes into the main branch
+and other changes have been made to main - regardless of whether these
+changes create a conflict or not - Git will try to do a 3-way merge and
+generate a merge commit. A merge commit is a dedicated special commit
+that records the combined changes from both branches and has two parent
+commits, preserving the history of both lines of development. The name
+“3-way merge” comes from the fact that Git uses three commits to
+generate the merge commit - the two branch tips and their common
+ancestor to reconstruct the changes that are to be merged.</p>
 </div>
 <div class="section level3">
 <h3 id="rebase-and-merge">Rebase and Merge<a class="anchor" aria-label="anchor" href="#rebase-and-merge"></a>
