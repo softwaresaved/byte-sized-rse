@@ -167,7 +167,7 @@ This strategy is ideal for merging feature branches with numerous small commits,
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- A Git branch is an independent line of development; the default is typically called main.
+- A Git branch is an independent line of development; the default is conventionally called `main` (but all branches are equal and the main branch can be renamed).
 - Branches help you manage change, collaborate better, and avoid messy mistakes on main.
 - Feature branches let you develop and test code without affecting the main branch and support collaborative and parallel development.
 - Fast-forward merges are used when the main branch has not changed since the feature branch was created, resulting in a linear history.
