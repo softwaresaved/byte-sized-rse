@@ -2708,7 +2708,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3104,6 +3104,43 @@ a single commit before merging into the main branch. This strategy
 simplifies the commit history, making it easier to follow. This strategy
 is ideal for merging feature branches with numerous small commits,
 resulting in a cleaner main branch history.</p>
+</div>
+</section><section><h2 class="section-heading" id="handy-git-features-for-managing-local-changes">Handy Git Features for Managing Local Changes<a class="anchor" aria-label="anchor" href="#handy-git-features-for-managing-local-changes"></a>
+</h2>
+<hr class="half-width">
+<p>As your projects grow, you will occasionally need to manage your
+local code history more precisely. Git offers a few useful features to
+help you do just that — especially when you are not quite ready to
+commit or want to isolate specific changes.</p>
+<div class="section level3">
+<h3 id="git-stash-setting-changes-aside-for-later">Git Stash: Setting Changes Aside for Later<a class="anchor" aria-label="anchor" href="#git-stash-setting-changes-aside-for-later"></a>
+</h3>
+<p>Imagine you are halfway through some code changes and suddenly need
+to switch tasks or pull updates from the remote branch. Committing is
+not ideal yet — so what do you do? Use <code>git stash</code> to safely
+store your uncommitted changes in a local “stash”. This lets you clean
+your working directory and avoid conflicts, without losing any work.
+When you are ready, you can bring those changes back using
+<code>git stash pop</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="git-cherry-pick-pulling-in-a-specific-commit">Git Cherry-Pick: Pulling in a Specific Commit<a class="anchor" aria-label="anchor" href="#git-cherry-pick-pulling-in-a-specific-commit"></a>
+</h3>
+<p>Sometimes, you want to take just one specific commit (say, from
+another branch) and apply it to your current branch — without merging
+the whole branch. That is where <code>git cherry-pick</code> command
+comes in. It applies the changes from the chosen commit directly on top
+of your current branch, as if you’d made them there all along.</p>
+</div>
+<div class="section level3">
+<h3 id="git-reset-rewinding-your-commit-history">Git Reset: Rewinding Your Commit History<a class="anchor" aria-label="anchor" href="#git-reset-rewinding-your-commit-history"></a>
+</h3>
+<p>Made a commit too soon? <code>git reset</code> allows you to undo
+commits locally. It moves your branch pointer back to an earlier commit,
+turning those “undone” changes into uncommitted edits in your working
+directory. It is handy for rewriting local history before sharing code —
+but be careful using it on shared branches, as it alters commit
+history.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
