@@ -655,7 +655,7 @@ branch since the feature branch was created.</p>
 commit in the feature branch. This strategy is simple and keeps the
 commit history linear - i.e. the history is one straight line.</p>
 <p>After a fast forward merge:</p>
-<pre class="text"><code><span><span class="va">A</span> <span class="op">-</span> <span class="va">B</span> <span class="op">-</span> <span class="va">C</span> <span class="op">-</span> <span class="va">D</span> <span class="op">-</span> <span class="va">E</span> <span class="op">[</span><span class="va">main</span><span class="op">]</span></span></code></pre>
+<pre class="text"><code><span><span class="va">A</span> <span class="op">-</span> <span class="va">B</span> <span class="op">-</span> <span class="va">C</span> <span class="op">-</span> <span class="va">D</span> <span class="op">-</span> <span class="va">E</span> <span class="op">[</span><span class="va">main</span><span class="op">]</span><span class="op">[</span><span class="va">feature</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="way-merge-with-merge-commit">3-Way Merge with Merge Commit<a class="anchor" aria-label="anchor" href="#way-merge-with-merge-commit"></a></h3>
@@ -682,7 +682,17 @@ the same part of the same file, Git will not be able to figure out which
 version to use and merge automatically. When such a situation occurs, it
 stops right before the merge commit so that you can resolve the
 conflicts manually before continuing.</p>
-</div>
+<p>Here is a little comparison of the two merge strategies we covered so
+far.</p>
+<table class="table"><thead><tr class="header"><th>Fast Forward</th>
+<th>3-way Merge</th>
+</tr></thead><tbody><tr class="odd"><td>No new commits on main</td>
+<td>New commits on main</td>
+</tr><tr class="even"><td>Linear History</td>
+<td>Commit with 2 parents</td>
+</tr><tr class="odd"><td>No merge commits</td>
+<td>Merge commit is created</td>
+</tr></tbody></table></div>
 <div class="section level3">
 <h3 id="rebase-and-merge">Rebase and Merge<a class="anchor" aria-label="anchor" href="#rebase-and-merge"></a></h3>
 </div>
