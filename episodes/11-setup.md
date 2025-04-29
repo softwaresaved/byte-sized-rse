@@ -43,5 +43,5 @@ for installing Python in preparation for undertaking their Python lesson.
     
 ### VS Code
 
-The hands-on part of this topic will be conducted using Visual Studio Code (VSCode), a widely used IDE.
+The hands-on part of this topic will be conducted using Visual Studio Code (VS Code), a widely used IDE.
 Please [download the appropriate version of Visual Studio Code][vs-code] for your operating system (Windows, macOS, or Linux) and system architecture (e.g., 64-bit, ARM).
