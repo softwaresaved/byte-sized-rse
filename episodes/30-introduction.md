@@ -97,7 +97,7 @@ If you try to merge your feature branch changes into the main branch and other c
 A merge commit is a dedicated special commit that records the combined changes from both branches and has two parent commits, preserving the history of both lines of development. The name "3-way merge" comes from the fact that Git uses three commits to generate the merge commit - the two branch tips and their common ancestor to reconstruct the changes that are to be merged.
 
 ```text
-A - B - C - F - G [main]
+A - B - C - F - "Merge commit G" [main]
          \     /
           D - E [feature]
 ```
