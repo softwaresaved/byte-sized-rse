@@ -729,17 +729,23 @@ made sequentially and as if you created your feature branch from a
 different point in the repository’s history. A disadvantage is that it
 rewrites commit history, which can be problematic for shared branches as
 it requires force pushing.</p>
-<p>Here is a little comparison of the fast forward and rebasing.</p>
-<table class="table"><colgroup><col width="51%"><col width="48%"></colgroup><thead><tr class="header"><th>Fast Forward</th>
+<p>Here is a little comparison of the three merge strategies we covered
+so far.</p>
+<table class="table"><colgroup><col width="34%"><col width="32%"><col width="32%"></colgroup><thead><tr class="header"><th>Fast Forward</th>
 <th>Rebasing</th>
+<th>3-Way Merge</th>
 </tr></thead><tbody><tr class="odd"><td>Maintains a linear history</td>
 <td>Maintains a linear history</td>
+<td>Does not maintains a linear history</td>
 </tr><tr class="even"><td>Avoids merge commits</td>
 <td>Avoids merge commits</td>
+<td>Uses merge commits</td>
 </tr><tr class="odd"><td>Only works if there are no new commits on the main branch</td>
 <td>Works for diverging branches</td>
+<td></td>
 </tr><tr class="even"><td>Does not rewrite commit history</td>
 <td>Rewrites commit history</td>
+<td>Does not rewrite commit history</td>
 </tr></tbody></table></div>
 <div class="section level3">
 <h3 id="squash-and-merge">Squash and Merge<a class="anchor" aria-label="anchor" href="#squash-and-merge"></a></h3>
