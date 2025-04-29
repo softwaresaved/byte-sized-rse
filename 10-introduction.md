@@ -29,8 +29,10 @@ An Integrated Development Environment (IDE) is a graphical application that prov
 At the core of an IDE is a code editor, and it combines several tools that developers need into a single interface to streamline the code development process. 
 IDEs are extremely useful and modern software development would be very hard without them. 
 
-Historically, developers typically wrote code using simple text editors, often command-line based with no graphical interface or syntax checking support. 
-They had to rely on separate tools outside the editor to compile, debug, and manage their code, making development a much more fragmented experience.
+Historically, developers typically wrote code using simple text editors, often terminal-based with no graphical interface or syntax checking support. 
+They had to rely on separate tools outside the editor to compile, debug, and manage their code, making development a much more fragmented experience. 
+It is worth noting that popular terminal-based editors such as Emacs and Vim may appear deceptively simple at first glance - but they are, in fact, highly 
+powerful and customisable frameworks for coding and automating development workflows.
 
 Today, although some IDEs are designed for specific programming languages, many modern IDEs can support multiple languages through a wide variety of plugins — often created and maintained by the developer community.
 
