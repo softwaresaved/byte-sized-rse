@@ -21,8 +21,8 @@ Basic Git training usually covers the essential concepts, such as adding files, 
 But for RSEs working in collaborative, code-intensive projects, that is just the tip of the iceberg. 
 More detailed topics like branching and merging strategies, and understanding merge conflicts are critical for managing code across teams and maintaining clean, reproducible development workflows.
 
-In this session, we will explore branching and feature branch workflow, a popular method for collaborative development, along with handling merge conflicts and some intermediate and advanced Git features (rebasing, merging, cherry-picking) 
-that can help streamline your workflow and avoid common pitfalls.
+In this session, we will explore branching and feature branch workflow, a popular method for collaborative development, along with some intermediate and advanced Git features (merging, rebasing, cherry-picking) 
+and handling merge conflicts that can help streamline your development workflow and avoid common pitfalls.
 
 ## Introduction to Feature Branch Workflow
 
