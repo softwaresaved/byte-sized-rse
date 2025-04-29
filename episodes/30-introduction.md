@@ -156,7 +156,7 @@ Here is a little comparison of the three merge strategies we covered so far.
 ### Squash and Merge
 
 Squash and merge squashes all the commits from a feature branch into a single commit before merging into the main branch. This strategy simplifies the commit history, making it easier to follow.
-This strategy is ideal for merging feature branches with numerous small commits, resulting in a cleaner main branch history where you do not care about keeping the history of commits. 
+This strategy is ideal for merging feature branches with numerous small commits, resulting in a cleaner main branch history. 
 
 
 
