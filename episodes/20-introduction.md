@@ -72,6 +72,8 @@ For example, in Python:
 - [`pylint`](https://pypi.org/project/pylint/) performs style checking along with additional linting functionalities
 - [`bandit`](https://bandit.readthedocs.io/en/latest/) focuses on static analysis to detect potential security vulnerabilities.
 
-### Linting Automation Using Continuous Integration
+### How do we use a Linter?
 
-The use of linting tools is often automated through integration with continuous integration (CI) pipelines or pre-commit hooks available in version controlled code repositories, helping to streamline the development process and ensure code quality consistently on each commit. This is covered in a separate session.
+In the rest of this session, we will walk you through how to use a linting tool.
+
+The use of linting tools is often automated through integration with Continuous Integration (CI) pipelines or pre-commit hooks available in version controlled code repositories, helping to streamline the development process and ensure code quality consistently on each commit. This is covered in a separate session.
