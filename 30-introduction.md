@@ -80,8 +80,6 @@ After a fast forward merge:
 A - B - C - D - E [main]
 ```
 
-![Fast forward merge](fig/fast-forward-merge.png){alt="Diagram depicting Git's fast forward merge strategy where there are no commits on the main branch and the main branch pointer and moved (fast-forwarded) to point to the last commit on the feature branch which is being merged."}
-
 ### 3-Way Merge with Merge Commit
 
 A fast-forward merge is not possible if the main and the feature branches have diverged. 
@@ -101,6 +99,9 @@ A - B - C - F - "MergeCommitG" [main]
          \     /
           D - E [feature]
 ```
+
+In addition, if the two branches you are trying to merge both changed the same part of the same file, Git will not be able to figure out which version to use and merge automatically.
+When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually before continuing.
 
 ### Rebase and Merge
 
