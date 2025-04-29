@@ -700,7 +700,7 @@ far.</p>
 <p>In Git, there is another way to integrate changes from one branch
 into another: the rebase.</p>
 <p>Let’s go back to an earlier example from the 3-way merge, where main
-and feature branche have diverged with subsequent commits made on each
+and feature branches have diverged with subsequent commits made on each
 (so fast-forward merging strategy is not an option).</p>
 <pre class="text"><code>A - B - C - F [main]
          \
@@ -709,7 +709,8 @@ and feature branche have diverged with subsequent commits made on each
 each commit from the feature branch on top of all the commits from the
 main branch in order. This results in a cleaner, linear history that
 looks as if the feature branch was started from the latest commit on
-main. So, all the changes introduced on feature branch (commits D and E)
+main.</p>
+<p>So, all the changes introduced on feature branch (commits D and E)
 are reapplied on top of commit F - becoming D’ and E’. Note that D’ and
 E’ are rebased commits, which are actually new commits with different
 SHAs but the same modifications as commits D and E.</p>
@@ -717,7 +718,7 @@ SHAs but the same modifications as commits D and E.</p>
              \
               D' - E' [feature]</code></pre>
 <p>At this point, you can go back to the main branch and do a
-fast-forward merge.</p>
+fast-forward merge with feature branch.</p>
 <p>Fast forward merge strategy is best used when you have a short-lived
 feature branch that needs to be merged back into the main branch, and no
 other changes have been made to the main branch in the meantime. Rebase
