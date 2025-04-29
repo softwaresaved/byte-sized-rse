@@ -646,10 +646,13 @@ Let’s have a look at the most commonly used merge strategies.</p>
 <div class="section level3">
 <h3 id="fast-forward-merge">Fast Forward Merge<a class="anchor" aria-label="anchor" href="#fast-forward-merge"></a></h3>
 <p>A fast-forward merge occurs when the main branch has not diverged
-from the feature branch. In this case, Git simply moves the main branch
-pointer to the latest commit in the feature branch. This strategy is
-simple and keeps the commit history linear.</p>
-<figure><img src="" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
+from the feature branch - meaning there are no new commits on the main
+branch since the feature branch was created. In this case, Git simply
+moves the main branch pointer to the latest commit in the feature
+branch. This strategy is simple and keeps the commit history linear -
+i.e. the history is one straight line.</p>
+<figure><img src="fig/fast-forward-merge.png" alt="Diagram depicting Git's fast forward merge strategy where the are no commits on the main branch and the main branch pointer and moved (fast-forwarded) to point to the last commit on the feature branch." class="figure mx-auto d-block"><div class="figcaption">Fast forward merge diagram</div>
+</figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
