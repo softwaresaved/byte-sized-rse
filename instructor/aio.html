@@ -2720,7 +2720,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2859,7 +2859,12 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What is a Git branch and why is it useful in collaborative
+development?</li>
+<li>When should I create a new branch in my project?</li>
+<li>What are the differences between fast-forward merge, 3-way merge,
+rebase, and squash and merge?</li>
+<li>How does Git handle merging when branches have diverged?</li>
 </ul>
 </div>
 </div>
@@ -2869,7 +2874,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Understand the purpose and benefits of using Git branches,
+especially the feature branch workflow in collaborative projects.</li>
+<li>Compare Git merging strategies (fast-forward, 3-way merge, rebase,
+squash and merge) and understand when to use each.</li>
+<li>Gain familiarity with intermediate Git features, including
+cherry-picking, stashing, and resetting.</li>
 </ul>
 </div>
 </div>
@@ -3115,8 +3125,24 @@ resulting in a cleaner main branch history.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
+<li>A Git branch is an independent line of development; the default is
+typically called main.</li>
 <li>Branches help you manage change, collaborate better, and avoid messy
 mistakes on main.</li>
+<li>Feature branches let you develop and test code without affecting the
+main branch and support collaborative and parallel development.</li>
+<li>Fast-forward merges are used when the main branch has not changed
+since the feature branch was created, resulting in a linear
+history.</li>
+<li>3-way merges occur when both branches have diverged; Git creates a
+merge commit to preserve both histories.</li>
+<li>Rebasing replays feature branch commits on top of the main branch
+for a cleaner, linear history—but it rewrites history and should be used
+with care.</li>
+<li>Squash and merge compresses all changes from a feature branch into a
+single commit, simplifying history.</li>
+<li>Understanding different merge strategies and when to use them is
+crucial for maintaining clean and manageable project histories.</li>
 </ul>
 </div>
 </div>
