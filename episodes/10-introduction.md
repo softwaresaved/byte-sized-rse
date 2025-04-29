@@ -53,13 +53,17 @@ For experienced developers, IDEs boost productivity and streamline complex workf
 
 Let’s look at what most IDEs offer - these features all work together to make your life easier when coding:
 
-- **Code editing** functionality with **syntax highlighting**
+- **Code editing** functionality with **syntax highlighting** and **automated code style formatting**
 - **Code completion** to speed up your typing by suggesting a set of possible (syntactically correct) code options
 - **Code search** to find functions, classes, or variables quickly
+- **Integrated Reference information and inline documentation** to get quick references where and how symbols (functions, parameters, classes, fields, and methods) and variables are defined 
+- **Testing framework integration**
 - **Version control integration** to interact with source code repositories and tools (e.g., Git)
 - **Built-in debugging tools** like setting breakpoints, step-by-step execution of code and inspection of variables to help find and fix bugs in code
 - **Integrated terminal** for running commands without leaving the IDE
-- **Project explorer** to easily navigate your files
+- **Integrated deployment tooling**
+- **Project/issue management**
+- **Project explorer** to easily navigate your files and file management
 
 ### Popular IDEs
   
