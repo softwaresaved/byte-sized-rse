@@ -105,17 +105,39 @@ When such a situation occurs, it stops right before the merge commit so that you
 
 Here is a little comparison of the two merge strategies we covered so far.
 
-| Fast Forward      | 3-way Merge |
+| Fast Forward      | 3-Way Merge |
 | ----------------------- | ----------------------|
 | No new commits on main  |  New commits on main  |
-| Linear History | Commit with 2 parents       |
-| No merge commits    | Merge commit is created |
+| Linear History          | Commit with 2 parents   |
+| No merge commits        | Merge commit is created |
 
  	
-
-
-
 ### Rebase and Merge
+
+In Git, there is another way to integrate changes from one branch into another: the rebase.
+
+If we go back to an earlier example from the 3-way merge, where main and feature branche have diverged with subsequent commits made on each (so fast-forward merging strategy is not an option).
+
+```text
+A - B - C - F [main]
+         \
+          D - E [feature]
+```
+
+When you rebase the feature branch with the main branch, Git replays each commit from the feature branch on top of all the commits from the main branch in order. This results in a cleaner, linear history that looks as if the feature branch was started from the latest commit on main. So, all the changes introduced on feature branch (commits D and E) are reapplied on top of commit F - becoming D' and E'. Note that D' and E' are rebased commits, which are actually new commits with different SHAs but the same modifications as commits D and E.
+
+
+```text
+A - B - C - F [main]
+             \
+              D' - E' [feature]
+```
+
+At this point, you can go back to the main branch and do a fast-forward merge.
+
+Fast forward merge strategy is best used when you have a short-lived feature branch that needs to be merged back into the main branch, and no other changes have been made to the main branch in the meantime.
+Rebase is ideal for feature branches that have fallen behind the main development line and need updating. It is particularly useful before merging long-running branches to ensure they apply cleanly on top of the main branch.
+In thay sense, rebasing is useful for cleaning up your project history before merging changes. Rebasing offers a way to rewrite history by transferring a branch from one base commit to another, making it seem like you created your branch from a different point in the repository's history.
 
 ### Squash and Merge
 
