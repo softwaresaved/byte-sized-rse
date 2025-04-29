@@ -45,7 +45,8 @@ This allows you to collect a related set of commits in one place, without interf
 
 Branching helps separate concerns in your codebase, making development, testing, and code review much easier. It also reduces the chance of conflicts during collaborative work, especially when multiple people are contributing to the same repository.
 
-This approach is known as the "feature branch workflow". In this model, each new feature or fix lives in its own branch. Once the work is complete and has been tested, the branch is merged back into the main branch. At that point, any merge conflicts can be addressed.
+This approach is known as the **feature branch workflow**. In this model, each new feature or fix lives in its own branch. Once the work is complete and has been tested, the branch is reviewed 
+by project collaborators (other than the code author), any merge conflicts addressed and the new work merged back into the main branch.
 Using feature branches is an efficient way to manage changes, collaborate effectively, and keep the main branch stable and production-ready.
 
 ## Introduction to Merging Strategies
