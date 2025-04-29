@@ -56,7 +56,7 @@ Some examples of small oversights that stack up over time include:
 
 ## Introduction to Linters
 
-### What is a Linter and yhy use one?
+### What is a Linter and Why Use One?
 
 A linter is a tool that performs static analysis on your code — meaning it examines the source code without running it — to detect potential errors, stylistic issues, and code patterns that might cause bugs in the future. The term originates from a 1970s tool for the C programming language called "lint".
 
