@@ -107,16 +107,7 @@ A - B - C - F - "MergeCommitG" [main]
 
 In addition, if the two branches you are trying to merge both changed the same part of the same file, Git will not be able to figure out which version to use and merge automatically.
 When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually before continuing.
-
-Here is a little comparison of the two merge strategies we covered so far.
-
-| Fast Forward      | 3-Way Merge |
-| ----------------------- | ----------------------|
-| No new commits on main  |  New commits on main  |
-| Linear History          | Commit with 2 parents   |
-| No merge commits        | Merge commit is created |
-
- 	
+	
 ### Rebase and Merge
 
 In Git, there is another way to integrate changes from one branch into another: the rebase.
@@ -148,15 +139,15 @@ Rebase is ideal for feature branches that have fallen behind the main developmen
 Rebasing maintains a linear history and avoids merge commits (like fast forwarding), making it look as if changes were made sequentially and as if you created your feature branch from a different point in the repository's history. 
 A disadvantage is that it rewrites commit history, which can be problematic for shared branches as it requires force pushing.
 
-Here is a little comparison of the three merge strategies we covered so far.
+Here is a little comparison of the three merge strategies we have covered so far.
 
 | Fast Forward      | Rebasing | 3-Way Merge |
 | ----------------------- | ----------------------|----------------------|
-| Maintains a linear history  |  Maintains a linear history | Does not maintains a linear history|
+| Maintains linear history  |  Maintains linear history | Non-linear history (commit with 2 parents) |
+| No new commits on main | New commits on main | New commits on main |
 | Avoids merge commits         | Avoids merge commits | Uses merge commits |
 | Only works if there are no new commits on the main branch        | Works for diverging branches | Works for diverging branches |
 | Does not rewrite commit history | Rewrites commit history | Does not rewrite commit history |
-
 
 ### Squash and Merge
 
