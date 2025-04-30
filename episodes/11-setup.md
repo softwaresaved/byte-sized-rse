@@ -22,7 +22,7 @@ exercises: 0
 
 - Shell with Git version control tool installed and the ability to navigate filesystem and run commands from within a shell
 - Python version 3.8 or above installed
-- Understanding of Python syntax to be able to follow code examples
+- Understanding of Python syntax to be able to read code examples
 - Visual Studio Code installed (ideally the latest version)
 
 :::
