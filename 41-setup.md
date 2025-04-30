@@ -1,7 +1,7 @@
 ---
 title: "4.1 Setup & Prerequisites"
 teaching: 10
-exercises: 2
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -20,8 +20,16 @@ exercises: 2
 
 ::: prereq
 
-- Understanding of Python syntax
+- Account on GitHub.com
+- Understanding of Python syntax to be able to read code examples
 
 :::
 
 ## Setup
+
+### GitHub Account
+
+[GitHub](https://github.com) is a free, online host for Git repositories that you will use during the course to store your code in so you will need to open a free GitHub account unless you do not already have one.
+
+
+
