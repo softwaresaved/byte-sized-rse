@@ -1,7 +1,7 @@
 ---
 title: "3.1 Setup & Prerequisites"
-teaching: 10
-exercises: 2
+teaching: 0
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
