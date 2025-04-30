@@ -22,7 +22,7 @@ exercises: 2
 
 - Shell with Git version control tool installed and the ability to navigate filesystem and run commands from within a shell
 - Account on GitHub.com
-- Some understanding of Python syntax to be able to read some code samples
+- Understanding of Python syntax to be able to read code examples
 
 :::
 
