@@ -6,7 +6,7 @@ Check [Byte-sized RSE series](https://www.universe-hpc.ac.uk/events/byte-sized-r
 
 This repository contains a subset of the [original Byte-sized RSE episodes](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) (currently mainly documented as a set of slides) transcribed in the [The Carpentries Workbench][workbench] format suitable for the delivery by instructors familiar with the episode content. 
 
-## Episode format
+## Episode Format
 
 Each episode is standalone, although it may require some prerequisite knowledge which is clearly described at the beginning. Episodes start with a setup for that episode, introduction and motivation, which is then followed by a practical hands-on part.
 
