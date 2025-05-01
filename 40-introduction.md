@@ -85,7 +85,7 @@ Instead, when reviewing focus on:
 In practice, code review often involves following a *project-specific checklist* to ensure consistency and alignment with coding standards. The process is typically *iterative*, with reviewers and contributors engaging in a cycle of discussion, updates, and re-review to address questions and refine changes before integration. If a conversation is taking place in a code review that has not been resolved by one or two back-and-forth exchange, then consider scheduling a conversation 
 or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). This way - you can enhance code quality and collaborative learning. 
 
-### Code Review: Tools & Platforms
+### Code Review Tools & Platforms
 
 Modern source code management (SCM) tools such as Git, Mercurial, and Subversion are well suited for conducting code reviews focused on changes or contributions. These tools track modifications and provide clear “diffs” (differences) that make it easier to inspect code updates line-by-line. 
 
