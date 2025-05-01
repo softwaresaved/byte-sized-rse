@@ -691,16 +691,37 @@ reviewing code is the most effective, with diminishing returns after
 that. The key is to find a pragmatic balance between the time invested
 and the value of constructive, actionable feedback.</p>
 <p>To that end, here are a few things you should not be trying to spot
-when reviewing:</p>
+or do when reviewing:</p>
 <ul><li>linting issues, or anything else that an automated tool can spot -
-get the Continuous Integration (CI) to do it.</li>
+get the Continuous Integration (CI) to do it</li>
 <li>bugs (unless somehting is obviously wrong with the code) - instead
-make sure there are tests for all cases.</li>
+make sure there are tests for all cases</li>
 <li>issues that pre-date the change - raise separate PRs fixing these
-issues separately to avoid heading down a rabbit hole.</li>
+issues separately to avoid heading down a rabbit hole</li>
 <li>architecture re-writes - try to have design discussions upfront, or
 else have a meeting to decide whether the code needs to be
 rewritten.</li>
+<li>complete rewrite/refactoring of the proposed code - provide only a
+few critical suggestions, you are aiming for better rather than
+perfect.</li>
+</ul><p>Instead, when reviewing focus on:</p>
+<ul><li>improving overall quality of the code - is the proposed code
+readable? Do functions do just one thing? Is the code using the right
+level of modularity? Is the code consistent with the structure of the
+rest of the code?</li>
+<li>ensuring adherence to best practices / project conventions - is
+there an appropriate and up-to-date documentation and tests for the
+proposed code? Is the agreed code style being followed?</li>
+<li>optimising code and reducing inefficiencies - is the proposed code a
+minimal change? Des the code reimplement anything that already exists,
+either elsewhere in the codebase or in a library you know about? Does
+the code implement something that is not the requirement or in the
+issue/ticket?</li>
+<li>sharing knowledge and upskilling team members - ask questions to
+undederstand the proposed changes (you can also learn something new and
+do not assume you know best) and try to provide constructive, specific,
+and respectful feedback. This approach helps build trust and can lead to
+improvements for the code author.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="code-review-tools-platforms">Code Review: Tools &amp; Platforms<a class="anchor" aria-label="anchor" href="#code-review-tools-platforms"></a></h3>
