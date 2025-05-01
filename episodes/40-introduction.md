@@ -60,7 +60,7 @@ Some examples include *over-the-shoulder code review* (when one developer talks 
 
 A *modification/contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub pull requests. This approach is still considered informal (although tool-assisted) and focuses on ensuring understanding, clarity, maintainability, and code quality. 
 
-A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur).The main focus is generally on conformance to processes & practices and identifying defects.
+A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur). It focuses generally on conformance to processes and practices and identifying defects.
 
 ### Core Review Practices & Processes
 
