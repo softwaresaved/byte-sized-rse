@@ -87,6 +87,9 @@ or a pair programming session to discuss things further (and record the outcome 
 
 ### Code Review: Tools & Platforms
 
+Modern source code management (SCM) tools such as Git, Mercurial, and Subversion are well suited for conducting code reviews focused on changes or contributions. These tools track modifications and provide clear “diffs” (differences) that make it easier to inspect code updates line-by-line. 
+
+On top of these, various higher-level software development support platforms — such as GitHub, Review Board, JetBrains Space, and Atlassian Crucible — offer additional features to streamline the review process, including inline comments, approval workflows, and integration with issue trackers. Many projects also adopt custom workflows tailored to their specific needs, balancing formality and flexibility to best support their development practices.
 
 ## Practical Work
 
