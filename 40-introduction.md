@@ -50,7 +50,7 @@ Code review is very useful for all parties involved - someone checks your design
 
 The specific aims of a code review can vary depending on the context — for example, production-ready code might undergo rigorous scrutiny, while early-stage prototypes may be reviewed more informally for general structure and approach. Code reviews can follow a formal process (e.g. structured pull requests with approval workflows) or take a more informal shape (e.g. ad hoc peer review or pair programming), depending on the needs of the project and the team.
 
-### Code Review Techniques
+### Code Review Types
   
 There are several types of code review, each suited to different contexts and goals. 
 
@@ -60,6 +60,9 @@ Some examples include *over-the-shoulder code review* (when one developer talks 
 A *modification/contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in tool-assisted version-controlled software development workflows like GitHub pull requests. This approach focuses on ensuring clarity, maintainability, and code quality and is still considered to be informal. 
 
 A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur).The main focus is generally on conformance to processes & practices and identifying defects.
+
+### Core Review Practices & Processes
+
 
 ## Practical Work
 
