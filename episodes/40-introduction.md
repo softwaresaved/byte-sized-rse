@@ -25,7 +25,7 @@ exercises: 0
 
 This session introduces key practices for effective coding and collaboration within research software projects. You will learn how to work together on code through structured approaches such as code review, understand common workflows and tools that support collaborative development, and explore the processes that help maintain code quality and team productivity. We will then take a practical look at how to carry out code reviews using GitHub, one of the most widely used platforms for collaborative software development.
 
-## Introduction to Coding within a Collaboration
+## Introduction to Coding Within a Collaboration
 
 Software development thrives on collaboration, even when much of the coding is done individually. Getting input from others can have a big impact on the quality, maintainability, and effectiveness of your work, often requiring only a small investment of time. Since there is rarely a single “perfect” way to solve a problem, working with others allows you to share knowledge, skills, and perspectives, leading to better solutions and new insights. Through collaboration, you can learn new techniques, discover tools and infrastructure that streamline development, and help build a shared understanding that benefits the wider team or community.
 
@@ -55,9 +55,10 @@ The specific aims of a code review can vary depending on the context — for exa
 There are several types of code review, each suited to different contexts and goals. 
 
 An *informal review* involves casually asking a colleague for input or advice. This type of review is often used to improve understanding, share skills, or get help with problem-solving, rather than enforce specific standards. 
+
 Some examples include *over-the-shoulder code review* (when one developer talks the other developer through the code changes while sitting at the same machine) and *pair programming* (when two developers work on the code at the same time with one of them actively coding and the other providing real-time feedback). The main focus here generally is on improving skills, understanding code and problem solving.
 
-A *modification/contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in tool-assisted version-controlled software development workflows like GitHub pull requests. This approach focuses on ensuring clarity, maintainability, and code quality and is still considered to be informal. 
+A *modification/contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub pull requests. This approach is still considered informal (although tool-assisted) and focuses on ensuring understanding, clarity, maintainability, and code quality. 
 
 A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur).The main focus is generally on conformance to processes & practices and identifying defects.
 
