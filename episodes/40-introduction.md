@@ -64,7 +64,7 @@ A more rigorous and formal method is the *structured codebase review*, such as a
 
 ### Code Review Practices & Processes
 
-In this session, we will focus on informal code review practices centered around code modifications and contributions. The goal is to integrate code review into the research software development process in a way that is lightweight, low-stakes, and easy to adopt. Even a brief initial review can make a big difference; in informal workflows, the first code review and the first hour often have the most impact - according to [“Best Kept Secrets of Peer Code Review” by Jason Cohen](https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676) the first hour of reviewing code is the most effective, with diminishing returns after that.
+In this session, we will focus on informal code review practices centered around code modifications and contributions. The goal is to integrate code review into the research software development process in a way that is lightweight, low-stakes, and easy to adopt. Even a brief initial review can make a big difference; in informal workflows, the first code review has the most impact - according to [“Best Kept Secrets of Peer Code Review” by Jason Cohen](https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676) the first hour of reviewing code is the most effective, with diminishing returns after that.
 The key is to find a pragmatic balance between the time invested and the value of constructive, actionable feedback.
 
 To that end, here are a few things you should not be trying to spot when reviewing:
