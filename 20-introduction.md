@@ -72,7 +72,7 @@ For example, in Python:
 - [`pylint`](https://pypi.org/project/pylint/) performs style checking along with additional linting functionalities
 - [`bandit`](https://bandit.readthedocs.io/en/latest/) focuses on static analysis to detect potential security vulnerabilities.
 
-### How do we use a Linter?
+## Practical Work
 
 In the rest of this session, we will walk you through how to use a linting tool.
 
