@@ -80,7 +80,7 @@ Instead, when reviewing focus on:
 - improving overall quality of the code - is the proposed code readable? Do functions do just one thing? Is the code using the right level of modularity? Is the code consistent with the structure of the rest of the code?
 - ensuring adherence to best practices / project conventions - is there an appropriate and up-to-date documentation and tests for the proposed code? Is the agreed code style being followed?
 - optimising code and reducing inefficiencies - is the proposed code a minimal change? Des the code reimplement anything that already exists, either elsewhere in the codebase or in a library you know about? Does the code implement something that is not the requirement or in the issue/ticket?
-- sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and can lead to improvements for the reviewed entity.
+- sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and can lead to improvements for the code author.
 
 
 ### Code Review: Tools & Platforms
