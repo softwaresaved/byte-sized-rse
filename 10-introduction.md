@@ -109,10 +109,11 @@ But if you want to level up, using a **built-in debugger** (like the one in VS C
 
 And if you really want to catch problems early, **writing tests** to check that your code behaves properly can save you from bigger headaches later. 
 
-### How do we use a Debugger?
+## Practical Work
 
 In the rest of this session, we will walk you through how to use a debugger in VS Code, focusing on practical steps and tips to help you find and fix errors more efficiently in your code.
 It is easier than you think and can really save you time.
+
 
 ::: keypoints
 
