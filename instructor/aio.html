@@ -4409,6 +4409,9 @@ solutions and new insights. Through collaboration, you can learn new
 techniques, discover tools and infrastructure that streamline
 development, and help build a shared understanding that benefits the
 wider team or community.</p>
+<div class="section level3">
+<h3 id="what-are-the-benefits-of-coding-with-others">What are the Benefits of Coding With Others?<a class="anchor" aria-label="anchor" href="#what-are-the-benefits-of-coding-with-others"></a>
+</h3>
 <p>There are many benefits to coding with others. Collaborative coding
 practices — such as pair programming, code reviews, and shared
 repositories — can help catch bugs earlier, improve code readability,
@@ -4422,18 +4425,83 @@ workflows early on means you will be ready to handle code review,
 version control, and team communication smoothly when collaboration
 intensifies. Early investment in collaboration infrastructure pays off
 by preventing confusion and bottlenecks later in a project.</p>
-</section><section><h2 class="section-heading" id="intro-to-code-review">Intro to code review<a class="anchor" aria-label="anchor" href="#intro-to-code-review"></a>
+</div>
+</section><section><h2 class="section-heading" id="introduction-to-code-review">Introduction to Code Review<a class="anchor" aria-label="anchor" href="#introduction-to-code-review"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="what-is-code-review">What is Code Review?<a class="anchor" aria-label="anchor" href="#what-is-code-review"></a>
+</h3>
+<p>Code review is the process of examining and discussing someone else’s
+code with the goal of checking its correctness and improving its quality
+and readability at the point when the code changes. It is a key
+collaborative and software quality assurance practice in software
+development that can help identify bugs early, ensure consistency with
+coding standards, and support knowledge sharing across a team.</p>
+<p>Code review is universally applicable throughout the software
+development cycle - from design to development to maintenance. According
+to Michael Fagan, the author of the <em>code inspection</em> technique,
+<a href="https://ieeexplore.ieee.org/document/5388086" class="external-link">rigorous
+inspections can remove 60-90% of errors from the code even before the
+first tests are run</a>. Furthermore, according to Fagan, the cost to
+remedy a defect in the early (design) stage is 10 to 100 times less
+compared to fixing the same defect in the development and maintenance
+stages, respectively. Since the cost of bug fixes grows in orders of
+magnitude throughout the software lifecycle, it is far more efficient to
+find and fix defects as close as possible to the point where they are
+introduced.</p>
+</div>
+<div class="section level3">
+<h3 id="why-do-code-reviews">Why do Code Reviews?<a class="anchor" aria-label="anchor" href="#why-do-code-reviews"></a>
+</h3>
+<p>Code review is very useful for all parties involved - someone checks
+your design or code for errors and gets to learn from your solution;
+having to explain code to someone else clarifies your rationale and
+design decisions in your mind too.</p>
+<p>The specific aims of a code review can vary depending on the context
+— for example, production-ready code might undergo rigorous scrutiny,
+while early-stage prototypes may be reviewed more informally for general
+structure and approach. Code reviews can follow a formal process
+(e.g. structured pull requests with approval workflows) or take a more
+informal shape (e.g. ad hoc peer review or pair programming), depending
+on the needs of the project and the team.</p>
+</div>
+<div class="section level3">
+<h3 id="code-review-techniques">Code Review Techniques<a class="anchor" aria-label="anchor" href="#code-review-techniques"></a>
+</h3>
 <ul>
-<li>Why do code reviews?</li>
 <li>Types of code review</li>
 <li>Code reviews in Git</li>
-</ul></section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a>
+</ul>
+<p>There are several types of code review, each suited to different
+contexts and goals.</p>
+<p>An <em>informal review</em> involves casually asking a colleague for
+input or advice. This type of review is often used to improve
+understanding, share skills, or get help with problem-solving, rather
+than enforce specific standards. Some examples include
+<em>over-the-shoulder code review</em> (when one developer talks the
+other developer through the code changes while sitting at the same
+machine) and <em>pair programming</em> (when two developers work on the
+code at the same time with one of them actively coding and the other
+providing real-time feedback). The main focus here generally is on
+improving skills, understanding code and problem solving.</p>
+<p>A <em>modification/contrubution-based review</em> occurs when changes
+or additions to a codebase are reviewed as they happen — commonly used
+in version-controlled workflows like GitHub pull requests. This approach
+focuses on ensuring clarity, maintainability, and code quality.</p>
+<p>A more rigorous method is the structured codebase review, such as a
+<em>Fagan inspection</em>, where a team examines a codebase
+systematically, following strict criteria to identify defects or ensure
+conformance to standards. While this method can be highly effective, it
+is resource-intensive and less common in the research software community
+(but it does occur).The main focus is generally on conformance to
+processes &amp; practices and identifying defects.</p>
+</div>
+</section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a>
 </h2>
 <hr class="half-width">
 <p>In the rest of this session, we will walk you through how a code
-review process using GitHub.</p>
+review process works using GitHub.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
