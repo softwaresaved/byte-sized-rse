@@ -83,7 +83,7 @@ Instead, when reviewing focus on:
 - sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and will lead to improvements for the code author.
 
 In practice, code review often involves following a *project-specific checklist* to ensure consistency and alignment with coding standards. The process is typically iterative, with reviewers and contributors engaging in a cycle of discussion, updates, and re-review to address questions and refine changes before integration. If a conversation is taking place in a code review that has not been resolved by one or two back-and-forth exchanges, then consider scheduling a conversation 
-or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). Code review is often used alongside other development practices (like pair programming) to enhance knowledge sharing, code quality and collaborative learning. 
+or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). This way - you can enhance code quality and collaborative learning. 
 
 ### Code Review: Tools & Platforms
 
