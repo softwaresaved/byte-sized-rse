@@ -22,6 +22,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+This session introduces the importance of code style and linting in writing clean, consistent, and maintainable code. You will learn how following a defined style guide improves code readability and collaboration, 
+and how automated tools, known as linters, can help identify and fix style issues early in the development process. We will explore common linting tools and how to integrate them into your coding workflow.
+
 ## Introduction to Code Style
 
 ### Why Does Code Style Matter?
