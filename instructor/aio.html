@@ -4508,6 +4508,19 @@ Kept Secrets of Peer Code Review” by Jason Cohen</a> the first hour of
 reviewing code is the most effective, with diminishing returns after
 that. The key is to find a pragmatic balance between the time invested
 and the value of constructive, actionable feedback.</p>
+<p>To that end, here are a few things you should not be trying to spot
+when reviewing:</p>
+<ul>
+<li>linting issues, or anything else that an automated tool can spot -
+get the Continuous Integration (CI) to do it.</li>
+<li>bugs (unless somehting is obviously wrong with the code) - instead
+make sure there are tests for all cases.</li>
+<li>issues that pre-date the change - raise separate PRs fixing these
+issues separately to avoid heading down a rabbit hole.</li>
+<li>architecture re-writes - try to have design discussions upfront, or
+else have a meeting to decide whether the code needs to be
+rewritten.</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="code-review-tools-platforms">Code Review: Tools &amp; Platforms<a class="anchor" aria-label="anchor" href="#code-review-tools-platforms"></a>
