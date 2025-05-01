@@ -58,11 +58,15 @@ An *informal review* involves casually asking a colleague for input or advice. T
 
 Some examples include *over-the-shoulder code review* (when one developer talks the other developer through the code changes while sitting at the same machine) and *pair programming* (when two developers work on the code at the same time with one of them actively coding and the other providing real-time feedback). 
 
-A *modification/contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub pull requests. This approach is still considered informal (although tool-assisted) and focuses on ensuring understanding, clarity, maintainability, and code quality. 
+A *code modification & contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub pull requests. This approach is still considered informal (although tool-assisted) and focuses on ensuring understanding, clarity, maintainability, and code quality. 
 
 A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur). It focuses generally on conformance to processes and practices and identifying defects.
 
-### Core Review Practices & Processes
+### Code Review Practices & Processes
+
+In this session, we will focus on informal code review practices centered around code modifications and contributions. The goal is to integrate code review into the research software development process in a way that is lightweight, low-stakes, and easy to adopt. Even a brief initial review can make a big difference; in informal workflows, the first code review and the first hour often have the most impact (see [Jason Cohen, “Best Kept Secrets of Peer Code Review”, Smart Bear Inc. 2006. ISBN: 978-1599160672](https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676)). The key is to find a pragmatic balance between the time invested and the value of constructive, actionable feedback.
+
+### Code Review: Tools & Platforms
 
 
 ## Practical Work
