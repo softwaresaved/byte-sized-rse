@@ -171,6 +171,9 @@ Sometimes, you want to take just one specific commit (say, from another branch) 
 
 Made a commit too soon? `git reset` allows you to undo commits locally. It moves your branch pointer back to an earlier commit, turning those "undone" changes into uncommitted edits in your working directory. It is handy for rewriting local history before sharing code — but be careful using it on shared branches, as it alters commit history.
 
+## Practical Work
+
+In the rest of this session, we will walk you through the feature branch workflow, different merging strategies and handling conflicts before merging.
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
