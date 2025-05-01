@@ -23,6 +23,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+This session provides an introduction to Integrated Development Environments (IDEs), powerful tools for software development. We will explore how various features built into IDEs can streamline your software development workflow, 
+especially through their built-in debugging tools — which allow you to identify and fix issues with your code efficiently. 
+
 ## What is an Integrated Development Environment (IDE)?
 
 An Integrated Development Environment (IDE) is a graphical application that provides a comprehensive workspace for writing, editing, testing, and debugging code—all in one place. 
