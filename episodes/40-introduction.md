@@ -80,8 +80,10 @@ Instead, when reviewing focus on:
 - improving overall quality of the code - is the proposed code readable? Do functions do just one thing? Is the code using the right level of modularity? Is the code consistent with the structure of the rest of the code?
 - ensuring adherence to best practices / project conventions - is there an appropriate and up-to-date documentation and tests for the proposed code? Is the agreed code style being followed?
 - optimising code and reducing inefficiencies - is the proposed code a minimal change? Des the code reimplement anything that already exists, either elsewhere in the codebase or in a library you know about? Does the code implement something that is not the requirement or in the issue/ticket?
-- sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and can lead to improvements for the code author.
+- sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and will lead to improvements for the code author.
 
+In practice, code review often involves following a *project-specific checklist* to ensure consistency and alignment with coding standards. The process is typically iterative, with reviewers and contributors engaging in a cycle of discussion, updates, and re-review to address questions and refine changes before integration. If a conversation is taking place in a code review that has not been resolved by one or two back-and-forth exchanges, then consider scheduling a conversation 
+or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). Code review is often used alongside other development practices (like pair programming) to enhance knowledge sharing, code quality and collaborative learning. 
 
 ### Code Review: Tools & Platforms
 
