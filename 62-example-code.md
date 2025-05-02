@@ -1,5 +1,5 @@
 ---
-title: "6.2 Some Example Code"
+title: "5.2 Some Example Code"
 teaching: 10
 exercises: 0
 ---
