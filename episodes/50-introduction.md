@@ -35,14 +35,13 @@ If we are unable to demonstrate that our software fulfills these criteria, why w
 
 ### Types of Testing - Levels
 
-Testing can be carried out at different code levels to ensure software behaves correctly at various stages of execution. 
+Testing can be performed at different code levels, each serving a distinct purpose to ensure software behaves correctly at various stages of execution. Together, these testing levels provide a structured approach to improving software quality and reliability.
 
-*Unit testing* focuses on the smallest testable parts of an application, such as individual functions or methods, to verify they work in isolation. 
+*Unit testing* is the most granular level, where individual components—like functions or classes—are tested in isolation to confirm they behave correctly under a variety of inputs. This makes it easier to identify and fix bugs early in the development process.
 
-*Integration testing* takes it a step further by checking that different modules or components of the code interact and function together as expected. 
+*Integration testing* builds on unit testing by checking how multiple components or modules work together. This level of testing helps catch issues that arise when components interact — such as unexpected data formats, interface mismatches, or dependency problems.
 
-At the highest level, *system testing* evaluates the complete application, testing it as a whole to ensure that all parts interact well together to deliver the desired outcomes under real-world conditions.
-
+At the highest level, system testing evaluates the software as a complete, integrated system. This type of testing focuses on validating the entire application's functionality from end to end, typically from the user’s perspective, including inputs, outputs, and how the system behaves under various conditions. 
 
 ### Types of testing - approaches (regression testing, property-based testing)
 ### Mocking
