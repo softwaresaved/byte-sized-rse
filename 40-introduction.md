@@ -63,24 +63,23 @@ A more rigorous and formal method is the *structured codebase review*, such as a
 
 ### Code Review Practices & Processes
 
-In this session, we will focus on informal code review practices centered around code modifications and contributions. The goal is to integrate code review into the research software development process in a way that is lightweight, low-stakes, and easy to adopt. Even a brief initial review can make a big difference and the first code review has the most impact - according to [“Best Kept Secrets of Peer Code Review” by Jason Cohen](https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676) the first hour of reviewing code is the most effective, with diminishing returns after that.
-The key is to find a pragmatic balance between the time invested in code review and the value of constructive, actionable feedback.
+In this session, we will focus on code review practices centered around code modifications and contributions. The aim is to integrate code review into the research software development process in a way that is lightweight, low-stakes, and easy to adopt. Even a short initial code review can have a significant impact. As highlighted in ["Best Kept Secrets of Peer Code Review" by Jason Cohen](https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676), the first hour of review is the most critical and productive, with diminishing returns thereafter.
 
-To that end, when reviewing focus on:
+The goal is to strike a practical balance: invest enough time to offer useful, actionable feedback without turning reviews into a bottleneck.
+When reviewing code, focus on:
 
-- improving overall quality of the code - is the proposed code readable; do functions do just one thing; is the code using the right level of modularity; is the code consistent with the structure of the rest of the code?
-- ensuring adherence to best practices / project conventions - is the agreed code style being followed; is there an appropriate and up-to-date documentation and tests for the proposed code?
-- optimising code and reducing inefficiencies - is the proposed code a minimal change; does the code reimplement anything that already exists, either elsewhere in the codebase or in a library you know about; does the code implement something that is not the requirement or not in the issue/ticket?
-- sharing knowledge and upskilling team members - ask questions to undederstand the proposed changes (you can also learn something new and do not assume you know best) and try to provide constructive, specific, and respectful feedback. This approach helps build trust and will lead to improvements for the code author.
+- Code quality - is the code clear and readable? Do functions serve a single purpose? Is it well-structured and consistent with the rest of the project?
+- Best practices and conventions - is the project’s coding style followed? Are tests and documentation included and up to date?
+- Efficiency and minimalism - does the change duplicate existing functionality (found elsewhere in the code or in a third-party library)? Is it limited to what’s required by the issue or ticket?
+- Knowledge sharing: Ask clarifying questions and offer respectful, specific feedback. This helps everyone learn and builds team trust.
 
+Given the value of that first hour, keep your efforts targeted. Do not spend time on:
 
-With the first hour of reviewing being the most critical, here are a few things you should not be trying to spot or do when reviewing:
-
-- linting issues, or anything else that an automated tool can spot - get the Continuous Integration (CI) to do it
-- bugs (unless somehting is obviously wrong with the code) - instead make sure there are tests for all cases
-- issues that pre-date the change - raise separate PRs fixing these issues separately to avoid heading down a rabbit hole
-- architecture re-writes - try to have design discussions upfront, or else have a meeting to decide whether the code needs to be rewritten.
-- complete rewrite/refactoring of the proposed code - provide only a few critical suggestions, you are aiming for better rather than perfect.
+- Linting or style issues - automated tools or CI pipelines should catch these
+- Hunting for bugs, unless something clearly looks wrong — instead, check that tests exist for various cases that should catch bugs
+- Fixing unrelated legacy issues that pre-date the change — log those separately to avoid scope creep
+- Architectural overhauls — save big-picture changes for design discussions or dedicated meetings
+- Refactoring everything — aim for incremental improvement, not perfection.
 
 In practice, code review often involves following a *project-specific checklist* to ensure consistency and alignment with coding standards. The process is typically *iterative*, with reviewers and contributors engaging in a cycle of discussion, updates, and re-review to address questions and refine changes before integration. If a conversation is taking place in a code review that has not been resolved by one or two back-and-forth exchange, then consider scheduling a conversation 
 or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). This way - you can enhance code quality and collaborative learning. 
