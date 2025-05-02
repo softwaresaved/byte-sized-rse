@@ -46,9 +46,9 @@ Code review is valuable at all stages of the software development lifecycle — 
 
 ### Why do Code Reviews?
 
-Code review is very useful for all parties involved - someone checks your design or code for errors and gets to learn from your solution; having to explain code to someone else clarifies your rationale and design decisions in your mind too.
+Code review is very useful for all the parties involved - code author as well as reviewers - someone checks your design or code for errors and gets to learn from your solution; having to explain code to someone else clarifies your rationale and design decisions in your mind too. In general, code reviews help improve code quality, catch bugs early, and promote shared understanding among team members. They also support skill development and encourage consistent coding practices across a project.
 
-The specific aims of a code review can vary depending on the context — for example, production-ready code might undergo rigorous scrutiny, while early-stage prototypes may be reviewed more informally for general structure and approach. Code reviews can follow a formal process (e.g. structured pull requests with approval workflows) or take a more informal shape (e.g. ad hoc peer review or pair programming), depending on the needs of the project and the team.
+The specific aims of a code review can vary depending on the context — for example, production-ready code might undergo rigorous scrutiny, while early-stage prototypes may be reviewed more informally for general structure and approach. Code reviews can follow a more formal process (e.g. structured pull requests with approval workflows) or take an informal shape (e.g. ad hoc peer review or pair programming), depending on the needs of the project and the team.
 
 ### Code Review Types
   
