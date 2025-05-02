@@ -2719,7 +2719,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4516,9 +4516,10 @@ check that tests exist for various cases that should catch bugs</li>
 <li>Fixing unrelated legacy issues that pre-date the change — log those
 separately to avoid scope creep</li>
 <li>Architectural overhauls — save big-picture changes for design
-discussions or dedicated meetings</li>
-<li>Refactoring everything — aim for incremental improvement, not
-perfection.</li>
+discussions or dedicated meetings to decide whether the code needs to be
+restructured</li>
+<li>Refactoring everything — provide only a few critical suggestions and
+aim for incremental improvement, not perfection.</li>
 </ul>
 <p>In practice, code review often involves following a
 <em>project-specific checklist</em> to ensure consistency and alignment
