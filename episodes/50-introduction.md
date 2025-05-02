@@ -33,7 +33,17 @@ Being able to demonstrate that a process generates the right results is importan
 
 If we are unable to demonstrate that our software fulfills these criteria, why would anyone use it? Having well-defined tests for our software helps ensure your software works correctly, reliably, and consistently over time. By identifying bugs early and confirming that new changes do not break existing functionality, testing improves code quality, reduces the risk of errors in production, and makes future development faster and safer.
 
-### Types of testing - levels (unit, integration, system)
+### Types of Testing - Levels
+
+Testing can be carried out at different code levels to ensure software behaves correctly at various stages of execution. 
+
+*Unit testing* focuses on the smallest testable parts of an application, such as individual functions or methods, to verify they work in isolation. 
+
+*Integration testing* takes it a step further by checking that different modules or components of the code interact and function together as expected. 
+
+At the highest level, *system testing* evaluates the complete application, testing it as a whole to ensure that all parts interact well together to deliver the desired outcomes under real-world conditions.
+
+
 ### Types of testing - approaches (regression testing, property-based testing)
 ### Mocking
 
