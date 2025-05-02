@@ -27,11 +27,17 @@ Code testing is the process of verifying that your code behaves as expected and 
 
 Being able to demonstrate that a process generates the right results is important in any field of research, whether it is software generating those results or not. So when writing software we need to ask ourselves some key questions:
 
-- Does the code we develop work the way it should do?
+- Does the code we develop works as expected?
+- To what extent are we confident of the accuracy of results that software produces?
 - Can we (and others) verify these assertions for themselves?
-- Perhaps most importantly, to what extent are we confident of the accuracy of results that software produces?
 
-If we are unable to demonstrate that our software fulfills these criteria, why would anyone use it? Having well-defined tests for our software helps ensure your software works correctly, reliably, and consistently over time. By identifying bugs early and confirming that new changes do not break existing functionality, testing improves code quality, reduces the risk of errors in production, and makes future development faster and safer.
+If we are unable to demonstrate that our software fulfills these criteria, why would anyone use it? 
+
+As a codebase gets larger, debugging can become increasingly difficult and new code may introduce bugs or unexpected behaviour in other parts if your code it does not even touch. Tests can help you pick up problems before they become a runtime bug
+and a failing test will also help pinpoint where the problem lies. Tests also provide invocation examples for other develoeprs and users of our code, makit easier to reuse. 
+
+Having well-defined tests for our software helps ensure your software works correctly, reliably, and consistently over time. By identifying bugs early and confirming that new changes do not break existing functionality, testing improves code quality, reduces the risk of errors in production, and makes future development and long-term maintenance faster and safer. 
+
 
 ### Types of Testing - Levels
 
