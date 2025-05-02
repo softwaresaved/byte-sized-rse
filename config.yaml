@@ -98,6 +98,10 @@ episodes:
 - 52-example-code.md
 - 53-create-new-test.md
 - 54-handling-errors.md
+- 60-introduction.md
+- 61-setup.md
+- 62-example-code.md
+- 63-defining-a-workflow.md
 
 # Information for Learners
 learners: 
