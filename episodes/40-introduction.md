@@ -92,4 +92,4 @@ On top of these, various higher-level software development support platforms —
 
 ## Practical Work
 
-In the rest of this session, we will walk you through how a code review process works using GitHub.
+In the rest of this session, we will walk you through how a code modification & contrubution-based code review process using pull requests in GitHub.
