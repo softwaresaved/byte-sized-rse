@@ -29,7 +29,7 @@ Being able to demonstrate that a process generates the right results is importan
 
 - Does the code we develop works as expected?
 - To what extent are we confident of the accuracy of results that software produces?
-- Can we (and others) verify these assertions for themselves?
+- Can we and others verify these assertions for themselves?
 
 If we are unable to demonstrate that our software fulfills these criteria, why would anyone use it? 
 
