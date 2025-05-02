@@ -33,8 +33,7 @@ Being able to demonstrate that a process generates the right results is importan
 
 If we are unable to demonstrate that our software fulfills these criteria, why would anyone use it? 
 
-As a codebase gets larger, debugging can become increasingly difficult and new code may introduce bugs or unexpected behaviour in other parts if your code it does not even touch. Tests can help you pick up problems before they become a runtime bug
-and a failing test will also help pinpoint where the problem lies. Tests also provide invocation examples for other develoeprs and users of our code, makit easier to reuse. 
+As a codebase grows, debugging becomes more challenging, and new code may introduce bugs or unexpected behavior in parts of the system it does not directly interact with. Tests can help catch issues before they become runtime bugs, and a failing test can pinpoint the source of the problem. Additionally, tests serve as invocation examples for other developers and users, making it easier for them to reuse the code effectively.
 
 Having well-defined tests for our software helps ensure your software works correctly, reliably, and consistently over time. By identifying bugs early and confirming that new changes do not break existing functionality, testing improves code quality, reduces the risk of errors in production, and makes future development and long-term maintenance faster and safer. 
 
