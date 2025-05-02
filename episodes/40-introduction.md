@@ -55,10 +55,9 @@ The specific aims of a code review can vary depending on the context — for exa
 There are several types of code review, each suited to different contexts and goals. 
 
 An *informal review* involves casually asking a colleague for input or advice. This type of review is often used to improve understanding, share skills, or get help with problem-solving, rather than enforce specific standards. 
-
 Some examples include *over-the-shoulder code review* (when one developer talks the other developer through the code changes while sitting at the same machine) and *pair programming* (when two developers work on the code at the same time with one of them actively coding and the other providing real-time feedback). 
 
-A *code modification & contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub pull requests. This approach is still considered informal (although tool-assisted) and focuses on ensuring understanding, clarity, maintainability, and code quality. 
+A *code modification & contrubution-based review* occurs when changes or additions to a codebase are reviewed as they happen — commonly used in version-controlled software development workflows like GitHub's pull requests. This approach is a bit more formal (e.g. structured pull requests with approval workflows) and tool-assisted, and focuses on ensuring understanding, clarity, maintainability, and code quality. 
 
 A more rigorous and formal method is the *structured codebase review*, such as a *Fagan inspection*, where a team examines a codebase systematically, following strict criteria to identify defects or ensure conformance to standards. While this method can be highly effective, it is resource-intensive and less common in the research software community (but it does occur). It focuses generally on conformance to processes and practices and identifying defects.
 
