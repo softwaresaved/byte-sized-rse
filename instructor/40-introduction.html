@@ -692,14 +692,32 @@ conformance to processes and practices and identifying defects.</p>
 centered around code modifications and contributions. The goal is to
 integrate code review into the research software development process in
 a way that is lightweight, low-stakes, and easy to adopt. Even a brief
-initial review can make a big difference; in informal workflows, the
-first code review has the most impact - according to <a href="https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676" class="external-link">“Best
+initial review can make a big difference and the first code review has
+the most impact - according to <a href="https://www.amazon.co.uk/Best-Kept-Secrets-Peer-Review/dp/1599160676" class="external-link">“Best
 Kept Secrets of Peer Code Review” by Jason Cohen</a> the first hour of
 reviewing code is the most effective, with diminishing returns after
 that. The key is to find a pragmatic balance between the time invested
-and the value of constructive, actionable feedback.</p>
-<p>To that end, here are a few things you should not be trying to spot
-or do when reviewing:</p>
+in code review and the value of constructive, actionable feedback.</p>
+<p>To that end, when reviewing focus on:</p>
+<ul><li>improving overall quality of the code - is the proposed code
+readable; do functions do just one thing; is the code using the right
+level of modularity; is the code consistent with the structure of the
+rest of the code?</li>
+<li>ensuring adherence to best practices / project conventions - is the
+agreed code style being followed; is there an appropriate and up-to-date
+documentation and tests for the proposed code?</li>
+<li>optimising code and reducing inefficiencies - is the proposed code a
+minimal change; does the code reimplement anything that already exists,
+either elsewhere in the codebase or in a library you know about; does
+the code implement something that is not the requirement or not in the
+issue/ticket?</li>
+<li>sharing knowledge and upskilling team members - ask questions to
+undederstand the proposed changes (you can also learn something new and
+do not assume you know best) and try to provide constructive, specific,
+and respectful feedback. This approach helps build trust and will lead
+to improvements for the code author.</li>
+</ul><p>With the first hour of reviewing being the most critical, here are a
+few things you should not be trying to spot or do when reviewing:</p>
 <ul><li>linting issues, or anything else that an automated tool can spot -
 get the Continuous Integration (CI) to do it</li>
 <li>bugs (unless somehting is obviously wrong with the code) - instead
@@ -712,24 +730,6 @@ rewritten.</li>
 <li>complete rewrite/refactoring of the proposed code - provide only a
 few critical suggestions, you are aiming for better rather than
 perfect.</li>
-</ul><p>Instead, when reviewing focus on:</p>
-<ul><li>improving overall quality of the code - is the proposed code
-readable? Do functions do just one thing? Is the code using the right
-level of modularity? Is the code consistent with the structure of the
-rest of the code?</li>
-<li>ensuring adherence to best practices / project conventions - is
-there an appropriate and up-to-date documentation and tests for the
-proposed code? Is the agreed code style being followed?</li>
-<li>optimising code and reducing inefficiencies - is the proposed code a
-minimal change? Des the code reimplement anything that already exists,
-either elsewhere in the codebase or in a library you know about? Does
-the code implement something that is not the requirement or in the
-issue/ticket?</li>
-<li>sharing knowledge and upskilling team members - ask questions to
-undederstand the proposed changes (you can also learn something new and
-do not assume you know best) and try to provide constructive, specific,
-and respectful feedback. This approach helps build trust and will lead
-to improvements for the code author.</li>
 </ul><p>In practice, code review often involves following a
 <em>project-specific checklist</em> to ensure consistency and alignment
 with coding standards. The process is typically <em>iterative</em>, with
