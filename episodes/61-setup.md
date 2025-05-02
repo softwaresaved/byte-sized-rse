@@ -1,5 +1,5 @@
 ---
-title: "5.1 Setup"
+title: "6.1 Setup"
 teaching: 10
 exercises: 2
 ---
