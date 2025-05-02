@@ -67,3 +67,5 @@ For example, if a function modifies data and writes it to a file, you can mock t
 
 
 ## Practical Work
+
+In the rest of this session, we will walk you through writing tests for your code.
