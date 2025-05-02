@@ -78,8 +78,8 @@ Given the value of that first hour, keep your efforts targeted. Do not spend tim
 - Linting or style issues - automated tools or CI pipelines should catch these
 - Hunting for bugs, unless something clearly looks wrong — instead, check that tests exist for various cases that should catch bugs
 - Fixing unrelated legacy issues that pre-date the change — log those separately to avoid scope creep
-- Architectural overhauls — save big-picture changes for design discussions or dedicated meetings
-- Refactoring everything — aim for incremental improvement, not perfection.
+- Architectural overhauls — save big-picture changes for design discussions or dedicated meetings to decide whether the code needs to be restructured
+- Refactoring everything — provide only a few critical suggestions and aim for incremental improvement, not perfection.
 
 In practice, code review often involves following a *project-specific checklist* to ensure consistency and alignment with coding standards. The process is typically *iterative*, with reviewers and contributors engaging in a cycle of discussion, updates, and re-review to address questions and refine changes before integration. If a conversation is taking place in a code review that has not been resolved by one or two back-and-forth exchange, then consider scheduling a conversation 
 or a pair programming session to discuss things further (and record the outcome of the discussion - e.g. in the pull requests’s comments). This way - you can enhance code quality and collaborative learning. 
