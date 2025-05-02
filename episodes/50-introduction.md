@@ -61,7 +61,7 @@ For example, if a function modifies data and writes it to a file, you can mock t
 
 ### Related Practices
 
-[Code style and linting](./10-introduction.md) are essential practices in code testing, as they help ensure that code is readable and maintainable by following established conventions, such as PEP8 in Python. Linting tools automatically check that code adheres to these style guidelines, reducing errors and improving consistency. 
+[Code style and linting](./20-introduction.md) are essential practices in code testing, as they help ensure that code is readable and maintainable by following established conventions, such as PEP8 in Python. Linting tools automatically check that code adheres to these style guidelines, reducing errors and improving consistency. 
 
 [Continuous Integration (CI)](././60-introduction.md) further enhances testing practices by automating key processes, such as running tests and linting tools, every time code changes are committed. This helps catch issues early, maintain code quality, and streamline the development workflow. Together, these practices improve code reliability and make collaboration smoother.
 
