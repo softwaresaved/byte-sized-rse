@@ -683,6 +683,26 @@ time.</p>
 </div>
 <div class="section level3">
 <h3 id="mocking">Mocking<a class="anchor" aria-label="anchor" href="#mocking"></a></h3>
+<p>When running tests, you often want to focus on testing a specific
+piece of functionality, but dependencies on external objects or
+functions can complicate this, as you cannot always be sure they work as
+expected. Mocking addresses this by allowing you to replace those
+dependencies with “mocked” objects or functions that behave according to
+your instructions. So, <em>mocking</em> is a testing technique used to
+isolate the unit of code being tested by replacing its dependencies with
+simplified, controllable versions — known as <em>mocks</em>.</p>
+<p>These mocks mimic the behavior of real components (such as databases,
+APIs, or external services) without requiring their full functionality
+or availability. This allows developers to test specific code paths,
+simulate error conditions, or verify how a unit interacts with other
+parts of the system. Mocking is especially useful in unit and
+integration testing to ensure tests remain focused, fast and
+reliable.</p>
+<p>For example, if a function modifies data and writes it to a file, you
+can mock the file-writing object, so instead of creating an actual file,
+the mocked object stores the “written” data. This enables you to verify
+that the data written is as expected, without actually creating a file,
+making tests more controlled and efficient.</p>
 </div>
 </section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a></h2>
 <hr class="half-width"><!--
