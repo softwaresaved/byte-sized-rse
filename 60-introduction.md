@@ -71,7 +71,7 @@ There are a wide range of CI-focused workflow services and different tools avail
 
 Popular cloud-based services include [GitHub Actions](https://github.com/features/actions), [Travis CI](https://www.travis-ci.com/), [CircleCI](https://circleci.com/), and [TeamCity](https://www.jetbrains.com/teamcity/), while self-hosted or hybrid solutions such as [GitLab CI](https://docs.gitlab.com/ee/ci/), [Jenkins](https://www.jenkins.io/), and [Buildbot](https://buildbot.net/) also available.
 
-### Extending/beyond CI - continuous deployment/delivery
+### Beyond CI - Continuous Deployment/Delivery
 
 You may frequently come across the term CI/CD, which refers to the combination of Continuous Integration (CI) and Continuous Deployment or Delivery (CD). While CI focuses on integrating and testing code changes, CD extends the process by automating the delivery and deployment of software. This can include building installation packages for various environments and automatically deploying updates to test or production systems. For example, a web application could be redeployed every time a new change passes the CI pipeline. CD helps streamline the release process for packages or applications, for example by doing nightly builds and deploying them to a public server for download, making it easier and faster to get working updates into the hands of users with minimal manual intervention.
 
