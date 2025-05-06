@@ -505,7 +505,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#how-to-describe-a-workflow">How to Describe a Workflow?</a></li>
-<li><a href="#enabling-and-creating-our-first-workflow">Enabling and Creating Our First Workflow</a></li>
+<li><a href="#enabling-workflows-for-our-repository">Enabling Workflows for our Repository</a></li>
+<li><a href="#creating-our-first-workflow">Creating Our First Workflow</a></li>
+<li><a href="#adding-our-workflow-to-our-repository">Adding our Workflow to our Repository</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -570,7 +572,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>6.3 Defining a Workflow</h1>
-        <p>Last updated on 2025-05-02 |
+        <p>Last updated on 2025-05-06 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/63-defining-a-workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -667,7 +669,7 @@ sequences, where the order is preserved.</p>
 </div>
 <p>So that’s a very brief tour of YAML, which demonstrates what we need
 to know to write GitHub Actions workflows.</p>
-</section><section><h2 class="section-heading" id="enabling-and-creating-our-first-workflow">Enabling and Creating Our First Workflow<a class="anchor" aria-label="anchor" href="#enabling-and-creating-our-first-workflow"></a></h2>
+</section><section><h2 class="section-heading" id="enabling-workflows-for-our-repository">Enabling Workflows for our Repository<a class="anchor" aria-label="anchor" href="#enabling-workflows-for-our-repository"></a></h2>
 <hr class="half-width"><p>So let’s now create a new GitHub Actions CI workflow for our new
 repository that runs our unit tests whenever a change is made.</p>
 <p>Firstly, we should ensure GitHub Actions is enabled for repository.
@@ -680,12 +682,15 @@ created in GitHub.</li>
 <li>Under <code>Actions permissions</code>, ensure
 <code>Allow all actions and reusable workflows</code> is selected,
 otherwise, our workflows won’t run!</li>
-</ol><p>Next, we need to create a new file in our repository to contain our
+</ol></section><section><h2 class="section-heading" id="creating-our-first-workflow">Creating Our First Workflow<a class="anchor" aria-label="anchor" href="#creating-our-first-workflow"></a></h2>
+<hr class="half-width"><p>Next, we need to create a new file in our repository to contain our
 workflow, and it needs to be located in a particular directory location.
 We’ll create this directly using the GitHub interface, since we’re
 already there:</p>
 <ol style="list-style-type: decimal"><li>Go back to the repository main page in GitHub.</li>
-<li>Select <code>Add file</code> then <code>Create new file</code>.</li>
+<li>Select <code>Add file</code> (you may need to expand your browser
+Window to see <code>Add file</code>) then
+<code>Create new file</code>.</li>
 <li>We need to add the workflow file within two nested subdirectories,
 since that’s where GitHub will look for it. In filename text box, add
 <code>.github</code> then add <code>/</code>. This will allow us to
@@ -693,56 +698,128 @@ continue adding directories or a filename as needed.</li>
 <li>Add <code>workflows</code>, and <code>/</code> again.</li>
 <li>Add <code>main.yml</code>.</li>
 <li>Should end up with
-<code>ci-example / .github / workflow / main.yml in main</code>
-</li>
-<li>Select in the <code>Edit new file</code> window to start creating
-the file.</li>
-</ol><p>Let’s build up this workflow now.</p>
+<code>ci-example / .github / workflow / main.yml in main</code> in the
+file field.</li>
+<li>Select anywhere in the <code>Edit new file</code> window to start
+creating the file.</li>
+</ol><p>Note that GitHub Actions expects workflows to be contained within the
+<code>.github/workflows</code> directory.</p>
+<p>Let’s build up this workflow now.</p>
 <p>FIXME: turn the below into a step-by-step learning narrative,
 explaining each bit</p>
+<p>So first let’s specify a name for our workflow that will appear under
+GitHub Actions build reports, and add the conditions that will trigger
+the workflow to run:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> run-unit-tests</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># We can specify which Github events will trigger a CI build</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> push</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co"># now define a single job called 'build' (but could define more)</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">    # we can also specify the OS to run tests on</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">    # a job is a seq of steps</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">    # Next we need to checkout our repository, and set up Python</span></span>
-<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">    # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything</span></span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
-<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.10</span></span>
-<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
-<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> “3.10”</span></span>
-<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
-<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a>        python3 -m pip install --upgrade pip</span>
-<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a>        pip3 install -r requirements.txt</span>
-<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with pytest</span></span>
-<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a>        python -m pytest tests/test_factorial.py</span></code></pre>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> push</span></span></code></pre>
 </div>
-<p>So once we’ve done that, we commit this new workflow file into our
-repository. At the bottom of the editing screen:</p>
-<ol style="list-style-type: decimal"><li>Add in a commit message, e.g. “Initial workflow to run tests on
+<p>So here our workflow will run when changes are pushed to the
+repository. There are <a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows" class="external-link">other
+events</a> we might specify instead (or as well) if we wanted, but this
+is the most common.</p>
+<p>GitHub Actions are described as a sequence of jobs (such as building
+our code, or running some tests), and each job contains a sequence of
+steps which each represent a specific “action” (such as running a
+command, or obtaining code from a repository).</p>
+<p>Let’s define the start of a workflow job we’ll name
+<code>build-and-test</code>:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="at">  </span><span class="fu">build-and-test</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span></code></pre>
+</div>
+<p>We only have one job in this workflow, but we may have many. We also
+specify the operating systems on which we want this job to run. In this
+case, only the latest version of Linux Ubuntu, but we could supply
+others too (such as Windows, or Mac OS) which we’ll see later.</p>
+<p>When the workflow is triggered, our job will run within a
+<code>runner</code>, which you can think of as a freshly installed
+instance of a machine running the operating system we indicate (in this
+case Ubuntu).</p>
+<p>Let’s now supply the concrete things we want to do in our workflow.
+We can think of this as the things we need to set up and run on a fresh
+machine. So within our workflow, we’ll need to:</p>
+<ul><li>Check out our code repository</li>
+<li>Install Python</li>
+<li>Install our Python dependencies (which is just <code>pytest</code>
+in this case)</li>
+<li>Run <code>pytest</code> over our set of tests</li>
+</ul><p>We can define these as follows:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.11</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span></code></pre>
+</div>
+<p>We first use GitHub Actions (indicated by
+<code>uses: actions/</code>), which are small tools we use to perform
+something specific. In this case, we use:</p>
+<ul><li>
+<code>checkout</code> - to checkout the repository into our
+runner</li>
+<li>
+<code>setup-python</code> - to set up a specific version of
+Python</li>
+</ul><p>Note that the <code>name</code> entries are descriptive text and can
+be anything, but it’s good to make them meaningful since they are what
+will appear in our build reports as we’ll see later.</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>        python3 -m pip install --upgrade pip</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>        pip3 install -r requirements.txt</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with pytest</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        python -m pytest tests/test_factorial.py</span></code></pre>
+</div>
+<p>Here we use two <code>run</code> steps to run some specific commands,
+to install our python dependencies and run <code>pytest</code> over our
+tests.</p>
+<div id="what-about-other-actions" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="what-about-other-actions" class="callout-inner">
+<h3 class="callout-title">What about other Actions?</h3>
+<div class="callout-content">
+<p>Our workflow here uses standard GitHub Actions (indicated by
+<code>actions/*</code>). Beyond the standard set of actions, others are
+available via the <a href="https://docs.github.com/en/developers/github-marketplace/github-marketplace-overview" class="external-link">GitHub
+Marketplace</a>. It contains many third-party actions (as well as apps)
+that you can use with GitHub for many tasks across many programming
+languages, particularly for setting up environments for running tests,
+code analysis and other tools, setting up and using infrastructure (for
+things like Docker or Amazon’s AWS cloud), or even managing repository
+issues. You can even contribute your own.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="adding-our-workflow-to-our-repository">Adding our Workflow to our Repository<a class="anchor" aria-label="anchor" href="#adding-our-workflow-to-our-repository"></a></h2>
+<hr class="half-width"><p>So once we’ve finished adding in our workflow to the file, we commit
+this into our repository:</p>
+<ol style="list-style-type: decimal"><li>In the top right of the editing screen select
+<code>Commit changes...</code>.</li>
+<li>Add in a commit message, e.g. “Initial workflow to run tests on
 push”.</li>
-<li>Select `Commit new file’.</li>
+<li>Select `Commit changes’.</li>
 </ol><p>This commit action will now trigger the running of this new workflow,
 since that’s what the workflow is designed to do.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -818,7 +895,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/63-defining-a-workflow.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/63-defining-a-workflow.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-02",
+  "dateModified": "2025-05-06",
   "datePublished": "2025-05-06"
 }
 
