@@ -85,7 +85,7 @@ Popular cloud-based services include [GitHub Actions](https://github.com/feature
 You may frequently come across the term CI/CD, which refers to the combination of Continuous Integration (CI) and Continuous Deployment or Delivery (CD). 
 
 While CI focuses on integrating and testing code changes, CD extends the process by automating the delivery and deployment of software. This can include building installation packages for various environments and automatically deploying updates to test or production systems. 
-For example, a web application could be redeployed every time a new change passes the CI pipeline. 
+For example, a web application could be redeployed every time a new change passes the CI pipeline (an example is this website - it is rebuilt each time a change is made to one of its [source pages](https://github.com/softwaresaved/byte-sized-rse)). 
 
 CD helps streamline the release process for packages or applications, for example by doing nightly builds and deploying them to a public server for download, making it easier and faster to get working updates into the hands of users with minimal manual intervention.
 
