@@ -33,13 +33,25 @@ A variety of CI tools and services, like GitHub Actions, GitLab CI, or Jenkins, 
 
 CI can also be extended into Continuous Delivery (CD), which automates the release or deployment of code to production or staging environments.
 
-## Principles of CI
+### Principles of CI
 
 Software development typically progresses in incremental steps and requires a significant time investment. It is not realistic to expect a complete, feature-rich application to emerge from a blank page in a single step. The process often involves collaboration among multiple developers, especially in larger projects where various components and features are developed concurrently.
 
 Continuous Integration (CI) is based on the principle that software development is an incremental process involving ongoing contributions from one or more developers. Integrating large changes is often more complex and error-prone than incorporating smaller, incremental updates.
 So, rather than waiting to integrate large, complex changes all at once, CI encourages integrating small updates frequently to check for conflicts and inconsistencies and ensure all parts of the codebase work well together at all times. 
 This becomes even more critical for larger projects, where multiple features may be developed in parallel - CI helps manage the complexity of merging such contributions by making integrations a regular, manageable part of the workflow.
+
+### CI Tasks
+
+When code is integrated, a range of tasks can be carried out automatically to ensure quality and consistency, including:
+
+- compiling the code
+- running a test suite and checking test coverage
+- verifying that the code adheres to project, team, or language style guidelines
+- building or generating documentation
+- other custom tasks may also be included, depending on project needs.
+
+These steps are typically executed as part of a structured sequence known as the “CI pipeline”.
 
 ## Extending/beyond CI - continuous deployment/delivery
 
