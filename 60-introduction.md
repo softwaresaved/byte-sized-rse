@@ -65,10 +65,15 @@ Modern CI services make it easy to run its tasks and checks across multiple plat
 
 While there can be a learning curve when first setting up CI, a wide variety of tools are available, and the core principles are transferable between them, making these valuable and broadly applicable skills.
 
-## Extending/beyond CI - continuous deployment/delivery
+### CI Tools & Services
 
-- what is continous deployment/delivery?
-- some example maybe?
+There are a wide range of CI-focused workflow services and different tools available to support various aspects of a CI pipeline. Many of these services have Web-based interfaces and run on cloud infrastructure, providing easy access to scalable, platform-independent pipelines. However, local and self-hosted options are also available for projects that require more control or need to operate in secure environments. Most CI tools are generally language- and tool-agnostic; if you can run a task locally, you can likely incorporate it into a CI pipeline. 
+
+Popular cloud-based services include [GitHub Actions](https://github.com/features/actions), [Travis CI](https://www.travis-ci.com/), [CircleCI](https://circleci.com/), and [TeamCity](https://www.jetbrains.com/teamcity/), while self-hosted or hybrid solutions such as [GitLab CI](https://docs.gitlab.com/ee/ci/), [Jenkins](https://www.jenkins.io/), and [Buildbot](https://buildbot.net/) also available.
+
+### Extending/beyond CI - continuous deployment/delivery
+
+You may frequently come across the term CI/CD, which refers to the combination of Continuous Integration (CI) and Continuous Deployment or Delivery (CD). While CI focuses on integrating and testing code changes, CD extends the process by automating the delivery and deployment of software. This can include building installation packages for various environments and automatically deploying updates to test or production systems. For example, a web application could be redeployed every time a new change passes the CI pipeline. CD helps streamline the release process for packages or applications, for example by doing nightly builds and deploying them to a public server for download, making it easier and faster to get working updates into the hands of users with minimal manual intervention.
 
 ## Practical Work
 
