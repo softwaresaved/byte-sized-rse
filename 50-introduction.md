@@ -56,9 +56,9 @@ However, for cases where exact outputs are not predictable — such as simulatio
 
 Another important approach is *regression testing*, which helps detect when previously working functionality breaks due to recent changes in the code. By rerunning earlier tests, developers can catch and address these regressions early, maintaining software stability over time.
 
-### Mocking
+#### Mocking
 
-When running tests, you often want to focus on testing a specific piece of functionality, but dependencies on external objects or functions can complicate this, as you cannot always be sure they work as expected. Mocking addresses this by allowing you to replace those dependencies with "mocked" objects or functions that behave according to your instructions. So, *mocking* is a testing technique used to isolate the unit of code being tested by replacing its dependencies with simplified, controllable versions — known as *mocks*. 
+When running tests, you often want to focus on testing a specific piece of functionality, but dependencies on external objects or functions can complicate this, as you cannot always be sure they work as expected. Mocking addresses this by allowing you to replace those dependencies with "mocked" objects or functions that behave according to your instructions. So, *mocking* is a testing approach used to isolate the unit of code being tested by replacing its dependencies with simplified, controllable versions — known as *mocks*. 
 
 Mocks mimic the behavior of real components (such as databases, APIs, or external services) without requiring their full functionality or availability. This allows developers to test specific code paths, simulate error conditions, or verify how a unit interacts with other parts of the system. Mocking is especially useful in unit and integration testing to ensure tests remain focused, fast and reliable.
 
