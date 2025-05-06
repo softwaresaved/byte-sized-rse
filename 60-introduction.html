@@ -479,7 +479,6 @@
       <div class="accordion-body">
         <ul><li><a href="#introduction-to-automation">Introduction to Automation</a></li>
 <li><a href="#intro-to-continuous-integration">Intro to Continuous Integration</a></li>
-<li><a href="#extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery</a></li>
 <li><a href="#practical-work">Practical Work</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -687,10 +686,36 @@ infrastructure and manual testing.</p>
 variety of tools are available, and the core principles are transferable
 between them, making these valuable and broadly applicable skills.</p>
 </div>
-</section><section><h2 class="section-heading" id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a></h2>
-<hr class="half-width"><ul><li>what is continous deployment/delivery?</li>
-<li>some example maybe?</li>
-</ul></section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a></h2>
+<div class="section level3">
+<h3 id="ci-tools-services">CI Tools &amp; Services<a class="anchor" aria-label="anchor" href="#ci-tools-services"></a></h3>
+<p>There are a wide range of CI-focused workflow services and different
+tools available to support various aspects of a CI pipeline. Many of
+these services have Web-based interfaces and run on cloud
+infrastructure, providing easy access to scalable, platform-independent
+pipelines. However, local and self-hosted options are also available for
+projects that require more control or need to operate in secure
+environments. Most CI tools are generally language- and tool-agnostic;
+if you can run a task locally, you can likely incorporate it into a CI
+pipeline.</p>
+<p>Popular cloud-based services include <a href="https://github.com/features/actions" class="external-link">GitHub Actions</a>, <a href="https://www.travis-ci.com/" class="external-link">Travis CI</a>, <a href="https://circleci.com/" class="external-link">CircleCI</a>, and <a href="https://www.jetbrains.com/teamcity/" class="external-link">TeamCity</a>, while
+self-hosted or hybrid solutions such as <a href="https://docs.gitlab.com/ee/ci/" class="external-link">GitLab CI</a>, <a href="https://www.jenkins.io/" class="external-link">Jenkins</a>, and <a href="https://buildbot.net/" class="external-link">Buildbot</a> also available.</p>
+</div>
+<div class="section level3">
+<h3 id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a></h3>
+<p>You may frequently come across the term CI/CD, which refers to the
+combination of Continuous Integration (CI) and Continuous Deployment or
+Delivery (CD). While CI focuses on integrating and testing code changes,
+CD extends the process by automating the delivery and deployment of
+software. This can include building installation packages for various
+environments and automatically deploying updates to test or production
+systems. For example, a web application could be redeployed every time a
+new change passes the CI pipeline. CD helps streamline the release
+process for packages or applications, for example by doing nightly
+builds and deploying them to a public server for download, making it
+easier and faster to get working updates into the hands of users with
+minimal manual intervention.</p>
+</div>
+</section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a></h2>
 <hr class="half-width"><p>In the rest of this session, we will walk you through setting up a
 basic CI pipeline using GitHub Actions to help you integrate, test, and
 potentially deploy your code with confidence.</p>
