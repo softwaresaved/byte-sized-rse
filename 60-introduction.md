@@ -6,13 +6,23 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+Questions the Page Answers:
+
+- What is automation in the context of software development, and why is it beneficial?
+- How does Continuous Integration (CI) enhance the software development process?
+- What tasks can be automated using CI?
+- Why is integrating small code changes regularly preferable to integrating large changes infrequently?
+- How can CI be extended to Continuous Delivery (CD) for automating deployment processes?​
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Understand the concept of automation and its role in improving efficiency and consistency in software development.
+- Learn the principles and benefits of Continuous Integration.
+- Identify common tasks that can be automated within a CI pipeline, such as code compilation, testing, linting, and documentation generation.
+- Recognise the importance of integrating code changes frequently to minimize conflicts and maintain a stable codebase.
+- Explore how Continuous Integration can be extended to Continuous Delivery to automate the deployment of packages and applications.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -54,7 +64,7 @@ These steps are typically executed as part of a structured sequence known as the
 
 ### Why use CI?
 
-CI offers several advantages that can significantly improve the software development process. 
+From what we have covered so far, it is clear that CI offers several advantages that can significantly improve the software development process. 
 
 It saves time and effort for you and your team by automating routine checks and tasks, allowing you to focus on development rather than manual verification. 
 
