@@ -16,10 +16,11 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## intro to Automation
+## Introduction to Automation
 
-- why automate?
-- benefits of automation (save time, often need to repeat commands, reproducibility, capture of repeatable process, use to understand how to run things, etc.)
+Automation is the process of using scripts or tools to perform tasks without manual intervention. In software development, automation helps streamline repetitive or complex tasks, such as running tests, building software, or processing data. 
+
+By automating these actions, you save time, reduce the chance of human error, and ensure that processes are reproducible and consistent. Automation also provides a clear, documented way to understand how things are run, making it easier for others to replicate or build upon your work.
 
 ## Intro to Continuous Integration
 
