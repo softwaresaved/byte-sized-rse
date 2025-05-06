@@ -5124,7 +5124,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-50-introduction"><p>Content from <a href="50-introduction.html">Lesson 5: Unit Testing Code</a></p>
 <hr>
-<p>Last updated on 2025-05-02 |
+<p>Last updated on 2025-05-06 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/50-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -5246,16 +5246,15 @@ helps detect when previously working functionality breaks due to recent
 changes in the code. By rerunning earlier tests, developers can catch
 and address these regressions early, maintaining software stability over
 time.</p>
-</div>
-<div class="section level3">
-<h3 id="mocking">Mocking<a class="anchor" aria-label="anchor" href="#mocking"></a>
-</h3>
+<div class="section level4">
+<h4 id="mocking">Mocking<a class="anchor" aria-label="anchor" href="#mocking"></a>
+</h4>
 <p>When running tests, you often want to focus on testing a specific
 piece of functionality, but dependencies on external objects or
 functions can complicate this, as you cannot always be sure they work as
 expected. Mocking addresses this by allowing you to replace those
 dependencies with “mocked” objects or functions that behave according to
-your instructions. So, <em>mocking</em> is a testing technique used to
+your instructions. So, <em>mocking</em> is a testing approach used to
 isolate the unit of code being tested by replacing its dependencies with
 simplified, controllable versions — known as <em>mocks</em>.</p>
 <p>Mocks mimic the behavior of real components (such as databases, APIs,
@@ -5270,6 +5269,7 @@ can mock the file-writing object, so instead of creating an actual file,
 the mocked object stores the “written” data. This enables you to verify
 that the data written is as expected, without actually creating a file,
 making tests more controlled and efficient.</p>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="related-practices">Related Practices<a class="anchor" aria-label="anchor" href="#related-practices"></a>
 </h2>
