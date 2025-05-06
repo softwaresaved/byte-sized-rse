@@ -53,6 +53,18 @@ When code is integrated, a range of tasks can be carried out automatically to en
 
 These steps are typically executed as part of a structured sequence known as the “CI pipeline”.
 
+### Why use CI?
+
+CI offers several advantages that can significantly improve the software development process. 
+
+It saves time and effort for you and your team by automating routine checks and tasks, allowing you to focus on development rather than manual verification. 
+
+CI also promotes good development practices by enforcing standards. For instance, many projects are configured to reject changes unless all CI checks pass. 
+
+Modern CI services make it easy to run its tasks and checks across multiple platforms, operating systems, and software versions, providing capabilities far beyond what could typically be achieved with local infrastructure and manual testing. 
+
+While there can be a learning curve when first setting up CI, a wide variety of tools are available, and the core principles are transferable between them, making these valuable and broadly applicable skills.
+
 ## Extending/beyond CI - continuous deployment/delivery
 
 - what is continous deployment/delivery?
