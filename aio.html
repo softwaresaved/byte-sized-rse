@@ -2767,7 +2767,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6056,6 +6056,26 @@ changes.</p>
 <p>CI can also be extended into Continuous Delivery (CD), which
 automates the release or deployment of code to production or staging
 environments.</p>
+</section><section><h2 class="section-heading" id="principles-of-ci">Principles of CI<a class="anchor" aria-label="anchor" href="#principles-of-ci"></a>
+</h2>
+<hr class="half-width">
+<p>Software development typically progresses in incremental steps and
+requires a significant time investment. It is not realistic to expect a
+complete, feature-rich application to emerge from a blank page in a
+single step. The process often involves collaboration among multiple
+developers, especially in larger projects where various components and
+features are developed concurrently.</p>
+<p>Continuous Integration (CI) is based on the principle that software
+development is an incremental process involving ongoing contributions
+from one or more developers. Integrating large changes is often more
+complex and error-prone than incorporating smaller, incremental updates.
+So, rather than waiting to integrate large, complex changes all at once,
+CI encourages integrating small updates frequently to check for
+conflicts and inconsistencies and ensure all parts of the codebase work
+well together at all times. This becomes even more critical for larger
+projects, where multiple features may be developed in parallel - CI
+helps manage the complexity of merging such contributions by making
+integrations a regular, manageable part of the workflow.</p>
 </section><section><h2 class="section-heading" id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a>
 </h2>
 <hr class="half-width">
