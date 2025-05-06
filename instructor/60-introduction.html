@@ -20,7 +20,7 @@
       <div class="large-logo">
         <img id="incubator-logo" alt="Byte-sized RSE" src="../assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
-            <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#early-development-pre-alpha-through-alpha" class="external-link alert-link">
+            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
               <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
               Pre-Alpha
             </a>
@@ -623,14 +623,12 @@ things are run, making it easier for others to replicate or build upon
 your work.</p>
 </section><section><h2 class="section-heading" id="intro-to-continuous-integration">Intro to Continuous Integration<a class="anchor" aria-label="anchor" href="#intro-to-continuous-integration"></a></h2>
 <hr class="half-width"><p>Building on the concept of automation, Continuous Integration (CI) is
-the practice of regularly integrating code changes into a shared
-repository and automatically running tasks and key checks, such as
-comiling code sand running tests across multiple platforms to catch
-issues early, verifing code style with linters, building documentation
-pages from docstrings (structured documentation embedded in the code),
-etc. This helps maintain code quality and ensures new contributions do
-not break existing functionality.</p>
-<p>A variety of CI tools and services, like GitHub Actions, GitLab CI,
+the practice of regularly integrating code changes into a shared code
+repository and automatically running tasks and key checks each time this
+happens (e.g. when changes are merged from development or feature branch
+into main, or even after each commit). This helps maintain code quality
+and ensures new contributions do not break existing functionality.</p>
+<p>A variety of CI services and tools, like GitHub Actions, GitLab CI,
 or Jenkins, make it easy to set up automated workflows triggered by code
 changes.</p>
 <p>CI can also be extended into Continuous Delivery (CD), which
@@ -661,12 +659,13 @@ integrations a regular, manageable part of the workflow.</p>
 <p>When code is integrated, a range of tasks can be carried out
 automatically to ensure quality and consistency, including:</p>
 <ul><li>compiling the code</li>
-<li>running a test suite and checking test coverage</li>
+<li>running a test suite across multiple platforms to catch issues early
+and checking test coverage to see what tests are missing</li>
 <li>verifying that the code adheres to project, team, or language style
-guidelines</li>
-<li>building or generating documentation</li>
-<li>other custom tasks may also be included, depending on project
-needs.</li>
+guidelines with linters</li>
+<li>building documentation pages from docstrings (structured
+documentation embedded in the code) or other source pages,</li>
+<li>other custom tasks, depending on project needs.</li>
 </ul><p>These steps are typically executed as part of a structured sequence
 known as the “CI pipeline”.</p>
 </div>
@@ -761,7 +760,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.12" class="external-link">sandpaper (0.16.12)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -772,10 +771,10 @@ any links that you are not going to use.
   <script type="application/ld+json">
     {
   "@context": "https://schema.org",
-  "@type": "TrainingMaterial",
+  "@type": "LearningResource",
   "@id": "https://softwaresaved.github.io/byte-sized-rse/instructor/60-introduction.html",
   "inLanguage": "en",
-  "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+  "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, RSE, research software, development, practices",
   "name": "Lesson 6: Continuous Integration",
