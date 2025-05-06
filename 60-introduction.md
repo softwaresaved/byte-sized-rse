@@ -87,3 +87,13 @@ You may frequently come across the term CI/CD, which refers to the combination o
 ## Practical Work
 
 In the rest of this session, we will walk you through setting up a basic CI pipeline using GitHub Actions to help you integrate, test, and potentially deploy your code with confidence.
+
+:::::::::::::::::::::::::::::::::::::: keypoints
+
+- Automation saves time and improves reproducibility by capturing repeatable processes like testing, linting, and building code into scripts or pipelines.
+- Continuous Integration (CI) is the practice of automatically running tasks and checks each time code is updated, helping catch issues early and improving collaboration.
+- Integrating smaller, frequent code updates is more manageable and less error-prone than merging large changes all at once.
+- CI pipelines can run on many platforms and environments using cloud-based services (e.g. GitHub Actions, Travis CI) or self-hosted solutions (e.g. Jenkins, GitLab CI).
+- CI can be extended to Continuous Delivery/Deployment (CD) to automatically package and deliver software updates to users or deploy changes to live systems.
+
+::::::::::::::::::::::::::::::::::::::
