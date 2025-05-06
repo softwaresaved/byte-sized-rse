@@ -2779,7 +2779,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6054,6 +6054,9 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
+<p>In this session, we’ll walk through setting up a basic CI pipeline
+using GitHub Actions to help you integrate, test, and potentially deploy
+your code with confidence.</p>
 <section><h2 class="section-heading" id="introduction-to-automation">Introduction to Automation<a class="anchor" aria-label="anchor" href="#introduction-to-automation"></a>
 </h2>
 <hr class="half-width">
@@ -6069,17 +6072,29 @@ your work.</p>
 </section><section><h2 class="section-heading" id="intro-to-continuous-integration">Intro to Continuous Integration<a class="anchor" aria-label="anchor" href="#intro-to-continuous-integration"></a>
 </h2>
 <hr class="half-width">
-<ul>
-<li>types of CI tasks (e.g. compiling, running test suite (across many
-platforms), verify code styling with linters, build docs, etc.)</li>
-<li>existing CI tools and services</li>
-</ul></section><section><h2 class="section-heading" id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a>
+<p>Building on the concept of automation, Continuous Integration (CI) is
+the practice of regularly integrating code changes into a shared
+repository and automatically running tasks and key checks, such as
+comiling code sand running tests across multiple platforms to catch
+issues early, verifing code style with linters, building documentation
+pages from docstrings (structured documentation embedded in the code),
+etc. This helps maintain code quality and ensures new contributions do
+not break existing functionality.</p>
+<p>A variety of CI tools and services, like GitHub Actions, GitLab CI,
+or Jenkins, make it easy to set up automated workflows triggered by code
+changes.</p>
+<p>CI can also be extended into Continuous Delivery (CD), which
+automates the release or deployment of code to production or staging
+environments.</p>
+</section><section><h2 class="section-heading" id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a>
 </h2>
 <hr class="half-width">
 <ul>
 <li>what is continous deployment/delivery?</li>
 <li>some example maybe?</li>
-</ul>
+</ul></section><section><h2 class="section-heading" id="practical-work">Practical Work<a class="anchor" aria-label="anchor" href="#practical-work"></a>
+</h2>
+<hr class="half-width">
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
