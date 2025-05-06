@@ -26,10 +26,9 @@ By automating these actions, you save time, reduce the chance of human error, an
 
 ## Intro to Continuous Integration
 
-Building on the concept of automation, Continuous Integration (CI) is the practice of regularly integrating code changes into a shared repository and automatically running tasks and key checks, such as comiling code sand running tests across multiple platforms to catch issues early, verifing code style with linters, building documentation pages from docstrings (structured documentation embedded in the code), etc. 
-This helps maintain code quality and ensures new contributions do not break existing functionality. 
+Building on the concept of automation, Continuous Integration (CI) is the practice of regularly integrating code changes into a shared code repository and automatically running tasks and key checks each time this happens (e.g. when changes are merged from development or feature branch into main, or even after each commit). This helps maintain code quality and ensures new contributions do not break existing functionality. 
 
-A variety of CI tools and services, like GitHub Actions, GitLab CI, or Jenkins, make it easy to set up automated workflows triggered by code changes. 
+A variety of CI services and tools, like GitHub Actions, GitLab CI, or Jenkins, make it easy to set up automated workflows triggered by code changes. 
 
 CI can also be extended into Continuous Delivery (CD), which automates the release or deployment of code to production or staging environments.
 
@@ -46,16 +45,16 @@ This becomes even more critical for larger projects, where multiple features may
 When code is integrated, a range of tasks can be carried out automatically to ensure quality and consistency, including:
 
 - compiling the code
-- running a test suite and checking test coverage
-- verifying that the code adheres to project, team, or language style guidelines
-- building or generating documentation
-- other custom tasks may also be included, depending on project needs.
+- running a test suite across multiple platforms to catch issues early and checking test coverage to see what tests are missing
+- verifying that the code adheres to project, team, or language style guidelines with linters
+- building documentation pages from docstrings (structured documentation embedded in the code) or other source pages,
+- other custom tasks, depending on project needs.
 
 These steps are typically executed as part of a structured sequence known as the “CI pipeline”.
 
 ### Why use CI?
 
-CI offers several advantages that can significantly improve the software development process. 
+From what we have covered so far, it is clear that CI offers several advantages that can significantly improve the software development process. 
 
 It saves time and effort for you and your team by automating routine checks and tasks, allowing you to focus on development rather than manual verification. 
 
