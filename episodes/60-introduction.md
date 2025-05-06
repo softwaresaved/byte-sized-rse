@@ -16,6 +16,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+In this session, we’ll walk through setting up a basic CI pipeline using GitHub Actions to help you integrate, test, and potentially deploy your code with confidence.
+
 ## Introduction to Automation
 
 Automation is the process of using scripts or tools to perform tasks without manual intervention. In software development, automation helps streamline repetitive or complex tasks, such as running tests, building software, or processing data. 
@@ -24,10 +26,17 @@ By automating these actions, you save time, reduce the chance of human error, an
 
 ## Intro to Continuous Integration
 
-- types of CI tasks (e.g. compiling, running test suite (across many platforms), verify code styling with linters, build docs, etc.)
-- existing CI tools and services
+Building on the concept of automation, Continuous Integration (CI) is the practice of regularly integrating code changes into a shared repository and automatically running tasks and key checks, such as comiling code sand running tests across multiple platforms to catch issues early, verifing code style with linters, building documentation pages from docstrings (structured documentation embedded in the code), etc. 
+This helps maintain code quality and ensures new contributions do not break existing functionality. 
+
+A variety of CI tools and services, like GitHub Actions, GitLab CI, or Jenkins, make it easy to set up automated workflows triggered by code changes. 
+
+CI can also be extended into Continuous Delivery (CD), which automates the release or deployment of code to production or staging environments.
+
 
 ## Extending/beyond CI - continuous deployment/delivery
 
 - what is continous deployment/delivery?
 - some example maybe?
+
+## Practical Work
