@@ -16,8 +16,6 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In this session, we’ll walk through setting up a basic CI pipeline using GitHub Actions to help you integrate, test, and potentially deploy your code with confidence.
-
 ## Introduction to Automation
 
 Automation is the process of using scripts or tools to perform tasks without manual intervention. In software development, automation helps streamline repetitive or complex tasks, such as running tests, building software, or processing data. 
@@ -40,3 +38,5 @@ CI can also be extended into Continuous Delivery (CD), which automates the relea
 - some example maybe?
 
 ## Practical Work
+
+In the rest of this session, we will walk you through setting up a basic CI pipeline using GitHub Actions to help you integrate, test, and potentially deploy your code with confidence.
