@@ -479,7 +479,6 @@
       <div class="accordion-body">
         <ul><li><a href="#introduction-to-automation">Introduction to Automation</a></li>
 <li><a href="#intro-to-continuous-integration">Intro to Continuous Integration</a></li>
-<li><a href="#principles-of-ci">Principles of CI</a></li>
 <li><a href="#extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery</a></li>
 <li><a href="#practical-work">Practical Work</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -636,8 +635,9 @@ changes.</p>
 <p>CI can also be extended into Continuous Delivery (CD), which
 automates the release or deployment of code to production or staging
 environments.</p>
-</section><section><h2 class="section-heading" id="principles-of-ci">Principles of CI<a class="anchor" aria-label="anchor" href="#principles-of-ci"></a></h2>
-<hr class="half-width"><p>Software development typically progresses in incremental steps and
+<div class="section level3">
+<h3 id="principles-of-ci">Principles of CI<a class="anchor" aria-label="anchor" href="#principles-of-ci"></a></h3>
+<p>Software development typically progresses in incremental steps and
 requires a significant time investment. It is not realistic to expect a
 complete, feature-rich application to emerge from a blank page in a
 single step. The process often involves collaboration among multiple
@@ -654,6 +654,21 @@ well together at all times. This becomes even more critical for larger
 projects, where multiple features may be developed in parallel - CI
 helps manage the complexity of merging such contributions by making
 integrations a regular, manageable part of the workflow.</p>
+</div>
+<div class="section level3">
+<h3 id="common-ci-tasks">Common CI Tasks<a class="anchor" aria-label="anchor" href="#common-ci-tasks"></a></h3>
+<p>When code is integrated, a range of tasks can be carried out
+automatically to ensure quality and consistency, including:</p>
+<ul><li>compiling the code</li>
+<li>running a test suite and checking test coverage</li>
+<li>verifying that the code adheres to project, team, or language style
+guidelines</li>
+<li>building or generating documentation</li>
+<li>other custom tasks may also be included, depending on project
+needs.</li>
+</ul><p>These steps are typically executed as part of a structured sequence
+known as the “CI pipeline”.</p>
+</div>
 </section><section><h2 class="section-heading" id="extendingbeyond-ci---continuous-deploymentdelivery">Extending/beyond CI - continuous deployment/delivery<a class="anchor" aria-label="anchor" href="#extendingbeyond-ci---continuous-deploymentdelivery"></a></h2>
 <hr class="half-width"><ul><li>what is continous deployment/delivery?</li>
 <li>some example maybe?</li>
