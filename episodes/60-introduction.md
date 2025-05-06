@@ -41,7 +41,7 @@ Continuous Integration (CI) is based on the principle that software development 
 So, rather than waiting to integrate large, complex changes all at once, CI encourages integrating small updates frequently to check for conflicts and inconsistencies and ensure all parts of the codebase work well together at all times. 
 This becomes even more critical for larger projects, where multiple features may be developed in parallel - CI helps manage the complexity of merging such contributions by making integrations a regular, manageable part of the workflow.
 
-### CI Tasks
+### Common CI Tasks
 
 When code is integrated, a range of tasks can be carried out automatically to ensure quality and consistency, including:
 
