@@ -54,7 +54,7 @@ These steps are typically executed as part of a structured sequence known as the
 
 ### Why use CI?
 
-CI offers several advantages that can significantly improve the software development process. 
+From what we have covered so far, it is clear that CI offers several advantages that can significantly improve the software development process. 
 
 It saves time and effort for you and your team by automating routine checks and tasks, allowing you to focus on development rather than manual verification. 
 
