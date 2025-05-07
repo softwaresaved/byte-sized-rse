@@ -19,12 +19,12 @@ exercises: 0
 ## How to Describe a Workflow?
 
 Now before we move on to defining our workflow in GitHub Actions,
-we’ll take a very brief look at a language used to describe its workflows,
+we'll take a very brief look at a language used to describe its workflows,
 called YAML.
 
 Originally, the acronym stood for *Yet Another Markup Language*,
-but since it’s not actually used for document markup,
-it’s acronym meaning was changed to *YAML Aint Markup Language*.
+but since it's not actually used for document markup,
+it's acronym meaning was changed to *YAML Aint Markup Language*.
 
 Essentially, YAML is based around key value pairs, for example:
 
@@ -82,12 +82,12 @@ first_scaled_by:
     nationality: Austrian
 ```
 
-So that’s a very brief tour of YAML,
+So that's a very brief tour of YAML,
 which demonstrates what we need to know to write GitHub Actions workflows.
 
 ## Enabling Workflows for our Repository
 
-So let’s now create a new GitHub Actions CI workflow for our new repository that runs our unit tests whenever a change is made.
+So let's now create a new GitHub Actions CI workflow for our new repository that runs our unit tests whenever a change is made.
 
 Firstly, we should ensure GitHub Actions is enabled for repository.
 In a browser:
@@ -96,7 +96,7 @@ In a browser:
 1. Go to repository `Settings`.
 1. From the sidebar on the left select `General`, then `Actions` (and under that, `General`).
 1. Under `Actions permissions`, ensure `Allow all actions and reusable workflows` is selected,
-otherwise, our workflows won’t run!
+otherwise, our workflows won't run!
 
 ## Creating Our First Workflow
 
@@ -108,7 +108,7 @@ since we're already there:
 1. Go back to the repository main page in GitHub.
 1. Select `Add file` (you may need to expand your browser Window to see `Add file`) then `Create new file`.
 1. We need to add the workflow file within two nested subdirectories,
-since that’s where GitHub will look for it.
+since that's where GitHub will look for it.
 In filename text box, add `.github` then add `/`.
 This will allow us to continue adding directories or a filename as needed.
 1. Add `workflows`, and `/` again.
@@ -226,15 +226,15 @@ You can even contribute your own.
 
 ## Adding our Workflow to our Repository
 
-So once we’ve finished adding in our workflow to the file,
+So once we've finished adding in our workflow to the file,
 we commit this into our repository:
 
 1. In the top right of the editing screen select `Commit changes...`.
 1. Add in a commit message, e.g. “Initial workflow to run tests on push”.
-1. Select `Commit changes’.
+1. Select `Commit changes`.
 
 This commit action will now trigger the running of this new workflow,
-since that’s what the workflow is designed to do.
+since that's what the workflow is designed to do.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
