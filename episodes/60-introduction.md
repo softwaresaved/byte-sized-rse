@@ -6,8 +6,6 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-Questions the Page Answers:
-
 - What is automation in the context of software development, and why is it beneficial?
 - How does Continuous Integration (CI) enhance the software development process?
 - What tasks can be automated using CI?
