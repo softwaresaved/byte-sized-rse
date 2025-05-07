@@ -174,10 +174,10 @@ We can define these as follows:
     steps:
 
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.11"
 ```
@@ -200,11 +200,12 @@ but it's good to make them meaningful since they are what will appear in our bui
 
     - name: Test with pytest
       run: |
-        python -m pytest tests/test_factorial.py
+        python -m pytest -v tests/test_factorial.py
 ```
 
 Here we use two `run` steps to run some specific commands,
-to install our python dependencies and run `pytest` over our tests.
+to install our python dependencies and run `pytest` over our tests,
+using `-v` to request verbose reporting.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
