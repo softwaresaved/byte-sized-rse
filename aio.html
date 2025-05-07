@@ -2767,7 +2767,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6040,10 +6040,10 @@ Delivery to automate the deployment of packages and applications.</li>
 </div>
 </div>
 <p>Doing tasks manually can be time-consuming, error-prone, and hard to
-reproduce, especially as complexity grows. Using automation allows
-computers to handle repetitive, structured tasks reliably, quickly, and
-consistently, freeing up your time for more valuable and creative
-work.</p>
+reproduce, especially as the software project’s complexity grows. Using
+automation allows computers to handle repetitive, structured tasks
+reliably, quickly, and consistently, freeing up your time for more
+valuable and creative work.</p>
 <section><h2 class="section-heading" id="introduction-to-automation">Introduction to Automation<a class="anchor" aria-label="anchor" href="#introduction-to-automation"></a>
 </h2>
 <hr class="half-width">
@@ -6703,10 +6703,10 @@ in this case)</li>
 <pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.11</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v4</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
 <span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span></code></pre>
 </div>
@@ -6734,11 +6734,11 @@ will appear in our build reports as we’ll see later.</p>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with pytest</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        python -m pytest tests/test_factorial.py</span></code></pre>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        python -m pytest -v tests/test_factorial.py</span></code></pre>
 </div>
 <p>Here we use two <code>run</code> steps to run some specific commands,
 to install our python dependencies and run <code>pytest</code> over our
-tests.</p>
+tests, using <code>-v</code> to request verbose reporting.</p>
 <div id="what-about-other-actions" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
