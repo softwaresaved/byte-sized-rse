@@ -24,7 +24,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Doing tasks manually can be time-consuming, error-prone, and hard to reproduce, especially as complexity grows. Using automation allows computers to handle repetitive, structured tasks reliably, quickly, and consistently, freeing up your time for more valuable and creative work.
+Doing tasks manually can be time-consuming, error-prone, and hard to reproduce, especially as the software project's complexity grows. Using automation allows computers to handle repetitive, structured tasks reliably, quickly, and consistently, freeing up your time for more valuable and creative work.
 
 ## Introduction to Automation
 
