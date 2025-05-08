@@ -6,13 +6,19 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I run code in VSCode?
+- How do I use a debugger to locate the source of a problem in my code?
+- How does debugging fit within the broader process of development?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Use VSCode to run a Python script and have any text output displayed within a terminal
+- Add a debugging breakpoint to a Python script
+- Run a debugger so it pauses program execution at a breakpoint
+- Use the debugger to step through our code statement by statement
+- Use debugging information to identify the cause of a problem in our code
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -25,7 +31,7 @@ Then, select the "Play"-looking icon at the top right of the code editor.
 
 FIXME: screenshot snippet of the play icon?
 
-You should see the program run, and output displayed in a pop-up teminal window at the bottom:
+You should see the program run, and output displayed in a pop-up terminal window at the bottom:
 
 ```output
 steve@laptop:~/code-style-example$ /bin/python3 /home/steve/code-style-example/climate_analysis.py
@@ -189,6 +195,11 @@ and debugging allows us to pick apart that process, and step by step, help us fi
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Run a script by selecting the "Play" icon in VSCode
+- Debugging allows us to pause and inspect the internal state of a program while it is running
+- Specify the points a debugger should pause by adding breakpoints to specific lines of code
+- When a breakpoint is reached, a debugger typically shows you the current variables and their values and the stack of functions called to reach the current state
+- Debuggers typically allow us to: step through the code a statement at a time, step into or out of a function call if we need further debugging information regarding that function, and continue execution until another breakpoint is reached or the end of the program
+- Testing is used to identify the existence of a problem, whilst we use debugging to locate the source of a problem
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
