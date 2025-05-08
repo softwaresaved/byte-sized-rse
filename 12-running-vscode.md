@@ -6,13 +6,18 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I access the key features of Microsoft Visual Studio (VS) Code?
+- How do I open a software project in VSCode?
+- What are VSCode extensions, and how do I use them?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Describe the general layout of the VSCode interface
+- Download or clone an existing remote GitHub repository
+- Open a code folder in VSCode using the explorer feature
+- Install and configure an extension to VSCode that helps with Python code development
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -22,9 +27,7 @@ exercises: 0
 Let's start by running VSCode now on our machines, so run it now.
 How you run VSCode will differ depending on which operating system you have installed.
 
-TODO: add screenshot of opening vscode for first time
-
-The first thing you'll likely see is a "Welcome" page.
+The first thing you'll likely see is a welcome-style page with links to features for opening files, and creating or opening a project.
 You may find it asks you which kind of theme you'd like - you can select from either a dark or light theme.
 
 ## Navigating Around VSCode
@@ -33,7 +36,7 @@ So let's take a look at the application.
 You'll see some icons on the left side, which give you access to its key features.
 Hovering your mouse over each one will show a tooltip that names that feature:
 
-TODO: add screenshot with highlighted icons for what we'll cover here
+![](fig/vscode-overview.png){alt='Screenshot of VSCode interface' .image-with-shadow width="100%" }
 
 - `Explorer` - the top one is a file navigator, or explorer - we can use this to open existing folders containing program files.
 - `Search ` - the next one down is a search capability, so you can search for things (and replace them with other text) over your code files.
@@ -123,6 +126,9 @@ So next, let's look at editing code.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- IDEs typically have a host of features that help save time when writing code
+- Syntax highlighting gives you immediate feedback of potential issues as you write code
+- Code completion helps to automatically finish incomplete code statements and names
+- Code linters such as Pylint help to analyse and identify deeper issues with our code, including potential run-time errors
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
