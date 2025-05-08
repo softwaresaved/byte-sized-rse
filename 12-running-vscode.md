@@ -126,9 +126,4 @@ So next, let's look at editing code.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- IDEs typically have a host of features that help save time when writing code
-- Syntax highlighting gives you immediate feedback of potential issues as you write code
-- Code completion helps to automatically finish incomplete code statements and names
-- Code linters such as Pylint help to analyse and identify deeper issues with our code, including potential run-time errors
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
