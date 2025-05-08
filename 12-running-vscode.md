@@ -126,4 +126,10 @@ So next, let's look at editing code.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
+- Key VSCode features are accessible via the left navigation bar and the menu.
+- VSCode's capabilities can be increased by installing extensions
+- Language-specific support is available via extensions
+- A VSCode "workspace" is a project that consists of a collection of folder and files
+- Git source code repositories on GitHub can be cloned locally and opened from within VSCode
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
