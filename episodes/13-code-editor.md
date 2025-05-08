@@ -6,13 +6,20 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I open a source code file in VSCode?
+- What editing features will help me when writing code?
+- How can I use static code analysis tools with VSCode?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Use syntax highlighting to identify code styling issues and common coding mistakes
+- Use code completion to automate finishing an incomplete code statement
+- Install the Pylint static code analysis tool as a VSCode extension
+- Use the Pylint extension to identify deeper potential issues and errors
+- Use an extension to help with writing Python docstrings
+- Describe how VSCode highlights the status of files managed under version control
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -168,6 +175,9 @@ Things like syntax highlighting, code completion, automatic code formatting and 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- IDEs typically have a host of features that help save time when writing code
+- Syntax highlighting gives you immediate feedback of potential issues as you write code
+- Code completion helps to automatically finish incomplete code statements and names
+- Code linters such as Pylint help to analyse and identify deeper issues with our code, including potential run-time errors
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
