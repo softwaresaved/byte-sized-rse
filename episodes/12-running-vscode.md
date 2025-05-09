@@ -84,7 +84,7 @@ Then select `Mark done`, and close the Welcome window.
 FIXME: copy code-style-example repo to softwaresaved's organisation
 
 Next, let's obtain some example Python and edit it from within VSCode.
-So first, you can download the example code we'll use from https://github.com/UNIVERSE-HPC/code-style-example/releases/tag/v1.0.0, either as a `.zip` or `.tar.gz` compressed archive file.
+First, download the example code we'll use from https://github.com/UNIVERSE-HPC/code-style-example/releases/tag/v1.0.0, either as a `.zip` or `.tar.gz` compressed archive file.
 If you're unsure, download the `.zip` file.
 Then, extract all the files from the archive into a convenient location.
 You should see files contained within a new directory named `code-style-example-1.0.0`.
