@@ -75,7 +75,7 @@ It might take a minute - you can see a sliding blue line in the top left to indi
 Once complete, you should see a couple of "Welcome" windows introducing you to two of its key features - support for Python and Jupyter notebooks.
 If you use Jupyter notebooks, which is a way of writing Python programs that you can run line by line from within an editor as you write the program, you may find this useful.
 
-For now, let's configure this extension for our Python development, and to do that, we need to do is tell VSCode which Python installation on our machine we'd like it to use. In the Python Welcome window, select `Select a Python interpreter`, and then `Select Python interpreter`.
+For now, let's configure this extension for our Python development, and to do that, we need to tell VSCode which Python installation on our machine we'd like it to use. In the Python Welcome window, select `Select a Python interpreter`, and then `Select Python interpreter`.
 You may find you have many installations of Python, or only have one. Try to select one later than 3.8 if you can.
 Then select `Mark done`, and close the welcome windows.
 
