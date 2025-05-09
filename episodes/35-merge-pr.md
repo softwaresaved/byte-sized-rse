@@ -6,20 +6,24 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I merge changes proposed within a pull request?
+- What should I do with a branch that has been merged and is no longer required?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Use GitHub to approve and merge a pull request
+- Delete a branch that has been merged
+- View commits associated with a particular GitHub issue
+- List the benefits of using a feature branch approach
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## How to Merge the Pull Request?
 
 You'll notice there's a subtle dropdown on the `Merge pull request` button,
-which presents options forhow to perform the merge.
+which presents options for how to perform the merge.
 
 FIXME: ensure rebase and merge is covered in intro?
 
@@ -61,7 +65,7 @@ We can add more information here if needed - but let's `Confirm rebase and merge
 Note that it says that the merge was done successfully,
 and suggests we can delete the branch.
 
-QUESTION:  who has merged the pull request? Yes/No
+QUESTION: who has merged the pull request? Yes/No
 
 We said earlier that branches in Git should be short lived where possible,
 and keeping branches hanging around may cause confusion.
@@ -120,6 +124,8 @@ In either case, the key is to make sure that code is tested and checked with the
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Choose the branch merging method that is right for the situation
+- If you use a rebasing merging strategy, remember the Golden Rule: only rebase with a local branch, never a public (shared) branch you suspect is being used by others
+- Commits related to a particular issue (and referred to in its commit message) are viewable under that issue
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
