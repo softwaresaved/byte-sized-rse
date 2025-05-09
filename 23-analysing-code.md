@@ -6,13 +6,21 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- What tools can help with maintaining a consistent code style?
+- How can I keep dependencies between different code projects separate?
+- How can we automate code style checking?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Use pylint to verify a program’s adherence to an established Python coding style convention
+- Describe the benefits of a virtual environment
+- Create and use a virtual environment to manage Python dependencies separately for our example code
+- Install the Pylint static code analysis tool as a VSCode extension
+- Use the Pylint extension to identify deeper potential issues and errors
+- List the various types of issue messages that are output from Pylint
+- Fix an issue identified by Pylint and re-run Pylint to ensure it is resolved
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -100,6 +108,21 @@ we no longer have access to any globally installed Python packages.
 The next thing we can do is install any packages needed for this codebase.
 As it turns out, there isn't any needed for the code itself,
 but we wish to use pylint, and that's a python package.
+
+::::::::::::::::::::::::::::::::::::::::: callout
+
+## What is Pylint?
+
+Pylint is a tool that can be run from the command line or via IDEs like VSCode,
+which can help our code in many ways:
+
+- Ensure consistent code style : whilst in-IDE context-sensitive highlighting such as that provided by VSCode, it helps us stay consistent with established code style standards such as ([PEP 8](https://peps.python.org/pep-0008/)) as we write code by highlighting infractions.
+- Perform basic error detection: Pylint can look for certain Python type errors.
+- Check variable naming conventions: Pylint often goes beyond PEP 8 to include other common conventions, such as naming variables outside of functions in upper case.
+- Customisation: you can specify which errors and conventions you wish to check for, and those you wish to ignore.
+
+:::::::::::::::::::::::::::::::::::::::::
+
 So we can install pylint into our virtual environment:
 
 ```bash
@@ -247,7 +270,7 @@ At the end, we can see a breakdown of what they mean:
 - `I` is for informational messages
 - `C` is for a programming standards violation. Part of the code is not conforming to the normally accepted conventions of writing good code (e.g. things like variable or function naming)
 - `R` for a need to refactor, due to a "bad code smell”
-- `W` for warning - something that
+- `W` for warning - something that isn't critical should be resolved
 - `E` for error - so pylint think's it's spotted a bug (useful, but don't depend on this to find errors!)
 - `F` for a fatal pylint error
 
@@ -283,6 +306,10 @@ We can see that most of our issues are do to with coding conventions.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Virtual environments help us maintain dependencies between different code projects separately, avoiding confusion between which dependencies are strictly required for a given project
+- One method to create a Python virtual environment is to use `python -m venv venv` to generate a virtual environment in the current directory called `venv`
+- Code linters such as Pylint help to analyse and identify deeper issues with our code, including potential run-time errors
+- Pylint outputs issues of different types, including informational messages, programming standards violations, warnings, and errors
+- Pylint outputs an overall score for our code based on deductions from a perfect score of 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

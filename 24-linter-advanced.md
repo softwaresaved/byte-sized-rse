@@ -6,13 +6,18 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- What can I do to increase the detail of Pylint reports?
+- How can I reduce unwanted messages from Pylint?
+- How can I use static code analysis tools with VSCode?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Use Pylint to produce a verbose report showing number of occurrences of encountered message types
+- Fix an issue within our code to increase our Pylint score
+- Specify message types to Pylint that we don't want reported
+- Install a Pylint extension into VSCode
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -183,6 +188,35 @@ disable=C0301,
 
 Every time you re-run it now, the `C0301` issue will not be present.
 
+## Using Pylint within VSCode
+
+The good news is that if you're using the VSCode IDE,
+we can also (or alternatively) install a Python linter in VSCode to give us this code analysis functionality, by installing a pylint extension.
+Select the `Extensions` icon and this time search for `Pylint`, the one by Microsoft, and click `Install`.
+
+Going back to our code you should now find lots of squiggly underlines of various colours.
+
+::::::::::::::::::::::::::::::::::::::::: callout
+
+## I don't see any Squiggly Underlines!!
+
+If you happen to not see any squiggly underlines in the editor,
+it could be the linter extension hasn't looked at your code yet.
+In order to trigger the linter to show us further issues, try saving the file to trigger the linter to do this.
+So go to `File` then `Save` on the menu bar, and you should now see a lot of squiggly underlines in the code.
+
+:::::::::::::::::::::::::::::::::::::::::
+
+These squiggly lines indicate an issue, and by hovering over them, we can see details of the issue.
+For example, by hovering over the variables `shift` or `comment` - we can see that the variable names don't conform to what's known as an `UPPER_CASE` naming convention.
+Simply, the linter has identified these variables as constants, and typically, these are in upper case. We should rename them, e.g. `SHIFT` and `COMMENT`.
+But following this, we also need to update the reference to `comment` in the code so it's also upper case.
+Now if we save the file selecting `File` then `Save`, we should see the linter rerun, and those highlighted issues disappear.
+
+We can also see a comprehensive list of all the issues found, by opening a code `Problems` window.
+In the menu, go to `View` then `Problems`, and then you'll see a complete list of issues which we can work on displayed in the pane at the bottom of the code editor.
+We don't have to address them, of course, but by following them we bring our code style closer to a commonly accepted and consistent form of Python.
+
 ## Summary
 
 Code linters like pylint help us to identify problems in our code,
@@ -211,6 +245,11 @@ However, whilst taking these shortcomings into account, linters are a very low e
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Use the `--reports y` argument on the command line to Pylint to provide verbose reports
+- Instruct Pylint to ignore messages on the command line using the `--disable=` argument followed by comman-separated list of message identifiers
+- Use `pylint --generate-rcfile > .pylintrc` to generate a pre-populated configuration file for Pylint to edit to customise Pylint's behaviour when run within a particular directory
+- Pylint can be run on the command line or used within VSCode
+- Using Pylint helps us keep our code consistent, particularly across teams
+- Don't use Pylint feedback and scores as the only means to judge code quality
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
