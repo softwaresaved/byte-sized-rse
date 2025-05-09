@@ -6,13 +6,16 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I use Git to create and work on a feature branch?
+- How do I push my branch changes to GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Create and use new a feature branch in our repository to working on an issue
+- Fix issue and commit changes to the feature branch
+- Push the new branch and its commits to GitHub
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -131,7 +134,7 @@ So what we need to do now is to switch to this new branch,
 which we can do via:
 
 ```bash
-git checkout issue-2-missing-docstrings
+git switch issue-2-missing-docstrings
 ```
 
 ```output
@@ -290,6 +293,9 @@ Let's do this now!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Use `git branch` to create a new branch in Git
+- Use `git switch` to change to and use another branch
+- Add an issue number, e.g. `#1` to a Git commit message so GitHub registers those commits under that issue
+- Use `git push --set-upstream origin branch-name` to push the commits on a new branch to a GitHub repository
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

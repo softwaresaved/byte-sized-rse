@@ -6,13 +6,18 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- What are Git "branches"?
+- Why should I separate different strands of code work into "feature branches"?
+- How should I capture problems with my code that I want to fix?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Obtain example code used for this lesson
+- List the issues with the example code
+- Describe the limitations of using a single branch on a repository
+- Create issues on GitHub that describe problems that will be fixed throughout the lesson
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -106,7 +111,7 @@ where the docstring explains what the function does,
 its input arguments, and what it returns.
 - An incorrect function name `FahrToCels`, which should be `FahrToCelsius`. This will cause it to fail if we try to run it.
 
-Another thing to note on this repository is that we have a single main branch (also used to be called a master branch) which you may see in older repositories.
+Another thing to note on this repository is that we have a single main branch (also used to be called a master branch which you may see in older repositories).
 You'll also notice some commits on the main branch already.
 One way to look at this is as a single "stream" of development.
 We've made changes to this codebase one after the other on this main branch,
@@ -123,6 +128,7 @@ perhaps as part of a new project that will develop the software.
 What would be really helpful would be to be able to do all these things whilst always maintaining working code in our repository.
 Fortunately, version control allows us to create and use *separate branches* in addition to the main branch, 
 which will not interfere with our working code on the main branch.
+Branches created for working on a particular feature are typically called *feature branches*.
 
 ## Create Example Issues
 
@@ -165,6 +171,8 @@ QUESTION: who's created the three issues? Yes/No
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Using Git branches helps us keep different strands of development separated, so development in one strand doesn't impact and confuse development in the others
+- Branches created to work specifically on a particular code feature are called *feature branches*
+- GitHub allows us to capture, describe and organise issues with our code to work on later
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

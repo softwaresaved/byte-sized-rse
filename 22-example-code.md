@@ -6,13 +6,16 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- Why should I write readable code?
+- What is a "Code Smell"?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Obtain and run example code used for this lesson
+- List the benefits of writing readable code
+- Describe the key indicators of a "bad code smell"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -32,7 +35,6 @@ cd
 git clone https://github.com/UNIVERSE-HPC/code-style-example
 cd code-style-example
 ```
-
 
 ## Examining the Code
 
@@ -173,6 +175,8 @@ to help us identify these sorts of issues with the code.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- No one writes readable, well designed and well formatted code all the time
+- Writing clear and readable code helps others - as well as yourself in the future - to understand, modify and extend your code more easily
+- A code smell is a cursory indication that a piece of code may have underlying issues
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
