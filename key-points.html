@@ -730,8 +730,6 @@ writing code</li>
 as you write code</li>
 <li>Code completion helps to automatically finish incomplete code
 statements and names</li>
-<li>Code linters such as Pylint help to analyse and identify deeper
-issues with our code, including potential run-time errors</li>
 </ul></section><section id="14-running-debugging"><h2 class="section-heading"><a href="14-running-debugging.html">1.4 Running and Debugging Code</a></h2>
 <hr class="half-width">
 <ul>
@@ -758,11 +756,35 @@ use debugging to locate the source of a problem</li>
 </ul></section><section id="23-analysing-code"><h2 class="section-heading"><a href="23-analysing-code.html">2.3 Analysing Code using a Linter</a></h2>
 <hr class="half-width">
 <ul>
-<li>FIXME</li>
+<li>Virtual environments help us maintain dependencies between different
+code projects separately, avoiding confusion between which dependencies
+are strictly required for a given project</li>
+<li>One method to create a Python virtual environment is to use
+<code>python -m venv venv</code> to generate a virtual environment in
+the current directory called <code>venv</code>
+</li>
+<li>Code linters such as Pylint help to analyse and identify deeper
+issues with our code, including potential run-time errors</li>
+<li>Pylint outputs issues of different types, including informational
+messages, programming standards violations, warnings, and errors</li>
+<li>Pylint outputs an overall score for our code based on deductions
+from a perfect score of 10</li>
 </ul></section><section id="24-linter-advanced"><h2 class="section-heading"><a href="24-linter-advanced.html">2.4 Advanced Linting Features</a></h2>
 <hr class="half-width">
 <ul>
-<li>FIXME</li>
+<li>Use the <code>--reports y</code> argument on the command line to
+Pylint to provide verbose reports</li>
+<li>Instruct Pylint to ignore messages on the command line using the
+<code>--disable=</code> argument followed by comman-separated list of
+message identifiers</li>
+<li>Use <code>pylint --generate-rcfile &gt; .pylintrc</code> to generate
+a pre-populated configuration file for Pylint to edit to customise
+Pylint’s behaviour when run within a particular directory</li>
+<li>Pylint can be run on the command line or used within VSCode</li>
+<li>Using Pylint helps us keep our code consistent, particularly across
+teams</li>
+<li>Don’t use Pylint feedback and scores as the only means to judge code
+quality</li>
 </ul></section><section id="30-introduction"><h2 class="section-heading"><a href="30-introduction.html">Lesson 3: Intermediate Git</a></h2>
 <hr class="half-width">
 <ul>
@@ -916,8 +938,8 @@ changes to live systems.</li>
   "url": "https://softwaresaved.github.io/byte-sized-rse/key-points.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/key-points.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-08",
-  "datePublished": "2025-05-08"
+  "dateModified": "2025-05-09",
+  "datePublished": "2025-05-09"
 }
 
   </script><script>

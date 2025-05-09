@@ -245,7 +245,6 @@
       <div class="accordion-body">
         <ul><li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
 <li><a href="#code-completion">Code Completion</a></li>
-<li><a href="#code-linting">Code Linting</a></li>
 <li><a href="#need-a-thing-install-an-extension">Need a Thing? Install an Extension!</a></li>
 <li><a href="#summary">Summary</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -573,7 +572,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>1.3 Using the Code Editor</h1>
-        <p>Last updated on 2025-05-08 |
+        <p>Last updated on 2025-05-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/13-code-editor.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -596,7 +595,6 @@
 <h3 class="card-title">Questions</h3>
 <ul><li>How do I open a source code file in VSCode?</li>
 <li>What editing features will help me when writing code?</li>
-<li>How can I use static code analysis tools with VSCode?</li>
 </ul></div>
 </div>
 </div>
@@ -608,10 +606,6 @@
 coding mistakes</li>
 <li>Use code completion to automate finishing an incomplete code
 statement</li>
-<li>Install the Pylint static code analysis tool as a VSCode
-extension</li>
-<li>Use the Pylint extension to identify deeper potential issues and
-errors</li>
 <li>Use an extension to help with writing Python docstrings</li>
 <li>Describe how VSCode highlights the status of files managed under
 version control</li>
@@ -691,78 +685,6 @@ information on the file <code>open</code> function and its arguments,
 along with a description of what it does. This is really handy to we
 don’t have to take the time to look up all this information up on the
 web, for example.</p>
-</section><section><h2 class="section-heading" id="code-linting">Code Linting<a class="anchor" aria-label="anchor" href="#code-linting"></a></h2>
-<hr class="half-width"><p>FIXME: intro to code linter (add to intro section)</p>
-<p>In the introduction we covered code linting tools, which go even
-further that syntax highlighting to analyse and identify deeper issues
-with our code. The good news is that we can install a Python linter in
-VSCode to give us this code analysis functionality, by installing a
-linter extension. As before, select the <code>Extensions</code> icon and
-this time search for <code>Pylint</code>, the one by Microsoft, and
-click <code>Install</code>.</p>
-<div id="what-is-pylint" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="what-is-pylint" class="callout-inner">
-<h3 class="callout-title">What is Pylint?</h3>
-<div class="callout-content">
-<p>Pylint is a tool that can be run from the command line or via IDEs
-like VSCode, which can help our code in many ways:</p>
-<ul><li>Ensure consistent code style : whilst in-IDE context-sensitive
-highlighting such as that provided by VSCode, it helps us stay
-consistent with established code style standards such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>) as we write code by
-highlighting infractions.</li>
-<li>Perform basic error detection: Pylint can look for certain Python
-type errors.</li>
-<li>Check variable naming conventions: Pylint often goes beyond PEP 8 to
-include other common conventions, such as naming variables outside of
-functions in upper case.</li>
-<li>Customisation: you can specify which errors and conventions you wish
-to check for, and those you wish to ignore.</li>
-</ul></div>
-</div>
-</div>
-<p>Going back to our code you should now find lots of squiggly
-underlines of various colours.</p>
-<div id="i-dont-see-any-squiggly-underlines" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="i-dont-see-any-squiggly-underlines" class="callout-inner">
-<h3 class="callout-title">I don’t see any Squiggly Underlines!!</h3>
-<div class="callout-content">
-<p>If you happen to not see any squiggly underlines in the editor, it
-could be the linter extension hasn’t looked at your code yet. In order
-to trigger the linter to show us further issues, try saving the file to
-trigger the linter to do this. So go to <code>File</code> then
-<code>Save</code> on the menu bar, and you should now see a lot of
-squiggly underlines in the code.</p>
-</div>
-</div>
-</div>
-<p>These squiggly lines indicate an issue, and by hovering over them, we
-can see details of the issue. For example, by hovering over the
-variables <code>shift</code> or <code>comment</code> - we can see that
-the variable names don’t conform to what’s known as an
-<code>UPPER_CASE</code> naming convention. Simply, the linter has
-identified these variables as constants, and typically, these are in
-upper case. We should rename them, e.g. <code>SHIFT</code> and
-<code>COMMENT</code>. But following this, we also need to update the
-reference to <code>comment</code> in the code so it’s also upper case.
-Now if we save the file selecting <code>File</code> then
-<code>Save</code>, we should see the linter rerun, and those highlighted
-issues disappear.</p>
-<p>We can also see a comprehensive list of all the issues found, by
-opening a code <code>Problems</code> window. In the menu, go to
-<code>View</code> then <code>Problems</code>, and then you’ll see a
-complete list of issues which we can work on displayed in the pane at
-the bottom of the code editor. We don’t have to address them, of course,
-but by following them we bring our code style closer to a commonly
-accepted and consistent form of Python.</p>
-<p>The linter also picks up things like functions that don’t have
-docstrings which we’ll take a look at. For now, we can close the
-<code>Problems</code> pane.</p>
 </section><section><h2 class="section-heading" id="need-a-thing-install-an-extension">Need a Thing? Install an Extension!<a class="anchor" aria-label="anchor" href="#need-a-thing-install-an-extension"></a></h2>
 <hr class="half-width"><p>As we just saw, included in the list of issues with our code was the
 lack of docstrings. If we want to write good code, we should be adding
@@ -828,8 +750,6 @@ writing code</li>
 as you write code</li>
 <li>Code completion helps to automatically finish incomplete code
 statements and names</li>
-<li>Code linters such as Pylint help to analyse and identify deeper
-issues with our code, including potential run-time errors</li>
 </ul></div>
 </div>
 </div>
@@ -895,8 +815,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/13-code-editor.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/13-code-editor.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-08",
-  "datePublished": "2025-05-08"
+  "dateModified": "2025-05-09",
+  "datePublished": "2025-05-09"
 }
 
   </script><script>

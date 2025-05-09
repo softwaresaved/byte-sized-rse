@@ -571,7 +571,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.3 Analysing Code using a Linter</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-05-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/23-analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -590,7 +590,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>FIXME</li>
+<ul><li>What tools can help with maintaining a consistent code style?</li>
+<li>How can I keep dependencies between different code projects
+separate?</li>
+<li>How can we automate code style checking?</li>
 </ul></div>
 </div>
 </div>
@@ -598,7 +601,19 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>FIXME</li>
+<ul><li>Use pylint to verify a program’s adherence to an established Python
+coding style convention</li>
+<li>Describe the benefits of a virtual environment</li>
+<li>Create and use a virtual environment to manage Python dependencies
+separately for our example code</li>
+<li>Install the Pylint static code analysis tool as a VSCode
+extension</li>
+<li>Use the Pylint extension to identify deeper potential issues and
+errors</li>
+<li>List the various types of issue messages that are output from
+Pylint</li>
+<li>Fix an issue identified by Pylint and re-run Pylint to ensure it is
+resolved</li>
 </ul></div>
 </div>
 </div>
@@ -693,8 +708,31 @@ packages.</p>
 <h3 id="installing-pylint-into-our-virtual-environment">Installing Pylint into our Virtual Environment<a class="anchor" aria-label="anchor" href="#installing-pylint-into-our-virtual-environment"></a></h3>
 <p>The next thing we can do is install any packages needed for this
 codebase. As it turns out, there isn’t any needed for the code itself,
-but we wish to use pylint, and that’s a python package. So we can
-install pylint into our virtual environment:</p>
+but we wish to use pylint, and that’s a python package.</p>
+<div id="what-is-pylint" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="what-is-pylint" class="callout-inner">
+<h3 class="callout-title">What is Pylint?</h3>
+<div class="callout-content">
+<p>Pylint is a tool that can be run from the command line or via IDEs
+like VSCode, which can help our code in many ways:</p>
+<ul><li>Ensure consistent code style : whilst in-IDE context-sensitive
+highlighting such as that provided by VSCode, it helps us stay
+consistent with established code style standards such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>) as we write code by
+highlighting infractions.</li>
+<li>Perform basic error detection: Pylint can look for certain Python
+type errors.</li>
+<li>Check variable naming conventions: Pylint often goes beyond PEP 8 to
+include other common conventions, such as naming variables outside of
+functions in upper case.</li>
+<li>Customisation: you can specify which errors and conventions you wish
+to check for, and those you wish to ignore.</li>
+</ul></div>
+</div>
+</div>
+<p>So we can install pylint into our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -845,7 +883,8 @@ good code (e.g. things like variable or function naming)</li>
 <code>R</code> for a need to refactor, due to a “bad code
 smell”</li>
 <li>
-<code>W</code> for warning - something that</li>
+<code>W</code> for warning - something that isn’t critical should be
+resolved</li>
 <li>
 <code>E</code> for error - so pylint think’s it’s spotted a bug
 (useful, but don’t depend on this to find errors!)</li>
@@ -889,7 +928,19 @@ conventions.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>Virtual environments help us maintain dependencies between different
+code projects separately, avoiding confusion between which dependencies
+are strictly required for a given project</li>
+<li>One method to create a Python virtual environment is to use
+<code>python -m venv venv</code> to generate a virtual environment in
+the current directory called <code>venv</code>
+</li>
+<li>Code linters such as Pylint help to analyse and identify deeper
+issues with our code, including potential run-time errors</li>
+<li>Pylint outputs issues of different types, including informational
+messages, programming standards violations, warnings, and errors</li>
+<li>Pylint outputs an overall score for our code based on deductions
+from a perfect score of 10</li>
 </ul></div>
 </div>
 </div>
@@ -955,8 +1006,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/23-analysing-code.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/23-analysing-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-05-08"
+  "dateModified": "2025-05-09",
+  "datePublished": "2025-05-09"
 }
 
   </script><script>
