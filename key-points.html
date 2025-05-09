@@ -828,6 +828,10 @@ code to work on later</li>
 </ul></section><section id="33-feature-branch"><h2 class="section-heading"><a href="33-feature-branch.html">3.3 Feature Branch Workflow</a></h2>
 <hr class="half-width">
 <ul>
+<li>A branch is one version of your project that can contain its own set
+of commits</li>
+<li>Feature branches enable us to develop / explore / test new code
+features without affecting the stable main code</li>
 <li>Use <code>git branch</code> to create a new branch in Git</li>
 <li>Use <code>git switch</code> to change to and use another branch</li>
 <li>Add an issue number, e.g. <code>#1</code> to a Git commit message so
@@ -849,7 +853,13 @@ branch and main branch</li>
 </ul></section><section id="35-merge-pr"><h2 class="section-heading"><a href="35-merge-pr.html">3.5 Merging a Pull Request</a></h2>
 <hr class="half-width">
 <ul>
-<li>FIXME</li>
+<li>Choose the branch merging method that is right for the
+situation</li>
+<li>If you use a rebasing merging strategy, remember the Golden Rule:
+only rebase with a local branch, never a public (shared) branch you
+suspect is being used by others</li>
+<li>Commits related to a particular issue (and referred to in its commit
+message) are viewable under that issue</li>
 </ul></section><section id="36-merge-conflicts"><h2 class="section-heading"><a href="36-merge-conflicts.html">3.6 Merge Conflicts</a></h2>
 <hr class="half-width">
 <ul>
