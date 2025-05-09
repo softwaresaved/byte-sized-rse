@@ -2044,7 +2044,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-22-example-code"><p>Content from <a href="22-example-code.html">2.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-05-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/22-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -2059,7 +2059,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>Why should I write readable code?</li>
+<li>What is a “Code Smell”?</li>
 </ul>
 </div>
 </div>
@@ -2069,7 +2070,9 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Obtain and run example code used for this lesson</li>
+<li>List the benefits of writing readable code</li>
+<li>Describe the key indicators of a “bad code smell”</li>
 </ul>
 </div>
 </div>
@@ -2240,7 +2243,13 @@ us identify these sorts of issues with the code.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>No one writes readable, well designed and well formatted code all
+the time</li>
+<li>Writing clear and readable code helps others - as well as yourself
+in the future - to understand, modify and extend your code more
+easily</li>
+<li>A code smell is a cursory indication that a piece of code may have
+underlying issues</li>
 </ul>
 </div>
 </div>
@@ -3407,7 +3416,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-32-example-code"><p>Content from <a href="32-example-code.html">3.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-05-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/32-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -3422,7 +3431,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What are Git “branches”?</li>
+<li>Why should I separate different strands of code work into “feature
+branches”?</li>
+<li>How should I capture problems with my code that I want to fix?</li>
 </ul>
 </div>
 </div>
@@ -3432,7 +3444,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Obtain example code used for this lesson</li>
+<li>List the issues with the example code</li>
+<li>Describe the limitations of using a single branch on a
+repository</li>
+<li>Create issues on GitHub that describe problems that will be fixed
+throughout the lesson</li>
 </ul>
 </div>
 </div>
@@ -3539,27 +3556,28 @@ arguments, and what it returns.</li>
 it.</li>
 </ul>
 <p>Another thing to note on this repository is that we have a single
-main branch (also used to be called a master branch) which you may see
-in older repositories. You’ll also notice some commits on the main
-branch already. One way to look at this is as a single “stream” of
-development. We’ve made changes to this codebase one after the other on
-this main branch, however, it might be that we may want to add a new
-software feature, or fix a bug in our code later on. This may take,
-maybe, more than a few commits to complete and make it work, perhaps
-over a matter of hours or days. Of course, as we make changes to make
-this feature work, the commits along the way may well break the
-“working” nature of our repository and after that, users getting hold of
-our software by cloning the repo, also get a version of the software
-that then isn’t working. This is also true for developers as well: for
-example, it’s very hard to develop a new feature for a piece of software
-if you don’t start with software that is already working. The problem
-would also become compounded if other developers become involved,
-perhaps as part of a new project that will develop the software. What
-would be really helpful would be to be able to do all these things
-whilst always maintaining working code in our repository. Fortunately,
-version control allows us to create and use <em>separate branches</em>
-in addition to the main branch, which will not interfere with our
-working code on the main branch.</p>
+main branch (also used to be called a master branch which you may see in
+older repositories). You’ll also notice some commits on the main branch
+already. One way to look at this is as a single “stream” of development.
+We’ve made changes to this codebase one after the other on this main
+branch, however, it might be that we may want to add a new software
+feature, or fix a bug in our code later on. This may take, maybe, more
+than a few commits to complete and make it work, perhaps over a matter
+of hours or days. Of course, as we make changes to make this feature
+work, the commits along the way may well break the “working” nature of
+our repository and after that, users getting hold of our software by
+cloning the repo, also get a version of the software that then isn’t
+working. This is also true for developers as well: for example, it’s
+very hard to develop a new feature for a piece of software if you don’t
+start with software that is already working. The problem would also
+become compounded if other developers become involved, perhaps as part
+of a new project that will develop the software. What would be really
+helpful would be to be able to do all these things whilst always
+maintaining working code in our repository. Fortunately, version control
+allows us to create and use <em>separate branches</em> in addition to
+the main branch, which will not interfere with our working code on the
+main branch. Branches created for working on a particular feature are
+typically called <em>feature branches</em>.</p>
 </section><section><h2 class="section-heading" id="create-example-issues">Create Example Issues<a class="anchor" aria-label="anchor" href="#create-example-issues"></a>
 </h2>
 <hr class="half-width">
@@ -3610,7 +3628,14 @@ later!</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Using Git branches helps us keep different strands of development
+separated, so development in one strand doesn’t impact and confuse
+development in the others</li>
+<li>Branches created to work specifically on a particular code feature
+are called <em>feature branches</em>
+</li>
+<li>GitHub allows us to capture, describe and organise issues with our
+code to work on later</li>
 </ul>
 </div>
 </div>
@@ -3621,7 +3646,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-33-feature-branch"><p>Content from <a href="33-feature-branch.html">3.3 Feature Branch Workflow</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-05-09 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/33-feature-branch.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -3636,7 +3661,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do I use Git to create and work on a feature branch?</li>
+<li>How do I push my branch changes to GitHub?</li>
 </ul>
 </div>
 </div>
@@ -3646,7 +3672,10 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Create and use new a feature branch in our repository to working on
+an issue</li>
+<li>Fix issue and commit changes to the feature branch</li>
+<li>Push the new branch and its commits to GitHub</li>
 </ul>
 </div>
 </div>
@@ -3776,7 +3805,7 @@ can do via:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> checkout issue-2-missing-docstrings</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> switch issue-2-missing-docstrings</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3940,7 +3969,12 @@ its commits to GItHub? Yes/no Let’s do this now!</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Use <code>git branch</code> to create a new branch in Git</li>
+<li>Use <code>git switch</code> to change to and use another branch</li>
+<li>Add an issue number, e.g. <code>#1</code> to a Git commit message so
+GitHub registers those commits under that issue</li>
+<li>Use <code>git push --set-upstream origin branch-name</code> to push
+the commits on a new branch to a GitHub repository</li>
 </ul>
 </div>
 </div>
