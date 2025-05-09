@@ -1,8 +1,8 @@
 # Byte-Sized RSE
 
-[Byte-sized RSE](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) is a series of standalone mini training materials providing key research software skills in around 1-1.5 hour originally developed and run by [Jeremy Cohen from the Imperial College London](https://wp.doc.ic.ac.uk/scg/person/jeremy-cohen/) and [Steve Crouch from the Software Sustainability Institute](https://www.software.ac.uk/our-people/steve-crouch) since October 2022 as part of the [UNIVERSE-HPC](https://www.universe-hpc.ac.uk/) project. 
+[Byte-sized RSE](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) is a series of standalone mini training materials providing key research software skills in around 1-1.5 hour originally developed and run by [Jeremy Cohen from the Imperial College London](https://profiles.imperial.ac.uk/jeremy.cohen) and [Steve Crouch from the Software Sustainability Institute](https://www.software.ac.uk/our-people/steve-crouch) since October 2022 as part of the [UNIVERSE-HPC](https://www.universe-hpc.ac.uk/) project. 
 
-There have been 3 Byte-sized RSE series so far, each with a number of episodes. Each episode also has a companion podcast episode in the [Code for Thought podcast series](https://codeforthought.buzzsprout.com/), hosted by [Peter Schmidth](https://codeforthought.buzzsprout.com/1326658/contributors/55741). Over time, episodes have been contributed by other authors/speakers too.
+There have been 3 Byte-sized RSE series so far, each with a number of episodes. Each episode also has a companion podcast episode in the [Code for Thought podcast series](https://codeforthought.buzzsprout.com/), hosted by [Peter Schmidt](https://codeforthought.buzzsprout.com/1326658/contributors/55741). Over time, episodes have been contributed by other authors/speakers too.
 
 Check [Byte-sized RSE series in the UNIVERSE-HPC project](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) for the full list of all episodes.
 
