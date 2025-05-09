@@ -6,8 +6,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do I merge changes made on another branch?
-- How should I organise a set of changes together?
+- How can I organise a set of changes together so they can be merged later?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
