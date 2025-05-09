@@ -8,7 +8,6 @@ exercises: 0
 
 - How do I open a source code file in VSCode?
 - What editing features will help me when writing code?
-- How can I use static code analysis tools with VSCode?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -16,8 +15,6 @@ exercises: 0
 
 - Use syntax highlighting to identify code styling issues and common coding mistakes
 - Use code completion to automate finishing an incomplete code statement
-- Install the Pylint static code analysis tool as a VSCode extension
-- Use the Pylint extension to identify deeper potential issues and errors
 - Use an extension to help with writing Python docstrings
 - Describe how VSCode highlights the status of files managed under version control
 
@@ -81,55 +78,6 @@ As another example, if we wanted to open another file, we might type `new_file =
 In this case, it provides information on the file `open` function and its arguments, along with a description of what it does.
 This is really handy to we don't have to take the time to look up all this information up on the web, for example.
 
-## Code Linting
-
-FIXME: intro to code linter (add to intro section)
-
-In the introduction we covered code linting tools,
-which go even further that syntax highlighting to analyse and identify deeper issues with our code.
-The good news is that we can install a Python linter in VSCode to give us this code analysis functionality, by installing a linter extension.
-As before, select the `Extensions` icon and this time search for `Pylint`, the one by Microsoft, and click `Install`.
-
-::::::::::::::::::::::::::::::::::::::::: callout
-
-## What is Pylint?
-
-Pylint is a tool that can be run from the command line or via IDEs like VSCode,
-which can help our code in many ways:
-
-- Ensure consistent code style : whilst in-IDE context-sensitive highlighting such as that provided by VSCode, it helps us stay consistent with established code style standards such as ([PEP 8](https://peps.python.org/pep-0008/)) as we write code by highlighting infractions.
-- Perform basic error detection: Pylint can look for certain Python type errors.
-- Check variable naming conventions: Pylint often goes beyond PEP 8 to include other common conventions, such as naming variables outside of functions in upper case.
-- Customisation: you can specify which errors and conventions you wish to check for, and those you wish to ignore.
-
-:::::::::::::::::::::::::::::::::::::::::
-
-Going back to our code you should now find lots of squiggly underlines of various colours.
-
-::::::::::::::::::::::::::::::::::::::::: callout
-
-## I don't see any Squiggly Underlines!!
-
-If you happen to not see any squiggly underlines in the editor,
-it could be the linter extension hasn't looked at your code yet.
-In order to trigger the linter to show us further issues, try saving the file to trigger the linter to do this.
-So go to `File` then `Save` on the menu bar, and you should now see a lot of squiggly underlines in the code.
-
-:::::::::::::::::::::::::::::::::::::::::
-
-These squiggly lines indicate an issue, and by hovering over them, we can see details of the issue.
-For example, by hovering over the variables `shift` or `comment` - we can see that the variable names don't conform to what's known as an `UPPER_CASE` naming convention.
-Simply, the linter has identified these variables as constants, and typically, these are in upper case. We should rename them, e.g. `SHIFT` and `COMMENT`.
-But following this, we also need to update the reference to `comment` in the code so it's also upper case.
-Now if we save the file selecting `File` then `Save`, we should see the linter rerun, and those highlighted issues disappear.
-
-We can also see a comprehensive list of all the issues found, by opening a code `Problems` window.
-In the menu, go to `View` then `Problems`, and then you'll see a complete list of issues which we can work on displayed in the pane at the bottom of the code editor.
-We don't have to address them, of course, but by following them we bring our code style closer to a commonly accepted and consistent form of Python.
-
-The linter also picks up things like functions that don't have docstrings which we'll take a look at.
-For now, we can close the `Problems` pane.
-
 ## Need a Thing? Install an Extension!
 
 As we just saw, included in the list of issues with our code was the lack of docstrings.
@@ -178,6 +126,5 @@ Things like syntax highlighting, code completion, automatic code formatting and 
 - IDEs typically have a host of features that help save time when writing code
 - Syntax highlighting gives you immediate feedback of potential issues as you write code
 - Code completion helps to automatically finish incomplete code statements and names
-- Code linters such as Pylint help to analyse and identify deeper issues with our code, including potential run-time errors
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
