@@ -67,7 +67,7 @@ Installing a language extension will allow you to do more things with that parti
 
 Let's install an extension now:
 
-1. Firstly, select the extensions icon first, then type in Python into the search box at the top, and it'll give you a list of all python-related extensions.
+1. Firstly, select the extensions icon, then type in "Python" into the search box at the top, and it'll give you a list of all Python-related extensions.
 1. Select the one which says `Python` from Microsoft. This is the Microsoft official Python extension.
 1. Then select `Install`.
 
