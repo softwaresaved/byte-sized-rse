@@ -1,7 +1,7 @@
 ---
 title: "1.4 Running and Debugging Code"
 teaching: 10
-exercises: 2
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
