@@ -58,7 +58,7 @@ There are many other features and ways to access them, and we'll cover key ones 
 
 Extensions are a major strength of VSCode. Whilst VSCode appears quite lightweight, and presents a simple interface (particularly compared to many other IDEs!), this is quite deceptive.
 You can extend its functionality in many different ways. 
-or example, installing support for other languages, greater support for version control, there's even support for working with databases, and so on.
+For example, installing support for other languages, greater support for version control, there's even support for working with databases, and so on.
 There are literally tens of thousands of possible extensions now.
 
 Now VSCode already comes with built-in support for JavaScript, including TypeScript and node.js,
