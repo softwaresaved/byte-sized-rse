@@ -6,13 +6,16 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I merge changes made on another branch?
+- How should I organise a set of changes together?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Describe what is meant by a pull request
+- Describe the benefits of using pull requests
+- Create a pull request using GitHub to group together and propose a set of changes to be merged to another branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -94,7 +97,7 @@ At this point, we could assume we've just done that, and the PR has been approve
 By contributing work in PRs, and having reviews of PRs,
 it's not just a number of people making changes in isolation.
 In collaborations around software,
-it's very important to increase the flow of information between people making changes,
+it's very important to increase the flow of information between people making changes
 in case there are any new potential issues that are introduced.
 And PRs give us that discipline - an opportunity really - to make sure that the changes we are making are well considered.
 This then becomes part of the overall cycle of development:
@@ -117,7 +120,7 @@ and when ready, we then merge the PR.
 
 Which raises the question, of how long should PRs be open, or branches for that matter?
 To some degree, this depends on the nature of the changes being made
-But branches in Git are designed, and should be wherever possible, short-lived.
+But branches in Git are designed, and should be wherever possible, short-lived and deleted when no longer required.
 The longer a branch is open, the more potential changes could be made to the main branch.
 Then when it comes time to merge the branch, we may get a lot of conflicts we need to manage.
 So generally, it's a good idea to keep your branches open for a day or two, a few days maximum, before creating a PR and doing a merge if you can.
@@ -128,6 +131,9 @@ as well as any others, by selecting the `Pull request` tab.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Always test code before you push changes to a remote repository
+- Pull requests give us the opportunity to properly consider and review logical sets of changes to our codebase before they are merged
+- GitHub gives us powerful tools to create and manage pull requests
+- Where possible, keep Git branches short lived and merge them as soon as is convenient, to avoid increasing disparities between the feature branch and main branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
