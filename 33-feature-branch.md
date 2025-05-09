@@ -293,6 +293,8 @@ Let's do this now!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
+- A branch is one version of your project that can contain its own set of commits
+- Feature branches enable us to develop / explore / test new code features without affecting the stable main code
 - Use `git branch` to create a new branch in Git
 - Use `git switch` to change to and use another branch
 - Add an issue number, e.g. `#1` to a Git commit message so GitHub registers those commits under that issue
