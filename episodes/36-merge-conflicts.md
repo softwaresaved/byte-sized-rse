@@ -6,13 +6,15 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How should I manage conflicts when merging branches?
+- How does GitHub help me manage merge conflicts with a pull request?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Locate points of merge conflict within a pull request using GitHub
+- Resolve a branch merge conflict from a pull request
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -161,6 +163,7 @@ for when we merged the feature branch with main.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- GitHub's interface helps us identify where conflicts exist for a pull request
+- Resolving merge conflicts on a per-conflict basis is achievable from within GitHub
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
