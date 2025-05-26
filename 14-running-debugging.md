@@ -25,8 +25,8 @@ exercises: 0
 
 ## Running Python in VSCode
 
-Now let's try running a Python file.
-First, make sure your Python doesn't have any errors!
+Now let's try running a Python script.
+First, make sure your Python code doesn't have any errors!
 Then, select the "Play"-looking icon at the top right of the code editor.
 
 FIXME: screenshot snippet of the play icon?
@@ -147,7 +147,9 @@ FIXME: show screenshot snippet of debugging icons
 - The first one is continue, which allows the script to keep running until the next breakpoint.
 - The next one allows us to step over - or through - the script one statement at a time.
 - The next two allow us to choose to step into or out of a function call, which is interesting.
+  
 If we want to examine the inner workings of a function during this debug session, we can do that.
+
 - The green cycle one is to restart the debug process.
 - The red cross stops debugging completely.
 
@@ -159,7 +161,7 @@ If we step again, and then again, our program halts because it's run into the pr
 
 This tells us something useful - that the problem occurs in the first iteration of the loop.
 So, this implies, the problem might be with the first line of data being processed,
-since the Python is going through the data file line by line.
+since the Python code is going through the data file line by line.
 If we re-run the debugger, we can go through this process again.
 And we can see something interesting when we get to the `if` statement.
 From the code, we know that the if statement is looking for an exclamation mark at the beginning of the line to indicate a comment.
