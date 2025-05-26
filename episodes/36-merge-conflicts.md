@@ -20,7 +20,7 @@ exercises: 0
 
 ## Work on Another Issue
 
-Now we still have two remaining  issues we can look at.
+Now we still have two remaining issues we can look at.
 Interestingly, both of them require changes that can cause a conflict when merging,
 so let's look at those now.
 
@@ -133,7 +133,7 @@ And in this case, there is only one conflicting file - `climate_analysis..py`,
 but there could be more than one.
 Now we can attempt to resolve the conflict by selecting `Resolve conflicts`.
 
-The GitHub interface  is really useful here.
+The GitHub interface is really useful here.
 It tells you which files have the conflicts on the left (only `climate_analysis.py` in this case),
 and where in each file the conflicts are.
 So let's fix the conflict.
