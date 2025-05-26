@@ -53,7 +53,7 @@ So let's go back to our repository on GitHub.
 You may see a message displayed at the top about protecting the main branch.
 We may come back to this later, so no need to worry about this for now.
 
-If we select the dropdown where it says "main", it gives us a list of branches.
+If we select the dropdown where it says `main`, it gives us a list of branches.
 We can see all branches by selecting that option at the bottom.
 Now, we can see we have our new branch that has appeared,
 which is separate from our main branch.
@@ -87,7 +87,15 @@ But we will assign the pull request (or PR for short) to ourselves,
 since it's a good idea to assign responsibility where we can.
 So let's create the pull request by selecting the button.
 
-QUESTION: who's created the pull request? Yes/No
+
+:::::::::::::::::::::::::::::::::::: instructor 
+
+### Creating a Pull Request - Checkin 
+
+Who's created the pull request?
+
+::::::::::::::::::::::::::::::::::::
+
 
 Now we get another screen describing the new PR itself.
 If we'd assigned any reviewers, we now wait for their reviews of this pull request.
