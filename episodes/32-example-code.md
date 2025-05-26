@@ -29,8 +29,8 @@ For this lesson we'll need to create a new GitHub repository based on the conten
 
 1. Once logged into GitHub in a web browser,
 go to https://github.com/UNIVERSE-HPC/git-example.
-1. Select 'Use this template', and then select 'Create a new repository' from the dropdown menu.
-1. On the next screen, ensure your personal GitHub account is selected in the `Owner` field, and fill in `Repository name` with `git-example`.
+1. Select `Use this template`, and then select `Create a new repository` from the dropdown menu.
+1. On the next screen, ensure your personal GitHub account is selected in the `Owner` field, and fill in `Repository name` with "git-example".
 1. Ensure the repository is set to `Public`.
 1. Select `Create repository`.
 
@@ -157,16 +157,16 @@ so select `Assign yourself`.
 
 :::: challenge
 
-## Adding Work for Ourselves
+### Adding Work for Ourselves
 
-Repeat this process for the other two issues in the following order:
+Repeat the process of adding issues on your GitHub repository for the following two issues in this order:
+
 - "Add missing docstrings to function and module"
 - "Script fails with undefined function name error"
+
 We'll refer back to these issues later!
 
 ::::
-
-QUESTION: who's created the three issues? Yes/No
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
