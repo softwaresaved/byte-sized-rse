@@ -6,7 +6,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do I merge changes proposed within a pull request?
+- How do I merge changes proposed within a pull request with the main branch?
 - What should I do with a branch that has been merged and is no longer required?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -65,7 +65,14 @@ We can add more information here if needed - but let's `Confirm rebase and merge
 Note that it says that the merge was done successfully,
 and suggests we can delete the branch.
 
-QUESTION: who has merged the pull request? Yes/No
+:::::::::::::::::::::::::::::::::::: instructor 
+
+### Merging a Pull Request - Checkin 
+
+Who has merged the pull request?
+
+::::::::::::::::::::::::::::::::::::
+
 
 We said earlier that branches in Git should be short lived where possible,
 and keeping branches hanging around may cause confusion.
