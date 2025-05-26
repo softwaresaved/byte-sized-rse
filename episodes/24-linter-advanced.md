@@ -58,7 +58,7 @@ Messages
 ...
 ```
 
-:::::::::::::::::: discussion
+:::::::::::::::::: instructor
 
 ### Pylint Verbose Reporting - Checkin
 
@@ -89,7 +89,7 @@ since clearly written code should do that itself.
 
 :::::::::::::::::: discussion
 
-### Docstrings - Checkin
+### Docstrings
 
 Who's familiar with Python docstrings?
 
