@@ -311,10 +311,10 @@ You'll notice a message suggesting we could create a pull request to merge the c
 ### Pushing the Feature Branch to GitHub - Checkin
 
 Who's committed that change and pushed the new branch with its commits to GitHub?
+If you have not done it - let's push the feature branch to GitHub now!
 
 ::::::::::::::::::
 
-Let's pushing the feature branch to GitHub now!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
