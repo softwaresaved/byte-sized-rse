@@ -1,0 +1,15 @@
+---
+title: "Contributor Code of Conduct"
+---
+
+As contributors and maintainers of this project,
+we pledge to follow the [The Carpentries Code of Conduct][coc].
+
+Instances of abusive, harassing, or otherwise unacceptable behavior
+may be reported by following our [reporting guidelines][coc-reporting].
+
+Original Byte-sized RSE events are run under [UNIVERSE-HPC Code of Conduct][https://www.universe-hpc.ac.uk/events/code-of-conduct/].
+
+
+[coc-reporting]: https://docs.carpentries.org/topic_folders/policies/incident-reporting.html
+[coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
