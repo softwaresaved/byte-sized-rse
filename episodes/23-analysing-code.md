@@ -91,9 +91,9 @@ You should notice the prompt changes to reflect that the virtual environment is 
 ```
 
 
-:::::::::::::::::::::::::::::::::::::::::::::::: discussion
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-### Setting up a Virtual Environment - Check In
+### Setting up a Virtual Environment - Checkin
 
 Who has successfully created and activated their virtual environment?
 
@@ -253,7 +253,13 @@ Which is helpful if we need clarification on a particular message.
 If we now edit the file, and go to line 9, column 35,
 we can see that there is an unnecessary space.
 
-QUESTION: who's managed to run pylint on the example code? Yes/No
+:::::::::::::::::::::::::::::::::::: instructor 
+
+### Running Pylint - Checkin 
+
+Who's managed to run pylint on the example code?
+
+::::::::::::::::::::::::::::::::::::
 
 Let's fix this issue now by removing the space,
 save the changed file,
