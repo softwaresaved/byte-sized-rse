@@ -7,13 +7,13 @@ exercises: 0
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How do I use Git to create and work on a feature branch?
-- How do I push my branch changes to GitHub?
+- How do I push my local branch changes to GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Create and use new a feature branch in our repository to working on an issue
+- Create and use new a feature branch in our repository to work on an issue
 - Fix issue and commit changes to the feature branch
 - Push the new branch and its commits to GitHub
 
@@ -126,7 +126,13 @@ Your branch is up-to-date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
-QUESTION: who's created their new feature branch? Yes/No
+:::::::::::::::::: instructor
+
+### Creating Feature Branch - Checkin
+
+Who's created their new feature branch?
+
+::::::::::::::::::
 
 ### Switching to the New Branch
 
@@ -178,7 +184,13 @@ Then add the following to the `FahrToKelvin` function (just below the function d
 
 Then save the file.
 
-QUESTION: Who has added this to the file, and saved it? Yes/No
+:::::::::::::::::: instructor
+
+### Changing the File - Checkin
+
+Who has added this to the file, and saved it?
+
+::::::::::::::::::
 
 Now we've done this, let's commit this change to the repository on our new branch.
 
@@ -239,7 +251,13 @@ Date:   Tue Apr 8 14:47:05 2025 +0100
 So, as we can see, on our new feature branch we now have our initial commit inherited from the main branch,
 and also our two new commits.
 
-QUESTION: who's edited the file and made the changes, and committed them - who's done that twice? Yes/No
+:::::::::::::::::: instructor
+
+### Comming on the Branch - Checkin
+
+Who's edited the file and made the changes, and committed them - who's done that twice?
+
+::::::::::::::::::
 
 ## Push New Feature Branch and Commits to GitHub
 
@@ -288,8 +306,15 @@ So here, we're telling git to push the changes on the new branch to a branch wit
 `origin` here is a shorthand that refers to the originating repository (the one we cloned originally).
 You'll notice a message suggesting we could create a pull request to merge the changes with the main branch.
 
-QUESTION: who's committed that change and pushed the new branch with its commits to GItHub? Yes/no
-Let's do this now!
+:::::::::::::::::: instructor
+
+### Pushing the Feature Branch to GitHub - Checkin
+
+Who's committed that change and pushed the new branch with its commits to GitHub?
+
+::::::::::::::::::
+
+Let's pushing the feature branch to GitHub now!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
