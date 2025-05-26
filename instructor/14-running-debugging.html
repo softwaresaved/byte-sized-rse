@@ -571,7 +571,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>1.4 Running and Debugging Code</h1>
-        <p>Last updated on 2025-05-09 |
+        <p>Last updated on 2025-05-26 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/14-running-debugging.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -618,9 +618,9 @@ code</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="running-python-in-vscode">Running Python in VSCode<a class="anchor" aria-label="anchor" href="#running-python-in-vscode"></a></h2>
-<hr class="half-width"><p>Now let’s try running a Python file. First, make sure your Python
-doesn’t have any errors! Then, select the “Play”-looking icon at the top
-right of the code editor.</p>
+<hr class="half-width"><p>Now let’s try running a Python script. First, make sure your Python
+code doesn’t have any errors! Then, select the “Play”-looking icon at
+the top right of the code editor.</p>
 <p>FIXME: screenshot snippet of the play icon?</p>
 <p>You should see the program run, and output displayed in a pop-up
 terminal window at the bottom:</p>
@@ -762,9 +762,10 @@ until the next breakpoint.</li>
 <li>The next one allows us to step over - or through - the script one
 statement at a time.</li>
 <li>The next two allow us to choose to step into or out of a function
-call, which is interesting. If we want to examine the inner workings of
-a function during this debug session, we can do that.</li>
-<li>The green cycle one is to restart the debug process.</li>
+call, which is interesting.</li>
+</ul><p>If we want to examine the inner workings of a function during this
+debug session, we can do that.</p>
+<ul><li>The green cycle one is to restart the debug process.</li>
 <li>The red cross stops debugging completely.</li>
 </ul><p>So let’s step through our code by selecting the second icon and see
 what happens. As we do so, we can see the variable state changing. By
@@ -775,10 +776,10 @@ then again, our program halts because it’s run into the problem we saw
 before.</p>
 <p>This tells us something useful - that the problem occurs in the first
 iteration of the loop. So, this implies, the problem might be with the
-first line of data being processed, since the Python is going through
-the data file line by line. If we re-run the debugger, we can go through
-this process again. And we can see something interesting when we get to
-the <code>if</code> statement. From the code, we know that the if
+first line of data being processed, since the Python code is going
+through the data file line by line. If we re-run the debugger, we can go
+through this process again. And we can see something interesting when we
+get to the <code>if</code> statement. From the code, we know that the if
 statement is looking for an exclamation mark at the beginning of the
 line to indicate a comment. However, the data variable contains a ‘#’ as
 the first character instead. Therefore, in this case, the code will
@@ -898,8 +899,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/14-running-debugging.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/14-running-debugging.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-09",
-  "datePublished": "2025-05-20"
+  "dateModified": "2025-05-26",
+  "datePublished": "2025-05-26"
 }
 
   </script><script>
