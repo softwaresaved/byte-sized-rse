@@ -41,7 +41,7 @@ But in essence, the code is designed to do the following:
 1. Open a file in the CSV (comma separated value) format
 1. Go through the file line by line, and:
    - If the line begins with a `#` symbol, ignore it.
-   - Otherwise, extract the fourth column (which is in Fahrenheit), convert it to Celsius and Kelvin, and output those readings.
+   - Otherwise, extract the fourth column (which contains temperature in Fahrenheit), convert it to Celsius and Kelvin, and output those readings.
 
 Let's take a look at some of what the code editor gives us.
 
