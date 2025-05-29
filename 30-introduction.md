@@ -56,9 +56,6 @@ Using feature branches is an efficient way to manage changes, collaborate effect
 
 ## Introduction to Merging Strategies
 
-- Options for merging (fast forward, merge commit, rebase and merge)
-- Other useful git features (cherry picking via git cherry-pick, stashing changes via git stash, resetting local state via git reset)
-
 ### Merging
 
 When you are ready to bring the changes from your feature branch back into the main branch, Git offers you to do a merge - a process that unifies work done in 2 separate branches. 
@@ -108,7 +105,7 @@ A - B - C - F - "MergeCommitG" [main]
 In addition, if the two branches you are trying to merge both changed the same part of the same file, Git will not be able to figure out which version to use and merge automatically.
 When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually before continuing.
 	
-### Rebase and Merge
+### Rebase & Merge
 
 In Git, there is another way to integrate changes from one branch into another: the rebase.
 
@@ -149,7 +146,7 @@ Here is a little comparison of the three merge strategies we have covered so far
 | Only works if there are no new commits on the main branch        | Works for diverging branches | Works for diverging branches |
 | Does not rewrite commit history | Rewrites commit history | Does not rewrite commit history |
 
-### Squash and Merge
+### Squash & Merge
 
 Squash and merge squashes all the commits from a feature branch into a single commit before merging into the main branch. This strategy simplifies the commit history, making it easier to follow.
 This strategy is ideal for merging feature branches with numerous small commits, resulting in a cleaner main branch history. 
