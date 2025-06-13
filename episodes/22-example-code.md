@@ -7,7 +7,7 @@ exercises: 0
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - Why should I write readable code?
-- What is a "Code Smell"?
+- What is a "code smell"?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -19,7 +19,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Obtaining Some Example Code
+## Obtaining Example Code
 
 FIXME: copy code-style-example into softwaresaved org
 
@@ -104,15 +104,24 @@ the code is deliberately written to contain some issues!
 
 ## Why Write Readable Code?
 
-QUESTION: who has seen or used code that looks like this? Yes/No?
-QUESTION: who has written code like this? Yes/No
+
+:::::::::::::::::: discussion
+
+### Readable Code
+
+As a group, answer the following questions:
+
+- Who has seen or used code that looks like this?
+- Who has written code like this?
+  
+:::::::::::::::::: 
 
 No one writes great code that's readable, well formatted, and well designed all the time.
 Sometimes you often need to explore ideas with code to understand how the code should be designed,
 and this typically involves trying things out first.
 But... the key is that once you understand how to do something,
 it's a good idea to make sure it's readable and understandable by other people,
-which may includes a future version of yourself,
+which may include a future version of yourself,
 6 months into the future.
 So it's really helpful to end up with good clean code so yit's easier to understand.
 
@@ -131,7 +140,7 @@ you can save yourself (and possibly others) a lot of time later!
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Does my Code Smell?
+### Does my Code Smell?
 
 Developers sometimes talk about "code smells”.
 Code smells are cursory indications from looking at the source code that a piece of code may have some deeper issues.
@@ -148,7 +157,7 @@ Something to bear in mind when writing code!
 
 Now despite the issues with the code, does it work?
 Let's find out.
-So in the shell, in the root directory of the repository:
+Within the shell, in the root directory of the repository, run the code as follows:
 
 ```bash
 python climate_analysis.py
@@ -168,7 +177,7 @@ Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889
 ```
 
 And we can see that the code does indeed appear to work,
-with celsius and kelvin values being printed to the terminal.
+with Celsius and Kelvin values being printed to the terminal.
 But how can we improve its readability?
 We'll use a special tool, called a code linter,
 to help us identify these sorts of issues with the code.
