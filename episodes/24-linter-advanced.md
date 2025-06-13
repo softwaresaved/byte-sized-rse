@@ -8,7 +8,7 @@ exercises: 0
 
 - What can I do to increase the detail of Pylint reports?
 - How can I reduce unwanted messages from Pylint?
-- How can I use static code analysis tools with VSCode?
+- How can I use static code analysis tools within VSCode?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -58,7 +58,13 @@ Messages
 ...
 ```
 
-QUESTION: for those doing activity, who's managed to run this command? YES/NO
+:::::::::::::::::: discussion
+
+### Pylint Verbose Reporting - Checkin
+
+For those doing activity, who's managed to run this command?
+
+::::::::::::::::::
 
 It gives you some overall statistics,
 plus comparisons with the last time you ran it,
@@ -72,7 +78,7 @@ on aspects such as:
 
 Looking at raw metrics,
 we can see that it breaks down our program into how many lines are
-code lines, python docstrings, standalone comments, and empty lines.
+code lines, Python docstrings, standalone comments, and empty lines.
 This is very useful, since it gives us an idea of how well commented our code is.
 In this case - not very well commented at all!
 For normal comments, the usually accepted wisdom is to add them to explain *why* you are doing something, or perhaps to explain how necessarily complex code works,
@@ -81,7 +87,13 @@ since clearly written code should do that itself.
 
 ## Increasing our Pylint Score - Adding a Docstring
 
-QUESTION: Who's familiar with Python docstrings? Yes/No
+:::::::::::::::::: discussion
+
+### Docstrings - Checkin
+
+Who's familiar with Python docstrings?
+
+::::::::::::::::::
 
 Docstrings are a special kind of comment for a function,
 that explain what the function does,
@@ -99,7 +111,7 @@ Let's add one to our code now, within the `fahr_to_celsius` function.
     """
 ```
 
-Re-run pylint - can see we have one less docstring error, and a slightly higher score.
+Re-run `pylint` command - can see we have one less docstring error, and a slightly higher score.
 
 If you'd like to know more about docstrings and commenting,
 there's an in-depth [RealPython tutorial](https://realpython.com/documenting-python-code/) on these and the different ways you can format them.
@@ -191,7 +203,7 @@ Every time you re-run it now, the `C0301` issue will not be present.
 ## Using Pylint within VSCode
 
 The good news is that if you're using the VSCode IDE,
-we can also (or alternatively) install a Python linter in VSCode to give us this code analysis functionality, by installing a pylint extension.
+we can also (or alternatively) install a Python linter in VSCode to give us this code analysis functionality, by installing the Pylint extension.
 Select the `Extensions` icon and this time search for `Pylint`, the one by Microsoft, and click `Install`.
 
 Going back to our code you should now find lots of squiggly underlines of various colours.

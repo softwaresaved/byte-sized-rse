@@ -14,7 +14,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Use pylint to verify a program’s adherence to an established Python coding style convention
+- Use Pylint to verify a program’s adherence to an established Python coding style convention
 - Describe the benefits of a virtual environment
 - Create and use a virtual environment to manage Python dependencies separately for our example code
 - Install the Pylint static code analysis tool as a VSCode extension
@@ -26,14 +26,21 @@ exercises: 0
 
 ## Installing a Code Linter
 
-The first thing we need to do is install pylint,
+The first thing we need to do is install Pylint,
 a very well established tool for statically analysing Python code.
 
-Now fortunately, pylint can be installed as a Python package,
-and we're going to create what's known as a virtual environment to hold this installation of pylint.
+Now fortunately, Pylint can be installed as a Python package,
+and we're going to create what's known as a virtual environment to hold this installation of Pylint.
 
-QUESTION: who has installed a Python package before, using the program pip? Yes/No
-QUESTION: who has created and used a Python virtual environment before? Yes/No
+
+:::::::::::::::::::::::::::::::::::::::::::::::: discussion
+
+### Installing Python Packages
+
+Who has installed a Python package before, using the program `pip`?
+Who has created and used a Python virtual environment before?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Benefits of Virtual Environments
 
@@ -64,7 +71,7 @@ Make sure you're in the root directory of the repository, then type
 python -m venv venv
 ```
 
-Here, we're using the built-on Python venv module - short for virtual environment - to create a virtual environment directory called `venv`.
+Here, we're using the built-on Python `venv` module - short for virtual environment - to create a virtual environment directory called "venv".
 We could have called the directory anything, but naming it `venv` (or `.venv`) is a common convention,
 as is creating it within the repository root directory.
 This makes sure the virtual environment is closely associated with this project, and not easily confused with another.
@@ -83,7 +90,15 @@ You should notice the prompt changes to reflect that the virtual environment is 
 (venv) $
 ```
 
-QUESTION: who has successfully created and activated their virtual environment? Yes/No?
+
+:::::::::::::::::::::::::::::::::::::::::::::::: discussion
+
+### Setting up a Virtual Environment - Check In
+
+Who has successfully created and activated their virtual environment?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 Now it's created, let's take a look at what's in this virtual environment at this point.
 
@@ -123,7 +138,7 @@ which can help our code in many ways:
 
 :::::::::::::::::::::::::::::::::::::::::
 
-So we can install pylint into our virtual environment:
+So we can install `pylint` library into our virtual environment as:
 
 ```bash
 pip install pylint
@@ -151,7 +166,7 @@ tomlkit           0.13.2
 typing_extensions 4.13.1
 ```
 
-So in addition to pylint,
+So in addition to Pylint,
 we see a number of other dependent packages installed that are required by it.
 
 We can also *deactivate* our virtual environment:
@@ -160,7 +175,7 @@ We can also *deactivate* our virtual environment:
 deactivate
 ```
 
-You should see the `(venv)` prefix disappear,
+You should see the "(venv)" prefix disappear,
 indicating we have returned to our global Python environment.
 Let's reactivate it since we'll need it to use pylint.
 
@@ -172,7 +187,7 @@ Let's reactivate it since we'll need it to use pylint.
 
 ## Analysing our Code using a Linter
 
-Let's point pylint at our code and see what it reports:
+Let's point Pylint at our code and see what it reports:
 
 ```bash
 pylint climate_analysis.py
