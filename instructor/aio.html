@@ -637,6 +637,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush35">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading35">
+        <a href="64-tracking-running-workflows.html">6.4 Tracking a Running Workflow</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush36">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading36">
+        <a href="65-build-matrices.html">6.5 Build Matrices</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -6979,6 +7003,268 @@ since that’s what the workflow is designed to do.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</section></section><section id="aio-64-tracking-running-workflows"><p>Content from <a href="64-tracking-running-workflows.html">6.4 Tracking a Running Workflow</a></p>
+<hr>
+<p>Last updated on 2025-06-18 |
+
+        <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/64-tracking-running-workflows.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="checking-a-running-workflow">Checking a Running Workflow<a class="anchor" aria-label="anchor" href="#checking-a-running-workflow"></a>
+</h2>
+<hr class="half-width">
+<p>We’ve committed our workflow, so how do we know its actually running?
+Since the workflow is triggered on each <code>git push</code>, if we go
+back to our main repository page, we should see an orange circle next to
+the most recent commit displayed just above the directory contents.</p>
+<p>FIXME: add screenshot of main page with orange CI running marker</p>
+<p>When this workflow is complete, it will display either a green tick
+for success, or a red cross if the workflow encountered an error. You
+can also see a history of the past workflow runs’ failures or successes
+for each workflow run triggered on the commits page, by selecting
+<code>Commits</code> on the right of this most recent commit
+display.</p>
+<p>FIXME: add screenshot of commits page with a single workflow result
+entry</p>
+<p>For more detail we can check the progress of a running workflow by
+selecting <code>Actions</code> in the top navigation bar (e.g. <a href="https://github.com/steve-crouch/ci-example/actions" class="external-link uri">https://github.com/steve-crouch/ci-example/actions</a>). We
+can see here that a new run has started, titled with our commit message.
+This page also shows a historical log of any other previous workflow
+runs too.</p>
+<p>We can also view a complete log of the output from workflow runs, by
+selecting the first (and only) entry at the top of the list. This will
+then display a list of our <code>job</code>s (in this case only
+<code>build-and-test</code>). If we select <code>build-and-test</code>
+we’ll see an in-progress log of our workflow run, separated into
+separate collapsed steps that we may expand to view further detail. Each
+of the steps is named from the <code>name</code> labels we gave each
+step. Note that the workflow may still be running at this point, so not
+all steps may be complete yet.</p>
+<p>FIXME: show workflow log of completed run</p>
+<p>If we drill down by selecting the <code>Test with pytest</code>
+entry, we’ll get a breakdown of the thing we’re really interested
+in:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Run python -m pytest -v tests/test_factorial.py
+============================= test session starts ==============================
+platform linux -- Python 3.11.12, pytest-7.2.0, pluggy-1.0.0 -- /opt/hostedtoolcache/Python/3.11.12/x64/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/ci-example2/ci-example2
+collecting ... collected 3 items
+
+tests/test_factorial.py::test_3 PASSED                                   [ 33%]
+tests/test_factorial.py::test_5 PASSED                                   [ 66%]
+tests/test_factorial.py::test_negative PASSED                            [100%]
+
+============================== 3 passed in 0.01s ===============================</code></pre>
+</div>
+<p>Which shows us that our tests were successful!</p>
+</section><section><h2 class="section-heading" id="triggering-our-workflow-with-code-changes">Triggering our Workflow with Code Changes<a class="anchor" aria-label="anchor" href="#triggering-our-workflow-with-code-changes"></a>
+</h2>
+<hr class="half-width">
+<p>Now if we make a change to our code, our workflow will be triggered
+and these tests will run, so let’s make a change.</p>
+<p>In GitHub (or on the command line if you prefer), edit the source
+code file <code>mymath/factorial.py</code>, add an additional line
+before <code>return factorial</code>. Then save the file (if editing
+locally), and commit the change.</p>
+<p>If we return to the GitHub Actions workflow list and select the most
+recent workflow run, we should see the workflow execute successfully as
+before - so we know our change hasn’t broken anything.</p>
+</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<hr class="half-width">
+<p>Our workflow will now be triggered every time a change to our code is
+pushed to our GitHub repository, which means that our code is now always
+being checked against our tests. Although we must remember to check the
+workflow log for this to have value. We also need to be sure that our
+tests sufficiently verify the behaviour of our code as it evolves, so we
+should ensure we update our tests as necessary, and adding new tests as
+required to verify new functionality.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-65-build-matrices"><p>Content from <a href="65-build-matrices.html">6.5 Build Matrices</a></p>
+<hr>
+<p>Last updated on 2025-06-18 |
+
+        <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/65-build-matrices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="running-workflows-over-multiple-platforms">Running Workflows over Multiple Platforms<a class="anchor" aria-label="anchor" href="#running-workflows-over-multiple-platforms"></a>
+</h2>
+<hr class="half-width">
+<p>So far, every time our workflow is triggered, it runs over a single
+operating system, Ubuntu. From an automation perspective this is
+incredibly helpful, since although running our unit tests is a quick
+process, by automating it this cumulative savings in time becomes
+considerable. However, what if we wanted to test our code across
+different versions of Python installed on different platforms, such as
+Windows and Mac OS? Let’s look at a feature called build matrices which
+allows us to do this, and really show the value of using CI to test code
+at scale.</p>
+<p>Suppose the intended users of our software use either Ubuntu, Mac OS,
+or Windows, and have Python versions 3.10 through 3.12 installed, and we
+want to support all of these. Assuming we have a suitable test suite, it
+would take a considerable amount of time to set up testing platforms to
+run our tests across all these platform combinations. Fortunately, CI
+can do the hard work for us very easily.</p>
+<p>First, let’s update our workflow to specify which platforms and
+Python versions we wish to run, by adding/changing the following where
+<code>runs-on</code> is defined:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">        </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"ubuntu-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"macos-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"windows-latest"</span><span class="kw">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.10"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.11"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.12"</span><span class="kw">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ${{ matrix.os }}</span></span></code></pre>
+</div>
+<p>Here we define a build matrix that specifies each of the
+<code>os</code> and <code>python-version</code> we want to test, such
+that new jobs will be created that run our tests for every permutation
+of these two variables. So, we should expect 9 jobs to run in total.</p>
+<p>We also change <code>runs-on</code> to refer to the <code>os</code>
+component of our <code>matrix</code>, using <code>{{ }}</code> as a
+means to reference these values.</p>
+<p>Similarly, we need to update our Python setup section to make use of
+the <code>python-version</code> component of our build matrix:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python ${{ matrix.python-version }}</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> ${{ matrix.python-version }}</span></span></code></pre>
+</div>
+<p>Once we’ve saved our workflow, commit the changes to the repository
+as before.</p>
+<p>If we view the most recent GitHub Actions workflow run, we should see
+that a new job has been created for each of the 9 permutations.</p>
+<p>FIXME: add GA screenshot showing all 9 permutations running</p>
+<p>Note all jobs are running in parallel (up to the limit allowed by our
+account) which potentially saves us a lot of time waiting for testing
+results. Therefore overall, this approach allows us to massively scale
+our automated testing across platforms we wish to test.</p>
+</section><section><h2 class="section-heading" id="failed-ci-builds">Failed CI Builds<a class="anchor" aria-label="anchor" href="#failed-ci-builds"></a>
+</h2>
+<hr class="half-width">
+<p>A CI build can fail when, e.g. a used Python package no longer
+supports a particular version of Python indicated in a GitHub Actions CI
+build matrix. In this case, the solution is either to upgrade the Python
+version in the build matrix (when possible), or to downgrade the package
+version (and not use the latest one like we have been doing in this
+course).</p>
+<p>Also note that, if one job fails in the build for any reason, all
+subsequent jobs will get cancelled because of the default behavior of
+GitHub Actions. From <a href="https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#handling-failures" class="external-link">GitHub’s
+documentation</a>:</p>
+<p><em>GitHub will cancel all in-progress and queued jobs in the matrix
+if any job in the matrix fails.</em> This behaviour can be controlled by
+changing the value of the <code>fail-fast</code> property in the
+<code>strategy</code> section:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">...</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">   strategy:</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">     fail-fast: false</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">     matrix:</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">...</span></span></code></pre>
+</div>
+<p>This would ensure that all matrix jobs will be run to completion
+regardless of any failures, which is useful so that we are able to
+identify and fix all failures at once, as opposed to having to fix each
+in turn.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
 </section></section>
 </div>
     </main>
@@ -7027,8 +7313,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/aio.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-06-17",
-  "datePublished": "2025-06-17"
+  "dateModified": "2025-06-18",
+  "datePublished": "2025-06-18"
 }
 
   </script><script>

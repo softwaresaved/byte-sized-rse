@@ -102,6 +102,8 @@ episodes:
 - 61-setup.md
 - 62-example-code.md
 - 63-defining-a-workflow.md
+- 64-tracking-running-workflows.md
+- 65-build-matrices.md
 
 # Information for Learners
 learners: 
