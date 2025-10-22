@@ -6,43 +6,41 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I see the comments left by a reviewer?
+- How do I merge a pull request?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Merge an approved pull request into its destination branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Read Review and Merge the Pull Request
 
-Now - final step
-Back to our role as contributor...
-We created our own pull request, that hopefully another participant (or ourselves) has reviewed
+Now we return to our role as code contributor.
 
-Let's take a look, by going back to our repository, and looking at our own pull request, and looking at the review
-We should now consider the review, and any observations or suggestions made
-At this point, we could go ahead and make any needed changes
-But, for simplicity, and assuming their review is positive (and they don't suggest more changes are required)
-We can go ahead and merge the pull request into our codebase
-By selecting 'Merge pull request', and then "Confirm Merge"
+As owner of your PR, the next step involves addressing any feedback made by the reviewer.
+Return to the PR you created earlier,
+and take a look at the comments that will appear in the `Conversation` tab.
+You may need to scroll down to see them.
 
-So now, our change has been integrated into our codebase
+We should now consider the review and any observations or suggestions made,
+and make any needed changes.
+To add these changes, we'd add new commits to the PR branch,
+but for simplicity, let's assume our reviewer fully endorsed our PR.
+We can go ahead and merge the pull request into our codebase,
+by selecting `Merge pull request`, and then `Confirm Merge`.
+
+So now, our change has been integrated into our codebase!
+You'll notice that the branch you created earlier has been deleted by GitHub,
+since it is no longer needed.
 
 QUESTION: Who's read the other participants' review of their PR, and merged it? Yes/No
 
-## Housekeeping
-
-But - there's a bit of housekeeping we should do
-The pull request branch is no longer needed, everything's been merged
-So let's keep a tidy repository and delete the branch
-If we go to our repo's main page, and select 'branches'
-We can delete our pull request branch
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Following a merge, pull request branches are deleted in keeping with the short-lived branch philosophy of GitHub
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
