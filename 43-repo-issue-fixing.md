@@ -6,65 +6,71 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do we approach grouping commits together for a pull request?
+- Can we use GitHub to directly make changes to files?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Create an issue on GitHub that describes a problem with the example codebase
+- Use the GitHub file editor to make a direct change to a file in our example repository
+- Submit the fix for the issue on a new repository branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Adding an Issue to the Repository
 
-Next thing to do is to add an issue to the repository
-Which will represent something we need to work on
-For the sake of this exercise, it doesn't really matter what the issue is
-But perhaps we've spotted a problem with our codebase during development, and we need to note this problem needs to be fixed
+Let's first add an issue to the repository, which will represent something we need to work on.
+For the sake of this exercise, it doesn't really matter what the issue is, but perhaps we've spotted a problem with our codebase during development and we need to note this problem needs to be fixed.
 
-For example, if we look at the README for the repo, we can see there's a broken link
-Clearly a problem, so let's register that as an issue
-Select "Issues", then "New issue"
-Title: Broken link to article
-Description: The README link to the SSI website article is broken, resulting in a page not found error
-Select "Submit new issue"
-Have opportunity to assign someone to the issue - let's say me
-And also assign what type of issue it is
-It's a problem with the README, so that's probably documentation, so let's set it as that
+If we look at the README for the repo we can see there's a broken link near the top, so let's register that as an issue.
+
+1. Go to your repository's main page in GitHub in a browser, and select `Issues` at the top.
+You'll notice a new page with no issues listed at present.
+1. Select `New issue`.
+1. On the issue creation page, add something like the following:
+   - In the title add: Broken link to article
+   - In the description add: The README link to the SSI website article is broken, resulting in a page not found error
+1. Assign ourselves to the issue by selecting `Assign yourself`.
+1. Assign the `Documentation` label to the issue.
+1. Select `Create` to create the issue.
 
 QUESTION: who's been able to create a new issue on the repository? Yes/No
 
 ## Fixing the Issue
 
-Now the next thing, is perhaps a bit later on, we decide to fix the issue
-So we navigate to the README (go to repository main page)
-And here, for the sake of the exercise, we'll just use GitHub's edit mechanism to edit the file directly
-Alternatively, and in most cases, we'd probably do this by having the repository cloned on our machine, and then we'd make the change, and submit it that way
-But in the interests of time and simplicity, we'll just use GitHub's edit function
-So select the edit icon
-And edit the README to fix the link (remove the bit that says "typo/")
+Now let's assume at some future date we decide to fix the issue.
+Now in most cases, we'd probably do this by having the repository cloned on our machine, and then we'd make the change, and submit it that way.
+But in the interests of time and simplicity, we'll just use GitHub's direct file editing feature.
 
-So we now need to commit the change, so we now select "Commit changes" in the top right
-Good practice when committing a change is to refer to the issue number in the commit message
-This gives us traceability for changes back to the originating issue
-We had our issue number 1, so let's refer to that
-#1 - Fix broken article link
-We could optionally put more info about the fix in the description if we wanted
+1. Go to the repository's main page
+1. Navigate to the `README` file in the file navigator
+1. Select the edit icon shaped like a pen/pencil on the top right
+1. In the file editor, fix the broken link by removing the bit that says "typo/"
 
-Now importantly, we want to submit this change as a pull request on a new branch
-This will allow others to review that pull request
-Selecting the second option here allows us to create a new branch for these changes
-And we can give this new branch an identifiable name
-readme-broken-link-fix
+So we now need to commit the change.
+It's good practice when committing a change is to refer to the issue number in the commit message,
+which will give us traceability for changes back to the originating issue when looking at the commits in a repository.
 
-Once we select propose changes, this change is submitted and our new branch, with that fix, is created
-And scrolling down, we can see our change highlighted
+1. Select `Commit changes...` in the top right.
+1. This is the first issue on the repository, so let's refer to that with `#1 - Fix broken article link` as the commit message
+1. We could optionally put more info about the fix in the description if we wanted
+
+Now importantly, we want to submit this change as a pull request on a new branch,
+since this will allow others to review that pull request.
+
+1. Select the second option `Create a new branch for this commit and start a pull request`
+1. Enter a meaningful name for this new branch, e.g. `readme-broken-link-fix`
+1. Select `Propose changes`
+
+This change is now submitted to this new branch.
+If you go to the main repository page and select `branches`, you'll see our new branch in the list.
 
 QUESTION: who's managed to commit their fix to a new branch? Yes/No
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- We use branches to contain the change commits we want to submit within a pull request
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
