@@ -388,6 +388,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#creating-a-copy-of-the-example-code-repository">Creating a Copy of the Example Code Repository</a></li>
+<li><a href="#examining-the-code">Examining the Code</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -587,7 +588,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>4.2 Some Example Code</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/42-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -606,7 +607,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>FIXME</li>
+<ul><li>What does a bad code repository look like?</li>
 </ul></div>
 </div>
 </div>
@@ -614,7 +615,8 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>FIXME</li>
+<ul><li>Obtain example code used for this lesson</li>
+<li>Describe the purpose of the example code repository</li>
 </ul></div>
 </div>
 </div>
@@ -622,11 +624,38 @@
 </div>
 <section><h2 class="section-heading" id="creating-a-copy-of-the-example-code-repository">Creating a Copy of the Example Code Repository<a class="anchor" aria-label="anchor" href="#creating-a-copy-of-the-example-code-repository"></a></h2>
 <hr class="half-width"><p>FIXME: copy review-example repo into softwaresaved org</p>
-<p>So the first thing we need to do is create a new GitHub repository
-from a template repository So first go to <a href="https://github.com/UNIVERSE-HPC/review-example" class="external-link uri">https://github.com/UNIVERSE-HPC/review-example</a> [copy and
-paste] Select ‘Use this template’ -&gt; Create a new repository Set
-owner and repo name (e.g. git-example), ensure it’s set to public,
-Create</p>
+<p>For this lesson we’ll need to create a new GitHub repository based on
+the contents of another repository.</p>
+<ol style="list-style-type: decimal"><li>Once logged into GitHub in a web browser, go to <a href="https://github.com/UNIVERSE-HPC/review-example" class="external-link uri">https://github.com/UNIVERSE-HPC/review-example</a>.</li>
+<li>Select ‘Use this template’, and then select ‘Create a new
+repository’ from the dropdown menu.</li>
+<li>On the next screen, ensure your personal GitHub account is selected
+in the <code>Owner</code> field, and fill in
+<code>Repository name</code> with <code>review-example</code>.</li>
+<li>Ensure the repository is set to <code>Public</code>.</li>
+<li>Select <code>Create repository</code>.</li>
+</ol><p>You should be presented with the new repository’s main page. Next, we
+need to clone this repository onto our own machines, using the Bash
+shell. So firstly open a Bash shell (via Git Bash in Windows or Terminal
+on a Mac). Then, on the command line, navigate to where you’d like the
+example code to reside, and use Git to clone it. For example, to clone
+the repository in our home directory (replacing
+<code>github-account-name</code> with our own account), and change
+directory to the repository contents:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/github-account-name/review-example</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> review-example</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a></h2>
+<hr class="half-width"><p>This repository contains code written in Python to analyse a dataset
+from the UK ResearchFish publication database. For the purposes of this
+training, we’ll be using this repository to make some high-level commits
+and create a pull request for review. It’s not necessary for us to delve
+deeper into how it works, but note that the repository contents have
+been modified to deliberately include many problem and errors!</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -634,7 +663,8 @@ Create</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>Encountering a “bad” code repository is an opportunity to learn what
+not to do!</li>
 </ul></div>
 </div>
 </div>
@@ -700,8 +730,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/42-example-code.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/42-example-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-10-21"
+  "dateModified": "2025-10-22",
+  "datePublished": "2025-10-22"
 }
 
   </script><script>

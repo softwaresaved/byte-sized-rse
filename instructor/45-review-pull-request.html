@@ -587,7 +587,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>4.5 Reviewing a Pull Request</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/45-review-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -608,7 +608,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>FIXME</li>
+<ul><li>How do I submit a review of a pull request?</li>
+<li>On what information about a pull request do I base my review?</li>
+<li>What are the levels of approval for a pull request review?</li>
 </ul></div>
 </div>
 </div>
@@ -616,46 +618,91 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>FIXME</li>
+<ul><li>Describe how GitHub presents the information related to a pull
+request</li>
+<li>Add review comments to a pull request</li>
+<li>Submit a review of a pull request</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<p>Let’s now adopt a new role - that of the reviewer of a pull request
-(or PR for short). Let’s assume that a colleague has created a pull
-request of his own, for the purposes of this exercise, it’s on their own
-repository But it could be a shared repository we are both working on In
-a collaborative environment, this is mostly likely going to be the case
-So let’s take a look at it and review it</p>
+<p>Let’s now adopt a new role - that of the reviewer of someone else’s
+pull request (or PR for short).</p>
 <section><h2 class="section-heading" id="write-a-review-of-the-pr">Write a Review of the PR<a class="anchor" aria-label="anchor" href="#write-a-review-of-the-pr"></a></h2>
-<hr class="half-width"><p>So we open the repo URL link in a browser, and go to “Pull requests”
-on the repo main page Then select the pull request To review the
-request’s changes, we can go to ‘Files changed’ - one of the tabs Which
-perhaps unsurprisingly, shows us the changes in each file, in this case
-just one file, and one change The view on the left (in red) is the old
-version, and the view on the right (in green), is the revised version of
-the line change</p>
+<hr class="half-width"><p>To see a list of PR review requests for you, go to <a href="https://github.com/pulls/review-requested" class="external-link uri">https://github.com/pulls/review-requested</a>. You should
+see a review request from another participant, so select this from the
+list.</p>
+<p>This will present an overview of the pull request (PR), including on
+separate tabs:</p>
+<ul><li>
+<code>Conversation</code> - an overview of the PR, including
+comments and other activities associated with the PR, as well as a
+summary at the end, indicating the overall status in terms of reviews
+requested, and whether there are any merge conflicts with the base
+branch (<code>main</code> in this case)</li>
+<li>
+<code>Commits</code> - a list of all commits on the feature branch
+that have yet to be merged into the base branch</li>
+<li>
+<code>Checks</code> - whether there are any automated checks
+implemented in GitHub Actions and their status</li>
+<li>
+<code>Files changed</code> - the list of files and their
+line-by-line changes for this PR</li>
+</ul><p>If you select the <code>Files changed</code> tab, or if you select
+<code>Add your review</code> from the <code>Conversation</code> page
+which takes you to the same tab, you can then begin your review.</p>
+<p>By default, the presented view indicates a “unified” view. This shows
+deletions highlighted in red, and additions highlighted in green.</p>
+<p>Another view is the “split” view of these changes, which is
+selectable by clicking on the cog-like icon and selecting
+<code>Split</code>. This provides a side-by-side alternative, with the
+older version on the left, and the newer version on the right. In this
+case, you should see a number of green highlighted lines on the right
+side of this view, indicating the added lines.</p>
+<p>When providing a review, we have the option of adding comments or
+suggestions inline to the proposed changes. By hovering over a line and
+selecting the <code>+</code> symbol at the start of the line, we’re able
+to add a comment on that line, for example if we spotted a spelling or
+grammatical mistake, or in the case of code, a programmatic problem or
+other issue.</p>
 <p>We have the option of adding comments or suggestions inline to the
-proposed changes, if we want For example, perhaps we know there is a
+proposed changes, if we want. For example, perhaps we know there is a
 Zenodo record for the code that this article points to, which we think
-should be added By hovering over a line and selecting the ‘+’ symbol at
-the start of the line And adding a comment So select the changed line,
-and add something like We should also link to the Zenodo record for the
-code that this article links to, at <a href="https://zenodo.org/record/250494#.Y2UUN-zP1R4" class="external-link uri">https://zenodo.org/record/250494#.Y2UUN-zP1R4</a> Then
-selecting ‘Start a review’ Can add as many comments as we want If this
-were a larger pull request, we would review the other changes, and add
-comments as needed</p>
-<p>So let’s assume we’ve done that</p>
-<p>Finally, as a reviewer of this pull request, we “Finish our review”
-We can add a comment, maybe with some high-level observations or
-suggestions Overall, the changes look good, although we should consider
-adding the Zenodo repository link.</p>
-<p>And then we can select whether (three options here) Comment - we can
-just leave a comment to consider Approve - the pull request is approved
-as is Request changes - there are some aspects that must be addressed
-before it can be merged For simplicity, let’s just go with the first
-option for this exercise</p>
+should be added.</p>
+<ol style="list-style-type: decimal"><li>Hovering over the line containing the fix and select the
+<code>+</code> symbol at the start of the line</li>
+<li>Add a comment, something like
+<code>We should also link to the Zenodo record for the code, at https://zenodo.org/record/250494#.Y2UUN-zP1R4</code>
+</li>
+<li>Then select <code>Start a review</code>
+</li>
+</ol><p>Can add as many comments as we want at this review stage, to any
+line. If this were a larger pull request, we would review all the other
+changes, and add comments as needed.</p>
+<p>Finally, as a reviewer of this pull request, we can complete our
+review:</p>
+<ol style="list-style-type: decimal"><li>Select <code>Finish our review</code>
+</li>
+<li>Add a brief comment,
+e.g. <code>Overall, the changes look good, although we should consider adding the Zenodo repository link</code>
+</li>
+</ol><p>And then we can select one of the following options:</p>
+<ul><li>
+<code>Comment</code> - where you’re just leaving a comment and
+aren’t requesting any changes</li>
+<li>
+<code>Approve</code> - no comments are changes are necessary</li>
+<li>
+<code>Request changes</code> - feedback must be addressed before it
+can be merged</li>
+</ul><p>For simplicity, let’s just go with the first option for this
+exercise.</p>
+<p>Finally, select <code>Submit review</code>, and our role as reviewer
+on the pull request is complete! The originator of the PR can then take
+our review into account, and make changes in response to the review.</p>
+<p>QUESTION: Who’s submitted a very brief code review? Yes/No</p>
 <div id="the-approve-and-request-changes-options-are-unavailable" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -679,10 +726,6 @@ however, so for the purposes of this training feel free to select the
 </div>
 </div>
 </div>
-<p>So then submit the review, and our role as reviewer on the pull
-request is complete The other participant can then take our review into
-account, when deciding whether to merge that pull request</p>
-<p>QUESTION: Who’s submitted a very brief code review? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -690,7 +733,13 @@ account, when deciding whether to merge that pull request</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>The key reason to use pull requests is to ensure that code changes
+are reviewed by other team members before they are merged</li>
+<li>We can elect to approve changes, request changes prior to merging a
+pull request, or block a merge until requested changes are
+satisfied</li>
+<li>GitHub doesn’t allow the creator of a pull request to approve
+it</li>
 </ul></div>
 </div>
 </div>
@@ -756,8 +805,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/45-review-pull-request.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/45-review-pull-request.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-10-21"
+  "dateModified": "2025-10-22",
+  "datePublished": "2025-10-22"
 }
 
   </script><script>

@@ -587,7 +587,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>4.4 Submiting a Pull Request</h1>
-        <p>Last updated on 2025-04-08 |
+        <p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/44-create-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -606,7 +606,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>FIXME</li>
+<ul><li>How do you create a pull request using GitHub?</li>
+<li>How long should we keep a pull request open?</li>
+<li>How do we request a review of a pull request?</li>
 </ul></div>
 </div>
 </div>
@@ -614,41 +616,100 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>FIXME</li>
+<ul><li>Create a pull request based on the changes we submitted to a new
+branch</li>
+<li>Describe the reasons to keep a pull request short-lived</li>
+<li>Request a review of your pull request from another participant</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
 <section><h2 class="section-heading" id="creating-a-pull-request">Creating a Pull Request<a class="anchor" aria-label="anchor" href="#creating-a-pull-request"></a></h2>
-<hr class="half-width"><p>But - we still need to submit this new branch and the commit we made
-as a pull request And GitHub nicely guides us to doing this Select
-“Create pull request”</p>
-<p>Once we’ve done that, we can see that our pull request has been
-opened And is ready for consideration to be merged into the codebase For
-information, we can see that GitHub is aware that the change we’ve
-committed can be merged directly - without conflicts - into our main
-branch We could optionally add more info about this pull request here in
-comments if we wanted</p>
+<hr class="half-width"><p>Let’s create a pull request now from this new branch.</p>
+<ol style="list-style-type: decimal"><li>First, go the <code>Pull requests</code> tab at the top of the group
+repository main page, and select <code>New pull request</code>
+</li>
+<li>In the <code>Compare changes</code> page that comes up:
+<ul><li>Select <code>compare:</code> and select your new branch,
+e.g. <code>readme-broken-link-fix</code>. You should now see a summary
+of the changes between the new branch and the main branch, i.e. a single
+commit and the fix you made earlier</li>
+<li>Select <code>Create pull request</code>
+</li>
+</ul></li>
+<li>In the <code>Open a pull request</code> page that appears:
+<ul><li>Add details for pull request before creating it, including a
+reviewer, label, title, and description</li>
+<li>Enter a fitting title, brief description, and label</li>
+<li>Select <code>Create pull request</code>
+</li>
+</ul></li>
+</ol><p>You’ll then see a summary of the pull request, including a summary of
+any conflicts with the base (<code>main</code>) branch, of which there
+should be none. There’s also an option to merge the pull request - but
+don’t do this yet, since you’ll need to wait for your pull request to be
+reviewed!</p>
 <p>QUESTION: who’s been able to create a new pull request? Yes/No</p>
-<div id="swap-repository-with-someone-else" class="callout discussion">
+<p>Interestingly, even though we have created this PR to do a merge, we
+could continue developing our code on this new branch indefinitely if we
+wanted. We could make and push new commits to this branch, which would
+show up here, and we then merge at a future date. This may be
+particularly useful if we need to have a longer discussion about the PR
+as it is developing. The discussion would be captured in the comments
+for the PR, and when ready, we then merge the PR.</p>
+<div id="how-long-should-prs-be-open" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="how-long-should-prs-be-open" class="callout-inner">
+<h3 class="callout-title">How Long should PRs be Open?</h3>
+<div class="callout-content">
+<p>Which raises the question, of how long should PRs be open, or
+branches for that matter? To some degree, this depends on the nature of
+the changes being made. But branches in Git are designed, and should be
+wherever possible, short-lived and deleted when no longer required. The
+longer a branch is open, the more potential changes could be made to the
+main branch. Then when it comes time to merge the branch, we may get a
+lot of conflicts we need to manage. So generally, it’s a good idea to
+keep your branches open for a day or two, a few days maximum, before
+creating a PR and doing a merge if you can. Note that we can also see
+this PR, as well as any others, by selecting the
+<code>Pull request</code> tab.</p>
+</div>
+</div>
+</div>
+<div id="obtain-a-github-account-id-from-another-participant" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="swap-repository-with-someone-else" class="callout-inner">
-<h3 class="callout-title">Swap Repository with Someone Else</h3>
+<div id="obtain-a-github-account-id-from-another-participant" class="callout-inner">
+<h3 class="callout-title">Obtain a GitHub Account ID from another
+Participant</h3>
 <div class="callout-content">
 <p>For the next stage, you’ll be reviewing a pull request. Either:</p>
 <ul><li>If you are attending a workshop with other learners, the instructor
-will enable you to swap the URL of your repository with the repository
-URL of another learner so you can review the pull request they made on
-their own repository.</li>
+will enable you to obtain a GitHub account ID from another learner so
+you can request a review of your pull request from them, and you’ll also
+be requested as a reviewer on someone else’s pull request.</li>
 <li>If you are going through this material on your own, you can review
 the pull request you made on your own repository instead.</li>
 </ul></div>
 </div>
 </div>
+<p>To assign your reviewer to your PR:</p>
+<ol style="list-style-type: decimal"><li>Go back to your repository’s main page</li>
+<li>Select <code>Pull requests</code>, and then the PR you created</li>
+<li>Select <code>Reviewers</code> and add the GitHub account for the
+reviewer</li>
+</ol><p>You should see an orange filled circle next to their name, indicating
+that you have requested their review and they have yet to submit it. We
+could add as many reviewers as we want, particularly if this is a
+complex change that affects many aspects of the codebase.</p>
+<p>QUESTION: who has managed to add the other account and request a
+review from them? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -656,7 +717,12 @@ the pull request you made on your own repository instead.</li>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>Try to keep pull requests short-lived to avoid them becoming
+outdated with other branches such as <code>main</code>
+</li>
+<li>We can request reviewers for a pull request by adding their GitHub
+account to a list of <code>Reviewers</code>
+</li>
 </ul></div>
 </div>
 </div>
@@ -722,8 +788,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/44-create-pull-request.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/44-create-pull-request.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-10-21"
+  "dateModified": "2025-10-22",
+  "datePublished": "2025-10-22"
 }
 
   </script><script>

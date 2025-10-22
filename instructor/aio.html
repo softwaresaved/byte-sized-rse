@@ -2854,7 +2854,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4887,7 +4887,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-42-example-code"><p>Content from <a href="42-example-code.html">4.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/42-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -4902,7 +4902,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What does a bad code repository look like?</li>
 </ul>
 </div>
 </div>
@@ -4912,7 +4912,8 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Obtain example code used for this lesson</li>
+<li>Describe the purpose of the example code repository</li>
 </ul>
 </div>
 </div>
@@ -4923,11 +4924,42 @@ any links that you are not going to use.
 </h2>
 <hr class="half-width">
 <p>FIXME: copy review-example repo into softwaresaved org</p>
-<p>So the first thing we need to do is create a new GitHub repository
-from a template repository So first go to <a href="https://github.com/UNIVERSE-HPC/review-example" class="external-link uri">https://github.com/UNIVERSE-HPC/review-example</a> [copy and
-paste] Select ‘Use this template’ -&gt; Create a new repository Set
-owner and repo name (e.g. git-example), ensure it’s set to public,
-Create</p>
+<p>For this lesson we’ll need to create a new GitHub repository based on
+the contents of another repository.</p>
+<ol style="list-style-type: decimal">
+<li>Once logged into GitHub in a web browser, go to <a href="https://github.com/UNIVERSE-HPC/review-example" class="external-link uri">https://github.com/UNIVERSE-HPC/review-example</a>.</li>
+<li>Select ‘Use this template’, and then select ‘Create a new
+repository’ from the dropdown menu.</li>
+<li>On the next screen, ensure your personal GitHub account is selected
+in the <code>Owner</code> field, and fill in
+<code>Repository name</code> with <code>review-example</code>.</li>
+<li>Ensure the repository is set to <code>Public</code>.</li>
+<li>Select <code>Create repository</code>.</li>
+</ol>
+<p>You should be presented with the new repository’s main page. Next, we
+need to clone this repository onto our own machines, using the Bash
+shell. So firstly open a Bash shell (via Git Bash in Windows or Terminal
+on a Mac). Then, on the command line, navigate to where you’d like the
+example code to reside, and use Git to clone it. For example, to clone
+the repository in our home directory (replacing
+<code>github-account-name</code> with our own account), and change
+directory to the repository contents:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/github-account-name/review-example</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> review-example</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a>
+</h2>
+<hr class="half-width">
+<p>This repository contains code written in Python to analyse a dataset
+from the UK ResearchFish publication database. For the purposes of this
+training, we’ll be using this repository to make some high-level commits
+and create a pull request for review. It’s not necessary for us to delve
+deeper into how it works, but note that the repository contents have
+been modified to deliberately include many problem and errors!</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -4936,7 +4968,8 @@ Create</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Encountering a “bad” code repository is an opportunity to learn what
+not to do!</li>
 </ul>
 </div>
 </div>
@@ -4947,7 +4980,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-43-repo-issue-fixing"><p>Content from <a href="43-repo-issue-fixing.html">4.3 Fixing a Repository Issue</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/43-repo-issue-fixing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -4962,7 +4995,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do we approach grouping commits together for a pull
+request?</li>
+<li>Can we use GitHub to directly make changes to files?</li>
 </ul>
 </div>
 </div>
@@ -4972,7 +5007,11 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Create an issue on GitHub that describes a problem with the example
+codebase</li>
+<li>Use the GitHub file editor to make a direct change to a file in our
+example repository</li>
+<li>Submit the fix for the issue on a new repository branch</li>
 </ul>
 </div>
 </div>
@@ -4982,48 +5021,75 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="adding-an-issue-to-the-repository">Adding an Issue to the Repository<a class="anchor" aria-label="anchor" href="#adding-an-issue-to-the-repository"></a>
 </h2>
 <hr class="half-width">
-<p>Next thing to do is to add an issue to the repository Which will
-represent something we need to work on For the sake of this exercise, it
-doesn’t really matter what the issue is But perhaps we’ve spotted a
-problem with our codebase during development, and we need to note this
-problem needs to be fixed</p>
-<p>For example, if we look at the README for the repo, we can see
-there’s a broken link Clearly a problem, so let’s register that as an
-issue Select “Issues”, then “New issue” Title: Broken link to article
-Description: The README link to the SSI website article is broken,
-resulting in a page not found error Select “Submit new issue” Have
-opportunity to assign someone to the issue - let’s say me And also
-assign what type of issue it is It’s a problem with the README, so
-that’s probably documentation, so let’s set it as that</p>
+<p>Let’s first add an issue to the repository, which will represent
+something we need to work on. For the sake of this exercise, it doesn’t
+really matter what the issue is, but perhaps we’ve spotted a problem
+with our codebase during development and we need to note this problem
+needs to be fixed.</p>
+<p>If we look at the README for the repo we can see there’s a broken
+link near the top, so let’s register that as an issue.</p>
+<ol style="list-style-type: decimal">
+<li>Go to your repository’s main page in GitHub in a browser, and select
+<code>Issues</code> at the top. You’ll notice a new page with no issues
+listed at present.</li>
+<li>Select <code>New issue</code>.</li>
+<li>On the issue creation page, add something like the following:
+<ul>
+<li>In the title add: Broken link to article</li>
+<li>In the description add: The README link to the SSI website article
+is broken, resulting in a page not found error</li>
+</ul>
+</li>
+<li>Assign ourselves to the issue by selecting
+<code>Assign yourself</code>.</li>
+<li>Assign the <code>Documentation</code> label to the issue.</li>
+<li>Select <code>Create</code> to create the issue.</li>
+</ol>
 <p>QUESTION: who’s been able to create a new issue on the repository?
 Yes/No</p>
 </section><section><h2 class="section-heading" id="fixing-the-issue">Fixing the Issue<a class="anchor" aria-label="anchor" href="#fixing-the-issue"></a>
 </h2>
 <hr class="half-width">
-<p>Now the next thing, is perhaps a bit later on, we decide to fix the
-issue So we navigate to the README (go to repository main page) And
-here, for the sake of the exercise, we’ll just use GitHub’s edit
-mechanism to edit the file directly Alternatively, and in most cases,
-we’d probably do this by having the repository cloned on our machine,
-and then we’d make the change, and submit it that way But in the
-interests of time and simplicity, we’ll just use GitHub’s edit function
-So select the edit icon And edit the README to fix the link (remove the
-bit that says “typo/”)</p>
-<p>So we now need to commit the change, so we now select “Commit
-changes” in the top right Good practice when committing a change is to
-refer to the issue number in the commit message This gives us
-traceability for changes back to the originating issue We had our issue
-number 1, so let’s refer to that #1 - Fix broken article link We could
-optionally put more info about the fix in the description if we
-wanted</p>
+<p>Now let’s assume at some future date we decide to fix the issue. Now
+in most cases, we’d probably do this by having the repository cloned on
+our machine, and then we’d make the change, and submit it that way. But
+in the interests of time and simplicity, we’ll just use GitHub’s direct
+file editing feature.</p>
+<ol style="list-style-type: decimal">
+<li>Go to the repository’s main page</li>
+<li>Navigate to the <code>README</code> file in the file navigator</li>
+<li>Select the edit icon shaped like a pen/pencil on the top right</li>
+<li>In the file editor, fix the broken link by removing the bit that
+says “typo/”</li>
+</ol>
+<p>So we now need to commit the change. It’s good practice when
+committing a change is to refer to the issue number in the commit
+message, which will give us traceability for changes back to the
+originating issue when looking at the commits in a repository.</p>
+<ol style="list-style-type: decimal">
+<li>Select <code>Commit changes...</code> in the top right.</li>
+<li>This is the first issue on the repository, so let’s refer to that
+with <code>#1 - Fix broken article link</code> as the commit
+message</li>
+<li>We could optionally put more info about the fix in the description
+if we wanted</li>
+</ol>
 <p>Now importantly, we want to submit this change as a pull request on a
-new branch This will allow others to review that pull request Selecting
-the second option here allows us to create a new branch for these
-changes And we can give this new branch an identifiable name
-readme-broken-link-fix</p>
-<p>Once we select propose changes, this change is submitted and our new
-branch, with that fix, is created And scrolling down, we can see our
-change highlighted</p>
+new branch, since this will allow others to review that pull
+request.</p>
+<ol style="list-style-type: decimal">
+<li>Select the second option
+<code>Create a new branch for this commit and start a pull request</code>
+</li>
+<li>Enter a meaningful name for this new branch,
+e.g. <code>readme-broken-link-fix</code>
+</li>
+<li>Select <code>Propose changes</code>
+</li>
+</ol>
+<p>This change is now submitted to this new branch. If you go to the
+main repository page and select <code>branches</code>, you’ll see our
+new branch in the list.</p>
 <p>QUESTION: who’s managed to commit their fix to a new branch?
 Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
@@ -5034,7 +5100,8 @@ Yes/No</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>We use branches to contain the change commits we want to submit
+within a pull request</li>
 </ul>
 </div>
 </div>
@@ -5045,7 +5112,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-44-create-pull-request"><p>Content from <a href="44-create-pull-request.html">4.4 Submiting a Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/44-create-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -5060,7 +5127,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do you create a pull request using GitHub?</li>
+<li>How long should we keep a pull request open?</li>
+<li>How do we request a review of a pull request?</li>
 </ul>
 </div>
 </div>
@@ -5070,7 +5139,10 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Create a pull request based on the changes we submitted to a new
+branch</li>
+<li>Describe the reasons to keep a pull request short-lived</li>
+<li>Request a review of your pull request from another participant</li>
 </ul>
 </div>
 </div>
@@ -5080,36 +5152,100 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="creating-a-pull-request">Creating a Pull Request<a class="anchor" aria-label="anchor" href="#creating-a-pull-request"></a>
 </h2>
 <hr class="half-width">
-<p>But - we still need to submit this new branch and the commit we made
-as a pull request And GitHub nicely guides us to doing this Select
-“Create pull request”</p>
-<p>Once we’ve done that, we can see that our pull request has been
-opened And is ready for consideration to be merged into the codebase For
-information, we can see that GitHub is aware that the change we’ve
-committed can be merged directly - without conflicts - into our main
-branch We could optionally add more info about this pull request here in
-comments if we wanted</p>
+<p>Let’s create a pull request now from this new branch.</p>
+<ol style="list-style-type: decimal">
+<li>First, go the <code>Pull requests</code> tab at the top of the group
+repository main page, and select <code>New pull request</code>
+</li>
+<li>In the <code>Compare changes</code> page that comes up:
+<ul>
+<li>Select <code>compare:</code> and select your new branch,
+e.g. <code>readme-broken-link-fix</code>. You should now see a summary
+of the changes between the new branch and the main branch, i.e. a single
+commit and the fix you made earlier</li>
+<li>Select <code>Create pull request</code>
+</li>
+</ul>
+</li>
+<li>In the <code>Open a pull request</code> page that appears:
+<ul>
+<li>Add details for pull request before creating it, including a
+reviewer, label, title, and description</li>
+<li>Enter a fitting title, brief description, and label</li>
+<li>Select <code>Create pull request</code>
+</li>
+</ul>
+</li>
+</ol>
+<p>You’ll then see a summary of the pull request, including a summary of
+any conflicts with the base (<code>main</code>) branch, of which there
+should be none. There’s also an option to merge the pull request - but
+don’t do this yet, since you’ll need to wait for your pull request to be
+reviewed!</p>
 <p>QUESTION: who’s been able to create a new pull request? Yes/No</p>
-<div id="swap-repository-with-someone-else" class="callout discussion">
+<p>Interestingly, even though we have created this PR to do a merge, we
+could continue developing our code on this new branch indefinitely if we
+wanted. We could make and push new commits to this branch, which would
+show up here, and we then merge at a future date. This may be
+particularly useful if we need to have a longer discussion about the PR
+as it is developing. The discussion would be captured in the comments
+for the PR, and when ready, we then merge the PR.</p>
+<div id="how-long-should-prs-be-open" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="how-long-should-prs-be-open" class="callout-inner">
+<h3 class="callout-title">How Long should PRs be Open?</h3>
+<div class="callout-content">
+<p>Which raises the question, of how long should PRs be open, or
+branches for that matter? To some degree, this depends on the nature of
+the changes being made. But branches in Git are designed, and should be
+wherever possible, short-lived and deleted when no longer required. The
+longer a branch is open, the more potential changes could be made to the
+main branch. Then when it comes time to merge the branch, we may get a
+lot of conflicts we need to manage. So generally, it’s a good idea to
+keep your branches open for a day or two, a few days maximum, before
+creating a PR and doing a merge if you can. Note that we can also see
+this PR, as well as any others, by selecting the
+<code>Pull request</code> tab.</p>
+</div>
+</div>
+</div>
+<div id="obtain-a-github-account-id-from-another-participant" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="swap-repository-with-someone-else" class="callout-inner">
-<h3 class="callout-title">Swap Repository with Someone Else</h3>
+<div id="obtain-a-github-account-id-from-another-participant" class="callout-inner">
+<h3 class="callout-title">Obtain a GitHub Account ID from another
+Participant</h3>
 <div class="callout-content">
 <p>For the next stage, you’ll be reviewing a pull request. Either:</p>
 <ul>
 <li>If you are attending a workshop with other learners, the instructor
-will enable you to swap the URL of your repository with the repository
-URL of another learner so you can review the pull request they made on
-their own repository.</li>
+will enable you to obtain a GitHub account ID from another learner so
+you can request a review of your pull request from them, and you’ll also
+be requested as a reviewer on someone else’s pull request.</li>
 <li>If you are going through this material on your own, you can review
 the pull request you made on your own repository instead.</li>
 </ul>
 </div>
 </div>
 </div>
+<p>To assign your reviewer to your PR:</p>
+<ol style="list-style-type: decimal">
+<li>Go back to your repository’s main page</li>
+<li>Select <code>Pull requests</code>, and then the PR you created</li>
+<li>Select <code>Reviewers</code> and add the GitHub account for the
+reviewer</li>
+</ol>
+<p>You should see an orange filled circle next to their name, indicating
+that you have requested their review and they have yet to submit it. We
+could add as many reviewers as we want, particularly if this is a
+complex change that affects many aspects of the codebase.</p>
+<p>QUESTION: who has managed to add the other account and request a
+review from them? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -5118,7 +5254,12 @@ the pull request you made on your own repository instead.</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Try to keep pull requests short-lived to avoid them becoming
+outdated with other branches such as <code>main</code>
+</li>
+<li>We can request reviewers for a pull request by adding their GitHub
+account to a list of <code>Reviewers</code>
+</li>
 </ul>
 </div>
 </div>
@@ -5129,7 +5270,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-45-review-pull-request"><p>Content from <a href="45-review-pull-request.html">4.5 Reviewing a Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/45-review-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -5144,7 +5285,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do I submit a review of a pull request?</li>
+<li>On what information about a pull request do I base my review?</li>
+<li>What are the levels of approval for a pull request review?</li>
 </ul>
 </div>
 </div>
@@ -5154,49 +5297,102 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Describe how GitHub presents the information related to a pull
+request</li>
+<li>Add review comments to a pull request</li>
+<li>Submit a review of a pull request</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Let’s now adopt a new role - that of the reviewer of a pull request
-(or PR for short). Let’s assume that a colleague has created a pull
-request of his own, for the purposes of this exercise, it’s on their own
-repository But it could be a shared repository we are both working on In
-a collaborative environment, this is mostly likely going to be the case
-So let’s take a look at it and review it</p>
+<p>Let’s now adopt a new role - that of the reviewer of someone else’s
+pull request (or PR for short).</p>
 <section><h2 class="section-heading" id="write-a-review-of-the-pr">Write a Review of the PR<a class="anchor" aria-label="anchor" href="#write-a-review-of-the-pr"></a>
 </h2>
 <hr class="half-width">
-<p>So we open the repo URL link in a browser, and go to “Pull requests”
-on the repo main page Then select the pull request To review the
-request’s changes, we can go to ‘Files changed’ - one of the tabs Which
-perhaps unsurprisingly, shows us the changes in each file, in this case
-just one file, and one change The view on the left (in red) is the old
-version, and the view on the right (in green), is the revised version of
-the line change</p>
+<p>To see a list of PR review requests for you, go to <a href="https://github.com/pulls/review-requested" class="external-link uri">https://github.com/pulls/review-requested</a>. You should
+see a review request from another participant, so select this from the
+list.</p>
+<p>This will present an overview of the pull request (PR), including on
+separate tabs:</p>
+<ul>
+<li>
+<code>Conversation</code> - an overview of the PR, including
+comments and other activities associated with the PR, as well as a
+summary at the end, indicating the overall status in terms of reviews
+requested, and whether there are any merge conflicts with the base
+branch (<code>main</code> in this case)</li>
+<li>
+<code>Commits</code> - a list of all commits on the feature branch
+that have yet to be merged into the base branch</li>
+<li>
+<code>Checks</code> - whether there are any automated checks
+implemented in GitHub Actions and their status</li>
+<li>
+<code>Files changed</code> - the list of files and their
+line-by-line changes for this PR</li>
+</ul>
+<p>If you select the <code>Files changed</code> tab, or if you select
+<code>Add your review</code> from the <code>Conversation</code> page
+which takes you to the same tab, you can then begin your review.</p>
+<p>By default, the presented view indicates a “unified” view. This shows
+deletions highlighted in red, and additions highlighted in green.</p>
+<p>Another view is the “split” view of these changes, which is
+selectable by clicking on the cog-like icon and selecting
+<code>Split</code>. This provides a side-by-side alternative, with the
+older version on the left, and the newer version on the right. In this
+case, you should see a number of green highlighted lines on the right
+side of this view, indicating the added lines.</p>
+<p>When providing a review, we have the option of adding comments or
+suggestions inline to the proposed changes. By hovering over a line and
+selecting the <code>+</code> symbol at the start of the line, we’re able
+to add a comment on that line, for example if we spotted a spelling or
+grammatical mistake, or in the case of code, a programmatic problem or
+other issue.</p>
 <p>We have the option of adding comments or suggestions inline to the
-proposed changes, if we want For example, perhaps we know there is a
+proposed changes, if we want. For example, perhaps we know there is a
 Zenodo record for the code that this article points to, which we think
-should be added By hovering over a line and selecting the ‘+’ symbol at
-the start of the line And adding a comment So select the changed line,
-and add something like We should also link to the Zenodo record for the
-code that this article links to, at <a href="https://zenodo.org/record/250494#.Y2UUN-zP1R4" class="external-link uri">https://zenodo.org/record/250494#.Y2UUN-zP1R4</a> Then
-selecting ‘Start a review’ Can add as many comments as we want If this
-were a larger pull request, we would review the other changes, and add
-comments as needed</p>
-<p>So let’s assume we’ve done that</p>
-<p>Finally, as a reviewer of this pull request, we “Finish our review”
-We can add a comment, maybe with some high-level observations or
-suggestions Overall, the changes look good, although we should consider
-adding the Zenodo repository link.</p>
-<p>And then we can select whether (three options here) Comment - we can
-just leave a comment to consider Approve - the pull request is approved
-as is Request changes - there are some aspects that must be addressed
-before it can be merged For simplicity, let’s just go with the first
-option for this exercise</p>
+should be added.</p>
+<ol style="list-style-type: decimal">
+<li>Hovering over the line containing the fix and select the
+<code>+</code> symbol at the start of the line</li>
+<li>Add a comment, something like
+<code>We should also link to the Zenodo record for the code, at https://zenodo.org/record/250494#.Y2UUN-zP1R4</code>
+</li>
+<li>Then select <code>Start a review</code>
+</li>
+</ol>
+<p>Can add as many comments as we want at this review stage, to any
+line. If this were a larger pull request, we would review all the other
+changes, and add comments as needed.</p>
+<p>Finally, as a reviewer of this pull request, we can complete our
+review:</p>
+<ol style="list-style-type: decimal">
+<li>Select <code>Finish our review</code>
+</li>
+<li>Add a brief comment,
+e.g. <code>Overall, the changes look good, although we should consider adding the Zenodo repository link</code>
+</li>
+</ol>
+<p>And then we can select one of the following options:</p>
+<ul>
+<li>
+<code>Comment</code> - where you’re just leaving a comment and
+aren’t requesting any changes</li>
+<li>
+<code>Approve</code> - no comments are changes are necessary</li>
+<li>
+<code>Request changes</code> - feedback must be addressed before it
+can be merged</li>
+</ul>
+<p>For simplicity, let’s just go with the first option for this
+exercise.</p>
+<p>Finally, select <code>Submit review</code>, and our role as reviewer
+on the pull request is complete! The originator of the PR can then take
+our review into account, and make changes in response to the review.</p>
+<p>QUESTION: Who’s submitted a very brief code review? Yes/No</p>
 <div id="the-approve-and-request-changes-options-are-unavailable" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -5220,10 +5416,6 @@ however, so for the purposes of this training feel free to select the
 </div>
 </div>
 </div>
-<p>So then submit the review, and our role as reviewer on the pull
-request is complete The other participant can then take our review into
-account, when deciding whether to merge that pull request</p>
-<p>QUESTION: Who’s submitted a very brief code review? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -5232,7 +5424,13 @@ account, when deciding whether to merge that pull request</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>The key reason to use pull requests is to ensure that code changes
+are reviewed by other team members before they are merged</li>
+<li>We can elect to approve changes, request changes prior to merging a
+pull request, or block a merge until requested changes are
+satisfied</li>
+<li>GitHub doesn’t allow the creator of a pull request to approve
+it</li>
 </ul>
 </div>
 </div>
@@ -5243,7 +5441,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-46-merge-pull-request"><p>Content from <a href="46-merge-pull-request.html">4.6 Merge the Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-04-08 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/46-merge-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -5258,7 +5456,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do I see the comments left by a reviewer?</li>
+<li>How do I merge a pull request?</li>
 </ul>
 </div>
 </div>
@@ -5268,7 +5467,7 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Merge an approved pull request into its destination branch</li>
 </ul>
 </div>
 </div>
@@ -5278,26 +5477,22 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="read-review-and-merge-the-pull-request">Read Review and Merge the Pull Request<a class="anchor" aria-label="anchor" href="#read-review-and-merge-the-pull-request"></a>
 </h2>
 <hr class="half-width">
-<p>Now - final step Back to our role as contributor… We created our own
-pull request, that hopefully another participant (or ourselves) has
-reviewed</p>
-<p>Let’s take a look, by going back to our repository, and looking at
-our own pull request, and looking at the review We should now consider
-the review, and any observations or suggestions made At this point, we
-could go ahead and make any needed changes But, for simplicity, and
-assuming their review is positive (and they don’t suggest more changes
-are required) We can go ahead and merge the pull request into our
-codebase By selecting ‘Merge pull request’, and then “Confirm Merge”</p>
-<p>So now, our change has been integrated into our codebase</p>
+<p>Now we return to our role as code contributor.</p>
+<p>As owner of your PR, the next step involves addressing any feedback
+made by the reviewer. Return to the PR you created earlier, and take a
+look at the comments that will appear in the <code>Conversation</code>
+tab. You may need to scroll down to see them.</p>
+<p>We should now consider the review and any observations or suggestions
+made, and make any needed changes. To add these changes, we’d add new
+commits to the PR branch, but for simplicity, let’s assume our reviewer
+fully endorsed our PR. We can go ahead and merge the pull request into
+our codebase, by selecting <code>Merge pull request</code>, and then
+<code>Confirm Merge</code>.</p>
+<p>So now, our change has been integrated into our codebase! You’ll
+notice that the branch you created earlier has been deleted by GitHub,
+since it is no longer needed.</p>
 <p>QUESTION: Who’s read the other participants’ review of their PR, and
 merged it? Yes/No</p>
-</section><section><h2 class="section-heading" id="housekeeping">Housekeeping<a class="anchor" aria-label="anchor" href="#housekeeping"></a>
-</h2>
-<hr class="half-width">
-<p>But - there’s a bit of housekeeping we should do The pull request
-branch is no longer needed, everything’s been merged So let’s keep a
-tidy repository and delete the branch If we go to our repo’s main page,
-and select ‘branches’ We can delete our pull request branch</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -5306,7 +5501,8 @@ and select ‘branches’ We can delete our pull request branch</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Following a merge, pull request branches are deleted in keeping with
+the short-lived branch philosophy of GitHub</li>
 </ul>
 </div>
 </div>
@@ -5489,7 +5685,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-51-setup"><p>Content from <a href="51-setup.html">5.1 Setup &amp; Prerequisites</a></p>
 <hr>
-<p>Last updated on 2025-05-02 |
+<p>Last updated on 2025-10-22 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/51-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 0 minutes</p>
@@ -5585,7 +5781,7 @@ Linux) and system architecture (e.g., 64-bit, ARM).</p>
 <h3 id="alternative-setup">Alternative setup<a class="anchor" aria-label="anchor" href="#alternative-setup"></a>
 </h3>
 <p>Alternatively, if you are unable to install these tools, you can
-undertake the activity entirely in a web browser but you will need to <a href="http://replit.com/" class="external-link">register for a free account</a> with a
+undertake the activity entirely in a web browser but you will need to <a href="https://replit.com/" class="external-link">register for a free account</a> with a
 third-party web application called <a href="https://replit.com/" class="external-link">replit</a>.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
@@ -7330,8 +7526,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/aio.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-10-21",
-  "datePublished": "2025-10-21"
+  "dateModified": "2025-10-22",
+  "datePublished": "2025-10-22"
 }
 
   </script><script>
