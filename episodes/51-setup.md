@@ -55,6 +55,6 @@ Please [download the appropriate version of Visual Studio Code][vs-code] for you
 
 ### Alternative setup
 
-Alternatively, if you are unable to install these tools, you can undertake the activity entirely in a web browser but you will need to [register for a free account](http://replit.com/) with a third-party web application called [replit](https://replit.com/).
+Alternatively, if you are unable to install these tools, you can undertake the activity entirely in a web browser but you will need to [register for a free account](https://replit.com/) with a third-party web application called [replit](https://replit.com/).
 
 
