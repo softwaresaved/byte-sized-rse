@@ -507,6 +507,7 @@
         <ul><li><a href="#how-to-describe-a-workflow">How to Describe a Workflow?</a></li>
 <li><a href="#enabling-workflows-for-our-repository">Enabling Workflows for our Repository</a></li>
 <li><a href="#creating-our-first-workflow">Creating Our First Workflow</a></li>
+<li><a href="#specify-the-steps-to-run">Specify the Steps to Run</a></li>
 <li><a href="#adding-our-workflow-to-our-repository">Adding our Workflow to our Repository</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -590,7 +591,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>6.3 Defining a Workflow</h1>
-        <p>Last updated on 2025-05-07 |
+        <p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/63-defining-a-workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -723,8 +724,8 @@ creating the file.</li>
 </ol><p>Note that GitHub Actions expects workflows to be contained within the
 <code>.github/workflows</code> directory.</p>
 <p>Let’s build up this workflow now.</p>
-<p>FIXME: turn the below into a step-by-step learning narrative,
-explaining each bit</p>
+<div class="section level3">
+<h3 id="specify-workflow-name-and-when-it-runs">Specify Workflow Name and When it Runs<a class="anchor" aria-label="anchor" href="#specify-workflow-name-and-when-it-runs"></a></h3>
 <p>So first let’s specify a name for our workflow that will appear under
 GitHub Actions build reports, and add the conditions that will trigger
 the workflow to run:</p>
@@ -738,7 +739,10 @@ the workflow to run:</p>
 <p>So here our workflow will run when changes are pushed to the
 repository. There are <a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows" class="external-link">other
 events</a> we might specify instead (or as well) if we wanted, but this
-is the most common.</p>
+one is the most common.</p>
+</div>
+<div class="section level3">
+<h3 id="specify-structure-to-contain-steps-to-run-on-which-platform">Specify Structure to Contain Steps to Run on which Platform<a class="anchor" aria-label="anchor" href="#specify-structure-to-contain-steps-to-run-on-which-platform"></a></h3>
 <p>GitHub Actions are described as a sequence of jobs (such as building
 our code, or running some tests), and each job contains a sequence of
 steps which each represent a specific “action” (such as running a
@@ -762,7 +766,9 @@ others too (such as Windows, or Mac OS) which we’ll see later.</p>
 <code>runner</code>, which you can think of as a freshly installed
 instance of a machine running the operating system we indicate (in this
 case Ubuntu).</p>
-<p>Let’s now supply the concrete things we want to do in our workflow.
+</div>
+</section><section><h2 class="section-heading" id="specify-the-steps-to-run">Specify the Steps to Run<a class="anchor" aria-label="anchor" href="#specify-the-steps-to-run"></a></h2>
+<hr class="half-width"><p>Let’s now supply the concrete things we want to do in our workflow.
 We can think of this as the things we need to set up and run on a fresh
 machine. So within our workflow, we’ll need to:</p>
 <ul><li>Check out our code repository</li>
@@ -914,8 +920,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/63-defining-a-workflow.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/63-defining-a-workflow.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-07",
-  "datePublished": "2025-10-22"
+  "dateModified": "2025-10-23",
+  "datePublished": "2025-10-23"
 }
 
   </script><script>

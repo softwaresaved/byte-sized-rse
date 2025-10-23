@@ -2842,7 +2842,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6593,7 +6593,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-61-setup"><p>Content from <a href="61-setup.html">6.1 Setup &amp; Prerequisites</a></p>
 <hr>
-<p>Last updated on 2025-05-06 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/61-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -6635,8 +6635,13 @@ this topic</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Account on GitHub.com</li>
+<li>Shell with Git version control tool installed and the ability to
+navigate filesystem and run commands from within a shell</li>
+<li>Python version 3.8 or above installed</li>
 <li>Understanding of Python syntax to be able to read code examples</li>
+<li>Pip Python package installer</li>
+<li>Visual Studio Code installed (ideally the latest version)</li>
+<li>Account on GitHub.com</li>
 </ul>
 </div>
 </div>
@@ -6644,6 +6649,42 @@ this topic</li>
 <section><h2 class="section-heading" id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="shell-with-git">Shell with Git<a class="anchor" aria-label="anchor" href="#shell-with-git"></a>
+</h3>
+<p>On macOS and Linux, a bash shell will be available by default.</p>
+<p>If you do not have a bash shell installed on your system and require
+assistance with the installation, you can take a look at <a href="https://swcarpentry.github.io/python-novice-inflammation/#install-python" class="external-link">the
+instructions provided by Software Carpentry</a> for installing <a href="https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell" class="external-link">shell</a>
+and <a href="https://carpentries.github.io/workshop-template/install_instructions/#git-1" class="external-link">Git</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="python">Python<a class="anchor" aria-label="anchor" href="#python"></a>
+</h3>
+<p>Python version 3.8 or above is required. Type <code>python -v</code>
+at your shell prompt and press enter to see what version of Python is
+installed on your system. If you do not have Python installed on your
+system and require assistance with the installation, you can take a look
+at <a href="https://swcarpentry.github.io/python-novice-inflammation/#install-python" class="external-link">the
+instructions provided by Software Carpentry</a> for installing Python in
+preparation for undertaking their Python lesson.</p>
+</div>
+<div class="section level3">
+<h3 id="pip">Pip<a class="anchor" aria-label="anchor" href="#pip"></a>
+</h3>
+<p>Pip Python package should come together with your Python
+distribution. Try typing <code>pip</code> at the command line and you
+should see some usage instructions for the command appear if it is
+installed.</p>
+</div>
+<div class="section level3">
+<h3 id="vs-code">VS Code<a class="anchor" aria-label="anchor" href="#vs-code"></a>
+</h3>
+<p>The hands-on part of this topic will be conducted using Visual Studio
+Code (VS Code), a widely used IDE. Please <a href="https://code.visualstudio.com/" class="external-link">download the appropriate version
+of Visual Studio Code</a> for your operating system (Windows, macOS, or
+Linux) and system architecture (e.g., 64-bit, ARM).</p>
+</div>
 <div class="section level3">
 <h3 id="github-account">GitHub Account<a class="anchor" aria-label="anchor" href="#github-account"></a>
 </h3>
@@ -6900,7 +6941,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-63-defining-a-workflow"><p>Content from <a href="63-defining-a-workflow.html">6.3 Defining a Workflow</a></p>
 <hr>
-<p>Last updated on 2025-05-07 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/63-defining-a-workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -7038,8 +7079,9 @@ creating the file.</li>
 <p>Note that GitHub Actions expects workflows to be contained within the
 <code>.github/workflows</code> directory.</p>
 <p>Let’s build up this workflow now.</p>
-<p>FIXME: turn the below into a step-by-step learning narrative,
-explaining each bit</p>
+<div class="section level3">
+<h3 id="specify-workflow-name-and-when-it-runs">Specify Workflow Name and When it Runs<a class="anchor" aria-label="anchor" href="#specify-workflow-name-and-when-it-runs"></a>
+</h3>
 <p>So first let’s specify a name for our workflow that will appear under
 GitHub Actions build reports, and add the conditions that will trigger
 the workflow to run:</p>
@@ -7053,7 +7095,11 @@ the workflow to run:</p>
 <p>So here our workflow will run when changes are pushed to the
 repository. There are <a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows" class="external-link">other
 events</a> we might specify instead (or as well) if we wanted, but this
-is the most common.</p>
+one is the most common.</p>
+</div>
+<div class="section level3">
+<h3 id="specify-structure-to-contain-steps-to-run-on-which-platform">Specify Structure to Contain Steps to Run on which Platform<a class="anchor" aria-label="anchor" href="#specify-structure-to-contain-steps-to-run-on-which-platform"></a>
+</h3>
 <p>GitHub Actions are described as a sequence of jobs (such as building
 our code, or running some tests), and each job contains a sequence of
 steps which each represent a specific “action” (such as running a
@@ -7077,6 +7123,10 @@ others too (such as Windows, or Mac OS) which we’ll see later.</p>
 <code>runner</code>, which you can think of as a freshly installed
 instance of a machine running the operating system we indicate (in this
 case Ubuntu).</p>
+</div>
+</section><section><h2 class="section-heading" id="specify-the-steps-to-run">Specify the Steps to Run<a class="anchor" aria-label="anchor" href="#specify-the-steps-to-run"></a>
+</h2>
+<hr class="half-width">
 <p>Let’s now supply the concrete things we want to do in our workflow.
 We can think of this as the things we need to set up and run on a fresh
 machine. So within our workflow, we’ll need to:</p>
@@ -7489,8 +7539,8 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/aio.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-10-22",
-  "datePublished": "2025-10-22"
+  "dateModified": "2025-10-23",
+  "datePublished": "2025-10-23"
 }
 
   </script><script>
