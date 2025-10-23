@@ -279,7 +279,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#obtaining-some-example-code">Obtaining Some Example Code</a></li>
+        <ul><li><a href="#obtaining-example-code">Obtaining Example Code</a></li>
 <li><a href="#examining-the-code">Examining the Code</a></li>
 <li><a href="#why-write-readable-code">Why Write Readable Code?</a></li>
 <li><a href="#running-the-example-code">Running the Example Code</a></li>
@@ -590,7 +590,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.2 Some Example Code</h1>
-        <p>Last updated on 2025-05-09 |
+        <p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/22-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -612,7 +612,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>Why should I write readable code?</li>
-<li>What is a “Code Smell”?</li>
+<li>What is a “code smell”?</li>
 </ul></div>
 </div>
 </div>
@@ -628,7 +628,7 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="obtaining-some-example-code">Obtaining Some Example Code<a class="anchor" aria-label="anchor" href="#obtaining-some-example-code"></a></h2>
+<section><h2 class="section-heading" id="obtaining-example-code">Obtaining Example Code<a class="anchor" aria-label="anchor" href="#obtaining-example-code"></a></h2>
 <hr class="half-width"><p>FIXME: copy code-style-example into softwaresaved org</p>
 <p>For this lesson we’ll be using some example code available on GitHub,
 which we’ll clone onto our machines using the Bash shell. So firstly
@@ -709,14 +709,26 @@ two temperature conversions from Fahrenheit to Celsius and Fahrenheit to
 Kelvin. Note that for the purposes of this lesson, the code is
 deliberately written to contain some issues!</p>
 </section><section><h2 class="section-heading" id="why-write-readable-code">Why Write Readable Code?<a class="anchor" aria-label="anchor" href="#why-write-readable-code"></a></h2>
-<hr class="half-width"><p>QUESTION: who has seen or used code that looks like this? Yes/No?
-QUESTION: who has written code like this? Yes/No</p>
+<hr class="half-width"><div id="readable-code" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="readable-code" class="callout-inner">
+<h3 class="callout-title">Readable Code</h3>
+<div class="callout-content">
+<p>As a group, answer the following questions:</p>
+<ul><li>Who has seen or used code that looks like this?</li>
+<li>Who has written code like this?</li>
+</ul></div>
+</div>
+</div>
 <p>No one writes great code that’s readable, well formatted, and well
 designed all the time. Sometimes you often need to explore ideas with
 code to understand how the code should be designed, and this typically
 involves trying things out first. But… the key is that once you
 understand how to do something, it’s a good idea to make sure it’s
-readable and understandable by other people, which may includes a future
+readable and understandable by other people, which may include a future
 version of yourself, 6 months into the future. So it’s really helpful to
 end up with good clean code so yit’s easier to understand.</p>
 <p>Another key benefit to writing “cleaner” code is that its generally
@@ -753,7 +765,8 @@ of the code? Something to bear in mind when writing code!</p>
 </div>
 </section><section><h2 class="section-heading" id="running-the-example-code">Running the Example Code<a class="anchor" aria-label="anchor" href="#running-the-example-code"></a></h2>
 <hr class="half-width"><p>Now despite the issues with the code, does it work? Let’s find out.
-So in the shell, in the root directory of the repository:</p>
+Within the shell, in the root directory of the repository, run the code
+as follows:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -773,8 +786,8 @@ Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889
 Max temperature in Celsius 16.261111111111113 Kelvin 289.4111111111111
 Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889</code></pre>
 </div>
-<p>And we can see that the code does indeed appear to work, with celsius
-and kelvin values being printed to the terminal. But how can we improve
+<p>And we can see that the code does indeed appear to work, with Celsius
+and Kelvin values being printed to the terminal. But how can we improve
 its readability? We’ll use a special tool, called a code linter, to help
 us identify these sorts of issues with the code.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -856,7 +869,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/instructor/22-example-code.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/instructor/22-example-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-09",
+  "dateModified": "2025-10-23",
   "datePublished": "2025-10-23"
 }
 

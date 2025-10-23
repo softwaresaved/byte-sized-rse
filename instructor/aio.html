@@ -2076,7 +2076,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-22-example-code"><p>Content from <a href="22-example-code.html">2.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/22-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -2092,7 +2092,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>Why should I write readable code?</li>
-<li>What is a “Code Smell”?</li>
+<li>What is a “code smell”?</li>
 </ul>
 </div>
 </div>
@@ -2111,7 +2111,7 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="obtaining-some-example-code">Obtaining Some Example Code<a class="anchor" aria-label="anchor" href="#obtaining-some-example-code"></a>
+<section><h2 class="section-heading" id="obtaining-example-code">Obtaining Example Code<a class="anchor" aria-label="anchor" href="#obtaining-example-code"></a>
 </h2>
 <hr class="half-width">
 <p>FIXME: copy code-style-example into softwaresaved org</p>
@@ -2198,14 +2198,28 @@ deliberately written to contain some issues!</p>
 </section><section><h2 class="section-heading" id="why-write-readable-code">Why Write Readable Code?<a class="anchor" aria-label="anchor" href="#why-write-readable-code"></a>
 </h2>
 <hr class="half-width">
-<p>QUESTION: who has seen or used code that looks like this? Yes/No?
-QUESTION: who has written code like this? Yes/No</p>
+<div id="readable-code" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="readable-code" class="callout-inner">
+<h3 class="callout-title">Readable Code</h3>
+<div class="callout-content">
+<p>As a group, answer the following questions:</p>
+<ul>
+<li>Who has seen or used code that looks like this?</li>
+<li>Who has written code like this?</li>
+</ul>
+</div>
+</div>
+</div>
 <p>No one writes great code that’s readable, well formatted, and well
 designed all the time. Sometimes you often need to explore ideas with
 code to understand how the code should be designed, and this typically
 involves trying things out first. But… the key is that once you
 understand how to do something, it’s a good idea to make sure it’s
-readable and understandable by other people, which may includes a future
+readable and understandable by other people, which may include a future
 version of yourself, 6 months into the future. So it’s really helpful to
 end up with good clean code so yit’s easier to understand.</p>
 <p>Another key benefit to writing “cleaner” code is that its generally
@@ -2244,7 +2258,8 @@ of the code? Something to bear in mind when writing code!</p>
 </h2>
 <hr class="half-width">
 <p>Now despite the issues with the code, does it work? Let’s find out.
-So in the shell, in the root directory of the repository:</p>
+Within the shell, in the root directory of the repository, run the code
+as follows:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2264,8 +2279,8 @@ Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889
 Max temperature in Celsius 16.261111111111113 Kelvin 289.4111111111111
 Max temperature in Celsius 16.33888888888889 Kelvin 289.4888888888889</code></pre>
 </div>
-<p>And we can see that the code does indeed appear to work, with celsius
-and kelvin values being printed to the terminal. But how can we improve
+<p>And we can see that the code does indeed appear to work, with Celsius
+and Kelvin values being printed to the terminal. But how can we improve
 its readability? We’ll use a special tool, called a code linter, to help
 us identify these sorts of issues with the code.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -2293,7 +2308,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-23-analysing-code"><p>Content from <a href="23-analysing-code.html">2.3 Analysing Code using a Linter</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/23-analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -2321,7 +2336,7 @@ separate?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Use pylint to verify a program’s adherence to an established Python
+<li>Use Pylint to verify a program’s adherence to an established Python
 coding style convention</li>
 <li>Describe the benefits of a virtual environment</li>
 <li>Create and use a virtual environment to manage Python dependencies
@@ -2343,14 +2358,25 @@ resolved</li>
 <section><h2 class="section-heading" id="installing-a-code-linter">Installing a Code Linter<a class="anchor" aria-label="anchor" href="#installing-a-code-linter"></a>
 </h2>
 <hr class="half-width">
-<p>The first thing we need to do is install pylint, a very well
+<p>The first thing we need to do is install Pylint, a very well
 established tool for statically analysing Python code.</p>
-<p>Now fortunately, pylint can be installed as a Python package, and
+<p>Now fortunately, Pylint can be installed as a Python package, and
 we’re going to create what’s known as a virtual environment to hold this
-installation of pylint.</p>
-<p>QUESTION: who has installed a Python package before, using the
-program pip? Yes/No QUESTION: who has created and used a Python virtual
-environment before? Yes/No</p>
+installation of Pylint.</p>
+<div id="installing-python-packages" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="installing-python-packages" class="callout-inner">
+<h3 class="callout-title">Installing Python Packages</h3>
+<div class="callout-content">
+<p>Who has installed a Python package before, using the program
+<code>pip</code>? Who has created and used a Python virtual environment
+before?</p>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="benefits-of-virtual-environments">Benefits of Virtual Environments<a class="anchor" aria-label="anchor" href="#benefits-of-virtual-environments"></a>
 </h3>
@@ -2387,10 +2413,10 @@ Make sure you’re in the root directory of the repository, then type</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span></code></pre>
 </div>
-<p>Here, we’re using the built-on Python venv module - short for virtual
-environment - to create a virtual environment directory called
-<code>venv</code>. We could have called the directory anything, but
-naming it <code>venv</code> (or <code>.venv</code>) is a common
+<p>Here, we’re using the built-on Python <code>venv</code> module -
+short for virtual environment - to create a virtual environment
+directory called “venv”. We could have called the directory anything,
+but naming it <code>venv</code> (or <code>.venv</code>) is a common
 convention, as is creating it within the repository root directory. This
 makes sure the virtual environment is closely associated with this
 project, and not easily confused with another.</p>
@@ -2409,8 +2435,22 @@ environment is active, which is a handy reminder. For example:</p>
 </h3>
 <pre class="output" tabindex="0"><code>(venv) $</code></pre>
 </div>
-<p>QUESTION: who has successfully created and activated their virtual
-environment? Yes/No?</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Setting up a Virtual Environment - Checkin
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>Who has successfully created and activated their virtual
+environment?</p>
+</div>
+</div>
+</div>
+</div>
 <p>Now it’s created, let’s take a look at what’s in this virtual
 environment at this point.</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -2463,7 +2503,8 @@ to check for, and those you wish to ignore.</li>
 </div>
 </div>
 </div>
-<p>So we can install pylint into our virtual environment:</p>
+<p>So we can install <code>pylint</code> library into our virtual
+environment as:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2492,7 +2533,7 @@ tomli             2.2.1
 tomlkit           0.13.2
 typing_extensions 4.13.1</code></pre>
 </div>
-<p>So in addition to pylint, we see a number of other dependent packages
+<p>So in addition to Pylint, we see a number of other dependent packages
 installed that are required by it.</p>
 <p>We can also <em>deactivate</em> our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -2500,9 +2541,9 @@ installed that are required by it.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">deactivate</span></span></code></pre>
 </div>
-<p>You should see the <code>(venv)</code> prefix disappear, indicating
-we have returned to our global Python environment. Let’s reactivate it
-since we’ll need it to use pylint.</p>
+<p>You should see the “(venv)” prefix disappear, indicating we have
+returned to our global Python environment. Let’s reactivate it since
+we’ll need it to use pylint.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2514,7 +2555,7 @@ since we’ll need it to use pylint.</p>
 </section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a>
 </h2>
 <hr class="half-width">
-<p>Let’s point pylint at our code and see what it reports:</p>
+<p>Let’s point Pylint at our code and see what it reports:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2582,7 +2623,21 @@ whitespace</p>
 message.</p>
 <p>If we now edit the file, and go to line 9, column 35, we can see that
 there is an unnecessary space.</p>
-<p>QUESTION: who’s managed to run pylint on the example code? Yes/No</p>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Running Pylint - Checkin
+  </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
+<p>Who’s managed to run pylint on the example code?</p>
+</div>
+</div>
+</div>
+</div>
 <p>Let’s fix this issue now by removing the space, save the changed
 file, and then re-run pylint on it.</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -2691,7 +2746,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-24-linter-advanced"><p>Content from <a href="24-linter-advanced.html">2.4 Advanced Linting Features</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/24-linter-advanced.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -2708,7 +2763,7 @@ any links that you are not going to use.
 <ul>
 <li>What can I do to increase the detail of Pylint reports?</li>
 <li>How can I reduce unwanted messages from Pylint?</li>
-<li>How can I use static code analysis tools with VSCode?</li>
+<li>How can I use static code analysis tools within VSCode?</li>
 </ul>
 </div>
 </div>
@@ -2769,8 +2824,18 @@ Messages
 +---------------------------+------------+
 ...</code></pre>
 </div>
-<p>QUESTION: for those doing activity, who’s managed to run this
-command? YES/NO</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Pylint Verbose Reporting - Checkin </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>For those doing activity, who’s managed to run this command?</p>
+</div>
+</div>
+</div>
+</div>
 <p>It gives you some overall statistics, plus comparisons with the last
 time you ran it, on aspects such as:</p>
 <ul>
@@ -2782,7 +2847,7 @@ convention issues)</li>
 <li>A sorted count of the messages we received</li>
 </ul>
 <p>Looking at raw metrics, we can see that it breaks down our program
-into how many lines are code lines, python docstrings, standalone
+into how many lines are code lines, Python docstrings, standalone
 comments, and empty lines. This is very useful, since it gives us an
 idea of how well commented our code is. In this case - not very well
 commented at all! For normal comments, the usually accepted wisdom is to
@@ -2792,7 +2857,18 @@ obvious, since clearly written code should do that itself.</p>
 </section><section><h2 class="section-heading" id="increasing-our-pylint-score---adding-a-docstring">Increasing our Pylint Score - Adding a Docstring<a class="anchor" aria-label="anchor" href="#increasing-our-pylint-score---adding-a-docstring"></a>
 </h2>
 <hr class="half-width">
-<p>QUESTION: Who’s familiar with Python docstrings? Yes/No</p>
+<div id="docstrings" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="docstrings" class="callout-inner">
+<h3 class="callout-title">Docstrings</h3>
+<div class="callout-content">
+<p>Who’s familiar with Python docstrings?</p>
+</div>
+</div>
+</div>
 <p>Docstrings are a special kind of comment for a function, that explain
 what the function does, the parameters it expects, and what is returned.
 You can also write docstrings for classes, methods, and modules, but you
@@ -2809,8 +2885,8 @@ can, particularly for critical or complex functions.</p>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">    :returns: temperature in Celsius</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">    """</span></span></code></pre>
 </div>
-<p>Re-run pylint - can see we have one less docstring error, and a
-slightly higher score.</p>
+<p>Re-run <code>pylint</code> command - can see we have one less
+docstring error, and a slightly higher score.</p>
 <p>If you’d like to know more about docstrings and commenting, there’s
 an in-depth <a href="https://realpython.com/documenting-python-code/" class="external-link">RealPython
 tutorial</a> on these and the different ways you can format them.</p>
@@ -2917,7 +2993,7 @@ be present.</p>
 <hr class="half-width">
 <p>The good news is that if you’re using the VSCode IDE, we can also (or
 alternatively) install a Python linter in VSCode to give us this code
-analysis functionality, by installing a pylint extension. Select the
+analysis functionality, by installing the Pylint extension. Select the
 <code>Extensions</code> icon and this time search for
 <code>Pylint</code>, the one by Microsoft, and click
 <code>Install</code>.</p>

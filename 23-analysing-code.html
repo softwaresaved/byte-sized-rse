@@ -589,7 +589,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.3 Analysing Code using a Linter</h1>
-        <p>Last updated on 2025-05-09 |
+        <p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/23-analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -619,7 +619,7 @@ separate?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Use pylint to verify a program’s adherence to an established Python
+<ul><li>Use Pylint to verify a program’s adherence to an established Python
 coding style convention</li>
 <li>Describe the benefits of a virtual environment</li>
 <li>Create and use a virtual environment to manage Python dependencies
@@ -638,14 +638,25 @@ resolved</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="installing-a-code-linter">Installing a Code Linter<a class="anchor" aria-label="anchor" href="#installing-a-code-linter"></a></h2>
-<hr class="half-width"><p>The first thing we need to do is install pylint, a very well
+<hr class="half-width"><p>The first thing we need to do is install Pylint, a very well
 established tool for statically analysing Python code.</p>
-<p>Now fortunately, pylint can be installed as a Python package, and
+<p>Now fortunately, Pylint can be installed as a Python package, and
 we’re going to create what’s known as a virtual environment to hold this
-installation of pylint.</p>
-<p>QUESTION: who has installed a Python package before, using the
-program pip? Yes/No QUESTION: who has created and used a Python virtual
-environment before? Yes/No</p>
+installation of Pylint.</p>
+<div id="installing-python-packages" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="installing-python-packages" class="callout-inner">
+<h3 class="callout-title">Installing Python Packages</h3>
+<div class="callout-content">
+<p>Who has installed a Python package before, using the program
+<code>pip</code>? Who has created and used a Python virtual environment
+before?</p>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="benefits-of-virtual-environments">Benefits of Virtual Environments<a class="anchor" aria-label="anchor" href="#benefits-of-virtual-environments"></a></h3>
 <p>Virtual environments are an indispensible tool for managing package
@@ -678,10 +689,10 @@ Make sure you’re in the root directory of the repository, then type</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span></code></pre>
 </div>
-<p>Here, we’re using the built-on Python venv module - short for virtual
-environment - to create a virtual environment directory called
-<code>venv</code>. We could have called the directory anything, but
-naming it <code>venv</code> (or <code>.venv</code>) is a common
+<p>Here, we’re using the built-on Python <code>venv</code> module -
+short for virtual environment - to create a virtual environment
+directory called “venv”. We could have called the directory anything,
+but naming it <code>venv</code> (or <code>.venv</code>) is a common
 convention, as is creating it within the repository root directory. This
 makes sure the virtual environment is closely associated with this
 project, and not easily confused with another.</p>
@@ -700,8 +711,7 @@ environment is active, which is a handy reminder. For example:</p>
 </h3>
 <pre class="output" tabindex="0"><code>(venv) $</code></pre>
 </div>
-<p>QUESTION: who has successfully created and activated their virtual
-environment? Yes/No?</p>
+
 <p>Now it’s created, let’s take a look at what’s in this virtual
 environment at this point.</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -751,7 +761,8 @@ to check for, and those you wish to ignore.</li>
 </ul></div>
 </div>
 </div>
-<p>So we can install pylint into our virtual environment:</p>
+<p>So we can install <code>pylint</code> library into our virtual
+environment as:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -780,7 +791,7 @@ tomli             2.2.1
 tomlkit           0.13.2
 typing_extensions 4.13.1</code></pre>
 </div>
-<p>So in addition to pylint, we see a number of other dependent packages
+<p>So in addition to Pylint, we see a number of other dependent packages
 installed that are required by it.</p>
 <p>We can also <em>deactivate</em> our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -788,9 +799,9 @@ installed that are required by it.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">deactivate</span></span></code></pre>
 </div>
-<p>You should see the <code>(venv)</code> prefix disappear, indicating
-we have returned to our global Python environment. Let’s reactivate it
-since we’ll need it to use pylint.</p>
+<p>You should see the “(venv)” prefix disappear, indicating we have
+returned to our global Python environment. Let’s reactivate it since
+we’ll need it to use pylint.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -800,7 +811,7 @@ since we’ll need it to use pylint.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="analysing-our-code-using-a-linter">Analysing our Code using a Linter<a class="anchor" aria-label="anchor" href="#analysing-our-code-using-a-linter"></a></h2>
-<hr class="half-width"><p>Let’s point pylint at our code and see what it reports:</p>
+<hr class="half-width"><p>Let’s point Pylint at our code and see what it reports:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -864,7 +875,7 @@ whitespace</p>
 message.</p>
 <p>If we now edit the file, and go to line 9, column 35, we can see that
 there is an unnecessary space.</p>
-<p>QUESTION: who’s managed to run pylint on the example code? Yes/No</p>
+
 <p>Let’s fix this issue now by removing the space, save the changed
 file, and then re-run pylint on it.</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -1025,7 +1036,7 @@ any links that you are not going to use.
   "url": "https://softwaresaved.github.io/byte-sized-rse/23-analysing-code.html",
   "identifier": "https://softwaresaved.github.io/byte-sized-rse/23-analysing-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-05-09",
+  "dateModified": "2025-10-23",
   "datePublished": "2025-10-23"
 }
 
