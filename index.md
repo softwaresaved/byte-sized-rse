@@ -1,4 +1,4 @@
-This repository has moved!
+**This repository has moved!**
 
 Find the lesson repository at: <https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main>
 
