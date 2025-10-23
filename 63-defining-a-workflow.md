@@ -120,7 +120,7 @@ Note that GitHub Actions expects workflows to be contained within the `.github/w
 
 Let's build up this workflow now.
 
-FIXME: turn the below into a step-by-step learning narrative, explaining each bit
+### Specify Workflow Name and When it Runs
 
 So first let's specify a name for our workflow that will appear under GitHub Actions build reports,
 and add the conditions that will trigger the workflow to run:
@@ -133,7 +133,9 @@ on: push
 
 So here our workflow will run when changes are pushed to the repository.
 There are [other events](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows) we might specify instead (or as well) if we wanted,
-but this is the most common.
+but this one is the most common.
+
+### Specify Structure to Contain Steps to Run on which Platform
 
 GitHub Actions are described as a sequence of jobs (such as building our code, or running some tests),
 and each job contains a sequence of steps
@@ -158,6 +160,8 @@ but we could supply others too (such as Windows, or Mac OS) which we'll see late
 When the workflow is triggered,
 our job will run within a `runner`,
 which you can think of as a freshly installed instance of a machine running the operating system we indicate (in this case Ubuntu).
+
+## Specify the Steps to Run
 
 Let's now supply the concrete things we want to do in our workflow.
 We can think of this as the things we need to set up and run on a fresh machine.
