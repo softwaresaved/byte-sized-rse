@@ -1,8 +1,8 @@
 This repository has moved!
 
-Find the lesson repository at: [https://github.com/carpentries-lab/deep-learning-intro/](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main)
+Find the lesson repository at: <https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main>
 
-Find the lesson website at: [https://carpentries-lab.github.io/deep-learning-intro/](https://carpentries-incubator.github.io/byte-sized-rse-overview/)
+Find the lesson website at: <https://carpentries-incubator.github.io/byte-sized-rse-overview/>
 
 Individual episodes are now separate mini-lessons in separate repositories:
 
