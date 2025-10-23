@@ -1,29 +1,13 @@
----
-site: sandpaper::sandpaper_site
----
+This repository has moved!
 
-## Byte-sized RSE
+Find the lesson repository at: [https://github.com/carpentries-lab/deep-learning-intro/](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main)
+Find the lesson website at: [https://carpentries-lab.github.io/deep-learning-intro/](https://carpentries-incubator.github.io/byte-sized-rse-overview/)
 
-Byte-sized RSE is a series of standalone mini training materials providing key research software skills in around 1-1.5 hour. It has been originally been developed and run by the [UNIVERSE-HPC](https://www.universe-hpc.ac.uk/) project. There have been 3 [Byte-sized RSE series](https://www.universe-hpc.ac.uk/events/byte-sized-rse/) so far, each with a number of episodes - some of which are documented in this course:
+Individual episodes are now separate mini-lessons in separate repositories:
 
-- Integrated Development Environments
-- Code Style & Linting
-- Intermediate Git
-- Code Review
-- Unit Testing Code
-
-Each episode is standalone - you can jump staight into the episode you are interested in and do not have to read preceeding episodes.
-
-### Target Audience
-
-Research Software Engineers (RSEs), reseachers and postgraduates involved in computational research who already posses foundational computational skills and who are now:
-
-- looking for quick refreshers, tips, or wanting to improve the sustainability or quality of their research code and are keen on continuous learning without heavy time investment.
-- interested in advancing their skills and learning best practices for software in research.
-- seeking digestible content to bridge the gap between research and software and benefiting from short-form RSE tips/tools to improve their research workflows.
-
-::: prereq
-
-Episodes may require some prerequisite knowledge clearly described at the start or each episode, along with its own, individual, setup instructions.
-
-:::
+* [Code Development & Debugging with IDEs](https://github.com/carpentries-incubator/byte-sized-rse-vscode)
+* [Code Style, Quality & Linting](https://github.com/carpentries-incubator/byte-sized-rse-code-quality)
+* [Intermediate Git](https://github.com/carpentries-incubator/byte-sized-rse-git-intermediate)
+* [Code Review](https://github.com/carpentries-incubator/byte-sized-rse-code-review)
+* [Unit Testing Code](https://github.com/carpentries-incubator/byte-sized-rse-testing)
+* [Continuous Integration](https://github.com/carpentries-incubator/byte-sized-rse-ci)
