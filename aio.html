@@ -2878,7 +2878,7 @@ this specific issue.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3467,7 +3467,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-32-example-code"><p>Content from <a href="32-example-code.html">3.2 Some Example Code</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/32-example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3514,11 +3514,11 @@ throughout the lesson</li>
 the contents of another repository.</p>
 <ol style="list-style-type: decimal">
 <li>Once logged into GitHub in a web browser, go to <a href="https://github.com/UNIVERSE-HPC/git-example" class="external-link uri">https://github.com/UNIVERSE-HPC/git-example</a>.</li>
-<li>Select ‘Use this template’, and then select ‘Create a new
-repository’ from the dropdown menu.</li>
+<li>Select <code>Use this template</code>, and then select
+<code>Create a new repository</code> from the dropdown menu.</li>
 <li>On the next screen, ensure your personal GitHub account is selected
 in the <code>Owner</code> field, and fill in
-<code>Repository name</code> with <code>git-example</code>.</li>
+<code>Repository name</code> with “git-example”.</li>
 <li>Ensure the repository is set to <code>Public</code>.</li>
 <li>Select <code>Create repository</code>.</li>
 </ol>
@@ -3663,14 +3663,16 @@ the purposes of this activity, let’s assign ourselves, so select
 <div id="adding-work-for-ourselves" class="callout-inner">
 <h3 class="callout-title">Adding Work for Ourselves</h3>
 <div class="callout-content">
-<p>Repeat this process for the other two issues in the following order:
-- “Add missing docstrings to function and module” - “Script fails with
-undefined function name error” We’ll refer back to these issues
-later!</p>
+<p>Repeat the process of adding issues on your GitHub repository for the
+following two issues in this order:</p>
+<ul>
+<li>“Add missing docstrings to function and module”</li>
+<li>“Script fails with undefined function name error”</li>
+</ul>
+<p>We’ll refer back to these issues later!</p>
 </div>
 </div>
 </div>
-<p>QUESTION: who’s created the three issues? Yes/No</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -3697,7 +3699,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-33-feature-branch"><p>Content from <a href="33-feature-branch.html">3.3 Feature Branch Workflow</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/33-feature-branch.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3712,7 +3714,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I use Git to create and work on a feature branch?</li>
-<li>How do I push my branch changes to GitHub?</li>
+<li>How do I push my local branch changes to GitHub?</li>
 </ul>
 </div>
 </div>
@@ -3722,8 +3724,8 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Create and use new a feature branch in our repository to working on
-an issue</li>
+<li>Create and use new a feature branch in our repository to work on an
+issue</li>
 <li>Fix issue and commit changes to the feature branch</li>
 <li>Push the new branch and its commits to GitHub</li>
 </ul>
@@ -3845,7 +3847,7 @@ Your branch is up-to-date with 'origin/main'.
 
 nothing to commit, working tree clean</code></pre>
 </div>
-<p>QUESTION: who’s created their new feature branch? Yes/No</p>
+
 </div>
 <div class="section level3">
 <h3 id="switching-to-the-new-branch">Switching to the New Branch<a class="anchor" aria-label="anchor" href="#switching-to-the-new-branch"></a>
@@ -3897,7 +3899,7 @@ of your choice.</p>
 <span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">    """</span></span></code></pre>
 </div>
 <p>Then save the file.</p>
-<p>QUESTION: Who has added this to the file, and saved it? Yes/No</p>
+
 <p>Now we’ve done this, let’s commit this change to the repository on
 our new branch.</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -3957,8 +3959,7 @@ Date:   Tue Apr 8 14:47:05 2025 +0100
 </div>
 <p>So, as we can see, on our new feature branch we now have our initial
 commit inherited from the main branch, and also our two new commits.</p>
-<p>QUESTION: who’s edited the file and made the changes, and committed
-them - who’s done that twice? Yes/No</p>
+
 </section><section><h2 class="section-heading" id="push-new-feature-branch-and-commits-to-github">Push New Feature Branch and Commits to GitHub<a class="anchor" aria-label="anchor" href="#push-new-feature-branch-and-commits-to-github"></a>
 </h2>
 <hr class="half-width">
@@ -4009,8 +4010,7 @@ branch with the same name on the remote repository. <code>origin</code>
 here is a shorthand that refers to the originating repository (the one
 we cloned originally). You’ll notice a message suggesting we could
 create a pull request to merge the changes with the main branch.</p>
-<p>QUESTION: who’s committed that change and pushed the new branch with
-its commits to GItHub? Yes/no Let’s do this now!</p>
+
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -4039,7 +4039,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-34-pull-request"><p>Content from <a href="34-pull-request.html">3.4 Creating a Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/34-pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4117,11 +4117,11 @@ a far better view of what’s going on.</p>
 <p>So let’s go back to our repository on GitHub. You may see a message
 displayed at the top about protecting the main branch. We may come back
 to this later, so no need to worry about this for now.</p>
-<p>If we select the dropdown where it says “main”, it gives us a list of
-branches. We can see all branches by selecting that option at the
-bottom. Now, we can see we have our new branch that has appeared, which
-is separate from our main branch. If we select that, we can see the
-state of the repository within this branch, including the new latest
+<p>If we select the dropdown where it says <code>main</code>, it gives
+us a list of branches. We can see all branches by selecting that option
+at the bottom. Now, we can see we have our new branch that has appeared,
+which is separate from our main branch. If we select that, we can see
+the state of the repository within this branch, including the new latest
 commits here - on our <code>climate-analysis.py</code> file.</p>
 </section><section><h2 class="section-heading" id="create-a-pull-request">Create a Pull Request<a class="anchor" aria-label="anchor" href="#create-a-pull-request"></a>
 </h2>
@@ -4148,7 +4148,7 @@ review. But for simplicity, we’ll leave those for now. But we will
 assign the pull request (or PR for short) to ourselves, since it’s a
 good idea to assign responsibility where we can. So let’s create the
 pull request by selecting the button.</p>
-<p>QUESTION: who’s created the pull request? Yes/No</p>
+
 <p>Now we get another screen describing the new PR itself. If we’d
 assigned any reviewers, we now wait for their reviews of this pull
 request. At this point, we could assume we’ve just done that, and the PR
@@ -4220,7 +4220,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-35-merge-pr"><p>Content from <a href="35-merge-pr.html">3.5 Merging a Pull Request</a></p>
 <hr>
-<p>Last updated on 2025-05-09 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/35-merge-pr.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4234,7 +4234,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I merge changes proposed within a pull request?</li>
+<li>How do I merge changes proposed within a pull request with the main
+branch?</li>
 <li>What should I do with a branch that has been merged and is no longer
 required?</li>
 </ul>
@@ -4306,7 +4307,7 @@ can get quite messy, so if in doubt, do a standard merge!</p>
 can add more information here if needed - but let’s
 <code>Confirm rebase and merge</code>. Note that it says that the merge
 was done successfully, and suggests we can delete the branch.</p>
-<p>QUESTION: who has merged the pull request? Yes/No</p>
+
 <p>We said earlier that branches in Git should be short lived where
 possible, and keeping branches hanging around may cause confusion. So
 let’s delete it now. Now if we go the main branch on the main repository
@@ -4399,7 +4400,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-36-merge-conflicts"><p>Content from <a href="36-merge-conflicts.html">3.6 Merge Conflicts</a></p>
 <hr>
-<p>Last updated on 2025-05-12 |
+<p>Last updated on 2025-10-23 |
 
         <a href="https://github.com/softwaresaved/byte-sized-rse/edit/main/episodes/36-merge-conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
