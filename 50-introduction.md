@@ -6,13 +6,21 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- Why should I test my code?
+- What is the role of automated testing?
+- What are the different types of automated tests?
+- What is the structure of a unit test?
+- What is test "mocking"?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Explain the reasons why testing is important
+- Describe the three main types of tests and what each are used for
+- Describe the practice of test “mocking” and when to use it
+- Obtain example code repository and run existing unit tests
+- Describe the format of a unit test written for the Pytest testing framework
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

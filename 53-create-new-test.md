@@ -6,13 +6,16 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I write a unit test?
+- How do I write a unit test that tests for an error?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Implement and run unit tests to verify the correct behaviour of program functions
+- Describe how and when testing fits into code development
+- Write a unit test that tests for an expected error
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -174,6 +177,65 @@ we can see that there are some interesting edge cases to test for:
 All good candidates for further tests,
 since they test the code in different ways,
 and test different paths through the code.
+
+## Testing for Failure
+
+We've seen what happens if a test succeeds,
+but what happens if a test fails?
+Let's deliberately change our test to be wrong and find out,
+by editing the `tests/test_factorial.py` file,
+changing the expected result of `factorial(3)` to be `10`, and saving the file.
+
+We'll rerun our tests slightly differently than last time:
+
+```bash
+python -m unittest -v tests/test_factorial.py
+```
+
+In this case, we add `-v` for more verbose output,
+giving us detailed results test-by-test.
+
+```output
+test_3 (tests.test_factorial.TestFactorialFunctions) ... FAIL
+
+======================================================================
+FAIL: test_3 (tests.test_factorial.TestFactorialFunctions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/steve/factorial-example/tests/test_factorial.py", line 8, in test_3
+    self.assertEqual(factorial(3), 10)
+AssertionError: 6 != 10
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+```
+
+In this instance we get a `FAIL` instead of an `OK` for our test,
+and we see an `AssertionError` that `6` is not equal to `10`,
+which is clearly true.
+
+Let's now change our faulty test back by editing the file again,
+changing the `10` back to `6`,
+and re-run our tests:
+
+```bash
+python -m unittest -v tests/test_factorial.py
+```
+
+```output
+test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
+
+This illustrates an important point with our tests:
+it's important to make sure your tests are correct too.
+So make sure you work with known 'good' test data which has been verified to be correct!
 
 :::::::::::::::::::::::::::::::::::::
 
