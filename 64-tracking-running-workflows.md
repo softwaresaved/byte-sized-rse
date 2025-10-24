@@ -24,14 +24,10 @@ Since the workflow is triggered on each `git push`,
 if we go back to our main repository page,
 we should see an orange circle next to the most recent commit displayed just above the directory contents.
 
-FIXME: add screenshot of main page with orange CI running marker
-
 When this workflow is complete, it will display either a green tick for success,
 or a red cross if the workflow encountered an error.
 You can also see a history of the past workflow runs' failures or successes for each workflow run triggered on the commits page,
 by selecting `Commits` on the right of this most recent commit display.
-
-FIXME: add screenshot of commits page with a single workflow result entry
 
 For more detail we can check the progress of a running workflow by selecting `Actions` in the top navigation bar (e.g. https://github.com/steve-crouch/ci-example/actions).
 We can see here that a new run has started,
@@ -46,8 +42,6 @@ separated into separate collapsed steps that we may expand to view further detai
 Each of the steps is named from the `name` labels we gave each step.
 Note that the workflow may still be running at this point,
 so not all steps may be complete yet.
-
-FIXME: show workflow log of completed run
 
 If we drill down by selecting the `Test with pytest` entry,
 we'll get a breakdown of the thing we're really interested in:

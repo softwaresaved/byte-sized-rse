@@ -14,7 +14,7 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Create an issue on GitHub that describes a problem with the example codebase
-- Use the GitHub file editor to make a direct change to a file in our example repository
+- Use the GitHub file editor to make a direct change to a file in a repository
 - Submit the fix for the issue on a new repository branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

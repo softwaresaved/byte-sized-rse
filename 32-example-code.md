@@ -23,8 +23,6 @@ exercises: 0
 
 ## Creating a Copy of the Example Code Repository
 
-FIXME: copy git-example repo into softwaresaved
-
 For this lesson we'll need to create a new GitHub repository based on the contents of another repository.
 
 1. Once logged into GitHub in a web browser,

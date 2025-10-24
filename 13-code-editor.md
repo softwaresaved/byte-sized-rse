@@ -49,8 +49,6 @@ Let's take a look at some of what the code editor gives us.
 
 You'll notice that the Python syntax is being highlighted for us, which helps readability.
 
-FIXME: add screenshot of code editor with syntax highlighting of code example
-
 Here, it uses colour to distinguish the various parts of our program.
 Functions are yellow, Python statements are purple, variables are light blue, and strings are this reddy-orange, and so on.
 Which, perhaps unsurprisingly, is a feature known as Syntax Highlighting, and it's possible to edit the colour scheme to your liking for a particular language if you like, although we won't go into that now.
@@ -93,8 +91,6 @@ This looks exactly like what we're after!
 Select `Install`.
 
 Now, when we go to a function for example `FahrToCelsius`, go to the next line, and add `"""`, we'll see a small pop-up to add a docstring. Press `Tab` to do so.
-
-FIXME: add screenshot snippet showing docstring boilerplate being added
 
 It does all the hard work of adding in the structure of a docstring for us, so we just need to fill in the blanks.
 This is another good example of us realising it would be nice to have something to help us, searching for an extension, and trying it out.

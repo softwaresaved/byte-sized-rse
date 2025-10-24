@@ -29,8 +29,6 @@ Now let's try running a Python script.
 First, make sure your Python code doesn't have any errors!
 Then, select the "Play"-looking icon at the top right of the code editor.
 
-FIXME: screenshot snippet of the play icon?
-
 You should see the program run, and output displayed in a pop-up terminal window at the bottom:
 
 ```output
@@ -123,8 +121,6 @@ You'll see the execution has paused on the line we entered the breakpoint, which
 Some new information is now displayed in various panes on the left of the code editor.
 In particular:
 
-FIXME: show screenshot of debugging panes (esp. variables and call stack)
-
 - `VARIABLES` - on the left, we can see a list of variables, and their current state, at this point in the script's execution, such as `COMMENT` and `SHIFT`, and `climate_data` (which is a reference to our open data file).
 We don't have many at the moment.
 It also distinguishes between local variables and global variables - this is to do with the "scope" of the variables, as to how they are accessible from this point in the running of the code.
@@ -141,8 +137,6 @@ If it were within the `FahrToKelvin` function, for example, we'd see that added 
 It also shows us the line number where execution has paused at this level of the call stack.
 
 Now, we can also see some new icons at the top to do with debugging:
-
-FIXME: show screenshot snippet of debugging icons
 
 - The first one is continue, which allows the script to keep running until the next breakpoint.
 - The next one allows us to step over - or through - the script one statement at a time.

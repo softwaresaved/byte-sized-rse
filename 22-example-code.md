@@ -21,8 +21,6 @@ exercises: 0
 
 ## Obtaining Example Code
 
-FIXME: copy code-style-example into softwaresaved org
-
 For this lesson we'll be using some example code available on GitHub,
 which we'll clone onto our machines using the Bash shell.
 So firstly open a Bash shell (via Git Bash in Windows or Terminal on a Mac). Then, on the command line, navigate to where you'd like the example code to reside,
