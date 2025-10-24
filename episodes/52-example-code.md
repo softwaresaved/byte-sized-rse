@@ -6,13 +6,16 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME
+- How do I run a set of unit tests?
+- How do unit test frameworks operate?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Obtain example code used for this lesson
+- Run a repository's existing unit tests using a unit testing framework
+- Describe the typical format of a unit test
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -158,67 +161,11 @@ We could even add multiple `unittest.TestCase` classes here if we wanted,
 each testing different aspects of our code for example,
 and `unittest` would search all of these classes and run each `test_` function in turn.
 
-## Testing for Failure
-
-We've seen what happens if a test succeeds,
-but what happens if a test fails?
-Let's deliberately change our test to be wrong and find out,
-by editing the `tests/test_factorial.py` file,
-changing the expected result of `factorial(3)` to be `10`, and saving the file.
-
-We'll rerun our tests slightly differently than last time:
-
-```bash
-python -m unittest -v tests/test_factorial.py
-```
-
-In this case, we add `-v` for more verbose output,
-giving us detailed results test-by-test.
-
-```output
-test_3 (tests.test_factorial.TestFactorialFunctions) ... FAIL
-
-======================================================================
-FAIL: test_3 (tests.test_factorial.TestFactorialFunctions)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/steve/factorial-example/tests/test_factorial.py", line 8, in test_3
-    self.assertEqual(factorial(3), 10)
-AssertionError: 6 != 10
-
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-
-FAILED (failures=1)
-```
-
-In this instance we get a `FAIL` instead of an `OK` for our test,
-and we see an `AssertionError` that `6` is not equal to `10`,
-which is clearly true.
-
-Let's now change our faulty test back by editing the file again,
-changing the `10` back to `6`,
-and re-run our tests:
-
-```bash
-python -m unittest -v tests/test_factorial.py
-```
-
-```output
-test_3 (tests.test_factorial.TestFactorialFunctions) ... ok
-
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-
-OK
-```
-
-This illustrates an important point with our tests:
-it's important to make sure your tests are correct too.
-So make sure you work with known 'good' test data which has been verified to be correct!
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Unittest is a built-in Python unit testing framework
+- Other popular unit testing frameworks for Python include `pytest` and `nose`
+- Object oriented programming is a way of encapsulating data and the functions that operate on that data together
+- Run a set of Unittest unit tests using `python -m unittest` followed by the script filename containing the tests that begins with `test_`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
