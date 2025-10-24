@@ -25,8 +25,6 @@ exercises: 0
 You'll notice there's a subtle dropdown on the `Merge pull request` button,
 which presents options for how to perform the merge.
 
-FIXME: ensure rebase and merge is covered in intro?
-
 You may remember from the introduction about doing a "rebase and merge" as opposed to just doing a merge commit,
 since it leads to a cleaner repository history.
 For example, if we did a normal merge here, we'd end up with our two new commits and a merge commit on the `main` branch.

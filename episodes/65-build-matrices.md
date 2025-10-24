@@ -67,8 +67,6 @@ Once we've saved our workflow, commit the changes to the repository as before.
 If we view the most recent GitHub Actions workflow run,
 we should see that a new job has been created for each of the 9 permutations.
 
-FIXME: add GA screenshot showing all 9 permutations running
-
 Note all jobs are running in parallel (up to the limit allowed by our account) which potentially saves us a lot of time waiting for testing results.
 Therefore overall, this approach allows us to massively scale our automated testing across platforms we wish to test.
 
