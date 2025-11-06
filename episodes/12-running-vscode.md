@@ -75,9 +75,13 @@ It might take a minute - you can see a sliding blue line in the top left to indi
 Once complete, you should see a couple of "Welcome" windows introducing you to two of its key features - support for Python and Jupyter notebooks.
 If you use Jupyter notebooks, which is a way of writing Python programs that you can run line by line from within an editor as you write the program, you may find this useful.
 
-For now, let's configure this extension for our Python development, and to do that, we need to tell VSCode which Python installation on our machine we'd like it to use. In the Python Welcome window, select `Select a Python interpreter`, and then `Select Python interpreter`.
-You may find you have many installations of Python, or only have one. Try to select the version later than 3.8 if you can.
-Then select `Mark done`, and close the Welcome window.
+For now, let's configure this extension for our Python development, and to do that, we need to tell VSCode which Python installation on our machine we'd like it to use. VSCode has a sophisticated method to access it's inner functionality known as the Command Palette, which we'll use to address this.
+
+1. Select `View` and `Command Palette` from the VSCode menu
+1. Begin typing `Python: Select Interpreter`, and then select it when it appears
+1. A list of available Python installations should appear. You may find you have many installations of Python, or only have one. Try to select the version later than 3.8 if you can.
+
+Once selected, the default Python interpreter for VSCode will be configured.
 
 ## A Sample Project
 
@@ -107,7 +111,7 @@ then select `Open` when ‘Would you like to open the cloned repository?' popup 
 
 :::::::::::::::::::::::::::::::::::::::::
 
-You'll then likely be presented with a window asking whether you trust the authors of this code.
+You may be presented with a window asking whether you trust the authors of this code.
 In general, it's a good idea to be at least a little wary, since you're obtaining code from the internet, so be sure to check your sources!
 Be careful here - I found on Windows the "Trust" option appears on the left, whilst on Mac, it appears on the right!
 In this case, feel free to trust the repository!

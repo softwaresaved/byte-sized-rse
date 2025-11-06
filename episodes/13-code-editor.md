@@ -34,7 +34,7 @@ you can select `Open Folder` to select the code folder.
 
 :::::::::::::::::::::::::::::::::::::::::
 
-Note that as an example, it's deliberately written to have flaws.
+Note that as an example, the code is deliberately written to have flaws.
 Things like the line spacing is inconsistent, there are no code comments, there's a variable that's not used, and you may spot other issues too.
 But in essence, the code is designed to do the following:
 
@@ -62,7 +62,7 @@ So this is great, and helps us understand what we are writing, and highlights so
 
 Something that's also useful is VSCode's ability (via the Python and Pylance extensions) to help you write and format your code whilst you're typing.
 
-For example, on a blank line somewhere, enter `for x in something:`.
+For example, on a blank line somewhere, enter `for x in something:`, and press the enter (or return) key.
 
 On the next line, we can see that it's automatically indented it for us, knowing that we're inside a loop.
 
@@ -78,8 +78,8 @@ This is really handy to we don't have to take the time to look up all this infor
 
 ## Need a Thing? Install an Extension!
 
-As we just saw, included in the list of issues with our code was the lack of docstrings.
-If we want to write good code, we should be adding code comments, including docstrings for our functions, methods, and modules.
+A great feature of VSCode is the ease with which we can add new extensions when we need them.
+For example, if we want to write good Python code, we should be adding code comments, including docstrings for our functions, methods, and modules.
 
 Let's try and find an extension that might help us with writing docstrings.
 Select the `Extensions` icon, and type `docstring` - you should see an `autoDocstring` extension by Nils Werner at the top.
@@ -94,7 +94,18 @@ Now, when we go to a function for example `FahrToCelsius`, go to the next line, 
 
 It does all the hard work of adding in the structure of a docstring for us, so we just need to fill in the blanks.
 This is another good example of us realising it would be nice to have something to help us, searching for an extension, and trying it out.
+For example, filling in the blanks for our generated docstring:
 
+```python
+    """Convert Fahrenheit to Celsius.
+
+    Args:
+        fahr (int): temperature in Fahrenheit
+
+    Returns:
+        int: temperature in Celsius
+    """
+```
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 

@@ -54,21 +54,23 @@ If you're running an Anaconda distribution of Python on Windows,
 if you see this error it means that VSCode is not looking in the right place for Anaconda's installation.
 In this case, you may need to configure VSCode accordingly.
 
-VSCode has a sophisticated method to access it's inner functionality known as the Command Palette, which we'll use to address this.
-Activate the Command Paletter by pressing `Ctrl` + `Shift` + `P` simultaneously,
-then type `Terminal: Select Default Profile`.
-From the options, select `Command Prompt C:\WINDOWS\...`,
-and hopefully that should resolve the issue.
+1. Activate the Command Palette, either by selecting `View` and `Command Palette` in the menu, or by pressing `Ctrl` + `Shift` + `P` simultaneously
+1. then type `Terminal: Select Default Profile`
+1. From the options, select `Command Prompt C:\WINDOWS\...`
+
+Hopefully that should resolve the issue.
 
 :::::::::::::::::::::::::::::::::::::::::
 
-The pop-up window is known as the "Console",
+The pop-up window is known as the "Console" or "Terminal",
 and essentially is a terminal, or command prompt, where the program is run.
-You'll notice we can also type in commands here too.
+You'll notice that the directory where the console runs is the current VSCode project's workspace location,
+and that we can also type in commands here too.
 For example in Windows, you could type `dir`, on Mac or Linux you could type `ls` - to get a listing of files, for example.
 
-We can also close this terminal/console at any time,
-and start a new one by selecting `Terminal` from the menu and selecting `New Terminal`. So when we write and run our code, we have the option of never having to leave VSCode at all for most things.
+We can also close this terminal/console at any time by selecting the `x` icon on the right,
+and start a new one by selecting `Terminal` from the menu and selecting `New Terminal`.
+So when we write and run our code, we have the option of never having to leave VSCode at all for most things.
 
 ## Debugging Code
 
@@ -92,7 +94,7 @@ with IDEs doing a lot of complex stuff for us.
 ### Introducing a Problem
 
 Let's assume we have a problem with our code - by introducing one.
-In our `climate_analysis.py` code, where it says `if data[0][0] != COMMENT`, replace `COMMENT` with `'!'`.
+In our `climate_analysis.py` code, where it says `if data[0][0] != comment`, replace `comment` with `'!'`.
 We perhaps might assume one of our colleagues erroneously made this change, but we haven't spotted it yet.
 We try to run the code as before, and now it doesn't work.
 We get a `ValueError`, which informs us it couldn't perform a conversion of a value extracted from the data file to a float as part of its temperature conversion.
@@ -117,11 +119,11 @@ Then it will likely ask two questions in pop-up pane near the top:
 1. Then it asks you to `Select a debug configuration`, so select `Python File` to debug the current file.
 
 Now the Python script is running in debug mode.
-You'll see the execution has paused on the line we entered the breakpoint, which is now highlighted.,
+You'll see the execution has paused on the line we entered the breakpoint, which is now highlighted.
 Some new information is now displayed in various panes on the left of the code editor.
 In particular:
 
-- `VARIABLES` - on the left, we can see a list of variables, and their current state, at this point in the script's execution, such as `COMMENT` and `SHIFT`, and `climate_data` (which is a reference to our open data file).
+- `VARIABLES` - on the left, we can see a list of variables, and their current state, at this point in the script's execution, such as `comment` and `shift`, and `climate_data` (which is a reference to our open data file).
 We don't have many at the moment.
 It also distinguishes between local variables and global variables - this is to do with the "scope" of the variables, as to how they are accessible from this point in the running of the code.
 Global variables can be seen from anywhere in the script.
@@ -138,9 +140,9 @@ It also shows us the line number where execution has paused at this level of the
 
 Now, we can also see some new icons at the top to do with debugging:
 
-- The first one is continue, which allows the script to keep running until the next breakpoint.
-- The next one allows us to step over - or through - the script one statement at a time.
-- The next two allow us to choose to step into or out of a function call, which is interesting.
+- The first one is continue, which allows the script to keep running until the next breakpoint (if there is one)
+- The next one allows us to step over - or through - the script one statement at a time
+- The next two allow us to choose to step into or out of a function call, which is interesting
   
 If we want to examine the inner workings of a function during this debug session, we can do that.
 
@@ -156,6 +158,8 @@ If we step again, and then again, our program halts because it's run into the pr
 This tells us something useful - that the problem occurs in the first iteration of the loop.
 So, this implies, the problem might be with the first line of data being processed,
 since the Python code is going through the data file line by line.
+Let's now stop the debugger by selecting the red square icon.
+
 If we re-run the debugger, we can go through this process again.
 And we can see something interesting when we get to the `if` statement.
 From the code, we know that the if statement is looking for an exclamation mark at the beginning of the line to indicate a comment.
@@ -168,7 +172,7 @@ And then it will fail with the exception we saw before.
 So now we've identified the problem, we can fix it.
 
 Firstly, stop the debug process by selecting the red square.
-Then edit the `if` line to search for `COMMENT` instead, reverting the code to what it was before.
+Then edit the `if` line to search for `comment` instead, reverting the code to what it was before.
 We can then rerun the debugger if we wish, to check our understanding.
 And as we step through the code, we can see if correctly identifies the first line as a comment, and ignores it, continuing to the iteration of the for loop, and the next line of data.
 Now we have our solution fixed, we can stop the debugger again.
